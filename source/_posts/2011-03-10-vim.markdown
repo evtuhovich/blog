@@ -1,0 +1,40 @@
+---
+layout: post
+title: О редакторе Vim, рассказ ссылками
+date: 2011-03-10 22:52
+comments: true
+categories:
+- vim
+- vim plugins
+- vimcast
+---
+
+[Vim](http://www.vim.org) — прекрасный редактор, который я использую для разработки на Ruby и Rails. Его можно
+использовать в чистом виде, но если добавить немного плагинов, то удобство работы значительно возрастает. Об этом я и
+хочу рассказать, правда рассказ получится длинным.
+
+Я выступал на последнем RailsClub'е с докладом Vim Or Die ([посмотреть его можно на
+univertv.ru](http://www.univertv.ru/video/informatika/programmirovanie/ruby_on_rails_moscow/vim_or_die/)), в котором
+неплохо раскрыл тему Vim и полезных плагинов. Cами слайды, которые малополезны без видео, можно найти на [slideshare.net](http://www.slideshare.net/evtuhovich/vim-or-die).
+
+Мои настройки vim выложены на github'е. Если стащить их в ~/.vim, а потом выполнить ruby update_bundles, то он стащит
+все нужные плагины для vim.
+
+После этого в ~/.vimrc надо написать строчку:
+
+   source ~/.vim/vimrc_brun.vim
+
+Все, "ваша вима готова".
+
+Список плагинов легко можно понять из файла [update_bundles](https://github.com/evtuhovich/dotvim/blob/master/update_bundles).
+
+Недавно наткнулся на [сборку Vim janus](https://github.com/carlhuda/janus), которой пользуются широкоизвестные в
+rails-тусовке [Yehuda Katz](http://yehudakatz.com/), Aman Gupta и Carl Lerche, так вот список плагинов процентов на 80
+пересекаются у нас. Хорошие плагины для vim выбираются ситом времени, не важно, на каком языке ты пишешь.
+
+Для особо ленивых есть отличный видеоматериал. Скринкасты по Vim на [vimcasts.org](http://vimcasts.org/). Очень понятно
+и доступно объясняется, какие кнопочки нажимать.
+
+Наш иностранный коллега Derek Wyatt выложил отличные [скринкасты по Vim на Vimeo](http://vimeo.com/user1690209).
+
+А рассказ о плагинах для Vim отложим на следующий раз.
