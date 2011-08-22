@@ -10,23 +10,26 @@ published: false
 Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
 
 Итак, у нас есть следующие модели:
-<pre class="ruby"><span class="keyword">class </span><span class="class">Shop</span> <span class="punct">&lt;</span> <span class="constant">ActiveRecord</span><span class="punct">::</span><span class="constant">Base</span>
-  <span class="ident">has_many</span> <span class="symbol">:categories</span>
 
-  <span class="ident">cached_methods</span> <span class="keyword">do</span>
-    <span class="keyword">def </span><span class="method">wait_orders_count</span>
-      <span class="constant">Order</span><span class="punct">.</span><span class="ident">count</span> <span class="symbol">:conditions</span> <span class="punct">=&gt;</span> <span class="punct">{</span><span class="symbol">:status_id</span> <span class="punct">=&gt;</span> <span class="constant">Order</span><span class="punct">::</span><span class="constant">WAIT</span><span class="punct">}</span>
-    <span class="keyword">end</span>
+{% codeblock shop.rb %}
+class Shop < ActiveRecord::Base
+  has_many :categories
 
-    <span class="keyword">def </span><span class="method">paid_orders_count</span>
-      <span class="constant">Order</span><span class="punct">.</span><span class="ident">count</span> <span class="symbol">:conditions</span> <span class="punct">=&gt;</span> <span class="punct">{</span><span class="symbol">:status_id</span> <span class="punct">=&gt;</span> <span class="constant">Order</span><span class="punct">::</span><span class="constant">PAID</span><span class="punct">}</span>
-    <span class="keyword">end</span>
+  cached_methods do
+    def wait_orders_count
+      Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT}
+    end
 
-    <span class="keyword">def </span><span class="method">bad_orders_count</span>
-      <span class="constant">Order</span><span class="punct">.</span><span class="ident">count</span> <span class="symbol">:conditions</span> <span class="punct">=&gt;</span> <span class="punct">{</span><span class="symbol">:status_id</span> <span class="punct">=&gt;</span> <span class="constant">Order</span><span class="punct">::</span><span class="constant">BAD</span><span class="punct">}</span>
-    <span class="keyword">end</span>
-  <span class="keyword">end</span>
-<span class="keyword">end</span>
+    def paid_orders_count
+      Order.count :conditions =&gt; {:status_id =&gt; Order::PAID}
+    end
+
+    def bad_orders_count
+      Order.count :conditions =&gt; {:status_id =&gt; Order::BAD}
+    end
+  end
+end
+{% endcodeblock %}
 
 <span class="keyword">class </span><span class="class">Category</span> <span class="punct">&lt;</span> <span class="constant">ActiveRecord</span><span class="punct">::</span><span class="constant">Base</span>
   <span class="ident">belongs_to</span> <span class="symbol">:shop</span>
