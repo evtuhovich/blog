@@ -3,10 +3,13 @@ layout: post
 title: Проблемы с find_in_batches
 date: 2011-09-11 00:22
 comments: true
-categories: rails 2.3, activerecord, find_in_batches
+categories:
+- rails 2.3
+- activerecord
+- find_in_batches
 ---
 
-Иногда мне кажется, что большинство инженерных историй похоже как две капли воды. Вот и эта история началась с того, что 
+Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что 
 в одном большом отчете цифры не сходились раза в два.
 
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались
@@ -14,12 +17,12 @@ categories: rails 2.3, activerecord, find_in_batches
 
 ``` ruby
     class OfferDescription < ActiveRecord::Base
-      has_many :children, :class_name => 'OfferDescription', :foreign_key => :parent_id, :inverse_of => :parent
+      has_many :children, :class_name => 'OfferDescription', :foreign_key => :parent_id
     end
 ```
 
-В отчете данные группировались по родительским объектам `OfferDescription`. И
-именно у объектов, у которых были дети, в отчетах были все нули. Рассчитывал
+В отчете данные группировались по родительским объектам `OfferDescription`.
+Именно у объектов, у которых были дети, в отчетах были все нули. Рассчитывал
 отчеты приблизительно вот такой код.
 
 ``` ruby
@@ -45,20 +48,24 @@ categories: rails 2.3, activerecord, find_in_batches
 в выборку детей всегда будет добавляться условие `:parent_id => nil`.
 
 Более того, следующий код тоже не будет работать (в примере взяты id, которые
-существуют в базе данных).
+существуют в базе данных), потому что условия в запросе к БД никогда не выполняются.
 
 ``` ruby
     OfferDescription.scoped(:conditions => {:id => 16005}).find_in_batches do |batch|
       batch.each do |offer_description|
         OfferDescription.find 18847
         # здесь запрос к базе данных будет вот таким
-        # SELECT * FROM "offer_descriptions" WHERE ("offer_descriptions"."id" = 18847) AND ("offer_descriptions"."id" = 16005)
+        # SELECT * FROM "offer_descriptions" WHERE 
+        # ("offer_descriptions"."id" = 18847) AND ("offer_descriptions"."id" = 16005)
       end
     end
 ```
 
+Говоря откровенно, я не понимаю, зачем так сделано. Если кто-то объяснит мне
+тайный смысл этого в комментариях, я буду ему очень благодарен.
+
 Все вышесказанное не умаляет полезности самого метода `find_in_batches`,
 потому что запросы к базе данных, которые он генерируют, позволяют выбрать все
 данные из базы, во многих случаях не создавая большую нагрузку. И конечно, он
-работает всегда не медленее, чем постраничный перебор с использованием
-`:limit` и `:offset'.
+работает всегда не медленнее, чем постраничный перебор с использованием
+`:limit` и `:offset`.
