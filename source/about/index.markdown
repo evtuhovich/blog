@@ -39,8 +39,13 @@ footer: true
 [Ехуду Катца](http://yehudakatz.com/) (core-developer Rails3, Merb, jQuery).
 
 С апреля 2011 года я работаю в компании [``Злые Марсиане''](http://evilmartians.com), руковожу разработкой купонного сервиса
-[Groupon](http://groupon.ru). Уже работая в марсианах я успел
+[Groupon](http://groupon.ru). Уже работая в марсианах, я успел
 [дать интервью](http://theoryandpractice.ru/posts/2488-programmisty-evil-martians-bookmate-i-yahoo-rasskazyvayut-o-krasote-koda),
 получить 1-ый дан Айкидо Айкикай у [Матвеева Вячеслава Александровича](http://aikiclub.ru).
+
+Также в декабре 2012 мы провели [RailsClub](http://railsclub.ru), на который привезли 3 иностранных докладчиков:
+[Sven Fuchs](http://svenfuchs.com/) (автор [Travis CI](http://travis-ci.org/)),
+[Konstantin Haase](http://rkh.im/) (maintainer Sinatra) и
+[Piotr Sarnacki](http://piotrsarnacki.com/) (автор rails engine).
 
 А еще в начале июня 2011 года у меня родилась дочь --- Ксения Ивановна.
