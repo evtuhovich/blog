@@ -6,7 +6,7 @@ comments: true
 categories: railsclub конференция
 ---
 
-В субботу 17 декабря прошла конференция [Railsclub](http://railslcub.ru), которую посетило приблизительно 170 человек. Я
+В субботу 17 декабря прошла конференция [Railsclub](http://railsclub.ru), которую посетило приблизительно 170 человек. Я
 рад, что в этот раз нам удалось привезти иностранных коллег: [Sven Fuchs](http://svenfuchs.com/), [Konstantin Haase](http://rkh.im/) и
 [Piotr Sarnacki](http://piotrsarnacki.com/).
 
