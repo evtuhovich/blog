@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Библия postgresql"
+date: 2011-12-27 17:11
+comments: true
+categories: postgresql, books
+---
+
+Если вы работаете с postgresql и сталкиваетесь с затруднительными ситуациями, ответы на которые даже не ясно, как
+гуглить, то, скорее всего, вам не хватает каких-то фундаментальных знаний этой БД.
+
+Относительно недавно я купил себе книгу «[PostgreSQL 9.0 High Performance
+book](http://www.packtpub.com/postgresql-90-high-performance/book)»
