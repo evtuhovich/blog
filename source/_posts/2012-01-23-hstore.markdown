@@ -1,0 +1,100 @@
+---
+layout: post
+title: "Hstore — key-value расширение для postgresql"
+date: 2012-01-23 23:05
+comments: true
+categories: postgresql, hstore, key-value
+---
+
+Наверное, не все знают, что для postgresql существует большое количество расширений, которые называются 
+[contrib модулями](http://www.postgresql.org/docs/9.1/static/contrib.html).
+
+Рассмотрим один из таких модулей - [hstore](http://www.postgresql.org/docs/9.1/static/hstore.html). Этот модуль
+нужен для того, чтобы в одном поле в БД хранить много значений key/value, фактически, просто какой-то хеш. При этом и
+ключи и значения могут быть строками. О том, чем это лучше, нежели просто хранить в текстовом поле сериализованный хеш,
+я расскажу чуть-чуть попозже. Понадобится это может в том случае, если у вас есть модели с произвольным набором полей.
+
+Вначале поставим это расширения в Ubuntu 11.10
+
+{% codeblock %}
+sudo apt-get install postgresql-contrib
+{% endcodeblock %}
+
+Потом поставим этот модуль. Для этого в 9.1 зайдем в консоль `psql`.
+
+{% codeblock lang:sql %}
+CREATE EXTENSION hstore;
+WARNING:  => is deprecated as an operator name
+DETAIL:  This name may be disallowed altogether in future versions of PostgreSQL.
+{% endcodeblock %}
+
+Для версии младше 9.1 процедура установки [немного другая](http://www.postgresql.org/docs/9.0/static/contrib.html).
+Далее создадим тестовую таблицу и заполним ее данными.
+
+{% codeblock lang:sql %}
+CREATE table test(id serial, value hstore);
+
+INSERT INTO test(value)
+SELECT hstore(((random() * 1000)::integer)::text, ((random() * 1000)::integer)::text) 
+FROM
+	generate_series(1, 1000);
+
+UPDATE test SET value = value || 
+  hstore(((random() * 1000)::integer)::text, ((random() * 1000)::integer)::text);
+UPDATE test SET value = value || 
+  hstore(((random() * 1000)::integer)::text, ((random() * 1000)::integer)::text);
+UPDATE test SET value = value || 
+  hstore(((random() * 1000)::integer)::text, ((random() * 1000)::integer)::text);
+UPDATE test SET value = value || 
+  hstore(((random() * 1000)::integer)::text, ((random() * 1000)::integer)::text);
+UPDATE test SET value = value || 
+  hstore(((random() * 1000)::integer)::text, ((random() * 1000)::integer)::text);
+UPDATE test SET value = value || 
+  hstore(((random() * 1000)::integer)::text, ((random() * 1000)::integer)::text);
+UPDATE test SET value = value || 
+  hstore(((random() * 1000)::integer)::text, ((random() * 1000)::integer)::text);
+
+SELECT * FROM test LIMIT 1;
+ id |                                                    value                                                     
+----+--------------------------------------------------------------------------------------------------------------
+  1 | "33"=>"923", "262"=>"181", "471"=>"658", "554"=>"916", "579"=>"472", "649"=>"287", "891"=>"620", "897"=>"24"
+{% endcodeblock %}
+
+Ваш результат, понятно, будет отличаться, но это непринципиально.
+
+Пока, конечно, это ничем не отличается от хранения сериализованного хеша в поле таблицы. Но тут мы добавим немного
+особой postgresql магии.
+
+{% codeblock lang:sql %}
+CREATE INDEX ON test USING GIN(value);
+" ну, или вот так
+CREATE INDEX ON test USING GIST(value);
+{% endcodeblock %}
+
+Postgres позволяет создавать индексы на ключах нашего хеша. И теперь при поиске элемента это будет не полное
+сканирование таблицы, а поиск по индексу. Почитать про разницу между GIN и GIST индексами можно 
+[здесь](http://www.postgresql.org/docs/9.1/static/textsearch-indexes.html).
+
+Итак, попробуем.
+
+{% codeblock lang:sql %}
+" Найдем все упячечные ключи
+explain SELECT value -> '111' FROM test WHERE value ? '111';
+                                  QUERY PLAN                                  
+------------------------------------------------------------------------------
+ Bitmap Heap Scan on test  (cost=12.01..16.02 rows=1 width=114)
+   Recheck Cond: (value ? '111'::text)
+   ->  Bitmap Index Scan on test_value_idx  (cost=0.00..12.01 rows=1 width=0)
+         Index Cond: (value ? '111'::text)
+
+{% endcodeblock %}
+
+Вах, как здорово — действительно вместо полного просмотра таблицы используется индекс.
+
+Конечно, уже нашлись коллеги, которые написали 
+[плагин для activerecord](https://github.com/softa/activerecord-postgres-hstore). Судя по комитам от октября 2011
+проект живой, но сам я им не пользовался, если у кого-то есть опыт — было бы интересно услышать.
+
+Так что в следующий раз, когда мне понадобится метод
+[serialize](http://apidock.com/rails/ActiveRecord/Base/serialize/class), я попробую вначале hstore, и обязательно
+поделюсь с вами.
