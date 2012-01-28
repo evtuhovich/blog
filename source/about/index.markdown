@@ -43,7 +43,7 @@ footer: true
 [дать интервью](http://theoryandpractice.ru/posts/2488-programmisty-evil-martians-bookmate-i-yahoo-rasskazyvayut-o-krasote-koda),
 получить 1-ый дан Айкидо Айкикай у [Матвеева Вячеслава Александровича](http://aikiclub.ru).
 
-Также в декабре 2012 мы провели [RailsClub](http://railsclub.ru), на который привезли 3 иностранных докладчиков:
+Также в декабре 2011 мы провели [RailsClub](http://railsclub.ru), на который привезли 3 иностранных докладчиков:
 [Sven Fuchs](http://svenfuchs.com/) (автор [Travis CI](http://travis-ci.org/)),
 [Konstantin Haase](http://rkh.im/) (maintainer Sinatra) и
 [Piotr Sarnacki](http://piotrsarnacki.com/) (автор rails engine).
