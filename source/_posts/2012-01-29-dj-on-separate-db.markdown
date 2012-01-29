@@ -3,7 +3,11 @@ layout: post
 title: Delayed_job в отдельной базе данных
 date: 2012-01-29 23:08
 comments: true
-categories: delayed_job, dj, "secondary db", "separate db"
+categories:
+- delayed_job
+- dj
+- secondary db
+- separate db
 ---
 
 Как я уже когда-то [писал](/blog/2009/05/19/two-databases/), иногда проект дорастает до того, что ему не хватает одной

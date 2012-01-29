@@ -3,7 +3,7 @@ layout: post
 title: "Библия postgresql"
 date: 2011-12-27 17:11
 comments: true
-categories: postgresql, books
+categories: postgresql books
 ---
 
 {% img left /images/pg-book.jpg 200 Библия %}
