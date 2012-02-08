@@ -9,6 +9,10 @@ footer: true
 
 {% img left /images/me_small.jpg Моя фотография %}
 
+Email: [evtuhovich@gmail.com](mailto:evtuhovich@gmail.com)<br />
+Skype: evtuhovich<br />
+Twitter: [evtuhovich](https://twitter.com/#!/evtuhovich)<br />
+
 Учился в [МФТИ](http://mipt.ru), закончил со степенью магистра.
 
 Потом был разработчиком на C#, получил 3 сертификата MS, но душа тянулась к свободному ПО, потому что Linux я увлекался
@@ -28,14 +32,14 @@ footer: true
 полтора года --- это достижение, но за 5 лет это уже не то. Поскольку новых продуктов делать там не планировалось, я
 отправился дальше.
 
-Именно за время работы в Скалакси я выступил с докладами про 
-[Git для продолжающих](http://www.slideshare.net/evtuhovich/git-5604524) и 
-[Continuous Delivery](http://www.slideshare.net/evtuhovich/continuous-delivery-5604548) на 
+Именно за время работы в Скалакси я выступил с докладами про
+[Git для продолжающих](http://www.slideshare.net/evtuhovich/git-5604524) и
+[Continuous Delivery](http://www.slideshare.net/evtuhovich/continuous-delivery-5604548) на
 [конференции в Минске](http://www.di.by/2010/speakers_list/3212/).
-Мы довели RailsClub до состояния полноценной конференции с 150-200 посетителями. 
+Мы довели RailsClub до состояния полноценной конференции с 150-200 посетителями.
 [Я выступил](http://univertv.ru/video/informatika/programmirovanie/ruby_on_rails_moscow/vim_or_die/) с
 [докладом Vim Or Die](http://www.slideshare.net/evtuhovich/vim-or-die) про лучший в мире редактор Vim на RailsClub.
-Также в рамках RailsClub совместно с [DevConf](http://devconf.ru) мы привезли в Москву 
+Также в рамках RailsClub совместно с [DevConf](http://devconf.ru) мы привезли в Москву
 [Ехуду Катца](http://yehudakatz.com/) (core-developer Rails3, Merb, jQuery).
 
 С апреля 2011 года я работаю в компании [``Злые Марсиане''](http://evilmartians.com), руковожу разработкой купонного сервиса
