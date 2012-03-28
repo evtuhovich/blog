@@ -20,6 +20,8 @@ warden стал по-другому сериализовать сессию. А 
 Все эти проблемы решены были кодом, которые приведен ниже. И еще похожий код был в rails2-ветке, который конвертил
 сессию третьих рельс во вторую. Пользуйтесь с осторожностью.
 
+<!-- more -->
+
 {% codeblock config/initializiers/rails3_session.rb %}
 class ActionController::Flash::FlashHash < Hash
 end
