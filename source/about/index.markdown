@@ -45,7 +45,7 @@ Twitter: [evtuhovich](https://twitter.com/#!/evtuhovich)<br />
 С апреля 2011 года я работаю в компании [``Злые Марсиане''](http://evilmartians.com), руковожу разработкой купонного сервиса
 [Groupon](http://groupon.ru). Уже работая в марсианах, я успел
 [дать интервью](http://theoryandpractice.ru/posts/2488-programmisty-evil-martians-bookmate-i-yahoo-rasskazyvayut-o-krasote-koda),
-получить 1-ый дан Айкидо Айкикай у [Матвеева Вячеслава Александровича](http://aikiclub.ru).
+получить первый дан Айкидо Айкикай у [Матвеева Вячеслава Александровича](http://aikiclub.ru).
 
 Также в декабре 2011 мы провели [RailsClub](http://railsclub.ru), на который привезли 3 иностранных докладчиков:
 [Sven Fuchs](http://svenfuchs.com/) (автор [Travis CI](http://travis-ci.org/)),
@@ -53,3 +53,10 @@ Twitter: [evtuhovich](https://twitter.com/#!/evtuhovich)<br />
 [Piotr Sarnacki](http://piotrsarnacki.com/) (автор rails engine).
 
 А еще в начале июня 2011 года у меня родилась дочь --- Ксения Ивановна.
+
+С начала 2012 вместе с [Иваном Самсоновым](https://twitter.com/#!/kronos_vano) мы вдохнули вторую жизнь в [Ruby NoName Podcast](http://ruby.rpod.ru),
+сделав его выпуски регулярными с частотой раз в две недели.
+
+С июня 2012 года я работаю в своей собственной консалтинговой компании «[Express 42](http://express42.com)», помогаю
+хорошим людям решать проблемы с доступностью, отказоустойчивостью, а также налаживаю управление конфигурацией и
+непрерывную интеграцию.
