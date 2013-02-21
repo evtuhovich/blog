@@ -62,15 +62,15 @@ end
 добавить следующие строки в ваш файл `spec/spec_helper.rb`.
 
 {% codeblock spec/spec_helper.rb %}
-RSpec.configure do |config|¬
-  config.around(:each) do |ex|¬
-    main = ActiveRecord::Base.connection¬
+RSpec.configure do |config|
+  config.around(:each) do |ex|
+    main = ActiveRecord::Base.connection
     foo = AnotherDBClass.connection
-    main.transaction(:requires_new => true, :joinable => false) do¬
-      foo.transaction(:requires_new => true, :joinable => false, &ex)¬
-    end¬
-  end¬
-end¬
+    main.transaction(:requires_new => true, :joinable => false) do
+      foo.transaction(:requires_new => true, :joinable => false, &ex)
+    end
+  end
+end
 
 {% endcodeblock %}
 
