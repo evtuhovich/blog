@@ -55,6 +55,21 @@ task :generate do
   system "jekyll"
 end
 
+desc "Generate toc for reports"
+task :generate_toc do
+  result = File.open("#{source_dir}/reports/toc.markdown", 'w')
+  toc = File.read("#{source_dir}/reports/index.markdown").lines.select { |l| l.match(/^#+/) }
+  toc.each do |line|
+    m = line.match /^#+ <a id="(.*)"><\/a>(.*)/
+    el = "1. [#{m[2]}](##{m[1]})\n"
+    if line.match /^##/
+      el = '   ' + el
+    end
+
+    result.write el
+  end
+end
+
 desc "Watch the site and regenerate when it changes"
 task :watch do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
