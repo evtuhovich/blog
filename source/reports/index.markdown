@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Доклады и мастер-классы"
-date: 2013-03-02 16:10
+date: 2013-04-23 16:10
 comments: true
 sharing: true
 footer: true
