@@ -13,6 +13,8 @@ Email: [evtuhovich@gmail.com](mailto:evtuhovich@gmail.com)<br />
 Skype: evtuhovich<br />
 Twitter: [evtuhovich](https://twitter.com/#!/evtuhovich)<br />
 
+Список моих докладов и мастер-классов доступен [здесь](/reports).
+
 Учился в [МФТИ](http://mipt.ru), закончил со степенью магистра.
 
 Потом был разработчиком на C#, получил 3 сертификата MS, но душа тянулась к свободному ПО, потому что Linux я увлекался
