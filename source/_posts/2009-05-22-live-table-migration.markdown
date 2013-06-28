@@ -5,7 +5,7 @@ date: 2009-05-22 23:45
 comments: true
 categories:
 - londiste
-- postgresql
+- PostgreSQL
 - миграция
 ---
 

@@ -4,7 +4,7 @@ title: Проблема с сортировкой русских слов в Pos
 date: 2012-07-14 13:17
 comments: true
 categories:
-- postgres
+- PostgreSQL
 - collate
 - osx
 ---

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Библия postgresql"
+title: "Библия PostgreSQL"
 date: 2011-12-27 17:11
 comments: true
-categories: postgresql books
+categories: PostgreSQL books
 ---
 
 {% img left /images/pg-book.jpg 200 Библия %}

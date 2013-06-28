@@ -5,7 +5,7 @@ date: 2012-03-14 23:52
 comments: true
 categories:
 - json
-- postgresql
+- PostgreSQL
 ---
 
 В третьем квартале 2012 должна выйти версия [PostgreSQL 9.2](http://www.postgresql.org/developer/roadmap/), в которой
