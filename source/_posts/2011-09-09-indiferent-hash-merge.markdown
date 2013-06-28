@@ -4,7 +4,6 @@ title: Слияние HashWithIndifferentAccess с обычными хешами
 date: 2011-09-09 23:16
 comments: true
 categories:
-- hash
 - HashWithIndifferentAccess
 ---
 

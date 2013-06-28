@@ -5,8 +5,7 @@ date: 2012-10-10 13:09
 comments: true
 categories:
 - PostgreSQL
-- "9.2"
-- index only scan
+- индексы
 ---
 
 Вообще, сам не узнаю себя, уже ровно месяц прошел с выпуска [Postgresql 9.2](http://www.postgresql.org/docs/9.2/static/release-9-2.html), даже вышло [обновление 9.2.1](http://www.postgresql.org/docs/9.2/static/release-9-2-1.html), исправляющее некоторые баги, а я все еще ничего не написал об этом.

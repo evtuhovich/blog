@@ -5,7 +5,6 @@ date: 2009-02-27 14:45:00 UTC
 comments: true
 categories:
 - cruisecontrol
-- cc.rb
 - continuous integration
 published: true
 ---

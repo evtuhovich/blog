@@ -4,7 +4,7 @@ title: Рекурсивные особенности to_yaml
 date: 2009-04-20 13:14:00 UTC
 comments: true
 published: true
-categories: to_yaml баг рекурсия
+categories: yaml
 ---
 
 Если необходимо сериализовать/десериализовать какой-то объект, то yaml формат хорошо для этого подходит.

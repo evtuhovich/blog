@@ -4,7 +4,7 @@ title: Тесты и тестирование
 date: 2009-03-23 19:06:00 UTC
 comments: true
 published: true
-categories: rspec тестирование rails
+categories: rspec rails
 ---
 
 Возможно, в сайте из 3 контроллеров и 15 страниц, тесты и не нужны. Я обычно не делаю тесты на маленьких проектах,

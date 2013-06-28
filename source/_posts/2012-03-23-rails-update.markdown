@@ -6,8 +6,7 @@ comments: true
 categories: 
 - warden
 - devise
-- rails2
-- rails3
+- rails
 ---
 
 На «Групоне» мы давно уже переходим с Rails 2.3 на Rails 3.0. На этой неделе перешли — полет нормальный. Но поскольку

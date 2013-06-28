@@ -4,9 +4,8 @@ title: Проблемы с find_in_batches
 date: 2011-09-11 00:22
 comments: true
 categories:
-- rails 2.3
-- activerecord
-- find_in_batches
+- rails
+- ActiveRecord
 ---
 
 Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что 

@@ -4,7 +4,6 @@ title: "Быстрое удаление старых ошибок из airbrake 
 date: 2012-04-11 21:14
 comments: true
 categories: 
-- exception
 - airbrake
 ---
 

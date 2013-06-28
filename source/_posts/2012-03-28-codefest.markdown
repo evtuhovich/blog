@@ -3,8 +3,8 @@ layout: post
 title: "Буду выступать на CodeFest"
 date: 2012-03-28 14:22
 comments: true
-categories: 
-- conference
+categories:
+- конференция
 - codefest
 ---
 

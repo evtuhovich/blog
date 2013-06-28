@@ -5,7 +5,6 @@ date: 2011-08-22 13:02
 comments: true
 categories:
 - rails
-- "2.3"
 - caches_action
 published: true
 ---

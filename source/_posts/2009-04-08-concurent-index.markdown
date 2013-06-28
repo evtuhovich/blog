@@ -5,8 +5,7 @@ date: 2009-04-08 11:11
 comments: true
 categories:
 - PostgreSQL
-- index
-- concurent index
+- индексы
 ---
 
 На таблице postgresql с большим количеством данных невозможно быстро создать либо пересоздать индекс. При создании

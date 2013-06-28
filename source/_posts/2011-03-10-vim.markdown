@@ -5,8 +5,7 @@ date: 2011-03-10 22:52
 comments: true
 categories:
 - vim
-- vim plugins
-- vimcast
+- podcast
 ---
 
 [Vim](http://www.vim.org) — прекрасный редактор, который я использую для разработки на Ruby и Rails. Его можно

@@ -6,8 +6,6 @@ comments: true
 published: true
 categories:
 - deploy
-- выкатка
-- cap
 - capistrano
 ---
 

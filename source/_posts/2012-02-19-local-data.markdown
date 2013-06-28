@@ -4,7 +4,6 @@ title: Фильтрация данных на клиенте
 date: 2012-02-19 23:16
 comments: true
 categories: 
-- filter
 - performance
 ---
 

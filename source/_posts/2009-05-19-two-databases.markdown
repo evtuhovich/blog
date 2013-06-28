@@ -4,8 +4,6 @@ title: Несколько баз данных
 date: 2009-05-19 22:52
 comments: true
 categories: 
-- abstract_class
-- multiple database
 - rollback
 - rspec
 - transaction
