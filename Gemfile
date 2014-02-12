@@ -1,12 +1,12 @@
-source "http://rubygems.org"
+# If you have OpenSSL installed, we recommend updating
+# the following line to use "https"
+source 'http://rubygems.org'
 
-gem 'rake'
-gem 'rack'
-gem 'jekyll'
-gem 'rdiscount'
-gem 'pygments.rb'
-gem 'RedCloth'
-gem 'haml', '>= 3.1'
-gem 'compass', '>= 0.11'
-gem 'rubypants'
-gem 'rb-fsevent'
+gem "middleman", "~>3.2.2"
+
+gem 'middleman-blog'
+# Live-reloading plugin
+gem "middleman-livereload", "~> 3.1.0"
+
+# For faster file watcher updates on Windows:
+gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
