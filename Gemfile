@@ -1,18 +1,10 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
 
-group :development do
-  gem 'rake'
-  gem 'rack'
-  gem 'jekyll'
-  gem 'rdiscount'
-  gem 'pygments.rb'
-  gem 'RedCloth'
-  gem 'haml', '>= 3.1'
-  gem 'compass', '>= 0.11'
-  gem 'rubypants'
-  gem 'rb-fsevent'
-  gem 'stringex'
-  gem 'liquid', '2.2.2'
-end
+gem "middleman", "~>3.2.2"
 
-gem 'sinatra', '1.2.6'
+gem 'middleman-blog'
+# Live-reloading plugin
+gem "middleman-livereload", "~> 3.1.0"
+
+# For faster file watcher updates on Windows:
+gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
