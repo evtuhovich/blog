@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Мастер-класс"
-date: 2011-11-13 23:20
+date: 2011-11-10 23:20
 comments: true
 categories: мастер-класс
 ---
