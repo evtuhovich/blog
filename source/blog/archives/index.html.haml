@@ -1,0 +1,27 @@
+---
+layout: page
+title: Blog Archive
+footer: false
+---
+
+.blog-archives
+  - year = nil
+  - page_articles('blog').each_with_index do |post, i|
+    - this_year = post.date.strftime('%Y')
+    - unless year == this_year
+      - year = this_year
+      %h2= year
+    %article
+      %h1
+        %a{:href => post.url}
+          = post.title
+          %time{ :datetime => post.date, :pubdate => true }
+            = post.date
+            %span.month= post.date.strftime('%b')
+            %span.day= post.date.strftime('%d')
+            %span.year= post.date.strftime('%Y')
+      %footer
+        - unless post.tags.empty?
+          %span.categories
+            posted in
+            = post.tags.map { |t| tag_url t }.join(', ')

@@ -39,11 +39,19 @@
 # activate :livereload
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def tag_url tag
+    link_to tag, "/blog/categories/#{tag}"
+  end
+
+  def site_url(protocol = 'http')
+    if development?
+      "#{protocol}://localhost:4567"
+    else
+      "#{protocol}://devopsdeflope.ru"
+    end
+  end
+end
 
 set :css_dir, 'stylesheets'
 

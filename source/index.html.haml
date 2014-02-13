@@ -4,18 +4,15 @@ pageable: true
 per_page: 10
 ---
 
-- content_for :menu do
-  = partial :menu, :locals => { :page => 'blog' }
-
-%section.text-section
-  %h1 блог
+.blog-index
   - page_articles('blog').each_with_index do |article, i|
-    %article.post
-      .info-box
-        %strong.date= article.date.strftime('%d %m %Y')
-        %strong= article.data.author
-      .text-holder
-        %h2= article.title
-        = article.summary
-
-        = link_to 'Читать дальше', article.url
+    %article
+      = partial 'article', :locals => {:article => article, :i => i}
+  .pagination
+    -# {% if paginator.next_page %}
+    -#   <a class="prev" href="{{paginator.next_page}}">&larr; Older</a>
+    -# {% endif %}
+    -# <a href="/blog/archives">Blog Archives</a>
+    -# {% if paginator.previous_page %}
+    -# <a class="next" href="{{paginator.previous_page}}">Newer &rarr;</a>
+    -# {% endif %}

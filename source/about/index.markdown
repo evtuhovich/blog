@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 
-{% img left /images/me_small.jpg Моя фотография %}
+![Моя фотография](/images/me_small.jpg)
 
 Email: [evtuhovich@gmail.com](mailto:evtuhovich@gmail.com)<br />
 Skype: evtuhovich<br />
