@@ -22,7 +22,7 @@ tags:
 Но перейдем к практике. Пусть у нас есть таблица пользователей библиотеки `users` и таблица, в которой хранится связка
 пользователей и книг, которые они взяли `books_users`. А у этой нашей библиотеки миллион пользователей.
 
-{% codeblock lang:sql %}
+```sql
 test=# \d users
                          Table "public.users"
  Column |  Type   |                     Modifiers                      
@@ -44,12 +44,12 @@ test=# select pg_size_pretty(pg_total_relation_size('users'));
  208 MB
 (1 row)
 
-{% endcodeblock %}
+```
 
 В какой-то момент мы решаем денормализовать схему БД и добавить количество взятых в библиотеки книг в таблицу
 пользователей.
 
-{% codeblock lang:sql %}
+```sql
 test=# alter table users add column books_count int;
 test=# update users set books_count = (select count(*) from books_users where user_id = users.id);
 UPDATE 1000000
@@ -59,12 +59,12 @@ test=# select pg_size_pretty(pg_total_relation_size('users'));
 ----------------
  454 MB
 
-{% endcodeblock %}
+```
 
 Как мы видим, после такой простой операции таблица разбухла в 2 раза. Что же делать в таком случае? Давайте попробуем
 обычный `vacuum`, ведь он предназначен именно для этого.
 
-{% codeblock lang:sql %}
+```sql
 test=# vacuum users;
 VACUUM
 
@@ -73,7 +73,7 @@ test=# select pg_size_pretty(pg_total_relation_size('users'));
 ----------------
  454 MB
 
-{% endcodeblock %}
+```
 
 Как мы видим, это не помогло. Понятно, что разбухла как таблица, так и индексы (а их там 4), поправить 3 из них можно с
 помощью [конкурентного пересоздания индексов](/blog/2009/04/08/concurent-index/), но сама таблица и индекс `users_pkey`, который

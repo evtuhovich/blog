@@ -30,7 +30,7 @@ $ echo "select version()" | psql
  clang version 4.0 (tags/Apple/clang-421.0.57) (based on LLVM 3.1svn), 64-bit
 (1 row)
 
-{% endcodeblock %}
+```
 
 Также у нас есть вот такая таблица `a` с индексом на поле `first_name`.
 
@@ -49,11 +49,11 @@ mc=# \d a
 Indexes:
     "a_first_name_idx" btree (first_name)
 
-{% endcodeblock %}
+```
 
 Посмотрим, сколько же записей в этой таблице и сколько в ней Иванов.
 
-{% codeblock lang:sql %}
+```sql
 
 select count(*) from a;
  count 
@@ -67,7 +67,7 @@ mc=# select count(*) from a where first_name = 'Иван';
    371
 (1 row)
 
-{% endcodeblock %}
+```
 
 Что же, посмотрим, как Иваны будут извлекаться из БД.
 
@@ -87,7 +87,7 @@ explain (analyze true, buffers true) select count(*) from a where first_name = '
  Total runtime: 4.133 ms
 (9 rows)
 
-{% endcodeblock %}
+```
 
 Как мы видем, вначале Иваны вытаскиваются из индекса (`Bitmap Index Scan`), а потом pg лезет в саму таблицу
 (`Bitmap Heap Scan`), чтобы проверить, есть ли такие записи на самом деле. Дело в том, что Postgresql —
@@ -117,7 +117,7 @@ mc=# explain (analyze true, buffers true) select count(*) from a where first_nam
  Total runtime: 0.342 ms
 (7 rows)
 
-{% endcodeblock %}
+```
 
 И да, мы получили другой план запроса, как и ожидали. Понятно, что index only scan может ускорить запросы только по тем
 таблицам, которые достаточно редко обновляются.

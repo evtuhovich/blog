@@ -17,14 +17,14 @@ tags:
 
 Вот такой запрос показывает потенциальных кандидатов на переезд.
 
-{% codeblock lang:sql %}
+```sql
 SELECT
 	relname, n_tup_ins + n_tup_upd + n_tup_del
 FROM
 	pg_stat_user_tables 
 ORDER BY
 	2
-{% endcodeblock %}
+```
 
 В нашем случае это оказалась таблица, где сохранялись ip-адреса, с которых пользователи заходят на сайт, и
 таблица `delayed_jobs`. В rails 2.3 делалось это очень просто.
@@ -33,7 +33,7 @@ ORDER BY
 class Delayed::Backend::ActiveRecord::Job
   establish_connection "second_#{Rails.env}"
 end
-{% endcodeblock %}
+```
 
 В случае же с rails 3, на которые вот уже совсем скоро переедет Групон, все оказалось не так просто. Gem `delayed_jobs`
 версии 2.1.4 достаточно сильно отличается от версии 2.0. Поэтому старый трюк работать перестал. Гугление не помогло,
@@ -41,7 +41,7 @@ end
 
 {% codeblock config/initializers/delayed_job_config.rb %}
 Delayed::Worker.backend = SecondDbDj
-{% endcodeblock %}
+```
 
 {% codeblock  app/models/second_db_dj.rb %}
 class SecondDbDj < SecondDb # это абстрактный класс, который подключает ко второй БД
@@ -118,7 +118,7 @@ db_time_now - max_run_time, worker_name])
   end
 
 end
-{% endcodeblock %}
+```
 
 Эта огромная простыня отличается от того, что находится в `delayed_job` всего тремя строчками. Если кто-то знает более
 простой способ сделать то же самое, я буду рад об этом узнать.

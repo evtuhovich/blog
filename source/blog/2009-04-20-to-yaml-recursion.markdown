@@ -21,7 +21,7 @@ tags: yaml
   print u.to_yaml
   u.projects
   print u.to_yaml
-{% endcodeblock %}
+```
 
 {% codeblock result.yml %}
 
@@ -51,7 +51,7 @@ projects:
     name: test
     created_at: 2009-04-23 12:45:23+04
   attributes_cache: {}
-{% endcodeblock %}
+```
 
 Решена была эта проблема просто: `object.attributes.to_yaml`.
 

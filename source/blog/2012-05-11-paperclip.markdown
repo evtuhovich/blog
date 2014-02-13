@@ -22,10 +22,10 @@ gem с rubygems, насильно заставляя всех в один ден
 
 Проблема решилась добавлением следующего кода в `Gemfile`:
 
-{% codeblock lang:ruby %}
+```ruby
 gem 'paperclip',  '3.0.1',
                   :git => 'git://github.com/thoughtbot/paperclip.git',
                   :tag => 'v3.0.1'
-{% endcodeblock %}
+```
 
 Если вы поддерживаете какие-то gem-ы, никогда не поступайте так плохо, как это сделали Thoughtbot.

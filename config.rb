@@ -48,7 +48,7 @@ helpers do
     if development?
       "#{protocol}://localhost:4567"
     else
-      "#{protocol}://devopsdeflope.ru"
+      "#{protocol}://evtuhovich.ru"
     end
   end
 end
@@ -66,9 +66,9 @@ Time.zone = "Moscow"
 activate :blog do |blog|
   blog.name = "blog"
   blog.prefix = "blog"
-  blog.permalink = ":year/:month/:day/:title/"
+  blog.permalink = ":year/:month/:day/:title/index.html"
   # blog.sources = ":year-:month-:day-:title.html"
-  blog.taglink = "categories/:tag/"
+  blog.taglink = "categories/:tag/index.html"
   blog.layout = false
   blog.summary_separator = /(<!-- more -->)/
   blog.summary_length = nil
@@ -91,6 +91,11 @@ activate :blog do |blog|
   #   }
   # }
 end
+
+activate :syntax
+
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment

@@ -21,7 +21,7 @@ tags:
 UPDATE`, потому что сделать длинный `SELECT` в домашних условиях достаточно сложно. Я изменил pid'ы процессов, чтобы они
 легче воспринимались визуально.
 
-{% codeblock lang:sql %}
+```sql
 mc=# select pg_backend_pid();
  pg_backend_pid
 ----------------
@@ -34,11 +34,11 @@ mc=# select * from a where id = 6637 for update;
 ------+------------
  6637 | Р
 
-{% endcodeblock %}
+```
 
 Во второй сессии мы добавим новую колонку к той же таблице.
 
-{% codeblock lang:sql %}
+```sql
 
 mc=# select pg_backend_pid();
  pg_backend_pid
@@ -47,13 +47,13 @@ mc=# select pg_backend_pid();
 
 mc=# alter table a add c int;
 
-{% endcodeblock %}
+```
 
 Как мы видим, `ALTER TABLE` «завис», то есть ждет завершение транзакции, которую начал процесс с pid 2.
 
 Что же, запустим еще одну сессию, в которой попробуем выбрать что-то из БД.
 
-{% codeblock lang:sql %}
+```sql
 
 mc=# select pg_backend_pid();
  pg_backend_pid
@@ -62,7 +62,7 @@ mc=# select pg_backend_pid();
 
 mc=# select * from a limit 10;
 # здесь запрос тоже висит
-{% endcodeblock %}
+```
 
 Этот запрос тоже повис. А теперь представьте себе на мгновение, что таблица a — это одна из самых важных таблиц в вашем
 web-проекте, и все запросы к ней, даже на чтение, теперь блокируются, это будет означать, что сайт лег.
@@ -70,7 +70,7 @@ web-проекте, и все запросы к ней, даже на чтени
 Ситуация понятная, pid 3 ждет pid 2, а pid 4 ждет pid 3. Посмотрим более внимательно, как это выглядит,
 с помощью системного представления PostgreSQL [pg_locks](http://www.postgresql.org/docs/9.1/static/view-pg-locks.html).
 
-{% codeblock lang:sql %}
+```sql
 mc=# SELECT c.relname, l.mode, l.granted, l.pid
 FROM pg_locks as l JOIN pg_class as c on c.oid = l.relation;
           relname           |        mode         | granted |  pid
@@ -79,7 +79,7 @@ FROM pg_locks as l JOIN pg_class as c on c.oid = l.relation;
  a                          | AccessExclusiveLock | f       | 3
  a                          | RowShareLock        | t       | 2
 
-{% endcodeblock %}
+```
 
 Добавлю еще, как я и говорил выше, pid 2 может просто делать выборку (`SELECT`), которая длится достаточно долго. Дважды
 за последние пару месяцев я наблюдал такую ситуацию в «бою». В первый раз это была финальная стадия работы `pg_repack`,
@@ -99,7 +99,7 @@ FROM pg_locks as l JOIN pg_class as c on c.oid = l.relation;
 выполняющиеся в данный момент операции, отсортированные по времени выполнения. Внизу вывода обычно находятся те из них,
 которые нас больше всего интересуют.
 
-{% codeblock lang:sql %}
+```sql
 
 SELECT now() - query_start, procpid, current_query
 FROM pg_stat_activity 
@@ -112,4 +112,4 @@ WHERE current_query <> '<IDLE>' order by 1;
  01:35:15.182291        | 58762 | COMMIT
  7 days 09:59:50.269023 | 61889 | select * from words where word like 'а';
 
-{% endcodeblock %}
+```

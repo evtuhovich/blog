@@ -21,7 +21,7 @@ tags:
 
 {% codeblock %}
     capify .
-{% endcodeblock %}
+```
 
 Дальше правим файл `config/deploy.rb`, в нем все более или менее понятно.
 
@@ -50,7 +50,7 @@ tags:
 то для этого подходить плагин multistage. Для этого надо
 {% codeblock %}
 gem install capistrano-ext
-{% endcodeblock %}
+```
 В файле `config/deploy.rb` добавить:
 
 ``` ruby
@@ -80,7 +80,7 @@ namespace :deploy do
   end
 end
 
-{% endcodeblock %}
+```
 
 Далее
 

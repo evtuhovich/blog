@@ -33,7 +33,7 @@ WITH TIME ZONE не является IMMUTABLE](http://postgresql.1045698.n5.nab
 Пример того, как выглядит генерация триггера на вставку в партиционированную таблицу. Для этой статьи я добавил
 комментарии для больше понятности, но все равно выглядит громоздко.
 
-{% codeblock lang:ruby %}
+```ruby
 class CreatePartitionsForArchiveTransfers < ActiveRecord::Migration
   def up
     # Таблица фактов называется archive_transfers, мы разобъем ее на части по месяцам
@@ -92,11 +92,11 @@ class CreatePartitionsForArchiveTransfers < ActiveRecord::Migration
 
   end
 end
-{% endcodeblock %}
+```
 
 После выполнения мы получим 36 новых таблиц в БД и триггер, похожий на этот.
 
-{% codeblock lang:sql %}
+```sql
 CREATE OR REPLACE FUNCTION archive_transfers_insert_trigger()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -118,7 +118,7 @@ END;
 $$
 LANGUAGE plpgsql;
 
-{% endcodeblock %}
+```
 
 При партиционировании перестает работать `RETURNING`, а это значит, что при вставке новой записи нельзя узнать ее
 id. Для этого существует [костыль](https://gist.github.com/copiousfreetime/59067), который на каждую вставку делает

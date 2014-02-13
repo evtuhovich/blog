@@ -21,37 +21,37 @@ Ubuntu хуже, чем в OSX, а что касается серверной ч
 
 Вот как это выглядит по-умолчанию.
 
-{% codeblock lang:sql %}
+```sql
 SELECT * FROM words ORDER BY word;
 
   292 | шептать        |     23
   602 | ягнёнок        |     40
   697 | здорово!       |     41
   698 | молодец!       |     41
-{% endcodeblock %}
+```
 
 Теперь попробуем исправить эту ситуацию. Вначале сделайте полный дамп кластера командой pg_dumpall. Учтите, что если на
 вашей машине много БД с данными, то эта команда может занять продолжительное время.
 
-{% codeblock lang:sh %}
+```sh
 
 $ pg_dumpall > dump.all
 
-{% endcodeblock %}
+```
 
 Далее будем считать, что у вас postgres стоит из homebrew. В противном случае некоторые шаги будут отличаться.
 Останавливаем postgresql, переносим старый кластер (на всякий случай).
 
-{% codeblock lang:sh %}
+```sh
 
 $ launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
 $ mv /usr/local/var/postgres /usr/local/var/postgres_old
-{% endcodeblock %}
+```
 
 Создает новый кластер с нужными нам настройками локали.
 
-{% codeblock lang:sh %}
+```sh
 
 $ export LC_COLLATE=C
 $ unset LC_ALL
@@ -69,21 +69,21 @@ The database cluster will be initialized with locales
 The default database encoding has accordingly been set to UTF8.
 The default text search configuration will be set to "russian".
 
-{% endcodeblock %}
+```
 
 После этого надо запустить postgres и загрузить в него дамп.
 
-{% codeblock lang:sh %}
+```sh
 	$ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 	$ psql postgres < dump.all
 	# Если все после этого заработало, то удалите старый кластер. Не забудьте,
   # что там может быть нужный вам postgresql.conf, pg_hba.conf
 	$ rm -rf /usr/local/var/postgres_old
-{% endcodeblock %}
+```
 
 Проверим, что все заработало.
 
-{% codeblock lang:sql %}
+```sql
 
 SELECT * FROM words ORDER BY word;
 
@@ -92,7 +92,7 @@ SELECT * FROM words ORDER BY word;
   748 | брови          |     44
   268 | бросай         |     20
 
-{% endcodeblock %}
+```
 
 Вроде бы победа, но у этой победы странный вкус. Обнаружены проблемы с буквами Ё/ё. Также сортировака учитывает регистр
 (и это не обойти). Но это гораздо лучше, чем то, что было до этого.

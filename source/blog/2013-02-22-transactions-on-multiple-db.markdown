@@ -26,11 +26,11 @@ foo_development:
 foo_test:
   database: foo_test
   <<: *defaults
-{% endcodeblock %}
+```
 
 Создаете rake-задачу `lib/tasks/db.rake`.
 
-{% codeblock lang:ruby lib/tasks/db.rake %}
+```ruby lib/tasks/db.rake
 namespace :db do
   namespace :schema do
     task :dump => [:environment, :load_config] do
@@ -53,7 +53,7 @@ namespace :db do
     end
   end
 end
-{% endcodeblock %}
+```
 
 Казалось бы, что все отлично, но после прохождения тестов данные, которые они сгенерировали, удаляются (не знаю, как
 более корректно выразить то, что каждый тест выполняется внутри транзакции и в конце каждого теста делается `ROLLBACK`)
@@ -71,7 +71,7 @@ RSpec.configure do |config|
   end
 end
 
-{% endcodeblock %}
+```
 
 Если в процессе выполнения тестов, вы будете видеть сообщение `WARNING:  there is already a transaction in progress` —
 не пугайтесь. С ходу поправить эту ошибку мне не удалось, но, кроме создания визуального неудобства, эта надпись никак не мешает работать.

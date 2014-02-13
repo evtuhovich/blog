@@ -28,7 +28,7 @@ $ brew tap petere/postgresql
 
 $ brew install postgresql-9.3
 
-{% endcodeblock %}
+```
 
 Все эти процедуры никак не угрожают предыдущей версии PostgreSQL, который вы поставили из homebrew.
 Далее необходимо создать новый кластер для для 9.3.
@@ -40,7 +40,7 @@ $ cd /usr/local/Cellar/postgresql-9.3/9.3beta1/bin
 $ ./initdb /usr/local/var/postgres-9.3
 
 
-{% endcodeblock %}
+```
 
 Далее в файле /usr/local/var/postgres-9.3/postgresql.conf поменяйте порт на 5433, если у вас установлена и запущена
 другая версия PostgreSQL, чтобы можно было пользоваться одновременно двумя.
@@ -48,7 +48,7 @@ $ ./initdb /usr/local/var/postgres-9.3
 {% codeblock %}
 $ cat /usr/local/var/postgres-9.3/postgresql.conf | grep port
 port = 5433                             # (change requires restart)
-{% endcodeblock %}
+```
 
 Все, можно запускать.
 
@@ -57,7 +57,7 @@ port = 5433                             # (change requires restart)
 $ /usr/local/Cellar/postgresql-9.3/9.3beta1/bin/pg_ctl \
   -D /usr/local/var/postgres-9.3/ -l /var/log/postgresql-9.3.log start
 
-{% endcodeblock %}
+```
 
 Возможно, у вас не будет хватать прав на /var/log/postgresql-9.3.log, но я уверен, вы с этим справитесь.
 
@@ -72,7 +72,7 @@ WARNING: psql version 9.2, server version 9.3.
 Type "help" for help.
 
 brun=# \q
-{% endcodeblock %}
+```
 
 Ура, можно экспериментировать. О том, что интересного появилось в 9.3, я расскажу в следующих постах.
 

@@ -25,7 +25,7 @@ PostgreSQL.
 
 Далее был написан скрипт на ruby, который проводил тестирование:
 
-{% codeblock lang:ruby %}
+```ruby
 File.open('res.txt', 'w') do |f|
 	(1..50).each do |s|
 		# -i означает, что мы создаем чистую БД
@@ -41,7 +41,7 @@ File.open('res.txt', 'w') do |f|
 		f.write res
 	end
 end
-{% endcodeblock %}
+```
 
 Более подробно про pgbench можно почитать в [официальной документации](http://www.postgresql.org/docs/9.1/static/pgbench.html).
 
@@ -49,7 +49,7 @@ end
 {% codeblock %}
              total       used       free     shared    buffers     cached
 Mem:           590        583          6          0          1        428
-{% endcodeblock %}
+```
 
 Именно этим обусловлен такой выбор границ scale factor. Про scale factor = 50 размер БД приблизительно 750Мб, то есть
 больше количества доступной памяти, а граница shared_buffers пересекается при значениях scale factor 4-5.

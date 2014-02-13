@@ -34,8 +34,8 @@
     :javascript
       var disqus_shortname = 'blog-evtuhovich';
               // var disqus_developer = 1;
-              var disqus_identifier = '#{current_article.url}';
-              var disqus_url = '#{current_article.url}';
+              var disqus_identifier = '#{site_url}#{current_article.url}';
+              var disqus_url = '#{site_url}#{current_article.url}';
               var disqus_script = 'embed.js';
           (function () {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

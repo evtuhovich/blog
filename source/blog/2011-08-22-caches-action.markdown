@@ -25,7 +25,7 @@ class Admin::DashboardsController < Admin::BaseController
     end
   end
 end
-{% endcodeblock %}
+```
 
 Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.
 
@@ -34,7 +34,7 @@ end
 {% codeblock dashboard.rb %}
 class Admin::DashboardsController < Admin::BaseController
   caches_action :show, :expires_in => 3.minutes
-{% endcodeblock %}
+```
 
 Но не тут-то было, потому что `caches_action` по-умолчанию не обращает внимание на передаваемые параметры. Вникнув в
 [документацию](http://apidock.com/rails/ActionController/Caching/Actions), я переделал на следующий вариант.
@@ -44,7 +44,7 @@ class Admin::DashboardsController < Admin::BaseController
   caches_action :show, :expires_in => 3.minutes,
     :layout => false,
     :cache_path => Proc.new { |c| c.params }
-{% endcodeblock %}
+```
 
 Во-первых, `:layout => false` говорит, что не надо кешировать layout. В
 админке у разных пользователей разные заголовки и отображаемые вкладки, в
@@ -56,7 +56,7 @@ class Admin::DashboardsController < Admin::BaseController
 {% codeblock show.html.haml %}
 - content_for :head do
   = include_stylesheets :admin_dashboard
-{% endcodeblock %}
+```
 
 Из-за него на странице перестали подхватываться стили, и из кеша эта страница доставалась уже «битая». Я убрал `content_for`,
 что, конечно, не очень изящно, но для админки простительно. Код же я переписал следующим образом.
@@ -66,7 +66,7 @@ class Admin::DashboardsController < Admin::BaseController
   caches_action :show, :expires_in => 3.minutes,
     :layout => false,
     :cache_path => Proc.new { |c| c.params.merge!("xhr" => c.request.xhr?.to_s) }
-{% endcodeblock %}
+```
 
 Но на этом беды не кончились — по неведомой причине после этого ajax запросы перестали попадать в кеш. Я посоветовался
 со своим коллегой [Равилем](https://github.com/brainopia), который подсказал мне, 
@@ -78,7 +78,7 @@ class Admin::DashboardsController < Admin::BaseController
   caches_action :show, :expires_in => 3.minutes,
     :layout => Proc.new { |c| c.request.xhr? },
     :cache_path => Proc.new { |c| c.params.merge!("xhr" => c.request.xhr?.to_s) }
-{% endcodeblock %}
+```
 
 Итак, я за одно утро наступил сразу на все возможные грабли с этим методом. Если хоть один человек избежит этого, значит
 я написал это не зря.

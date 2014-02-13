@@ -26,7 +26,7 @@ asset pipeline переделок было значительное количе
 
 git diff `git merge-base master rails32`..master -- conflicted.filename
 
-{% endcodeblock %}
+```
 
 Эта команда показывает, что поменялось в файле `conflicted.filename` в ветке `master` с момента последнего слияния веток.
 Почти всегда этот diff давал мне ясное понимание того, как надо разрешить конфликт.
@@ -38,7 +38,7 @@ git diff `git merge-base master rails32`..master -- conflicted.filename
 $ git merge-base master rails32
 74b67a8090fa10549ab238928c68368f10b5a415
 
-{% endcodeblock %}
+```
 
 К несчастью, мой любимый плагин к vim [vim-git](http://github.com/tpope/vim-git) не позволяет показать такой diff просто. И я
 не помню, чтобы какая-то IDE умела это. Хотя, казалось бы, такая очевидная и нужная функция.

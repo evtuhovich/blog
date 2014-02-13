@@ -33,12 +33,12 @@ gem install vagrant
 mkdir vagrant
 cd vagrant
 vagrant init distr http://path-to-distr
-{% endcodeblock %}
+```
 
 Теперь у вас в папке появится файл `Vagrantfile`. Если заглянуть в него, то в комментариях там есть неплохие заготовки того, как
 настраивать vagrant. После редактирования у меня остался следующий файл.
 
-{% codeblock lang:ruby %}
+```ruby
 Vagrant::Config.run do |config|
   config.vm.box = "work"
 
@@ -47,14 +47,14 @@ Vagrant::Config.run do |config|
     chef.add_recipe "sysctl"
   end
 end
-{% endcodeblock %}
+```
 
 После этого прилинкуйте папку с вашими рецептами в текущую папку. В моих рецептах есть один с названием sysctl, именно
 его я буду тестировать.
 
 {% codeblock %}
 ln -sf path/to/cookbooks cookbooks
-{% endcodeblock %}
+```
 
 Запускаем vagrant.
 {% codeblock %}
@@ -72,7 +72,7 @@ vagrant up
 : stdout
 [default] [Fri, 13 Jan 2012 18:57:13 +0000] INFO: Report handlers complete
 : stdout
-{% endcodeblock %}
+```
 
 После этого вы можете зайти на машину командой `vagrant ssh` и посмотреть, что произошло, и устраивает ли вас это.
 
