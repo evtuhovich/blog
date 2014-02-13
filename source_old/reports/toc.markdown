@@ -1,8 +1,0 @@
-1. [Доклады](#reports)
-   1. [Повторяемость для котиков: библиотекарь и книжная полка](#librarian)
-   1. [Continuous Delivery. Как перестать релизиться и начать жить](#continuousdelivery)
-   1. [Нетрадиционное использование Ruby и PostgreSQL](#rmongorb)
-   1. [Как мы делали Групон](#grpn)
-   1. [Vim Or Die](#vimordie)
-1. [Мастер-классы](#master-class)
-   1. [Устройство и оптимизация Postgresql](#pg)
