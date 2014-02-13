@@ -3,7 +3,7 @@ layout: post
 title: Странное поведение создателей Paperclip
 date: 2012-05-11 23:23
 comments: true
-categories:
+tags:
 - paperclip
 ---
 

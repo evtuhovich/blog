@@ -3,7 +3,7 @@ layout: post
 title: PgQ и Londiste
 date: 2009-06-05 12:34
 comments: true
-categories:
+tags:
 - PostgreSQL
 - rails
 - londiste

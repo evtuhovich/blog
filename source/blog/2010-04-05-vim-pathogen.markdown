@@ -3,7 +3,7 @@ layout: post
 title: Автоматизация vim с помощью pathogen
 date: 2010-04-05 00:33
 comments: true
-categories: 
+tags: 
 - vim
 - pathogen
 ---

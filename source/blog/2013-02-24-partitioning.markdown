@@ -3,7 +3,7 @@ layout: post
 title: Партиционирование
 date: 2013-02-24 22:12
 comments: true
-categories:
+tags:
 - PostgreSQL
 - partitioning
 ---

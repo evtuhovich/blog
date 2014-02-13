@@ -3,7 +3,7 @@ layout: post
 title: Транзакции и несколько БД
 date: 2013-02-22 00:38
 comments: true
-categories:
+tags:
 - rspec
 ---
 

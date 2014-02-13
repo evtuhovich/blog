@@ -3,7 +3,7 @@ layout: post
 title: Пакетные менеджеры
 date: 2012-06-07 21:47
 comments: true
-categories: 
+tags: 
 - package manager
 - gem
 - apt-get

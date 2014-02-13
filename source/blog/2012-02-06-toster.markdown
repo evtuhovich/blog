@@ -3,7 +3,7 @@ layout: post
 title: "Конференция .toster"
 date: 2012-02-06 11:54
 comments: true
-categories: 
+tags: 
 - конференция
 - toster
 ---

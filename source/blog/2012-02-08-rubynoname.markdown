@@ -3,7 +3,7 @@ layout: post
 title: "RubyNoName подкаст"
 date: 2012-02-08 22:40
 comments: true
-categories: 
+tags: 
 - podcast
 - rubynoname
 ---

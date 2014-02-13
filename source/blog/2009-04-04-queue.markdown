@@ -3,7 +3,7 @@ layout: post
 title: Использование очередей в высоконагруженных проектах
 date: 2009-04-04 23:45
 comments: true
-categories:
+tags:
 - PostgreSQL
 - pgq
 ---

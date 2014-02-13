@@ -3,7 +3,7 @@ layout: post
 title: Отмена последнего коммита в git 
 date: 2009-04-03 12:34
 comments: true
-categories:
+tags:
 - git
 ---
 

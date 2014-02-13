@@ -3,7 +3,7 @@ layout: post
 title: "Некоторые проблемы с cached_action в Rails 2.3"
 date: 2011-08-22 13:02
 comments: true
-categories:
+tags:
 - rails
 - caches_action
 published: true

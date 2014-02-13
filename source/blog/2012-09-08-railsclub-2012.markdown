@@ -3,7 +3,7 @@ layout: post
 title: Конференции
 date: 2012-09-08 10:49
 comments: true
-categories: 
+tags: 
 - railsclub
 - конференция
 ---

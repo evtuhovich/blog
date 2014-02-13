@@ -3,7 +3,7 @@ layout: post
 title: Блокировки в PostgreSQL
 date: 2013-01-27 22:35
 comments: true
-categories:
+tags:
 - PostgreSQL
 - блокирвоки
 ---

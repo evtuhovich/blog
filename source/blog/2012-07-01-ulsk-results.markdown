@@ -3,7 +3,7 @@ layout: post
 title: Посещение Ульяновска
 date: 2012-07-01 13:26
 comments: true
-categories: 
+tags: 
 - Ульяновск
 ---
 

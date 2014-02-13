@@ -3,7 +3,7 @@ layout: post
 title: Проблема с проверкой уникальности какого-то поля в rails
 date: 2009-05-28 22:22
 comments: true
-categories: 
+tags: 
 - rails
 - validates_uniqueness_of
 - индексы

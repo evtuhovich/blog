@@ -3,7 +3,7 @@ layout: post
 title: "Новый адрес блога, DevConf и HotCode"
 date: 2013-05-15 22:38
 comments: true
-categories: 
+tags: 
 - конференция
 ---
 

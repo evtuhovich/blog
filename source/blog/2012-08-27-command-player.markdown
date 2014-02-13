@@ -3,7 +3,7 @@ layout: post
 title: Командный игрок
 date: 2012-08-27 17:54
 comments: true
-categories:
+tags:
 - мысли
 ---
 
