@@ -1,18 +1,35 @@
 ---
-layout: default
 pageable: true
 per_page: 10
 ---
-
 .blog-index
-  - page_articles('blog').each_with_index do |article, i|
+  - blog('blog').articles[page_start..page_end].each do |article|
     %article
-      = partial 'article', :locals => {:article => article, :i => i}
+      %header
+        %h1.entry-title
+          %a{href: article.url}= article.title
+        %p.meta
+          %time{"data-updated" => "true", datetime: article.date, pubdate: ""}= article.date.strftime('%Y-%m-%d')
+          |
+          %a{href: "#{article.url}/#disqus_thread"} Комментарии
+      .entry-content
+        = article.summary
+      - if article.summary != article.body
+        %footer
+          %a{href: article.url, rel: "full-article"} Продолжение →
   .pagination
-    -# {% if paginator.next_page %}
-    -#   <a class="prev" href="{{paginator.next_page}}">&larr; Older</a>
-    -# {% endif %}
-    -# <a href="/blog/archives">Blog Archives</a>
-    -# {% if paginator.previous_page %}
-    -# <a class="next" href="{{paginator.previous_page}}">Newer &rarr;</a>
-    -# {% endif %}
+    - if next_page
+      %a.prev{href: next_page.url} ← Earlies
+    - if prev_page
+      %a.next{href: prev_page.url} Newer →
+    %a{href: "/blog/archives"} Blog Archives
+
+- content_for :disqus do
+  :javascript
+    var disqus_shortname = 'blog-evtuhovich';
+    var disqus_script = 'count.js';
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());

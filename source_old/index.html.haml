@@ -1,0 +1,659 @@
+!!!
+/[if IEMobile 7 ] <html class="no-js iem7">
+/[if lt IE 9] <html class="no-js lte-ie8">
+/ [if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!
+%html.no-js{lang: "en"}
+  / <![endif]
+  %head
+    %meta{charset: "utf-8"}/
+    %title Технические заметки одного Евтуховича
+    %meta{content: "Иван Евтухович", name: "author"}/
+    %meta{content: "RubyNoName подкаст нашел постоянных новых ведущих — это Кирилл Шатров и Андрей Дерябин. Они уже\r\nвыпустили первый выпуск, а также обновили страницу о …", name: "description"}/
+    / http://t.co/dKP3o1e
+    %meta{content: "True", name: "HandheldFriendly"}/
+    %meta{content: "320", name: "MobileOptimized"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    %link{href: "http://evtuhovich.ru", rel: "canonical"}/
+    %link{href: "/favicon.png", rel: "icon"}/
+    %link{href: "/stylesheets/screen.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}/
+    %script{src: "/javascripts/modernizr-2.0.js"}
+    %script{src: "/javascripts/ender.js"}
+    %script{src: "/javascripts/octopress.js", type: "text/javascript"}
+    %link{href: "/atom.xml", rel: "alternate", title: "Технические заметки одного Евтуховича", type: "application/atom+xml"}/
+    / Fonts from Google's Web font directory at http://google.com/webfonts
+    %link{href: "http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic", rel: "stylesheet", type: "text/css"}/
+    %link{href: "http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic", rel: "stylesheet", type: "text/css"}/
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-28012309-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  %body
+    %header{role: "banner"}
+      %hgroup
+        %h1
+          %a{href: "/"} Технические заметки одного Евтуховича
+        %h2 Рассказ о серых трудовых буднях инженера программных систем
+    %nav{role: "navigation"}
+      %ul.subscription{"data-subscription" => "rss"}
+        %li
+          %a{href: "/atom.xml", rel: "subscribe-rss", title: "subscribe via RSS"} RSS
+      %form{action: "http://google.com/search", method: "get"}
+        %fieldset{role: "search"}
+          %input{name: "q", type: "hidden", value: "site:evtuhovich.ru"}/
+          %input.search{name: "q", placeholder: "Поиск", results: "0", type: "text"}/
+      %ul{role: "main-navigation"}
+        %li
+          %a{href: "/"} Блог
+        %li
+          %a{href: "/blog/archives"} Архив
+        %li
+          %a{href: "/blog/categories"} Индекс
+        %li
+          %a{href: "/about"} Обо мне
+    #main
+      #content
+        .blog-index
+          %article
+            %header
+              %h1.entry-title
+                %a{href: "/blog/2014/01/04/podcasts/"} Итоги года: подкасты, мастер-классы и митап
+              %p.meta
+                %time{"data-updated" => "true", datetime: "2014-01-04T17:53:00+04:00", pubdate: ""} 2014-01-04
+                |
+                %a{href: "/blog/2014/01/04/podcasts/#disqus_thread"} Комментарии
+            .entry-content
+              %p
+                %a{href: "http://rubynoname.ru"} RubyNoName подкаст
+                нашел постоянных новых ведущих — это Кирилл Шатров и Андрей Дерябин. Они уже
+                выпустили
+                = succeed "," do
+                  %a{href: "http://rubynoname.ru/posts/2013/S05E21.html"} первый выпуск
+                = succeed "," do
+                  %a{href: "http://rubynoname.ru/about.html"} обновили страницу о подкасте
+              %p
+                Пока мой коллега Никита Борзых отдыхал в Париже, я записал
+                %a{href: "http://devopsdeflope.ru/posts/2013/004.html"} интервью
+                с
+                %a{href: "https://twitter.com/osminog"} Локомотивом DevOps Движения России Александром Титовым
+                для нашего нового подкаста
+                = succeed "." do
+                  %a{href: "http://devopsdeflope.ru/"}
+                    Девопс
+                    Дефлопе
+              %p
+                Мы организовали очередную
+                = succeed "," do
+                  %a{href: "http://www.meetup.com/DevOps-Moscow-in-Russian/events/157003432/"}
+                    встречу DevOps митапа в
+                    Яндексе
+              %p
+                В 2013 году в разных составах я провел 4 мастер-класса по DevOps. Два мастер-класса прошли в рамках
+                = succeed "," do
+                  %a{href: "http://brainwashing.pro/devops"} Брейнвошинга
+                = succeed "," do
+                  %a{href: "http://www.highload.ru/"} конференции HighLoad
+              %p
+                Я стал меньше писать в этом блоге по разным причинам, одна из которых — я публикую статьи на Хабре в
+                = succeed "." do
+                  %a{href: "http://habrahabr.ru/company/express42/blog/"}
+                    блоге нашей
+                    компании «Экспресс 42»
+              %p Желаю вам в 2014 году яркой и интересной инженерной жизни!
+          %article
+            %header
+              %h1.entry-title
+                %a{href: "/blog/2013/11/13/deflope/"} Закат безымянного подкаста, Дефлопе и предложение о работе
+              %p.meta
+                %time{"data-updated" => "true", datetime: "2013-11-13T17:53:00+04:00", pubdate: ""} 2013-11-13
+                |
+                %a{href: "/blog/2013/11/13/deflope/#disqus_thread"} Комментарии
+            .entry-content
+              %p
+                В суете и быстротечности нашей жизни нет ничего неизменного, лишь непостоянство — верный признак того, что жизнь
+                продолжается. Почти два года мы с Иваном Самсоновым бесперебойно раз в две недели выпускали свежий и сочный выпуск
+                = succeed "," do
+                  %a{href: "http://rubynoname.ru"} RubyNoName подкаста
+              %p
+                В сухом остатке одно — мы перестаем вести подкаст и ищем новых ведущих. Если вы чувствуете в себе силы подхватить
+                подкаст, то напишите мне письмо или еще как-то свяжитесь со мною.
+              %p
+                Я не стою на месте, ведь жизнь — это постоянное движение. Вместе с Никитой Борзых мы продолжим слегка заброшенный нами
+                подкаст
+                = succeed "." do
+                  %a{href: "http://devopsdeflope.ru/"} Девопс Дефлопе
+              %p
+                Более того, я перестаю организовывать
+                %a{href: "http://railsclub.ru/"} Railsclub
+                ровно по тем же причинам.
+              %p
+                Если кому-то интересно знать, то мне жаль расставаться со всем этим. Но чтобы добавить в хорошо наполненную жизнь
+                чего-то нового, надо убрать оттуда что-то старое. Внимательно взвесим все на своих внутренних весах, я и принял этот ряд
+                непростых для себя решений.
+              %p
+                Один из наших клиентов — компания
+                %a{href: "https://www.virool.com/"} Virool
+                = succeed "." do
+                  %a{href: "https://www.virool.com/about/work-at-virool#ror-developer"} ищет себе крутого рубиста
+          %article
+            %header
+              %h1.entry-title
+                %a{href: "/blog/2013/09/04/breaking-news/"} Ближайшие события в Ruby и DevOps мире
+              %p.meta
+                %time{"data-updated" => "true", datetime: "2013-09-04T09:37:00+04:00", pubdate: ""} 2013-09-04
+                |
+                %a{href: "/blog/2013/09/04/breaking-news/#disqus_thread"} Комментарии
+            .entry-content
+              %p До выхода PostgreSQL 9.3 еще 5 дней, поэтому самое время поговорить не о технических вещах.
+              %p
+                28 сентября в Москве в «Цифровом Октябре» пройдет очередная конференция
+                = succeed "." do
+                  %a{href: "http://railsclub.ru/"} RailsClub
+              %p
+                А за неделю до этого — 21 и 22 сентября пройдет
+                %a{href: "http://brainwashing.pro/devops"} мастер-класс Brainwashing
+                от нашей компании
+                «
+                %a{href: "http://express42.com/"}> Экспресс 42
+                ». Мастер-класс будут вести: локомотив DevOps движения в России
+                = succeed "," do
+                  %a{href: "https://twitter.com/osminog"} Александр Титов
+                %a{href: "https://twitter.com/ex_sample"} Никита Борзых
+                и я. Мы расскажем обо всех типичных задачах, которые возникают при
+                эксплуатации интернет-проектов, подходах к их решению, а также на практике поясним что такое система управления
+                конфигурацией
+                = succeed "," do
+                  %a{href: "http://www.opscode.com/chef/"} Chef
+              %p
+                Еще за неделю до этого пройдет очередной
+                = succeed "." do
+                  %a{href: "http://www.meetup.com/DevOps-Moscow-in-Russian/events/136708242/"} митап русскоговорящих любителей DevOps
+              %p
+                Также мне стало известно, что в Санкт-Петербурге тоже будет
+                = succeed "." do
+                  %a{href: "http://rubyspb.ru/"} конференция по руби
+          %article
+            %header
+              %h1.entry-title
+                %a{href: "/blog/2013/08/03/partitioning/"} CAP-теорема и разделение сети
+              %p.meta
+                %time{"data-updated" => "true", datetime: "2013-08-03T22:29:00+04:00", pubdate: ""} 2013-08-03
+                |
+                %a{href: "/blog/2013/08/03/partitioning/#disqus_thread"} Комментарии
+            .entry-content
+              %p
+                Любой блог либо обновляется, либо мертв. Конечно, и этот блог тоже когда-то умрет, но время для этого еще не пришло, так
+                что сегодня мы поговорим о CAP-теореме.
+              %p
+                В вольной формулировке это звучит приблизительно так: «Любая распределенная система не может быть одновременно
+                непротиворечива, доступна и устойчива к выходу из строя узлов». За подробностями отсылаю к
+                = succeed "." do
+                  %a{href: "http://softwaremaniacs.org/blog/2010/01/31/brewers-cap-theorem/"} русскоязчыной статье Ивана Сагалаева
+              %p
+                CAP теорема прекрасна тем, что позволяет взглянуть на многие сложные системы гораздо проще. Более того, она позволяет
+                легко объяснить, почему создать систему, которая «будет правильно работать всегда», невозможно. Но все это было бы
+                просто интересным поводом для размышления, если бы никак не применялось на практике.
+              %p
+                Я иногда думал, как поведет себя та или иная система с точки зрения CAP-теоремы. Но совсем недавно наш иностранный
+                коллега
+                %a{href: "https://github.com/aphyr"} Kyle Kingsbury
+                проделал, на мой взгляд, титанический труд и написал серию статей под
+                общим названием
+                = succeed "," do
+                  %a{href: "http://aphyr.com/tags/jepsen"} «Jepsen»
+                = succeed "," do
+                  %a{href: "http://aphyr.com/posts/282-call-me-maybe-postgres"} PostgreSQL
+                = succeed "," do
+                  %a{href: "http://aphyr.com/posts/283-call-me-maybe-redis"} Redis
+                = succeed "," do
+                  %a{href: "http://aphyr.com/posts/284-call-me-maybe-mongodb"} MongoDB
+                = succeed "." do
+                  %a{href: "http://aphyr.com/posts/285-call-me-maybe-riak"} Riak
+                = succeed "," do
+                  %a{href: "http://aphyr.com/posts/288-the-network-is-reliable"}
+                    огромную
+                    статью
+              %p
+                %em PS
+                Кто еще не знает, 21 и 22 сентября в рамках образовательного проекта
+                %a{href: "http://evilmartians.ru/"} Злых Марсиан
+                Brainwashing,
+                космонавты из
+                %a{href: "http://express42.com"} Экспресса 42
+                проведут
+                = succeed "," do
+                  %a{href: "http://brainwashing.pro/devops"} мастер-класс по DevOps
+                = succeed "," do
+                  %a{href: "https://twitter.com/osminog"}
+                    Александр
+                    Титов
+                %a{href: "https://twitter.com/ex_sample"}
+                  Никита
+                  Борзых
+                и ваш покорный слуга. Приходите, мы вложили в этот мастер-класс весь наш
+                многолетний опыт.
+          %article
+            %header
+              %h1.entry-title
+                %a{href: "/blog/2013/06/28/pg-stat-statements/"} Статистика запросов и Pg_stat_statements
+              %p.meta
+                %time{"data-updated" => "true", datetime: "2013-06-28T15:20:00+04:00", pubdate: ""} 2013-06-28
+                |
+                %a{href: "/blog/2013/06/28/pg-stat-statements/#disqus_thread"} Комментарии
+            .entry-content
+              %p
+                Иногда при эксплуатации проекта возникает вопрос, какие запросы в БД выполняются дольше всего или потребляют наибольшее
+                количество времени или ресурсов.
+              %p
+                До версии 9.2 неплохой ответ на этот вопрос можно было получить с помощью проекта
+                = succeed "." do
+                  %a{href: "http://dalibo.github.io/pgbadger/"} pgBadger
+                = succeed "," do
+                  %a{href: "http://dalibo.github.io/pgbadger/documentation.html"} документации
+                = succeed "." do
+                  %a{href: "http://dalibo.github.io/pgbadger/sample.html"}
+                    красивый
+                    отчет
+              %p
+                Такого же результата можно добиться с помощью сбора статистики на стороне клиента, например, так это сделано в
+                = succeed "." do
+                  %a{href: "https://newrelic.com/"} newrelic
+              %p
+                Модуль
+                %a{href: "http://www.postgresql.org/docs/9.2/static/pgstatstatements.html"} pg_stat_statements
+                появился в PostgreSQL уже
+                достаточно давно, но только в 9.2 он научился «нормализовать» запросы, объединяя запросы, которые отличаются только
+                параметрами, в один.
+              %p
+                Чтобы воспользоваться этим модулем, необходимо добавить следующую строчку в
+                = succeed "." do
+                  %code postgresql.conf
+              %figure.code
+                .highlight
+                  %table
+                    %tr
+                      %td.gutter
+                        %pre.line-numbers
+                          %span.line-number 1
+                      %td.code
+                        %pre
+                          %code
+                            %span.line shared_preload_libraries = 'pg_stat_statements'         # (change requires restart)
+              %p После чего необходимо перезапустить сервер БД. После этого в БД, выполните следующую команду:
+              %figure.code
+                %figcaption
+                  %span
+                .highlight
+                  %table
+                    %tr
+                      %td.gutter
+                        %pre.line-numbers
+                          %span.line-number 1
+                      %td.code
+                        %pre
+                          %code.sql
+                            %span.line
+                              %span.k CREATE
+                              %span.n EXTENSION
+                              %span.n pg_stat_statements
+              %p После этого в БД, где вы выполнили эту команду, появится представление (view) pg_stat_statements.
+              %figure.code
+                %figcaption
+                  %span
+                .highlight
+                  %table
+                    %tr
+                      %td.gutter
+                        %pre.line-numbers
+                          %span.line-number 1
+                          %span.line-number 2
+                          %span.line-number 3
+                          %span.line-number 4
+                          %span.line-number 5
+                          %span.line-number 6
+                          %span.line-number 7
+                          %span.line-number 8
+                          %span.line-number 9
+                          %span.line-number 10
+                          %span.line-number 11
+                          %span.line-number 12
+                          %span.line-number 13
+                          %span.line-number 14
+                          %span.line-number 15
+                          %span.line-number 16
+                          %span.line-number 17
+                          %span.line-number 18
+                          %span.line-number 19
+                          %span.line-number 20
+                          %span.line-number 21
+                          %span.line-number 22
+                          %span.line-number 23
+                          %span.line-number 24
+                      %td.code
+                        %pre
+                          %code.sql
+                            %span.line
+                              %span.err $
+                              %span.n psql
+                              %span.n dbname
+                            %span.line
+                              %span.n dbname
+                              %span.o =#
+                              %span.err \
+                              %span.n x
+                            %span.line
+                              %span.err Расширенный
+                              %span.err вывод
+                              %span.err включен
+                              %span.p .
+                            %span.line
+                            %span.line
+                              %span.n doman
+                              %span.o =#
+                              %span.k select
+                              %span.o *
+                              %span.k from
+                              %span.n pg_stat_statements
+                              %span.p ;
+                            %span.line
+                            %span.line
+                              %span.n userid
+                              %span.o |
+                              %span.mi 10
+                            %span.line
+                              %span.n dbid
+                              %span.o |
+                              %span.mi 16388
+                            %span.line
+                              %span.n query
+                              %span.o |
+                              %span.k SELECT
+                              %span.ss "words"
+                              %span.p .
+                              %span.o *
+                              %span.k FROM
+                              %span.ss "words"
+                              %span.k WHERE
+                              %span.ss "words"
+                              %span.p .
+                              %span.ss "id"
+                              %span.o =
+                              %span.o ?
+                              %span.k LIMIT
+                              %span.o ?
+                            %span.line
+                              %span.n calls
+                              %span.o |
+                              %span.mi 27
+                            %span.line
+                              %span.n total_time
+                              %span.o |
+                              %span.mi 0
+                              %span.p .
+                              %span.mi 277
+                            %span.line
+                              %span.k rows
+                              %span.o |
+                              %span.mi 27
+                            %span.line
+                              %span.n shared_blks_hit
+                              %span.o |
+                              %span.mi 76
+                            %span.line
+                              %span.n shared_blks_read
+                              %span.o |
+                              %span.mi 6
+                            %span.line
+                              %span.n shared_blks_dirtied
+                              %span.o |
+                              %span.mi 0
+                            %span.line
+                              %span.n shared_blks_written
+                              %span.o |
+                              %span.mi 0
+                            %span.line
+                              %span.n local_blks_hit
+                              %span.o |
+                              %span.mi 0
+                            %span.line
+                              %span.n local_blks_read
+                              %span.o |
+                              %span.mi 0
+                            %span.line
+                              %span.n local_blks_dirtied
+                              %span.o |
+                              %span.mi 0
+                            %span.line
+                              %span.n local_blks_written
+                              %span.o |
+                              %span.mi 0
+                            %span.line
+                              %span.n temp_blks_read
+                              %span.o |
+                              %span.mi 0
+                            %span.line
+                              %span.n temp_blks_written
+                              %span.o |
+                              %span.mi 0
+                            %span.line
+                              %span.n blk_read_time
+                              %span.o |
+                              %span.mi 0
+                              %span.p .
+                              %span.mi 051
+                            %span.line
+                              %span.n blk_write_time
+                              %span.o |
+                              %span.mi 0
+              %p
+                Для того, чтобы показывались последние две строчки, необходимо включить
+                = succeed "," do
+                  %a{href: "http://www.postgresql.org/docs/9.2/static/runtime-config-statistics.html#GUC-TRACK-IO-TIMING"} track_io_timing
+                %code postgresql.conf
+                следующую строчку.
+              %figure.code
+                %figcaption
+                  %span
+                .highlight
+                  %table
+                    %tr
+                      %td.gutter
+                        %pre.line-numbers
+                          %span.line-number 1
+                      %td.code
+                        %pre
+                          %code.sql
+                            %span.line
+                              %span.n track_io_timing
+                              %span.o =
+                              %span.k on
+              %p
+                Давайте внимательнее посмотрим на вывод этого запроса. userid — это id пользователя, который выполнял запрос, dbid — id
+                базы данных, в которой выполнялся этот запрос. Узнать его можно, выполнив
+                = succeed "." do
+                  %code select oid, * from pg_database
+              %p Все это можно было узнать и из pgBadger, а вот дальше начинаются вкусности:
+              %ul
+                %li rows — суммарное количество вовзращенных строк;
+                %li shared_blks_hit — количество страниц, которые были в кэше БД;
+                %li shared_blks_read — количество страниц, которые были прочитаны с диска, чтобы выполнить запросы такого типа;
+                %li shared_blks_dirtied — количество страниц, которые были изменены;
+                %li shared_blks_written — количество страниц, которые были записаны на диск;
+                %li
+                  local_blks_hit, local_blks_read, local_blks_dirtied, local_blks_written — то же самое, что предыдущие 4, только для
+                  временных таблиц и индексов;
+                %li temp_blks_read — сколько страниц временных данных было прочитано;
+                %li
+                  temp_blks_written — сколько страниц временных данных было записано (используется при сортировке на диски, джойнах и
+                  других временных операциях);
+                %li blk_read_time — сколько времени суммарно заняло чтение с диска;
+                %li blk_write_time — сколько времени суммарно заняла запись на диск.
+              %p Вооружившись такой статистикой и вашим ясным аналитическим разумом, можно значительно увеличить производительность вашей БД.
+              %p
+                Конечно, такая красота достается не бесплатно, pg_stat_statements создает дополнительную нагрузку на БД. Неплохой анализ
+                этой нагрузки есть в конце этой
+                = succeed "." do
+                  %a{href: "http://www.depesz.com/2012/03/30/waiting-for-9-2-pg_stat_statements-improvements/"} отличной статьи
+          %article
+            %header
+              %h1.entry-title
+                %a{href: "/blog/2013/05/15/administrativnoie/"} Новый адрес блога, DevConf и HotCode
+              %p.meta
+                %time{"data-updated" => "true", datetime: "2013-05-15T22:38:00+04:00", pubdate: ""} 2013-05-15
+                |
+                %a{href: "/blog/2013/05/15/administrativnoie/#disqus_thread"} Комментарии
+            .entry-content
+              %p
+                Во-первых, я давно хотел это сделать, а сегодня сделал — теперь блог будет доступен по адресу
+                = succeed "." do
+                  %a{href: "http://evtuhovich.ru"} http://evtuhovich.ru
+              %p
+                Во-вторых, 14 июня в Москве пройдет
+                = succeed "." do
+                  %a{href: "http://devconf.ru/"} конференция DevConf
+                %a{href: "http://railsclub.ru"} RailClub
+                помогаю организовывать
+                = succeed "." do
+                  %a{href: "http://devconf.ru/offers/ruby"} Ruby-секцию
+              %p
+                В-третьих, в Киеве 31 мая — 1 июня пройдет огромная конференция
+                = succeed "," do
+                  %a{href: "http://hotcode.org/"} HotCode
+                = succeed "\u{bb}." do
+                  %a{href: "http://hotcode.org/speeches/chef/"} Четыре года с Chef: история отношений
+              %p
+                Коллеги шутят, что моему стоит сменить название с «Нестройные рубиновые мысли» на что-то, связанное со слоном (потому
+                что слон — символ PostgreSQL). Я постараюсь исправиться и больше времени уделять Ruby в своих постах.
+          %article
+            %header
+              %h1.entry-title
+                %a{href: "/blog/2013/05/15/postgresql-9-dot-3/"} PostgreSQL 9.3 Beta 1 на OSX
+              %p.meta
+                %time{"data-updated" => "true", datetime: "2013-05-15T13:18:00+04:00", pubdate: ""} 2013-05-15
+                |
+                %a{href: "/blog/2013/05/15/postgresql-9-dot-3/#disqus_thread"} Комментарии
+            .entry-content
+              %p
+                Два дня назад, 13 мая,
+                = succeed "." do
+                  %a{href: "http://www.postgresql.org/about/news/1463/"} вышла beta 1 PostgreSQL 9.3
+                = succeed "." do
+                  %a{href: "http://www.postgresql.org/developer/roadmap/"}
+                    зарелизить в третьем квартале
+                    2013 года
+              %p
+                Обо всех новых возможностях 9.3 можно почитать на
+                = succeed "." do
+                  %a{href: "http://wiki.postgresql.org/wiki/What%27s_new_in_PostgreSQL_9.3"} официальной wiki
+              %p Но чтобы не только почитать, но и попробовать, я напишу здесь, как поставить 9.3 beta 1 на OSX.
+            %footer
+              %a{href: "/blog/2013/05/15/postgresql-9-dot-3/", rel: "full-article"} Продолжение →
+          %article
+            %header
+              %h1.entry-title
+                %a{href: "/blog/2013/03/20/big-cache/"} БД — большой кэш
+              %p.meta
+                %time{"data-updated" => "true", datetime: "2013-03-20T23:03:00+04:00", pubdate: ""} 2013-03-20
+                |
+                %a{href: "/blog/2013/03/20/big-cache/#disqus_thread"} Комментарии
+            .entry-content
+              %p
+                В
+                %a{href: "blog/2013/02/24/partitioning/"} прошлый раз
+                я обещал написать о том, что в проектах с более менее серьезной нагрузкой
+                БД либо помещается в память, либо не работает. Ситуация в современном мире меняется в связи с появлением SSD дисков, но
+                пока что они стоят достаточно дорого, по сравнению со старыми добрыми вращающимися дисками. Чтобы «потрогать» это
+                руками, проделаем несложный тест.
+            %footer
+              %a{href: "/blog/2013/03/20/big-cache/", rel: "full-article"} Продолжение →
+          %article
+            %header
+              %h1.entry-title
+                %a{href: "/blog/2013/02/24/partitioning/"} Партиционирование
+              %p.meta
+                %time{"data-updated" => "true", datetime: "2013-02-24T22:12:00+04:00", pubdate: ""} 2013-02-24
+                |
+                %a{href: "/blog/2013/02/24/partitioning/#disqus_thread"} Комментарии
+            .entry-content
+              %p
+                Я долго считал партиционирование плохой практикой, а само слово не любил из-за кальки с английского, которую крайне
+                сложно выговорить с первого раза. И если слово «партиционирование» я так с первого раза и не выговариваю, то саму
+                практику пришлось признать как необходимое и неизбежное зло. Чтобы никто не подумал, что я делаю что-то плохое, я
+                использую для этого термин «инженерный компромисс», звучит умнее и не так обидно.
+            %footer
+              %a{href: "/blog/2013/02/24/partitioning/", rel: "full-article"} Продолжение →
+          %article
+            %header
+              %h1.entry-title
+                %a{href: "/blog/2013/02/22/transactions-on-multiple-db/"} Транзакции и несколько БД
+              %p.meta
+                %time{"data-updated" => "true", datetime: "2013-02-22T00:38:00+04:00", pubdate: ""} 2013-02-22
+                |
+                %a{href: "/blog/2013/02/22/transactions-on-multiple-db/#disqus_thread"} Комментарии
+            .entry-content
+              %p
+                Иногда так случается, что на проекте необходимо использовать более одного сервера баз данных. Оказывается, в rails можно
+                достаточно удобно поддерживать актуальность нескольких БД с помощью миграций.
+            %footer
+              %a{href: "/blog/2013/02/22/transactions-on-multiple-db/", rel: "full-article"} Продолжение →
+          .pagination
+            %a.prev{href: "/blog/page/2/"} ← Older
+            %a{href: "/blog/archives"} Blog Archives
+        %aside.sidebar
+          %section
+            %h1 Последние записи
+            %ul#recent_posts
+              %li.post
+                %a{href: "/blog/2014/01/04/podcasts/"} Итоги года: подкасты, мастер-классы и митап
+              %li.post
+                %a{href: "/blog/2013/11/13/deflope/"} Закат безымянного подкаста, Дефлопе и предложение о работе
+              %li.post
+                %a{href: "/blog/2013/09/04/breaking-news/"} Ближайшие события в Ruby и DevOps мире
+              %li.post
+                %a{href: "/blog/2013/08/03/partitioning/"} CAP-теорема и разделение сети
+              %li.post
+                %a{href: "/blog/2013/06/28/pg-stat-statements/"} Статистика запросов и pg_stat_statements
+          %section
+            %h1 Последние твиты
+            %a.twitter-timeline{"data-widget-id" => "363743636166410240", href: "https://twitter.com/evtuhovich"} Твиты пользователя @evtuhovich
+            :javascript
+              !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    %footer{role: "contentinfo"}
+      %p
+        Copyright © 2014 - Иван Евтухович -
+        %span.credit
+          Powered by
+          %a{href: "http://octopress.org"} Octopress
+    :javascript
+      var disqus_shortname = 'blog-evtuhovich';
+            
+              
+              var disqus_script = 'count.js';
+            
+          (function () {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          }());
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    :javascript
+      (function(){
+        var twitterWidgets = document.createElement('script');
+        twitterWidgets.type = 'text/javascript';
+        twitterWidgets.async = true;
+        twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+        document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+      })();
