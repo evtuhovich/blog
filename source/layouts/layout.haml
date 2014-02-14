@@ -61,18 +61,7 @@
         = yield
         %aside.sidebar
           %section
-            %h1 Последние записи
-            %ul#recent_posts
-              %li.post
-                %a{href: "/blog/2014/01/04/podcasts/"} Итоги года: подкасты, мастер-классы и митап
-              %li.post
-                %a{href: "/blog/2013/11/13/deflope/"} Закат безымянного подкаста, Дефлопе и предложение о работе
-              %li.post
-                %a{href: "/blog/2013/09/04/breaking-news/"} Ближайшие события в Ruby и DevOps мире
-              %li.post
-                %a{href: "/blog/2013/08/03/partitioning/"} CAP-теорема и разделение сети
-              %li.post
-                %a{href: "/blog/2013/06/28/pg-stat-statements/"} Статистика запросов и pg_stat_statements
+            = partial 'recent_posts'
           %section
             %h1 Последние твиты
             %a.twitter-timeline{"data-widget-id" => "363743636166410240", href: "https://twitter.com/evtuhovich"} Твиты пользователя @evtuhovich
