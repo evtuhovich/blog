@@ -12,7 +12,8 @@ published: true
 
 Итак, у нас есть следующие модели:
 
-{% codeblock shop.rb %}
+```
+# shop.rb
 class Shop < ActiveRecord::Base
   has_many :categories
 

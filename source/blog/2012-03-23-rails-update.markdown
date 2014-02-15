@@ -21,7 +21,8 @@ warden стал по-другому сериализовать сессию. А 
 
 <!-- more -->
 
-{% codeblock config/initializiers/rails3_session.rb %}
+```
+# config/initializiers/rails3_session.rb
 class ActionController::Flash::FlashHash < Hash
 end
 

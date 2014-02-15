@@ -19,7 +19,7 @@ tags:
 
 Если вкратце, то заходим в каталог проекта и набираем:
 
-{% codeblock %}
+```
     capify .
 ```
 
@@ -48,7 +48,7 @@ tags:
 
 Если есть необходимость в нескольких конфигурациях для выкатки одного и того же приложения (а разве бывает по-другому?),
 то для этого подходить плагин multistage. Для этого надо
-{% codeblock %}
+```
 gem install capistrano-ext
 ```
 В файле `config/deploy.rb` добавить:
@@ -63,7 +63,8 @@ gem install capistrano-ext
 какие сервера выкатывать. И в крайнем случае какую-то специфичную логику. Это поможет избежать казусов, когда на staging у
 вас выкатывается все хорошо, а с выкаткой на production возникают проблемы.
 
-{% codeblock conifg/deploy/staging.rb %}
+```
+# conifg/deploy/staging.rb
 role :app,    "beta.mysite.ru", :sphinx => true
 role :web,    "beta.mysite.ru"
 role :static, "beta.mysite.ru"

@@ -29,7 +29,8 @@ ORDER BY
 В нашем случае это оказалась таблица, где сохранялись ip-адреса, с которых пользователи заходят на сайт, и
 таблица `delayed_jobs`. В rails 2.3 делалось это очень просто.
 
-{% codeblock config/initializers/delayed_job_config.rb %}
+```
+# config/initializers/delayed_job_config.rb
 class Delayed::Backend::ActiveRecord::Job
   establish_connection "second_#{Rails.env}"
 end
@@ -39,11 +40,13 @@ end
 версии 2.1.4 достаточно сильно отличается от версии 2.0. Поэтому старый трюк работать перестал. Гугление не помогло,
 поэтому пришлось залесть в его исходники, понять, чего там внутри происходит, и сделать вот такой monkey-patch.
 
-{% codeblock config/initializers/delayed_job_config.rb %}
+```
+# config/initializers/delayed_job_config.rb
 Delayed::Worker.backend = SecondDbDj
 ```
 
-{% codeblock  app/models/second_db_dj.rb %}
+```
+#  app/models/second_db_dj.rb
 class SecondDbDj < SecondDb # это абстрактный класс, который подключает ко второй БД
   include Delayed::Backend::Base
   set_table_name :delayed_jobs

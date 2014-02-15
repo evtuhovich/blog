@@ -13,7 +13,8 @@ published: true
 Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически
 обновляется с помощью ajax-запросов.
 
-{% codeblock dashboard.rb %}
+```
+# dashboard.rb
 class Admin::DashboardsController < Admin::BaseController
   layout "admin"
 
@@ -31,7 +32,8 @@ end
 
 В какой-то момент мы решили ее закешировать. Казалось бы, чего уж проще (отмечу, что мы используем Rails 2.3.14).
 
-{% codeblock dashboard.rb %}
+```
+# dashboard.rb
 class Admin::DashboardsController < Admin::BaseController
   caches_action :show, :expires_in => 3.minutes
 ```
@@ -39,7 +41,8 @@ class Admin::DashboardsController < Admin::BaseController
 Но не тут-то было, потому что `caches_action` по-умолчанию не обращает внимание на передаваемые параметры. Вникнув в
 [документацию](http://apidock.com/rails/ActionController/Caching/Actions), я переделал на следующий вариант.
 
-{% codeblock dashboard.rb %}
+```
+# dashboard.rb
 class Admin::DashboardsController < Admin::BaseController
   caches_action :show, :expires_in => 3.minutes,
     :layout => false,
@@ -53,7 +56,8 @@ class Admin::DashboardsController < Admin::BaseController
 Во-вторых, `:caches_path` отвечает за генерацию ключа для кеширования. Вот с ним-то и возникла проблема, потому что этот ключ
 для обычных и ajax запросов будет один и тот же. Более того, в коде `show.html.haml` оказался проблемный кусок.
 
-{% codeblock show.html.haml %}
+```
+# show.html.haml
 - content_for :head do
   = include_stylesheets :admin_dashboard
 ```
@@ -61,7 +65,8 @@ class Admin::DashboardsController < Admin::BaseController
 Из-за него на странице перестали подхватываться стили, и из кеша эта страница доставалась уже «битая». Я убрал `content_for`,
 что, конечно, не очень изящно, но для админки простительно. Код же я переписал следующим образом.
 
-{% codeblock dashboard.rb %}
+```
+# dashboard.rb
 class Admin::DashboardsController < Admin::BaseController
   caches_action :show, :expires_in => 3.minutes,
     :layout => false,
@@ -73,7 +78,8 @@ class Admin::DashboardsController < Admin::BaseController
 [куда смотреть](http://railsforum.com/viewtopic.php?id=41906). Оказывается, у `caches_action` есть особенность, что он
 кеширует ajax запросы только с `:layout => true`. В итоге у меня получился следующий код.
 
-{% codeblock dashboard.rb %}
+```
+# dashboard.rb
 class Admin::DashboardsController < Admin::BaseController
   caches_action :show, :expires_in => 3.minutes,
     :layout => Proc.new { |c| c.request.xhr? },

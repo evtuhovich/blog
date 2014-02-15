@@ -16,14 +16,16 @@ tags: yaml
 то это будет сложная операция. Понятно, что в примитивных тестах этого было не видно, а подумать хорошо головой в тот
 раз не получилось.
 
-{% codeblock test.rb %}
+```
+# test.rb
   u = User.find 1
   print u.to_yaml
   u.projects
   print u.to_yaml
 ```
 
-{% codeblock result.yml %}
+```
+# result.yml
 
 --- !ruby/object:User
 attributes:

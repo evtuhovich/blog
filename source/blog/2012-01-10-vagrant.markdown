@@ -3,7 +3,7 @@ layout: post
 title: "vagrant"
 date: 2012-01-10 23:55
 comments: true
-tags: vagrant DevOps
+tags: vagrant, DevOps
 ---
 
 Очень странно, что я до сих пор не написал о [Vagrant](http://vagrantup.com/) — инструменте создания и распространения
@@ -28,7 +28,7 @@ Vagrant — это надстройка над платформой вирту�
 
 Итак, приступим.
 
-{% codeblock %}
+```
 gem install vagrant
 mkdir vagrant
 cd vagrant
@@ -52,12 +52,13 @@ end
 После этого прилинкуйте папку с вашими рецептами в текущую папку. В моих рецептах есть один с названием sysctl, именно
 его я буду тестировать.
 
-{% codeblock %}
+```
 ln -sf path/to/cookbooks cookbooks
 ```
 
 Запускаем vagrant.
-{% codeblock %}
+
+```
 vagrant up
 [default] VM already created. Booting if it's not already running...
 [default] Clearing any previously set forwarded ports...

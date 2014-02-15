@@ -7,11 +7,9 @@ tags:
 - pgbouncer
 ---
 
-{% pullquote %}
 Удивительное дело, что я до сих пор не написал про [PgBouncer](http://pgfoundry.org/projects/pgbouncer/). Как написано
 на сайте — это «Lightweight connection pooler for PostgreSQL». Я бы первел это следующим образом.
-{" PgBouncer — это легкий менеджер соединений для PostgreSQL "}.
-{% endpullquote %}
+PgBouncer — это легкий менеджер соединений для PostgreSQL.
 
 <!-- more -->
 
@@ -21,7 +19,7 @@ tags:
 Вместо того, чтобы каждый раз создавать дорогое соединение с postgres, создается легкое соединение с PgBouncer, который
 пользуется уже существующим соединением с БД.
 
-{% img /images/pgbouncer.png PgBouncer %}
+![PgBouncer](/images/pgbouncer.png)
 
 Если же встроенный пул соединений есть, то вроде бы и PgBouncer не нужен.  Это действительно так, если у вас запущено
 несколько процессов с вашим приложением. Но если ваша система достаточно велика, то сотни процессов вашего приложения

@@ -18,7 +18,7 @@ tags:
 
 Итак, у нас есть БД Posgresql 9.2 с предварительно отключенным автовакумом.
 
-{% codeblock %}
+```
 
 $ cat postgresql.conf | grep autovacuum\ =
 autovacuum = off			# Enable autovacuum subprocess?  'on'
@@ -34,7 +34,7 @@ $ echo "select version()" | psql
 
 Также у нас есть вот такая таблица `a` с индексом на поле `first_name`.
 
-{% codeblock %}
+```
 
 mc=# \d a
          Table "public.a"
@@ -71,7 +71,7 @@ mc=# select count(*) from a where first_name = 'Иван';
 
 Что же, посмотрим, как Иваны будут извлекаться из БД.
 
-{% codeblock %}
+```
 
 explain (analyze true, buffers true) select count(*) from a where first_name = 'Иван';
                                                              QUERY PLAN                                                             
@@ -102,7 +102,7 @@ explain (analyze true, buffers true) select count(*) from a where first_name = '
 Поскольку vacuum как раз занимается тем, что чистит старые строки, то он же и обновляет visibility map. Поэтому сделаем
 вакум на таблице `a` и повторим наш запрос.
 
-{% codeblock %}
+```
 mc=# vacuum a;
 VACUUM
 mc=# explain (analyze true, buffers true) select count(*) from a where first_name = 'Иван';

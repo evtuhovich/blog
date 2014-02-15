@@ -46,7 +46,7 @@ end
 Более подробно про pgbench можно почитать в [официальной документации](http://www.postgresql.org/docs/9.1/static/pgbench.html).
 
 На машинках t1.micro `free -m` выдает следующее:
-{% codeblock %}
+```
              total       used       free     shared    buffers     cached
 Mem:           590        583          6          0          1        428
 ```

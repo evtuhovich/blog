@@ -18,7 +18,7 @@ tags: PostgreSQL hstore key-value
 
 Вначале поставим это расширения в Ubuntu 11.10
 
-{% codeblock %}
+```
 sudo apt-get install postgresql-contrib
 ```
 

@@ -22,7 +22,7 @@ asset pipeline переделок было значительное количе
 возникают, когда поменялся отступ, например, какой-то блок куда ушел внутрь еще одного условия `if`. Тогда я пользовался
 следующей конструкцией:
 
-{% codeblock %}
+```
 
 git diff `git merge-base master rails32`..master -- conflicted.filename
 
@@ -33,7 +33,7 @@ git diff `git merge-base master rails32`..master -- conflicted.filename
 
 Сама команда `merge-base` возвращает ближайшего общего предка для двух веток, то есть sha-id какого-то комита.
 
-{% codeblock %}
+```
 
 $ git merge-base master rails32
 74b67a8090fa10549ab238928c68368f10b5a415

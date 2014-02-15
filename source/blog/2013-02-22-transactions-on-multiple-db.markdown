@@ -18,7 +18,8 @@ tags:
 Во-первых, рельсы умеют загружать и сохранять схемы нескольких БД, делается это следующим образом. Добавляете новую БД в
 свой `database.yml`.
 
-{% codeblock database.yml %}
+```
+# database.yml
 foo_development:
   database: foo
   <<: *defaults
@@ -60,7 +61,8 @@ end
 только из основной БД. Чтобы поправить это, необходимо завернуть выполнение теста в транзакцию по второй БД, для чего
 добавить следующие строки в ваш файл `spec/spec_helper.rb`.
 
-{% codeblock spec/spec_helper.rb %}
+```
+# spec/spec_helper.rb
 RSpec.configure do |config|
   config.around(:each) do |ex|
     main = ActiveRecord::Base.connection

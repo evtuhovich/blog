@@ -27,7 +27,8 @@ tags:
 
 Я посмотрел, что поменялось, и достаточно быстро пришел к хорошему решению — отнаследовать класс `FlashHash` от `Hash`.
 
-{% codeblock config/initializers/session_hack.rb %}
+```
+# config/initializers/session_hack.rb
 
 module ActionDispatch
   class Flash
@@ -46,7 +47,8 @@ end
 забыть. Поэтому я решил, что разлогинить пользователей, у которых
 есть flash сообщение в сессии — это не очень большой грех (а их ведь мало совсем), поэтому поступил вот так.
 
-{% codeblock config/initializers/session_hack.rb %}
+```
+# config/initializers/session_hack.rb
 module ActiveSupport
   class MessageVerifier
     def compat_verify(signed_message)
