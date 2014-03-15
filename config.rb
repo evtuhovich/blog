@@ -64,6 +64,34 @@ set :haml, :ugly => true
 Time.zone = "Moscow"
 
 activate :blog do |blog|
+  blog.name = "life"
+  blog.prefix = "life"
+  blog.permalink = ":year/:month/:day/:title/index.html"
+  blog.taglink = "categories/:tag/index.html"
+  blog.layout = 'layouts/post'
+  blog.summary_separator = /(<!-- more -->)/
+  blog.summary_length = nil
+  # blog.year_link = ":year.html"
+  # blog.month_link = ":year/:month.html"
+  # blog.day_link = ":year/:month/:day.html"
+  # blog.default_extension = ".markdown"
+
+  blog.tag_template = "life/tag.html"
+#  blog.calendar_template = "blog/calendar.html"
+
+  blog.paginate = true
+  blog.per_page = 10
+  blog.page_link = "/life/page/:num"
+  # blog.publish_future_dated = true
+  # blog.custom_collections = {
+  #   categories: {
+  #     link: '/categories/{categories}/',
+  #     template: '/category.html'
+  #   }
+  # }
+end
+
+activate :blog do |blog|
   blog.name = "blog"
   blog.prefix = "blog"
   blog.permalink = ":year/:month/:day/:title/index.html"

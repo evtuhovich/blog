@@ -1,9 +1,13 @@
 ---
 pageable: true
 per_page: 10
-blog: blog
+blog: life
 ---
 .blog-index
+  %article
+    = link_to 'Архив жизни', '/life/archives'
+    = link_to 'Индекс жизни', '/life/categories'
+    = link_to 'RSS', '/life/atom.xml'
   - page_articles.each do |article|
     %article
       %header

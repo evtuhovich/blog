@@ -17,7 +17,7 @@
           %time{"data-updated" => "true", datetime: current_article.date, pubdate: ""}= current_article.date.strftime('%Y-%m-%d')
           %span.categories
             - current_article.tags.each do |tag|
-              %a.category{href: tag_path(tag, 'blog')}= tag
+              %a.category{href: tag_path(tag)}= tag
         .sharing
           %a.twitter-share-button{"data-counturl" => "#{site_url}#{current_article.url}", "data-url" => "#{site_url}#{current_article.url}", "data-via" => "evtuhovich", href: "http://twitter.com/share"} Tweet
           .fb-like{"data-send" => "true", "data-show-faces" => "false", "data-width" => "450"}

@@ -1,0 +1,26 @@
+---
+title: Архив жизни
+footer: false
+blog: life
+---
+%div
+  %article{role: "article"}
+    %header
+      %h1.entry-title Архив жизни
+    #blog-archives
+      - blog.articles.group_by { |a| a.date.year }.each do |year, articles|
+        %h2= year
+        - articles.each do |article|
+          %article
+            %h1
+              %a{href: article.url}= article.title
+            %time{datetime: article.date, pubdate: ""}
+              %span.month= article.date.strftime('%b')
+              %span.day= article.date.strftime('%d')
+              %span.year= article.date.strftime('%Y')
+            - unless article.tags.empty?
+              %footer
+                %span.categories
+                  posted in
+                  - article.tags.each do |tag|
+                    %a.category{href: tag_path(tag, 'blog')}= tag
