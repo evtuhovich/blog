@@ -15,3 +15,4 @@ gem 'redcarpet'
 gem "pygments.rb"
 
 gem 'livejournal'
+gem 'rake'
