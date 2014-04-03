@@ -225,7 +225,7 @@ tsung из brew). Для этого надо зайти в папку `~/.tsung/
 Он сгенерирует из файла `tsung.log` два html страницы: graph.html и report.html. Там много чего есть, я приведу для
 примера только один график оттуда.
 
-![График](images/tsung.png)
+![Graph](/images/tsung.png)
 
 Как мы видем, после 60 секунд нагрузка резко падает, и недогулявшией пользователи догуливают по сайту.
 
@@ -240,8 +240,8 @@ tsung из brew). Для этого надо зайти в папку `~/.tsung/
 2014/04/01 08:31:12 [error] 21583#0: *171178 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 54.72.45.113, server: new.project.ru, request: "GET /login HTTP/1.1", upstream: "http://127.0.0.1:8080/login", host: "1.1.1.1"
 ```
 
-![Плохие настройки](images/tsung-bad-tune.png)
-![Хорошие настройки](images/tsung-good-tune.png)
+![Плохие настройки](/images/tsung-bad-tune.png)
+![Хорошие настройки](/images/tsung-good-tune.png)
 
 Во втором случае видно, как сервер выходит на «насыщение», то есть понятно, на каких нагрузках он перестает справляться.
 Гладкие графики — явный признак того, что все работает правильно (наоборот, кстати, тоже верно).
