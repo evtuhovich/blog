@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Евтухович Иван Юрьевич
-date: 2013-03-21 12:16
+date: 2014-04-02 12:16
 comments: true
 sharing: true
 footer: true
@@ -44,7 +44,7 @@ Twitter: [evtuhovich](https://twitter.com/#!/evtuhovich)<br />
 Также в рамках RailsClub совместно с [DevConf](http://devconf.ru) мы привезли в Москву
 [Ехуду Катца](http://yehudakatz.com/) (core-developer Rails3, Merb, jQuery).
 
-С апреля 2011 года я работаю в компании [``Злые Марсиане''](http://evilmartians.com), руковожу разработкой купонного сервиса
+С апреля 2011 года я работал в компании [``Злые Марсиане''](http://evilmartians.com), руководил разработкой купонного сервиса
 [Groupon](http://groupon.ru). Уже работая в марсианах, я успел
 [дать интервью](http://theoryandpractice.ru/posts/2488-programmisty-evil-martians-bookmate-i-yahoo-rasskazyvayut-o-krasote-koda),
 получить первый дан Айкидо Айкикай у [Матвеева Вячеслава Александровича](http://aikiclub.ru).
@@ -65,3 +65,5 @@ Twitter: [evtuhovich](https://twitter.com/#!/evtuhovich)<br />
 
 В сентябре 2012 мы провели концференцию RailsClub международного уровня, пригласили 5 иностранных докладчиков со всех
 концов мира.
+
+В 2013 году вместе с моим коллегой Никитой Борзых мы стали выпускать подкаст «[DevOps Deflope](http://devopsdeflope.ru/)».
