@@ -39,6 +39,9 @@
 # activate :livereload
 
 # Methods defined in the helpers block are available in templates
+
+require 'active_support/core_ext'
+
 helpers do
   def tag_url tag
     link_to tag, "/blog/categories/#{tag}"
