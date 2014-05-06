@@ -8,6 +8,7 @@ blog: blog
     %header
       %h1.entry-title Индекс
     %ul#category-list
-      - blog('blog').tags.each do |tag, articles|
+      - idx = blog('blog').tags
+      - idx.sort { |a, b| 10 * (b[1].count <=> a[1].count) + (a[0] <=> b[0]) }.each do |tag, articles|
         %li
           = link_to "#{tag} (#{articles.count})", tag_path(tag)
