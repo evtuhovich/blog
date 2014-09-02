@@ -4,7 +4,7 @@ task 'publish' do
 end
 
 task :generate_toc do
-  result = File.open("source/reports/toc.markdown", 'w')
+  result = File.open("source/reports/_toc.markdown", 'w')
 	toc = File.read("source/reports/index.markdown.erb").lines.select { |l| l.match(/^#+/) }
   toc.each do |line|
     m = line.match /^#+ <a id="(.*)"><\/a>(.*)/
