@@ -95,7 +95,7 @@ FROM pg_locks as l JOIN pg_class as c on c.oid = l.relation;
 возникновения подобной ситуации. Но это уже совсем другая история.
 
 В подобных ситуациях всегда спасает следующий запрос из системной таблицы
-[pg_stat_activity](http://www.postgresql.org/docs/9.1/static/monitoring-stats.html), который возвращает все
+[pg\_stat\_activity](http://www.postgresql.org/docs/9.1/static/monitoring-stats.html), который возвращает все
 выполняющиеся в данный момент операции, отсортированные по времени выполнения. Внизу вывода обычно находятся те из них,
 которые нас больше всего интересуют.
 
