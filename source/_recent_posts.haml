@@ -1,6 +1,6 @@
 %h1 Последние записи
 %ul#recent_posts
-  - blog('blog').articles[0..5].each do |article|
+  - blog.articles[0..5].each do |article|
     %li.post
       = link_to article.title, article
 

@@ -1,8 +1,12 @@
+---
+blog: blog
+---
+
 %div
   %article(role="article")
     %header
       %h1.entry-title
-        Category:
+        Категория:
         = tagname
     %ul
       - page_articles.group_by { |a| a.date.year }.each do |year, articles|

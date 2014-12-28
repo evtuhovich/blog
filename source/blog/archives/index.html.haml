@@ -1,11 +1,12 @@
 ---
-title: Blog Archive
+title: Архив Технического Блога
 footer: false
+blog: blog
 ---
 %div
   %article{role: "article"}
     %header
-      %h1.entry-title Blog Archive
+      %h1.entry-title Архив Технического Блога
     #blog-archives
       - blog('blog').articles.group_by { |a| a.date.year }.each do |year, articles|
         %h2= year

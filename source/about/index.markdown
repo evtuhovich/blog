@@ -5,6 +5,7 @@ date: 2014-04-02 12:16
 comments: true
 sharing: true
 footer: true
+blog: life
 ---
 
 ![Моя фотография](/images/me_small.jpg)
