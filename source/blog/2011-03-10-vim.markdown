@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: О редакторе Vim, рассказ ссылками
 date: 2011-03-10 22:52
 comments: true

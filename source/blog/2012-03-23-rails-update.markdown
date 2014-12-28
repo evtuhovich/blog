@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Обновление на rails3 и проблемы, связанные с этим
 date: 2012-03-23 15:19
 comments: true

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Проблемы с кэшированием
 date: 2009-03-22 13:18:00 UTC
 comments: true

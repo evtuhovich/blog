@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "PostgreSQL 9.3 beta 1 на OSX"
 date: 2013-05-15 13:18
 comments: true

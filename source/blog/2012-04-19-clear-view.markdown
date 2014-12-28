@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Ясность
 date: 2012-04-19 00:18
 comments: true

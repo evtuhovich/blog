@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Перенос таблицы в другую базу данных postgres без простоя приложения
 date: 2009-05-22 23:45
 comments: true

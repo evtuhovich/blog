@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Проблемы с find_in_batches
 date: 2011-09-11 00:22
 comments: true

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "PgBouncer"
 date: 2012-02-12 23:04
 comments: true

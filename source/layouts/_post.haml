@@ -1,0 +1,43 @@
+%div
+  %article.hentry{role: "article"}
+    %header
+      %h1.entry-title= current_article.title
+      %p.meta
+        %time{"data-updated" => "true", datetime: current_article.date, pubdate: ""}= current_article.date.strftime('%Y-%m-%d')
+        |
+        %a{href: "#disqus_thread"} Комментарии
+    .entry-content
+      = current_article.body
+    %footer
+      %p.meta
+        %span.byline.author.vcard
+          Автор
+          %span.fn Иван Евтухович
+        %time{"data-updated" => "true", datetime: current_article.date, pubdate: ""}= current_article.date.strftime('%Y-%m-%d')
+        %span.categories
+          - current_article.tags.each do |tag|
+            %a.category{href: tag_path(tag)}= tag
+      .sharing
+        %a.twitter-share-button{"data-counturl" => "#{site_url}#{current_article.url}", "data-url" => "#{site_url}#{current_article.url}", "data-via" => "evtuhovich", href: "http://twitter.com/share"} Tweet
+        .fb-like{"data-send" => "true", "data-show-faces" => "false", "data-width" => "450"}
+      %p.meta
+        / FIXME %a.basic-alignment.left{href: "/blog/2013/11/13/deflope/", title: "Previous Post: Закат безымянного подкаста, Дефлопе и предложение о работе"} « Закат безымянного подкаста, Дефлопе и предложение о работе
+  %section
+    %h1 Комментарии
+    #disqus_thread{"aria-live" => "polite"}
+      %noscript
+        Please enable JavaScript to view the
+        %a{href: "http://disqus.com/?ref_noscript"} comments powered by Disqus.
+
+- content_for :disqus do
+  :javascript
+    var disqus_shortname = 'blog-evtuhovich';
+            // var disqus_developer = 1;
+            var disqus_identifier = '#{site_url}#{current_article.url}';
+            var disqus_url = '#{site_url}#{current_article.url}';
+            var disqus_script = 'embed.js';
+        (function () {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());

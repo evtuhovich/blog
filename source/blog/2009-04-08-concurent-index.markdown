@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Конкурентное пересоздание индексов в postgresql
 date: 2009-04-08 11:11
 comments: true

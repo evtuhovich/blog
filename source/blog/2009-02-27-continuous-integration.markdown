@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Непрерывная интеграция
 date: 2009-02-27 14:45:00 UTC
 comments: true

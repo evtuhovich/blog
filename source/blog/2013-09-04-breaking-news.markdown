@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Ближайшие события в Ruby и DevOps мире
 date: 2013-09-04 09:37
 comments: true

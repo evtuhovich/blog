@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Англоязычные подкасты про ruby и rails"
 date: 2010-07-28 22:52
 comments: true

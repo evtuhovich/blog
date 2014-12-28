@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Использование capistrano
 date: 2009-01-26 10:32:00 UTC
 comments: true

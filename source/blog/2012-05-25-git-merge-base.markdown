@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Конфликтные слияния веток и git merge-base
 date: 2012-05-25 22:37
 comments: true

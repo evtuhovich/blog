@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Delayed_job в отдельной базе данных
 date: 2012-01-29 23:08
 comments: true

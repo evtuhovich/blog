@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Переопределение Rails.logger и проблемы с ним 
 date: 2010-07-27 22:52
 comments: true

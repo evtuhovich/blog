@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Управление конфигурацией и Chef
 date: 2011-09-03 01:06
 comments: true

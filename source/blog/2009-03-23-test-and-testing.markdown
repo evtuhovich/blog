@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Тесты и тестирование
 date: 2009-03-23 19:06:00 UTC
 comments: true

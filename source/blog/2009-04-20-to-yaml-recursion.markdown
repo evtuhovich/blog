@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Рекурсивные особенности to_yaml
 date: 2009-04-20 13:14:00 UTC
 comments: true

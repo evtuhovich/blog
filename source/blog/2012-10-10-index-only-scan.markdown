@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Index Only Scan в Postgresql 9.2
 date: 2012-10-10 13:09
 comments: true

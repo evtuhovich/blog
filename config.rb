@@ -20,9 +20,9 @@
 # page "/path/to/file.html", :layout => :otherlayout
 #
 # A path which all have the same layout
-with_layout :life do
-  page "/life/*"
-end
+# with_layout :life do
+# 	page "/life/*.html"
+# end
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
@@ -71,7 +71,7 @@ activate :blog do |blog|
   blog.prefix = "life"
   blog.permalink = ":year/:month/:day/:title/index.html"
   blog.taglink = "categories/:tag/index.html"
-  blog.layout = 'layouts/post'
+  blog.layout = 'layouts/life-post'
   blog.summary_separator = /(<!-- more -->)/
   blog.summary_length = nil
   # blog.year_link = ":year.html"
@@ -100,7 +100,7 @@ activate :blog do |blog|
   blog.permalink = ":year/:month/:day/:title/index.html"
   # blog.sources = ":year-:month-:day-:title.html"
   blog.taglink = "categories/:tag/index.html"
-  blog.layout = 'layouts/post'
+  blog.layout = 'layouts/blog-post'
   blog.summary_separator = /(<!-- more -->)/
   blog.summary_length = nil
   # blog.year_link = ":year.html"

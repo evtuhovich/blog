@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Изменение формата сессии при переходе с Rails 3.0 на 3.2
 date: 2012-04-24 21:39
 comments: true

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Перенести ветку в git
 date: 2009-03-13 09:12:00 UTC
 comments: true

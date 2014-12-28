@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Railsclub: отчет о прошедшей конференции"
 date: 2011-12-21 18:28
 comments: true

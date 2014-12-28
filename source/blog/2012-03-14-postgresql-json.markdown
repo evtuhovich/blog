@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Поддержка JSON в PostgreSql 9.2
 date: 2012-03-14 23:52
 comments: true

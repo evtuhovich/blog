@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Hstore — key-value расширение для postgresql"
 date: 2012-01-23 23:05
 comments: true

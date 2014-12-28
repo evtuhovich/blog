@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Barman и WAL-E
 date: 2012-07-27 15:54
 comments: true

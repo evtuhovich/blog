@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: CAP-теорема и разделение сети
 date: 2013-08-03 22:29
 comments: true

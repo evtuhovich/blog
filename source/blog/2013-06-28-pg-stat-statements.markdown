@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Статистика запросов и pg_stat_statements"
 date: 2013-06-28 15:20
 comments: true

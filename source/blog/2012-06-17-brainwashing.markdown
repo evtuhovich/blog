@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Очередной Brainwashing 14 и 15 июля
 date: 2012-06-17 10:07
 comments: true

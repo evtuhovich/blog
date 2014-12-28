@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: PosgtreSql, миграции и огромные таблицы
 date: 2009-03-20 12:34
 comments: true
