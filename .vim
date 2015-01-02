@@ -5,7 +5,7 @@ let g:ctrlp_custom_ignore = {
 
 augroup ruby
 	autocmd!
-	autocmd BufRead,BufNewFile *.markdown set formatoptions+=a
+	autocmd BufRead,BufNewFile *.markdown set formatoptions+=a expandtab
 
 	set spell
 	set spelllang=ru,en

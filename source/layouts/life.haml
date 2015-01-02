@@ -5,25 +5,36 @@
 %html.no-js{lang: "en"}
   / <![endif]
   %head
+    - title = current_page.data.title || 'Круть-верть, на пороге смерть'
+    - descr = current_article ? current_article.summary : "Блог Ивана Евтуховича"
+    - url = site_url + current_page.url
     %meta{charset: "utf-8"}/
-    %title= current_page.data.title || 'Круть-верть, на пороге смерть'
+    %title= title
     %meta{content: "Иван Евтухович", name: "author"}/
-    %meta{content: "Блог Ивана Евтуховича", name: "description"}/
     / http://t.co/dKP3o1e
     %meta{content: "True", name: "HandheldFriendly"}/
     %meta{content: "320", name: "MobileOptimized"}/
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
-    %link{href: "http://evtuhovich.ru", rel: "canonical"}/
+    %link{href: url, rel: "canonical"}/
     %link{href: "/favicon.png", rel: "icon"}/
     %link{href: "/stylesheets/screen-life.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}/
     %link{href: "/stylesheets/syntax.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}/
     %script{src: "/javascripts/modernizr-2.0.js"}
     %script{src: "/javascripts/ender.js"}
     %script{src: "/javascripts/octopress.js", type: "text/javascript"}
-    %link{href: "/life/atom.xml", rel: "alternate", title: "Технические заметки одного Евтуховича", type: "application/atom+xml"}/
+    %link{href: "/life/atom.xml", rel: "alternate", title: title, type: "application/atom+xml"}/
     / Fonts from Google's Web font directory at http://google.com/webfonts
     %link{href: "http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic", rel: "stylesheet", type: "text/css"}/
     %link{href: "http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic", rel: "stylesheet", type: "text/css"}/
+    %meta{name: "description", content: descr}
+    %meta{property: "og:description", content: descr}
+    %meta{property: "og:image", content: "/images/me_small.jpg"}
+    %meta{property: "og:title", content: title}
+    %meta{property: "og:type", content: "article"}
+    %meta{property: "og:url", content: url}
+    %meta{property: "twitter:description", content: descr}
+    %meta{property: "twitter:title", content: title}
+
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-28012309-1']);
