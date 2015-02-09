@@ -21,7 +21,7 @@
 #
 # A path which all have the same layout
 # with_layout :life do
-# 	page "/life/*.html"
+page "/elena.html", :layout => false
 # end
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
