@@ -1,6 +1,6 @@
 ---
 title: Непрерывная поставка ПО
-date: 2015-01-19 22:34 MSK
+date: 2015-03-11 10:34 MSK
 tags:
   - continuous delivery
 published: false
