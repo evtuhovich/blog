@@ -145,3 +145,9 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket                     = 'evtuhovich.ru'
+  s3_sync.region                     = 'eu-west-1'
+  s3_sync.delete                     = false # We delete stray files by default.
+end
