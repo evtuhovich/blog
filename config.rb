@@ -150,4 +150,8 @@ activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'evtuhovich.ru'
   s3_sync.region                     = 'eu-west-1'
   s3_sync.delete                     = false # We delete stray files by default.
+  s3_sync.content_types              = {
+    '**/*.html' => 'text/html;charset=utf-8',
+    'blog/2017/01/25/microservices/index.html' => 'text/html;charset=utf-8'
+  }
 end
