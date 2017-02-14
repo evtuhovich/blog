@@ -206,6 +206,7 @@ module Middleman
 
       def content_type
         @content_type ||= options.content_types[path]
+        @content_type ||= (path =~ /html$/ ? 'text/html;charset=utf-8' : nil)
         @content_type ||= MIME::Types.of(path).first
       end
 
