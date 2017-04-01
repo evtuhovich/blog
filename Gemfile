@@ -16,6 +16,7 @@ gem 'mime-types'
 gem 'nokogiri'
 gem 'redcarpet'
 gem "pygments.rb"
+gem 'middleman-compass'
 
 #gem 'livejournal'
 gem 'rake'
