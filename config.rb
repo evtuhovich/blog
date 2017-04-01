@@ -40,7 +40,7 @@ page "/elena.html", :layout => false
 
 # Methods defined in the helpers block are available in templates
 
-require 'active_support/core_ext'
+#require 'active_support/core_ext'
 
 helpers do
   def tag_url tag
