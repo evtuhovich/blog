@@ -9,7 +9,7 @@ tags:
 прочитайте [статью Мартина Фаулера](https://martinfowler.com/articles/microservices.html) или
 [ее перевод на русский](https://habrahabr.ru/post/249183/).
 
-<!-- more -->
+READMORE
 
 Я считаю, что микросервисная архитектура — это прямое следствие применения обратного
 [закона Конвея](http://evtuhovich.ru/blog/2016/10/05/conways-law/) к разработке огромных приложений. То есть чисто

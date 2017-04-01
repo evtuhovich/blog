@@ -72,7 +72,6 @@ activate :blog do |blog|
   blog.permalink = ":year/:month/:day/:title/index.html"
   blog.taglink = "categories/:tag/index.html"
   blog.layout = 'layouts/life-post'
-  blog.summary_separator = /(<!-- more -->)/
   blog.summary_length = nil
   # blog.year_link = ":year.html"
   # blog.month_link = ":year/:month.html"
@@ -102,7 +101,6 @@ activate :blog do |blog|
   # blog.sources = ":year-:month-:day-:title.html"
   blog.taglink = "categories/:tag/index.html"
   blog.layout = 'layouts/blog-post'
-  blog.summary_separator = /(<!-- more -->)/
   blog.summary_length = nil
   # blog.year_link = ":year.html"
   # blog.month_link = ":year/:month.html"

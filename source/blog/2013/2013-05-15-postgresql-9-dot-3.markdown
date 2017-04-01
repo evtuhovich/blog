@@ -15,7 +15,7 @@ tags:
 
 Но чтобы не только почитать, но и попробовать, я напишу здесь, как поставить 9.3 beta 1 на OSX.
 
-<!-- more -->
+READMORE
 
 К нашему большому счастью, один из разработчиков PostgreSQL — [Peter Eisentraut](http://petereisentraut.blogspot.ru/)
 уже сделал формулу для homebrew, чтобы поставить 9.3.

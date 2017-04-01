@@ -14,7 +14,7 @@ tags:
 изменение стоит первым в [Release Notes](http://www.postgresql.org/docs/9.2/static/release-9-2.html), а значит я не
 одинок.
 
-<!-- more -->
+READMORE
 
 Итак, у нас есть БД Posgresql 9.2 с предварительно отключенным автовакумом.
 
