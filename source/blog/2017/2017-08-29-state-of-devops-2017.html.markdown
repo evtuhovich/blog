@@ -3,7 +3,7 @@
 title: Состояние DevOps на 2017 год
 date: 2017-08-29 10:32 MSK
 tags: 
-
+  - State of DevOps
 ---
 
 В очередной раз компания [Puppet](https://puppet.com/) совместно с [DORA](https://devops-research.com/) ( DevOps Research and Assessment — компания, которая решила активно продавать DevOps, что бы это не значило) опубликовали отчет о состоянии DevOps, который называется «[2017 State of DevOps Report](https://puppet.com/resources/whitepaper/state-of-devops-report)». Скачать его можно бесплатно, если оставить свою почту. Насколько я знаю, это единственное регулярное исследование ИТ-рынка на предмет проникновения DevOps практик.
