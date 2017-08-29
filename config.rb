@@ -62,8 +62,6 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
-set :haml, :ugly => true
-
 Time.zone = "Moscow"
 
 activate :blog do |blog|
