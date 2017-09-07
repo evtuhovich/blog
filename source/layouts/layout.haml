@@ -25,7 +25,10 @@
     %link{href: "http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic", rel: "stylesheet", type: "text/css"}/
     %meta{name: "description", content: descr}
     %meta{property: "og:description", content: descr}
-    %meta{property: "og:image", content: "/images/me_small.jpg"}
+    - if current_article && current_article.data['fb_image']
+      %meta{:content => "http://evtuhovich.ru#{asset_path(:images, current_article.data['fb_image'])}", :property => "og:image"}/
+    - else
+      %meta{property: "og:image", content: "/images/me_small.jpg"}
     %meta{property: "og:title", content: title}
     %meta{property: "og:type", content: "article"}
     %meta{property: "og:url", content: url}
