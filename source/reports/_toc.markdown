@@ -1,4 +1,7 @@
 1. [2017](#reports2017)
+   1. [ Почему инструментов недостаточно для полного DevOps](#instruments_not)
+   1. [ Поставка ПО в 2017 году](#sw_delivery)
+   1. [ Agile, DevOps и другие инструменты цифровизации](#agile_devops)
    1. [ Возможен ли DevOps в Enterprise](#is_devops_possible)
    1. [ Key DevOps Practices](#key_devops_practices)
 1. [2016](#reports2016)
