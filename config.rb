@@ -72,6 +72,7 @@ activate :blog do |blog|
   blog.taglink = "categories/:tag/index.html"
   blog.layout = 'layouts/life-post'
   blog.summary_length = nil
+  blog.sources = '{year}/{year}-{month}-{day}-{title}.html'
   # blog.year_link = ":year.html"
   # blog.month_link = ":year/:month.html"
   # blog.day_link = ":year/:month/:day.html"
