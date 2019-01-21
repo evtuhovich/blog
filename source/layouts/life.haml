@@ -17,8 +17,8 @@
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
     %link{href: url, rel: "canonical"}/
     %link{href: "/favicon.png", rel: "icon"}/
-    %link{href: "/stylesheets/screen-life.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}/
-    %link{href: "/stylesheets/syntax.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}/
+    = stylesheet_link_tag 'screen-life'
+    = stylesheet_link_tag 'syntax'
     %link{href: "/life/atom.xml", rel: "alternate", title: title, type: "application/atom+xml"}/
     / Fonts from Google's Web font directory at http://google.com/webfonts
     %link{href: "http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic", rel: "stylesheet", type: "text/css"}/

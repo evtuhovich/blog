@@ -6,6 +6,7 @@ comments: true
 sharing: true
 footer: true
 blog: life
+
 ---
 
 ![Моя фотография](/images/me_small.jpg)
