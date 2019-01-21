@@ -1,7 +1,7 @@
 ---
 
 title: Проблемы с find_in_batches
-date: 2011-09-11 00:22
+date: 2011-09-11T00:22:00
 comments: true
 tags:
 - rails

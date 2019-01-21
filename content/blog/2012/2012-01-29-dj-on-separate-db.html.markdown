@@ -1,7 +1,7 @@
 ---
 
 title: Delayed_job в отдельной базе данных
-date: 2012-01-29 23:08
+date: 2012-01-29T23:08:00
 comments: true
 tags:
 - delayed_job

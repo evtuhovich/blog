@@ -1,7 +1,7 @@
 ---
 
 title: Несколько баз данных
-date: 2009-05-19 22:52
+date: 2009-05-19T22:52:00
 comments: true
 tags: 
 - rollback

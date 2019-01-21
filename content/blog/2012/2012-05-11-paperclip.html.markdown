@@ -1,6 +1,6 @@
 ---
 title: Странное поведение создателей Paperclip
-date: 2012-05-11 23:23
+date: 2012-05-11T23:23:00
 comments: true
 tags:
 - paperclip

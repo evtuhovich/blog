@@ -1,7 +1,7 @@
 ---
 
 title: Пакетные менеджеры
-date: 2012-06-07 21:47
+date: 2012-06-07T21:47:00
 comments: true
 tags: 
 - package manager

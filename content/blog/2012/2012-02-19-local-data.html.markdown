@@ -1,7 +1,7 @@
 ---
 
 title: Фильтрация данных на клиенте
-date: 2012-02-19 23:16
+date: 2012-02-19T23:16:00
 comments: true
 tags: 
 - performance

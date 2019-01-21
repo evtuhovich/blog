@@ -1,7 +1,7 @@
 ---
 
 title: Слияние HashWithIndifferentAccess с обычными хешами
-date: 2011-09-09 23:16
+date: 2011-09-09T23:16:00
 comments: true
 tags:
 - HashWithIndifferentAccess

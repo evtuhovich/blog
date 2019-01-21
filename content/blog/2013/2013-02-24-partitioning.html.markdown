@@ -1,7 +1,7 @@
 ---
 
 title: Партиционирование
-date: 2013-02-24 22:12
+date: 2013-02-24T22:12:00
 comments: true
 tags:
 - PostgreSQL

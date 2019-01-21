@@ -1,7 +1,7 @@
 ---
 
 title: "Ремонт БД на лету с помощью pg_repack"
-date: 2013-01-09 00:49
+date: 2013-01-09T00:49:00
 comments: true
 tags: 
 - PostgreSQL

@@ -1,7 +1,7 @@
 ---
 
 title: PgQ и Londiste
-date: 2009-06-05 12:34
+date: 2009-06-05T12:34:00
 comments: true
 tags:
 - PostgreSQL

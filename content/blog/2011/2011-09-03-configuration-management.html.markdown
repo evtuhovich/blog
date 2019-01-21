@@ -1,7 +1,7 @@
 ---
 
 title: Управление конфигурацией и Chef
-date: 2011-09-03 01:06
+date: 2011-09-03T01:06:00
 comments: true
 tags:
 - configuration management

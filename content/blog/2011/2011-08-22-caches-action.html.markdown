@@ -1,7 +1,7 @@
 ---
 
 title: "Некоторые проблемы с cached_action в Rails 2.3"
-date: 2011-08-22 13:02
+date: 2011-08-22T13:02:00
 comments: true
 tags:
 - rails

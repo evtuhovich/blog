@@ -1,7 +1,7 @@
 ---
 
 title: Транзакции и несколько БД
-date: 2013-02-22 00:38
+date: 2013-02-22T00:38:00
 comments: true
 tags:
 - rspec

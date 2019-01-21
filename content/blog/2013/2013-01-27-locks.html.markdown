@@ -1,7 +1,7 @@
 ---
 
 title: Блокировки в PostgreSQL
-date: 2013-01-27 22:35
+date: 2013-01-27T22:35:00
 comments: true
 tags:
 - PostgreSQL

@@ -1,7 +1,7 @@
 ---
 
 title: Автоматизация vim с помощью pathogen
-date: 2010-04-05 00:33
+date: 2010-04-05T00:33:00
 comments: true
 tags: 
 - vim

@@ -1,7 +1,7 @@
 ---
 
 title: "Railsclub: отчет о прошедшей конференции"
-date: 2011-12-21 18:28
+date: 2011-12-21T18:28:00
 comments: true
 tags:
   - railsclub

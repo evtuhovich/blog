@@ -1,7 +1,7 @@
 ---
 
 title: "RubyNoName подкаст"
-date: 2012-02-08 22:40
+date: 2012-02-08T22:40:00
 comments: true
 tags: 
 - podcast

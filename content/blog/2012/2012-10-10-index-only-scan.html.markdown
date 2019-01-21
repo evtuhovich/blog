@@ -1,7 +1,7 @@
 ---
 
 title: Index Only Scan в Postgresql 9.2
-date: 2012-10-10 13:09
+date: 2012-10-10T13:09:00
 comments: true
 tags:
 - PostgreSQL

@@ -1,7 +1,7 @@
 ---
 
 title: "PostgreSQL 9.3 beta 1 на OSX"
-date: 2013-05-15 13:18
+date: 2013-05-15T13:18:00
 comments: true
 tags: 
 - PostgreSQL

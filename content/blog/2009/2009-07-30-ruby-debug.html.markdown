@@ -1,7 +1,7 @@
 ---
 
 title: Использование ruby-debug
-date: 2009-07-30 22:22
+date: 2009-07-30T22:22:00
 comments: true
 tags: 
 - ruby-debug

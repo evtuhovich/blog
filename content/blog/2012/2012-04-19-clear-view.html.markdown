@@ -1,7 +1,7 @@
 ---
 
 title: Ясность
-date: 2012-04-19 00:18
+date: 2012-04-19T00:18:00
 comments: true
 tags:
 - мысли

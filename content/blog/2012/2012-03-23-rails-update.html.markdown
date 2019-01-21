@@ -1,7 +1,7 @@
 ---
 
 title: Обновление на rails3 и проблемы, связанные с этим
-date: 2012-03-23 15:19
+date: 2012-03-23T15:19:00
 comments: true
 tags: 
 - warden

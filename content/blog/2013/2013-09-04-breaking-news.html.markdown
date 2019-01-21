@@ -1,7 +1,7 @@
 ---
 
 title: Ближайшие события в Ruby и DevOps мире
-date: 2013-09-04 09:37
+date: 2013-09-04T09:37:00
 comments: true
 tags:
 - конференция

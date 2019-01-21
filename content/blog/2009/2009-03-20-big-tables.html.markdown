@@ -1,7 +1,7 @@
 ---
 
 title: PosgtreSql, миграции и огромные таблицы
-date: 2009-03-20 12:34
+date: 2009-03-20T12:34:00
 comments: true
 tags:
 - PostgreSQL

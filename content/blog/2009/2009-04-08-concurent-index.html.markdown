@@ -1,7 +1,7 @@
 ---
 
 title: Конкурентное пересоздание индексов в postgresql
-date: 2009-04-08 11:11
+date: 2009-04-08T11:11:00
 comments: true
 tags:
 - PostgreSQL

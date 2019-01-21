@@ -1,7 +1,7 @@
 ---
 
 title: Проблема с сортировкой русских слов в Postgres на OSX
-date: 2012-07-14 13:17
+date: 2012-07-14T13:17:00
 comments: true
 tags:
 - PostgreSQL

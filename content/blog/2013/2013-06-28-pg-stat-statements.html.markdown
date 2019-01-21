@@ -1,7 +1,7 @@
 ---
 
 title: "Статистика запросов и pg_stat_statements"
-date: 2013-06-28 15:20
+date: 2013-06-28T15:20:00
 comments: true
 tags:
 - PostgreSQL

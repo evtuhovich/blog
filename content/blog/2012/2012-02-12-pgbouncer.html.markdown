@@ -1,7 +1,7 @@
 ---
 
 title: "PgBouncer"
-date: 2012-02-12 23:04
+date: 2012-02-12T23:04:00
 comments: true
 tags: 
 - pgbouncer

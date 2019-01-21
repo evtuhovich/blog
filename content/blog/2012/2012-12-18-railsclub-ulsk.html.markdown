@@ -1,7 +1,7 @@
 ---
 
 title: "Последствия выступления на Railsclub'Ulsk"
-date: 2012-12-18 16:13
+date: 2012-12-18T16:13:00
 comments: true
 tags:
 - конференция

@@ -1,7 +1,7 @@
 ---
 
 title: "Новый адрес блога, DevConf и HotCode"
-date: 2013-05-15 22:38
+date: 2013-05-15T22:38:00
 comments: true
 tags: 
 - конференция

@@ -1,7 +1,7 @@
 ---
 
 title: Переопределение Rails.logger и проблемы с ним 
-date: 2010-07-27 22:52
+date: 2010-07-27T22:52:00
 comments: true
 tags: 
 - rails
