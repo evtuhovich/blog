@@ -1,9 +1,11 @@
 ---
 
 title: Проблемы с кэшированием
-date: 2009-03-22 13:18:00 UTC
+date: 2009-03-22T13:18:00
 comments: true
-tags: memcache rails
+tags: 
+  - memcache
+  - rails
 published: true
 ---
 

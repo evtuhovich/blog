@@ -1,9 +1,10 @@
 ---
 
 title: Перенести ветку в git
-date: 2009-03-13 09:12:00 UTC
+date: 2009-03-13T09:12:00
 comments: true
-tags: git
+tags:
+  - git
 published: true
 ---
 

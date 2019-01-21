@@ -1,7 +1,7 @@
 ---
 
 title: Непрерывная интеграция
-date: 2009-02-27 14:45:00 UTC
+date: 2009-02-27T14:45:00
 comments: true
 tags:
 - cruisecontrol

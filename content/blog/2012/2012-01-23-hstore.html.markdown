@@ -3,7 +3,10 @@
 title: "Hstore — key-value расширение для postgresql"
 date: 2012-01-23 23:05
 comments: true
-tags: PostgreSQL hstore key-value
+tags:
+  - PostgreSQL
+  - hstore
+  - key-value
 ---
 
 Наверное, не все знают, что для postgresql существует большое количество расширений, которые называются 

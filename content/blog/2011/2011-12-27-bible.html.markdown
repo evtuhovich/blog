@@ -3,7 +3,9 @@
 title: "Библия PostgreSQL"
 date: 2011-12-27 17:11
 comments: true
-tags: PostgreSQL books
+tags:
+  - PostgreSQL
+  - books
 ---
 
 ![Библия](/images/pg-book.jpg)

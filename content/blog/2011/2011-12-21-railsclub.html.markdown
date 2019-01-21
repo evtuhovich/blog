@@ -3,7 +3,9 @@
 title: "Railsclub: отчет о прошедшей конференции"
 date: 2011-12-21 18:28
 comments: true
-tags: railsclub конференция
+tags:
+  - railsclub
+  - конференция
 ---
 
 В субботу 17 декабря прошла конференция [Railsclub](http://railsclub.ru), которую посетило приблизительно 170 человек. Я

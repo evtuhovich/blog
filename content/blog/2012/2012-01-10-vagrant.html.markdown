@@ -3,7 +3,9 @@
 title: "vagrant"
 date: 2012-01-10 23:55
 comments: true
-tags: vagrant, DevOps
+tags:
+  - vagrant
+  - DevOps
 ---
 
 Очень странно, что я до сих пор не написал о [Vagrant](http://vagrantup.com/) — инструменте создания и распространения
