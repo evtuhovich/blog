@@ -1,6 +1,6 @@
 ---
 title: Состояние DevOps на 2016 год
-date: 2016-09-28 15:05 MSK
+date: 2016-09-28T15:05:00
 tags:
   - State of DevOps
 ---

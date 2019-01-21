@@ -1,6 +1,6 @@
 ---
 title: Соло на ноже
-date: 2014-03-28 18:11 MSK
+date: 2014-03-28T18:11:00
 tags:
 - knife
 - chef

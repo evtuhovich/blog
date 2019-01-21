@@ -1,6 +1,6 @@
 ---
 title: Service Discovery
-date: 2017-03-09 15:01 MSK
+date: 2017-03-09T15:01:00
 tags:
   - микросервисы
 ---

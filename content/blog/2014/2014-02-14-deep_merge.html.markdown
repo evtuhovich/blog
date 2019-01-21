@@ -1,6 +1,6 @@
 ---
 title: Атрибуты в шефе и DeepMerge
-date: 2014-02-14 18:38 MSK
+date: 2014-02-14T18:38:00
 tags:
 - chef
 ---

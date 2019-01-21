@@ -1,7 +1,7 @@
 ---
 
 title: Состояние DevOps на 2017 год
-date: 2017-08-29 10:32 MSK
+date: 2017-08-29T10:32:00
 tags: 
   - State of DevOps
 fb_image: /images/devops2017.png
