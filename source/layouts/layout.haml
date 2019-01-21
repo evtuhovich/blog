@@ -6,7 +6,7 @@
   / <![endif]
   %head
     - title = current_page.data.title || 'Технические заметки одного Евтуховича'
-    - descr = current_article ? current_article.summary : "Про всякие технические штучки"
+    - descr = title
     - url = site_url + current_page.url
     %meta{charset: "utf-8"}/
     %title= title
