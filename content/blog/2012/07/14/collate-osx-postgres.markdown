@@ -14,7 +14,7 @@ Ubuntu хуже, чем в OSX, а что касается серверной ч
 К примеру, по-умолчанию, в Postgresql в OSX сломана сортировка русских слов. Решение я нашел
 [здесь](http://chipiga.pp.ua/sql/kak-zastavit-postgresql-pravilno-sortirovat-utf8-kirillitsu-na-mac-os-x/).
 
-READMORE
+<!--more-->
 
 Вкратце, в этой статье вместо сортировки русского языка сделана бинарная сортировка, которая в большинстве случаев
 работает.
