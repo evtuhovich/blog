@@ -8,8 +8,6 @@ footer: true
 blog: blog
 ---
 
-<%= partial 'reports/toc.markdown' %>
-
 # <a id="reports2018"></a>2018
 
 ## <a id="pipeline_borders"></a> DevOps и бизнес: границы конвейера поставки ПО
