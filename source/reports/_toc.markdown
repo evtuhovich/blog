@@ -1,3 +1,5 @@
+1. [2019](#reports2019)
+   1. [ Внедрение DevOps в больших организациях](#devops_in_enterprise)
 1. [2018](#reports2018)
    1. [ DevOps и бизнес: границы конвейера поставки ПО](#pipeline_borders)
 1. [2017](#reports2017)
