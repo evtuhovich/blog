@@ -40,7 +40,8 @@ tags:
 Ну, а потом опубликовать поскорее его командой `git push`.
 
 Кстати, моя компания сделала [отличный однодневный мастер-класс по
-git](https://education.express42.com/git?utm_source=evtuhovich)
+git](https://education.express42.com/git?utm_source=evtuhovich), обязательно приходите, расскажем вам обо всех тонкостях
+работы с гитом и не только.
 
 Хорошие материалы по git можно посмотреть здесь:
 
