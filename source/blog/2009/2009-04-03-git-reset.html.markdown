@@ -39,6 +39,9 @@ tags:
 
 Ну, а потом опубликовать поскорее его командой `git push`.
 
+Кстати, моя компания сделала [отличный однодневный мастер-класс по
+git](https://education.express42.com/git?utm_source=evtuhovich)
+
 Хорошие материалы по git можно посмотреть здесь:
 
 * [Git Community Book](http://book.git-scm.com/) --— на английском;
