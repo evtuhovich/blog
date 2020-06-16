@@ -6,11 +6,13 @@ tags:
 
 ---
 
+_Updated: 2020-03-30_
+
 Идея сделать сырникопедию пришла ко мне в голову совершенно случайно. Я давно выкладывал сырники в Инстаграмм, снабжая их подписями с перепетыми песнями из русского рока. В какой-то момент я понял, что не могу вспомнить, какие песни из русского рока я уже использовал, поэтому родилась идея сделать каталог, который бы помогал мне выбирать новые песни для сырников.
 
 <!--more-->
 
-Я проставил всем сырникам с правильными подписями [тэг в Инстаграмме](https://www.instagram.com/explore/tags/%D1%81%D1%8B%D1%80%D0%BD%D0%B8%D0%BA%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F/), а ниже табилца всех песен со ссылками, 29 записей. Я планирую регулярно обновлять Сырникопедию, чтобы все люди, искренне влюбленные в сырники и русский рок, могли в любой момент обратиться к ней.
+Я проставил всем сырникам с правильными подписями [тэг в Инстаграмме](https://www.instagram.com/explore/tags/%D1%81%D1%8B%D1%80%D0%BD%D0%B8%D0%BA%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F/), а ниже табилца всех песен со ссылками, 33 записи. Я планирую регулярно обновлять Сырникопедию, чтобы все люди, искренне влюбленные в сырники и русский рок, могли в любой момент обратиться к ней.
 
 Как истинный автор, я непоследователен, где-то вместо сырников у меня яичница, а вместо русского рока Doors или советские песни. А если обратиться к самым первым записям, то это были попытка сделать антологию русской поэзии, но она быстро провалилась, потому что кончились стихотворения.
 
@@ -22,16 +24,20 @@ tags:
 <tr><td rowspan="2">Агата Кристи</td><td>Два корабля</td><td>https://www.instagram.com/p/BbGeksfATS2</td></tr>
 <tr>                                 <td>Опиум для никого</td><td>https://www.instagram.com/p/BaqHlF3gcBJ</td></tr>
 
-<tr><td rowspan="5">Аквариум</td><td>Тень</td><td>https://www.instagram.com/p/Bas_xVBgDvj</td></tr>
+<tr><td rowspan="7">Аквариум</td><td>Тень</td><td>https://www.instagram.com/p/Bas_xVBgDvj</td></tr>
 <tr>                             <td>Камни в холодной воде</td><td>https://www.instagram.com/p/BZnR3YjAzUw</td></tr>
 <tr>                             <td>Город золотой</td><td>https://www.instagram.com/p/BLaOhhgAcns</td></tr>
 <tr>                             <td>Город золотой</td><td>https://www.instagram.com/p/BB1Vh9kSR_w</td></tr>
 <tr>                             <td>Поезд в огне</td><td>https://www.instagram.com/p/_nuHoySR2c</td></tr>
+<tr>                             <td>Поезд в огне</td><td>https://www.instagram.com/p/BxJ5Nkgl7Lm/</td></tr>
+<tr>                             <td>Не могу оторвать глаз от тебя</td><td>https://www.instagram.com/p/B-WzvJ2DWhI</td></tr>
 
 <tr><td>Ария</td><td>Беспечный ангел</td><td>https://www.instagram.com/p/_VrPp3SR8k</td></tr>
+<tr><td>Гражданская оборона</td><td>Все идет по плану</td><td>https://www.instagram.com/p/B9qxw0PDXEz</td></tr>
 
-<tr><td rowspan="2">ДДТ</td><td>Что такое осень</td><td>https://www.instagram.com/p/BaGGuWkAPrR</td></tr>
+<tr><td rowspan="3">ДДТ</td><td>Что такое осень</td><td>https://www.instagram.com/p/BaGGuWkAPrR</td></tr>
 <tr>                        <td>Метель</td><td>https://www.instagram.com/p/BWcA6lMg2D6</td></tr>
+<tr>                        <td>Метель</td><td>https://www.instagram.com/p/B88KboFDaB-</td></tr>
 
 <tr><td rowspan="2">Земфира</td><td>Небо Лондона</td><td>https://www.instagram.com/p/BctltxCAdJm</td></tr>
 <tr>                            <td>ППМЛ</td><td>https://www.instagram.com/p/BWt2PVVgube</td></tr>
