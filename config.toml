@@ -2,21 +2,29 @@ baseURL = "http://evtuhovich.ru/"
 languageCode ="ru-ru" 
 title = "Блог Ивана Евтуховича"
 theme = "ananke"
-
+disqusShortname = "evtuhovich"
 DefaultContentLanguage = "ru"
 SectionPagesMenu = "main"
 Paginate = 12
 googleAnalytics = ""
 enableRobotsTXT = true
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [sitemap]
   changefreq = "monthly"
   priority = 0.5
   filename = "sitemap.xml"
 
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 1
 [params]
   favicon = ""
-  description = "The last theme you'll ever need. Maybe."
+  description = "Блог Ивана Евтуховича"
   facebook = "https://www.facebook.com/evtuhovich"
   twitter = "https://twitter.com/evtuhovich"
   instagram = "https://www.instagram.com/evtuhovich/"
@@ -26,3 +34,11 @@ enableRobotsTXT = true
   linkedin = ""
   featured_image = "/images/gohugo-default-sample-hero-image.jpg"
   recent_posts_number = 2
+
+[menu]
+[[menu.about]]
+    identifier = "about"
+    name = "This is the blog section"
+    title = "blog section"
+    url = "/about/"
+    weight = -110

@@ -18,6 +18,7 @@ _Updated: 2020-03-30_
 
 *PS* Большое спасибо моему другу Ивану Рогулину, который всегда продолжает в камментах песни, которые я пишу.
 
+<!-- Table -->
 <table class="music">
 <tr><td>Doors</td><td>Riders on the Storm</td><td>https://www.instagram.com/p/BGdjeKzSR_z</td></tr>
 
