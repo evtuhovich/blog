@@ -3,10 +3,10 @@ languageCode ="ru-ru"
 title = "Блог Ивана Евтуховича"
 theme = "ananke"
 disqusShortname = "evtuhovich"
+googleAnalytics = "UA-28012309-1"
 DefaultContentLanguage = "ru"
 SectionPagesMenu = "main"
 Paginate = 12
-googleAnalytics = ""
 enableRobotsTXT = true
 
 [markup.goldmark.renderer]
