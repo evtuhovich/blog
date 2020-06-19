@@ -23,7 +23,7 @@ unsafe = true
     ordered = false
     startLevel = 1
 [params]
-  favicon = ""
+  favicon = "/images/favicon.ico"
   description = "Блог Ивана Евтуховича"
   facebook = "https://www.facebook.com/evtuhovich"
   twitter = "https://twitter.com/evtuhovich"
