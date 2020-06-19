@@ -9,6 +9,7 @@
 
 # Ignore the build directory
 /build
+/public
 
 # Ignore Sass' cache
 /.sass-cache
@@ -19,3 +20,4 @@
 .cache
 
 .s3_sync
+sync.sh

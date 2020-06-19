@@ -2,8 +2,8 @@ baseURL = "http://evtuhovich.ru/"
 languageCode ="ru-ru" 
 title = "Блог Ивана Евтуховича"
 theme = "ananke"
-disqusShortname = "evtuhovich"
-googleAnalytics = "UA-28012309-1"
+disqusShortname = "blog-evtuhovich"
+googleAnalytics = ""
 DefaultContentLanguage = "ru"
 SectionPagesMenu = "main"
 Paginate = 12
@@ -32,7 +32,7 @@ unsafe = true
   github = ""
   gitlab = ""
   linkedin = ""
-  featured_image = "/images/gohugo-default-sample-hero-image.jpg"
+  featured_image = "/images/background.jpg"
   recent_posts_number = 2
 
 [menu]
@@ -42,3 +42,38 @@ unsafe = true
     title = "blog section"
     url = "/about/"
     weight = -110
+
+[[deployment.targets]]
+# An arbitrary name for this target.
+name = "s3"
+# The Go Cloud Development Kit URL to deploy to. Examples:
+# GCS; see https://gocloud.dev/howto/blob/#gcs
+# URL = "gs://<Bucket Name>"
+
+# S3; see https://gocloud.dev/howto/blob/#s3
+# For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
+URL = "s3://evtuhovich.ru?region=eu-west-1"
+
+# Azure Blob Storage; see https://gocloud.dev/howto/blob/#azure
+# URL = "azblob://$web"
+
+# You can use a "prefix=" query parameter to target a subfolder of the bucket:
+# URL = "gs://<Bucket Name>?prefix=a/subfolder/"
+
+# If you are using a CloudFront CDN, deploy will invalidate the cache as needed.
+# cloudFrontDistributionID = <ID>
+
+# Optionally, you can include or exclude specific files.
+# See https://godoc.org/github.com/gobwas/glob#Glob for the glob pattern syntax.
+# If non-empty, the pattern is matched against the local path.
+# All paths are matched against in their filepath.ToSlash form.
+# If exclude is non-empty, and a local or remote file's path matches it, that file is not synced.
+# If include is non-empty, and a local or remote file's path does not match it, that file is not synced.
+# As a result, local files that don't pass the include/exclude filters are not uploaded to remote,
+# and remote files that don't pass the include/exclude filters are not deleted.
+# include = "**.html" # would only include files with ".html" suffix
+# exclude = "**.{jpg, png}" # would exclude files with ".jpg" or ".png" suffix
+
+
+# [[deployment.matchers]] configure behavior for files that match the Pattern.
+# Samples:
