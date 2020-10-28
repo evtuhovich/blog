@@ -33,7 +33,8 @@ unsafe = true
   gitlab = ""
   linkedin = ""
   featured_image = "/images/background.jpg"
-  recent_posts_number = 2
+  recent_posts_number = 10
+  mainSections = ["blog", "life"]
 
 [menu]
 [[menu.about]]
