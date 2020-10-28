@@ -4,7 +4,7 @@ date: 2018-11-25T16:14:00
 comments: true
 sharing: true
 footer: true
-blog: blog
+layout: single
 toc: true
 ---
 
