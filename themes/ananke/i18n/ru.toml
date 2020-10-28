@@ -11,7 +11,7 @@ other = "Недавние записи"
 other = "читать дальше"
 
 [whatsInThis]
-other = "Содержание {{ .Type }}"
+other = "Содержание"
 
 [related]
 other = "Схожие"
