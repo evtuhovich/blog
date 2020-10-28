@@ -36,13 +36,6 @@ unsafe = true
   recent_posts_number = 10
   mainSections = ["blog", "life"]
 
-[menu]
-[[menu.about]]
-    identifier = "about"
-    name = "This is the blog section"
-    title = "blog section"
-    url = "/about/"
-    weight = -110
 
 [[deployment.targets]]
 # An arbitrary name for this target.
