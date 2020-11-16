@@ -1,4 +1,4 @@
-baseURL = "http://evtuhovich.ru/"
+baseURL = "https://evtuhovich.ru/"
 languageCode ="ru-ru" 
 title = "Блог Ивана Евтуховича"
 theme = "ananke"
