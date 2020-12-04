@@ -3,25 +3,31 @@
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
       {{- .Content -}}
     </section>
-    <section class="flex-ns flex-wrap justify-around">
-      <ul>
-      {{ $year := split .Page.Path "/" }}
-      {{ $year := first 2 $year }}
-      {{/* $year := delimit $year "/" */}}
-      {{ range .Site.RegularPages }}
-        {{ $y := split .Path "/" }}
-        {{ $section := index $y 0 }}
-        {{ $y := index $y 1 }}
-        {{ if and (eq $y (index $year 1)) (eq $section .Section) }} 
+    <div class="mw8 center">    
+      <section class="flex-wrap justify-around">
+        {{ $oldYear := "2000" }}
+        {{ range .Site.RegularPages }}
+          {{ $y := split .Path "/" }}
+          {{ $year := index $y 1 }}
+          {{ if and (ne $year $oldYear) (ne $oldYear "2000") }}
+            </ul>
+          {{ end }}
+          {{ if ne $year $oldYear }}
+          <h2>
+            {{- $year }}
+          </h2>
+          <ul>
+          {{ end }}
           <li>
             <a href="{{ .Permalink }}" class="link dim">
               {{ .Title }}
             </a>
             {{ .Date.Format "2006-01-02" }}
           </li>
+          {{ $oldYear = $year }}
         {{ end }}
-      {{ end }}
-      </ul>
-    </section>
+
+      </section>
+    </div>
   </article>
 {{ end }}
