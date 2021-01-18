@@ -1,0 +1,18 @@
+{{ $table := $.Site.Data.songs }}
+
+<table class="songtable">
+  {{ range $group, $songs := $table }}
+		{{ $.Scratch.Set "count" 0 }}
+		{{ range $song := $songs }}
+			{{ range $name, $link := $song }}
+				<tr>
+					{{ if eq 0 ($.Scratch.Get "count") }}
+						<td rowspan="{{ len $songs }}">{{ $group }}</td>
+					{{ end }}
+					<td><a href="{{ $link }}">{{ $name }}</a></td>
+				</tr>
+				{{ $.Scratch.Add "count" 1 }}
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	</table>
