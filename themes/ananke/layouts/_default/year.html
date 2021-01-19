@@ -3,16 +3,16 @@
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
       {{- .Content -}}
     </section>
-    <div class="mw8 center">    
+    <div class="mw8 center">
       <section class="flex-wrap justify-around">
-        {{ $oldYear := "2000" }}
-        {{ range .Site.RegularPages }}
+        {{ $.Scratch.Set "oldYear" "2000" }}
+        {{ range where .Site.RegularPages "Section" "!=" "" }}
           {{ $y := split .Path "/" }}
           {{ $year := index $y 1 }}
-          {{ if and (ne $year $oldYear) (ne $oldYear "2000") }}
+          {{ if and (ne $year ($.Scratch.Get "oldYear")) (ne ($.Scratch.Get "oldYear") "2000") }}
             </ul>
           {{ end }}
-          {{ if ne $year $oldYear }}
+          {{ if ne $year ($.Scratch.Get "oldYear") }}
           <h2>
             {{- $year }}
           </h2>
@@ -24,7 +24,7 @@
             </a>
             {{ .Date.Format "2006-01-02" }}
           </li>
-          {{ $oldYear = $year }}
+          {{ $.Scratch.Set "oldYear" $year }}
         {{ end }}
 
       </section>
