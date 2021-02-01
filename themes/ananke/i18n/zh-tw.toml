@@ -8,28 +8,28 @@ other = "所有 {{.Title }}"
 other = "最近 {{.Title }}"
 
 [readMore]
-other = "继续阅读"
+other = "繼續閱讀"
 
 [whatsInThis]
-other = "这是什么 {{ .Type }}"
+other = "更多關於 {{ .Type }}"
 
 [related]
-other = "相关內容"
+other = "相關內容"
 
 [yourName]
 other = "你的名字"
 
 [emailAddress]
-other = "电邮地址"
+other = "Email"
 
 [message]
-other = "信息"
+other = "訊息"
 
 [emailRequiredNote]
-other = "需要电子邮件地址。"
+other = "必須填寫 Email"
 
 [send]
-other = "发送"
+other = "送出"
 
 [taxonomyPageList]
-other = "标签为“{{ .Title }}”的页面如下"
+other = "標籤為 “{{ .Title }}” 的頁面如下"

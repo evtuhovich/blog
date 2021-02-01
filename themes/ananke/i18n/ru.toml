@@ -2,16 +2,16 @@
 other = "Ещё"
 
 [allTitle]
-other = "Все записи"
+other = "Все {{.Title }}"
 
 [recentTitle]
-other = "Недавние записи"
+other = "Недавние {{.Title }}"
 
 [readMore]
 other = "читать дальше"
 
 [whatsInThis]
-other = "Содержание"
+other = "Содержание {{ .Type }}"
 
 [related]
 other = "Схожие"
@@ -29,4 +29,7 @@ other = "Сообщение"
 other = "Требуется адрес электронной почты."
 
 [send]
-other = "трансмиссия"
+other = "Отправить"
+
+[taxonomyPageList]
+other = "Ниже вы найдете страницы, на которых используется термин таксономии “{{ .Title }}”"
