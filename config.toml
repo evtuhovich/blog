@@ -36,6 +36,7 @@ unsafe = true
   recent_posts_number = 10
   mainSections = ["blog", "life"]
   custom_css = ["css/custom.css"]
+  recent_copy = "Недавние записи"
 
 
 [[deployment.targets]]
