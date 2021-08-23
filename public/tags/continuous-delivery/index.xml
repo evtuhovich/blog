@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>continuous delivery on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/continuous-delivery/</link>
+    <description>Recent content in continuous delivery on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 11 Mar 2015 10:34:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/continuous-delivery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Непрерывная поставка ПО</title>
+      <link>https://evtuhovich.ru/blog/2015/03/11/continuous-delivery/</link>
+      <pubDate>Wed, 11 Mar 2015 10:34:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2015/03/11/continuous-delivery/</guid>
+      <description>Термин «Непрерывная поставка ПО» (Continuous Delivery, CD) прочно вошел в обиход в конце 2010 году, после выпуска одноименной книги.
+В книге описываются достаточно простые идеи о том, как сделать процесс поставки ПО таким, чтобы его можно было выкатывать после каждого комита. И, хотя прошло уже больше четырех лет, до сих пор такой подход к поставке ПО не стал стандартом. По вполне понятным причинам множество компаний продолжает использовать кустарное либо мануфактурное производство, вместо перехода к конвейеру.</description>
+    </item>
+    
+  </channel>
+</rss>

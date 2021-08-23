@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ru-ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Tsung — цунами ручного приготовления | Блог Ивана Евтуховича</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="С моей точки зрения, любое нагрузочное тестирование — это измерение сферического коня в вакуму в идеальных попугаях. Но
+иногда нужны хоть какие-то данные о том, какую нагрузку выдержит ваша система. И тогда на помощь приходят специальные
+инструменты для создания нагрузки.
+Хороший обзор таких инструментов (httperf, siege, ab, pronk) есть у Льва Валкина.
+Но у нас была задача чуть посложнее, хотелось проверить, как поведет себя система под «реальной» нагрузкой. И если вам
+нужны сложные сценарии нагрузки, то тут не обойтись без tsung. Хочется сразу
+предупредить, что документация, хоть и содержит ответы на многие вопросы, но не блещет особой понятностью и полнотой.
+Тем не менее, аналогов этому инструменту я не знаю.
+Сейчас мы будем нагрузочно тестировать мой блог (давайте на секунду вообразим, что он стал мегапопулярным). Оставайтесь
+с нами, но бойтесь, впереди много xml!">
+    <meta name="generator" content="Hugo 0.87.0" />
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+    
+
+  
+  
+    <link rel="stylesheet" href="/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+  <link rel="stylesheet" href="/css/custom.css">
+
+
+    
+      
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="Tsung — цунами ручного приготовления" />
+<meta property="og:description" content="С моей точки зрения, любое нагрузочное тестирование — это измерение сферического коня в вакуму в идеальных попугаях. Но
+иногда нужны хоть какие-то данные о том, какую нагрузку выдержит ваша система. И тогда на помощь приходят специальные
+инструменты для создания нагрузки.
+Хороший обзор таких инструментов (httperf, siege, ab, pronk) есть у Льва Валкина.
+Но у нас была задача чуть посложнее, хотелось проверить, как поведет себя система под «реальной» нагрузкой. И если вам
+нужны сложные сценарии нагрузки, то тут не обойтись без tsung. Хочется сразу
+предупредить, что документация, хоть и содержит ответы на многие вопросы, но не блещет особой понятностью и полнотой.
+Тем не менее, аналогов этому инструменту я не знаю.
+Сейчас мы будем нагрузочно тестировать мой блог (давайте на секунду вообразим, что он стал мегапопулярным). Оставайтесь
+с нами, но бойтесь, впереди много xml!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://evtuhovich.ru/blog/2014/04/02/tsung/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2014-04-02T18:43:00+00:00" />
+<meta property="article:modified_time" content="2014-04-02T18:43:00+00:00" />
+
+<meta itemprop="name" content="Tsung — цунами ручного приготовления">
+<meta itemprop="description" content="С моей точки зрения, любое нагрузочное тестирование — это измерение сферического коня в вакуму в идеальных попугаях. Но
+иногда нужны хоть какие-то данные о том, какую нагрузку выдержит ваша система. И тогда на помощь приходят специальные
+инструменты для создания нагрузки.
+Хороший обзор таких инструментов (httperf, siege, ab, pronk) есть у Льва Валкина.
+Но у нас была задача чуть посложнее, хотелось проверить, как поведет себя система под «реальной» нагрузкой. И если вам
+нужны сложные сценарии нагрузки, то тут не обойтись без tsung. Хочется сразу
+предупредить, что документация, хоть и содержит ответы на многие вопросы, но не блещет особой понятностью и полнотой.
+Тем не менее, аналогов этому инструменту я не знаю.
+Сейчас мы будем нагрузочно тестировать мой блог (давайте на секунду вообразим, что он стал мегапопулярным). Оставайтесь
+с нами, но бойтесь, впереди много xml!"><meta itemprop="datePublished" content="2014-04-02T18:43:00+00:00" />
+<meta itemprop="dateModified" content="2014-04-02T18:43:00+00:00" />
+<meta itemprop="wordCount" content="1192">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tsung — цунами ручного приготовления"/>
+<meta name="twitter:description" content="С моей точки зрения, любое нагрузочное тестирование — это измерение сферического коня в вакуму в идеальных попугаях. Но
+иногда нужны хоть какие-то данные о том, какую нагрузку выдержит ваша система. И тогда на помощь приходят специальные
+инструменты для создания нагрузки.
+Хороший обзор таких инструментов (httperf, siege, ab, pronk) есть у Льва Валкина.
+Но у нас была задача чуть посложнее, хотелось проверить, как поведет себя система под «реальной» нагрузкой. И если вам
+нужны сложные сценарии нагрузки, то тут не обойтись без tsung. Хочется сразу
+предупредить, что документация, хоть и содержит ответы на многие вопросы, но не блещет особой понятностью и полнотой.
+Тем не менее, аналогов этому инструменту я не знаю.
+Сейчас мы будем нагрузочно тестировать мой блог (давайте на секунду вообразим, что он стал мегапопулярным). Оставайтесь
+с нами, но бойтесь, впереди много xml!"/>
+
+	<meta name="yandex-verification" content="844263c66799f878" />
+
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter40052600 = new Ya.Metrika({
+                    id:40052600,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/40052600" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28012309-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28012309-1');
+</script>
+
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Блог Ивана Евтуховича
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/calendar/" title="Архив page">
+              Архив
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/blog/" title="Блог page">
+              Блог
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/life/" title="Жизнь page">
+              Жизнь
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="Обо мне page">
+              Обо мне
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+<a href="https://www.facebook.com/evtuhovich" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://twitter.com/evtuhovich" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://www.instagram.com/evtuhovich/" target="_blank" class="link-transition instagram link dib z-999 pt3 pt0-l mr1" title="Instagram link" rel="noopener" aria-label="follow on Instagram——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M42.271,26.578v-0.006c0.502,0,1.005,0.01,1.508-0.002  c0.646-0.017,1.172-0.57,1.172-1.217c0-0.963,0-1.927,0-2.89c0-0.691-0.547-1.24-1.236-1.241c-0.961,0-1.922-0.001-2.883,0  c-0.688,0.001-1.236,0.552-1.236,1.243c-0.001,0.955-0.004,1.91,0.003,2.865c0.001,0.143,0.028,0.291,0.073,0.426  c0.173,0.508,0.639,0.82,1.209,0.823C41.344,26.579,41.808,26.578,42.271,26.578z M33,27.817c-3.384-0.002-6.135,2.721-6.182,6.089  c-0.049,3.46,2.72,6.201,6.04,6.272c3.454,0.074,6.248-2.686,6.321-6.043C39.254,30.675,36.462,27.815,33,27.817z M21.046,31.116  v0.082c0,4.515-0.001,9.03,0,13.545c0,0.649,0.562,1.208,1.212,1.208c7.16,0.001,14.319,0.001,21.479,0  c0.656,0,1.215-0.557,1.215-1.212c0.001-4.509,0-9.02,0-13.528v-0.094h-2.912c0.411,1.313,0.537,2.651,0.376,4.014  c-0.161,1.363-0.601,2.631-1.316,3.803s-1.644,2.145-2.779,2.918c-2.944,2.006-6.821,2.182-9.946,0.428  c-1.579-0.885-2.819-2.12-3.685-3.713c-1.289-2.373-1.495-4.865-0.739-7.451C22.983,31.116,22.021,31.116,21.046,31.116z   M45.205,49.255c0.159-0.026,0.318-0.049,0.475-0.083c1.246-0.265,2.264-1.304,2.508-2.557c0.025-0.137,0.045-0.273,0.067-0.409  V21.794c-0.021-0.133-0.04-0.268-0.065-0.401c-0.268-1.367-1.396-2.428-2.78-2.618c-0.058-0.007-0.113-0.02-0.17-0.03H20.761  c-0.147,0.027-0.296,0.047-0.441,0.08c-1.352,0.308-2.352,1.396-2.545,2.766c-0.008,0.057-0.02,0.114-0.029,0.171V46.24  c0.028,0.154,0.05,0.311,0.085,0.465c0.299,1.322,1.427,2.347,2.77,2.52c0.064,0.008,0.13,0.021,0.195,0.03H45.205z M33,64  C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        БЛОГ
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://evtuhovich.ru/blog/2014/04/02/tsung/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://evtuhovich.ru/blog/2014/04/02/tsung/&amp;text=Tsung%c2%a0%e2%80%94%20%d1%86%d1%83%d0%bd%d0%b0%d0%bc%d0%b8%20%d1%80%d1%83%d1%87%d0%bd%d0%be%d0%b3%d0%be%20%d0%bf%d1%80%d0%b8%d0%b3%d0%be%d1%82%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d1%8f" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://evtuhovich.ru/blog/2014/04/02/tsung/&amp;title=Tsung%c2%a0%e2%80%94%20%d1%86%d1%83%d0%bd%d0%b0%d0%bc%d0%b8%20%d1%80%d1%83%d1%87%d0%bd%d0%be%d0%b3%d0%be%20%d0%bf%d1%80%d0%b8%d0%b3%d0%be%d1%82%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d1%8f" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Tsung — цунами ручного приготовления</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-04-02T18:43:00Z">April 2, 2014</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>С моей точки зрения, любое нагрузочное тестирование — это измерение сферического коня в вакуму в идеальных попугаях. Но
+иногда нужны хоть какие-то данные о том, какую нагрузку выдержит ваша система. И тогда на помощь приходят специальные
+инструменты для создания нагрузки.</p>
+<p>Хороший обзор таких инструментов (httperf, siege, ab, pronk) есть у <a href="http://lionet.livejournal.com/99984.html">Льва Валкина</a>.
+Но у нас была задача чуть посложнее, хотелось проверить, как поведет себя система под «реальной» нагрузкой. И если вам
+нужны сложные сценарии нагрузки, то тут не обойтись без <a href="http://tsung.erlang-projects.org/">tsung</a>. Хочется сразу
+предупредить, что документация, хоть и содержит ответы на многие вопросы, но не блещет особой понятностью и полнотой.
+Тем не менее, аналогов этому инструменту я не знаю.</p>
+<p>Сейчас мы будем нагрузочно тестировать мой блог (давайте на секунду вообразим, что он стал мегапопулярным). Оставайтесь
+с нами, но бойтесь, впереди много xml!</p>
+<p>Для того, чтобы сгенерировать тестовые планы, можно воспользоваться утилитой <code>tsung-recorder</code>. После того, как вы
+делаете <code>tsung-recorder start</code>, на порту 8090 подымается http-прокси. В настройках системы (или браузера) пропишите
+прокси localhost:8090 и дальше притворитесь пользователем и прощелкайте сайт. После того, как вам надоест это, выполните
+<code>tsung-recorder stop</code>, и у вас появится файл вида <code>/Users/brun/.tsung/tsung_recorder20140402-1855.xml</code>.</p>
+<p>Выглядит этот файл приблизительно вот так.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;session</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;rec20140402-1908&#39;</span> <span style="color:#a6e22e">probability=</span><span style="color:#e6db74">&#39;100&#39;</span>  <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#39;ts_http&#39;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://localhost:4567/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/modernizr-2.0.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/ender.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/octopress.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/ender.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/octopress.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/images/line-tile.png?1392294669&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">if_modified_since=</span><span style="color:#e6db74">&#39;Sat, 15 Feb 2014 19:50:57 GMT&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://www.google-analytics.com/__utm.gif?utmwv=5.4.8&amp;amp;utms=14&amp;amp;utmn=652893960&amp;amp;utmhn=localhost&amp;amp;utmcs=UTF-8&amp;amp;utmsr=1440x900&amp;amp;utmvp=1436x791&amp;amp;utmsc=24-bit&amp;amp;utmul=en-gb&amp;amp;utmje=1&amp;amp;utmfl=12.0%20r0&amp;amp;utmdt=%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%95%D0%B2%D1%82%D1%83%D1%85%D0%BE%D0%B2%D0%B8%D1%87%D0%B0&amp;amp;utmhid=1795243922&amp;amp;utmr=0&amp;amp;utmp=%2F&amp;amp;utmht=1396451305551&amp;amp;utmac=UA-28012309-1&amp;amp;utmcc=__utma%3D111872281.1944978080.1358763093.1396030618.1396449754.56%3B%2B__utmz%3D111872281.1358763093.1.1.utmcsr%3D(direct)%7Cutmccn%3D(direct)%7Cutmcmd%3D(none)%3B&amp;amp;utmu=q~&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/__utm.gif?utmwv=5.4.8&amp;amp;utms=14&amp;amp;utmn=652893960&amp;amp;utmhn=localhost&amp;amp;utmcs=UTF-8&amp;amp;utmsr=1440x900&amp;amp;utmvp=1436x791&amp;amp;utmsc=24-bit&amp;amp;utmul=en-gb&amp;amp;utmje=1&amp;amp;utmfl=12.0%20r0&amp;amp;utmdt=%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%95%D0%B2%D1%82%D1%83%D1%85%D0%BE%D0%B2%D0%B8%D1%87%D0%B0&amp;amp;utmhid=1795243922&amp;amp;utmr=0&amp;amp;utmp=%2F&amp;amp;utmht=1396451305551&amp;amp;utmac=UA-28012309-1&amp;amp;utmcc=__utma%3D111872281.1944978080.1358763093.1396030618.1396449754.56%3B%2B__utmz%3D111872281.1358763093.1.1.utmcsr%3D(direct)%7Cutmccn%3D(direct)%7Cutmcmd%3D(none)%3B&amp;amp;utmu=q~&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/__utm.gif?utmwv=5.4.8&amp;amp;utms=14&amp;amp;utmn=652893960&amp;amp;utmhn=localhost&amp;amp;utmcs=UTF-8&amp;amp;utmsr=1440x900&amp;amp;utmvp=1436x791&amp;amp;utmsc=24-bit&amp;amp;utmul=en-gb&amp;amp;utmje=1&amp;amp;utmfl=12.0%20r0&amp;amp;utmdt=%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%95%D0%B2%D1%82%D1%83%D1%85%D0%BE%D0%B2%D0%B8%D1%87%D0%B0&amp;amp;utmhid=1795243922&amp;amp;utmr=0&amp;amp;utmp=%2F&amp;amp;utmht=1396451305551&amp;amp;utmac=UA-28012309-1&amp;amp;utmcc=__utma%3D111872281.1944978080.1358763093.1396030618.1396449754.56%3B%2B__utmz%3D111872281.1358763093.1.1.utmcsr%3D(direct)%7Cutmccn%3D(direct)%7Cutmcmd%3D(none)%3B&amp;amp;utmu=q~&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://connect.facebook.net/en_US/all.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/en_US/all.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://localhost:4567/images/noise.png?1392294669&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">if_modified_since=</span><span style="color:#e6db74">&#39;Sat, 15 Feb 2014 19:50:57 GMT&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://blog-evtuhovich.disqus.com/count-data.js?2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2013%2F06%2F28%2Fpg-stat-statements%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2013%2F08%2F03%2Fpartitioning%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2013%2F09%2F04%2Fbreaking-news%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2013%2F11%2F13%2Fdeflope%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F01%2F04%2Fpodcasts%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F02%2F13%2Fbye-octopress%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F02%2F14%2Fdeep_merge%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F03%2F28%2Fadministrativa%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F03%2F28%2Fknife-solo%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F04%2F02%2Ftsung%2F&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/count-data.js?2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2013%2F06%2F28%2Fpg-stat-statements%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2013%2F08%2F03%2Fpartitioning%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2013%2F09%2F04%2Fbreaking-news%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2013%2F11%2F13%2Fdeflope%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F01%2F04%2Fpodcasts%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F02%2F13%2Fbye-octopress%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F02%2F14%2Fdeep_merge%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F03%2F28%2Fadministrativa%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F03%2F28%2Fknife-solo%2F&amp;amp;2=http%3A%2F%2Flocalhost%3A4567%2Fblog%2F2014%2F04%2F02%2Ftsung%2F&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;21&#39;</span><span style="color:#f92672">/&gt;</span>
+
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://localhost:4567/blog/categories&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/modernizr-2.0.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/octopress.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/ender.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/ender.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/octopress.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/images/line-tile.png?1392294669&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">if_modified_since=</span><span style="color:#e6db74">&#39;Sat, 15 Feb 2014 19:50:57 GMT&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://connect.facebook.net/en_US/all.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/en_US/all.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/en_US/all.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://localhost:4567/images/noise.png?1392294669&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">if_modified_since=</span><span style="color:#e6db74">&#39;Sat, 15 Feb 2014 19:50:57 GMT&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://www.google-analytics.com/__utm.gif?utmwv=5.4.8&amp;amp;utms=15&amp;amp;utmn=1115728760&amp;amp;utmhn=localhost&amp;amp;utmcs=UTF-8&amp;amp;utmsr=1440x900&amp;amp;utmvp=1436x791&amp;amp;utmsc=24-bit&amp;amp;utmul=en-gb&amp;amp;utmje=1&amp;amp;utmfl=12.0%20r0&amp;amp;utmdt=%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81&amp;amp;utmhid=515038711&amp;amp;utmr=0&amp;amp;utmp=%2Fblog%2Fcategories&amp;amp;utmht=1396451326877&amp;amp;utmac=UA-28012309-1&amp;amp;utmcc=__utma%3D111872281.1944978080.1358763093.1396030618.1396449754.56%3B%2B__utmz%3D111872281.1358763093.1.1.utmcsr%3D(direct)%7Cutmccn%3D(direct)%7Cutmcmd%3D(none)%3B&amp;amp;utmu=q~&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/__utm.gif?utmwv=5.4.8&amp;amp;utms=15&amp;amp;utmn=1115728760&amp;amp;utmhn=localhost&amp;amp;utmcs=UTF-8&amp;amp;utmsr=1440x900&amp;amp;utmvp=1436x791&amp;amp;utmsc=24-bit&amp;amp;utmul=en-gb&amp;amp;utmje=1&amp;amp;utmfl=12.0%20r0&amp;amp;utmdt=%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81&amp;amp;utmhid=515038711&amp;amp;utmr=0&amp;amp;utmp=%2Fblog%2Fcategories&amp;amp;utmht=1396451326877&amp;amp;utmac=UA-28012309-1&amp;amp;utmcc=__utma%3D111872281.1944978080.1358763093.1396030618.1396449754.56%3B%2B__utmz%3D111872281.1358763093.1.1.utmcsr%3D(direct)%7Cutmccn%3D(direct)%7Cutmcmd%3D(none)%3B&amp;amp;utmu=q~&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">/&gt;</span>
+
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://localhost:4567/blog/categories/rollback/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/modernizr-2.0.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/ender.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/octopress.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/ender.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/octopress.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/images/line-tile.png?1392294669&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">if_modified_since=</span><span style="color:#e6db74">&#39;Sat, 15 Feb 2014 19:50:57 GMT&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://connect.facebook.net/en_US/all.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/en_US/all.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/en_US/all.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/en_US/all.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://localhost:4567/images/noise.png?1392294669&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">if_modified_since=</span><span style="color:#e6db74">&#39;Sat, 15 Feb 2014 19:50:57 GMT&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;http://www.google-analytics.com/__utm.gif?utmwv=5.4.8&amp;amp;utms=16&amp;amp;utmn=1214674352&amp;amp;utmhn=localhost&amp;amp;utmcs=UTF-8&amp;amp;utmsr=1440x900&amp;amp;utmvp=1436x791&amp;amp;utmsc=24-bit&amp;amp;utmul=en-gb&amp;amp;utmje=1&amp;amp;utmfl=12.0%20r0&amp;amp;utmdt=%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%95%D0%B2%D1%82%D1%83%D1%85%D0%BE%D0%B2%D0%B8%D1%87%D0%B0&amp;amp;utmhid=1238120725&amp;amp;utmr=0&amp;amp;utmp=%2Fblog%2Fcategories%2Frollback%2F&amp;amp;utmht=1396451329783&amp;amp;utmac=UA-28012309-1&amp;amp;utmcc=__utma%3D111872281.1944978080.1358763093.1396030618.1396449754.56%3B%2B__utmz%3D111872281.1358763093.1.1.utmcsr%3D(direct)%7Cutmccn%3D(direct)%7Cutmcmd%3D(none)%3B&amp;amp;utmu=q~&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/__utm.gif?utmwv=5.4.8&amp;amp;utms=16&amp;amp;utmn=1214674352&amp;amp;utmhn=localhost&amp;amp;utmcs=UTF-8&amp;amp;utmsr=1440x900&amp;amp;utmvp=1436x791&amp;amp;utmsc=24-bit&amp;amp;utmul=en-gb&amp;amp;utmje=1&amp;amp;utmfl=12.0%20r0&amp;amp;utmdt=%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%95%D0%B2%D1%82%D1%83%D1%85%D0%BE%D0%B2%D0%B8%D1%87%D0%B0&amp;amp;utmhid=1238120725&amp;amp;utmr=0&amp;amp;utmp=%2Fblog%2Fcategories%2Frollback%2F&amp;amp;utmht=1396451329783&amp;amp;utmac=UA-28012309-1&amp;amp;utmcc=__utma%3D111872281.1944978080.1358763093.1396030618.1396449754.56%3B%2B__utmz%3D111872281.1358763093.1.1.utmcsr%3D(direct)%7Cutmccn%3D(direct)%7Cutmcmd%3D(none)%3B&amp;amp;utmu=q~&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+
+
+<span style="color:#f92672">&lt;/session&gt;</span>
+</code></pre></div><p>Как видно, в нем много лишнего, давайте почистим его и получим какой-то план тестирования только моего блога.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">
+<span style="color:#f92672">&lt;session</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;rec20140402-1908&#39;</span> <span style="color:#a6e22e">probability=</span><span style="color:#e6db74">&#39;100&#39;</span>  <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#39;ts_http&#39;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/modernizr-2.0.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/ender.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/octopress.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/ender.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/octopress.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/images/line-tile.png?1392294669&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">if_modified_since=</span><span style="color:#e6db74">&#39;Sat, 15 Feb 2014 19:50:57 GMT&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/images/noise.png?1392294669&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">if_modified_since=</span><span style="color:#e6db74">&#39;Sat, 15 Feb 2014 19:50:57 GMT&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;21&#39;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/categories&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/categories/rollback/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/2009/05/19/two-databases/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/life&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/about&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/2014/02/13/bye-octopress/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/archives&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;4&#39;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/categories/knife/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+<span style="color:#f92672">&lt;/session&gt;</span>
+
+</code></pre></div><p>Удалим все ненужные нам ресурсы, а для ресурсов блога оставим только url, удалив <code>http://localhost:4567</code>. Далее
+напишем файл tsung.xml. Я постарался отразить в комментариях в xml все интересные для меня моменты.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<span style="color:#75715e">&lt;!DOCTYPE tsung SYSTEM &#34;/usr/local/Cellar/tsung/1.5.0/share/tsung/tsung-1.0.dtd&#34; &gt;</span>
+
+<span style="color:#f92672">&lt;tsung</span> <span style="color:#a6e22e">loglevel=</span><span style="color:#e6db74">&#34;info&#34;</span> <span style="color:#a6e22e">dumptraffic=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;1.0&#34;</span><span style="color:#f92672">&gt;</span>
+
+  <span style="color:#f92672">&lt;clients&gt;</span>
+    <span style="color:#f92672">&lt;client</span> <span style="color:#a6e22e">host=</span><span style="color:#e6db74">&#34;localhost&#34;</span> <span style="color:#a6e22e">use_controller_vm=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">maxusers=</span><span style="color:#e6db74">&#34;10000&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/clients&gt;</span>
+
+  <span style="color:#75715e">&lt;!-- Если надо нагружат сразу несколько серверов, то можно указать их список ниже --&gt;</span>
+  <span style="color:#f92672">&lt;servers&gt;</span>
+    <span style="color:#f92672">&lt;server</span> <span style="color:#a6e22e">host=</span><span style="color:#e6db74">&#34;localhost&#34;</span> <span style="color:#a6e22e">port=</span><span style="color:#e6db74">&#34;4567&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;tcp&#34;</span><span style="color:#f92672">&gt;&lt;/server&gt;</span>
+  <span style="color:#f92672">&lt;/servers&gt;</span>
+
+  <span style="color:#f92672">&lt;load</span> <span style="color:#a6e22e">duration=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">unit=</span><span style="color:#e6db74">&#34;hour&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;arrivalphase</span> <span style="color:#a6e22e">phase=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">duration=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">unit=</span><span style="color:#e6db74">&#34;minute&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;users</span> <span style="color:#a6e22e">maxnumber=</span><span style="color:#e6db74">&#34;1000&#34;</span> <span style="color:#a6e22e">arrivalrate=</span><span style="color:#e6db74">&#34;1000&#34;</span> <span style="color:#a6e22e">unit=</span><span style="color:#e6db74">&#34;minute&#34;</span><span style="color:#f92672">&gt;&lt;/users&gt;</span>
+    <span style="color:#f92672">&lt;/arrivalphase&gt;</span>
+  <span style="color:#f92672">&lt;/load&gt;</span>
+
+  <span style="color:#f92672">&lt;options&gt;</span>
+    <span style="color:#75715e">&lt;!-- Сложим в файл urls.csv список всех урлов блога --&gt;</span>
+    <span style="color:#f92672">&lt;option</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;file_server&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;urls.csv&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;urls&#34;</span><span style="color:#f92672">&gt;&lt;/option&gt;</span>
+  <span style="color:#f92672">&lt;/options&gt;</span>
+
+  <span style="color:#f92672">&lt;sessions&gt;</span>
+
+    <span style="color:#75715e">&lt;!-- поскольку боты будут делать только 1 запрос, вес (weight) у них поставим побольше --&gt;</span>
+    <span style="color:#f92672">&lt;session</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;bot&#39;</span> <span style="color:#a6e22e">weight=</span><span style="color:#e6db74">&#39;30&#39;</span>  <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#39;ts_http&#39;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;setdynvars</span> <span style="color:#a6e22e">sourcetype=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">fileid=</span><span style="color:#e6db74">&#34;urls&#34;</span> <span style="color:#a6e22e">delimiter=</span><span style="color:#e6db74">&#34;;&#34;</span> <span style="color:#a6e22e">order=</span><span style="color:#e6db74">&#34;iter&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#75715e">&lt;!-- можно использовать как переменную %%_url%% в динамических запросах --&gt;</span>
+        <span style="color:#f92672">&lt;var</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;url&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/setdynvars&gt;</span>
+
+      <span style="color:#75715e">&lt;!-- subst=&#34;true&#34; обязателен для динамических запросов --&gt;</span>
+      <span style="color:#f92672">&lt;request</span> <span style="color:#a6e22e">subst=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;%%_url%%&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+    <span style="color:#f92672">&lt;/session&gt;</span>
+
+    <span style="color:#f92672">&lt;session</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;normal_user&#39;</span> <span style="color:#a6e22e">weight=</span><span style="color:#e6db74">&#39;1&#39;</span>  <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#39;ts_http&#39;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#75715e">&lt;!-- здесь мы вставляем сессию из предыдущего примера --&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/modernizr-2.0.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/ender.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/octopress.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/ender.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/javascripts/octopress.js&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/images/line-tile.png?1392294669&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">if_modified_since=</span><span style="color:#e6db74">&#39;Sat, 15 Feb 2014 19:50:57 GMT&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/images/noise.png?1392294669&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">if_modified_since=</span><span style="color:#e6db74">&#39;Sat, 15 Feb 2014 19:50:57 GMT&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;21&#39;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/categories&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/categories/rollback/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/2009/05/19/two-databases/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/life&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/about&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/2014/02/13/bye-octopress/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/archives&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;4&#39;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/blog/categories/knife/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+      <span style="color:#f92672">&lt;thinktime</span> <span style="color:#a6e22e">random=</span><span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;request&gt;&lt;http</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#39;1.1&#39;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#39;GET&#39;</span><span style="color:#f92672">&gt;&lt;/http&gt;&lt;/request&gt;</span>
+    <span style="color:#f92672">&lt;/session&gt;</span>
+  <span style="color:#f92672">&lt;/sessions&gt;</span>
+<span style="color:#f92672">&lt;/tsung&gt;</span>
+</code></pre></div><p>В файл <code>urls.csv</code> мы положим список всех урлов сайта, выглядеть он будет приблизительно так.</p>
+<pre><code>/about/index.html
+/blog/2009/01/26/capistrano/index.html
+/blog/2009/02/27/continuous-integration/index.html
+/blog/2009/03/13/git-move-branch/index.html
+/blog/2009/03/20/big-tables/index.html
+/blog/2009/03/22/cache-problem/index.html
+/blog/2009/03/23/test-and-testing/index.html
+/blog/2009/04/03/git-reset/index.html
+/blog/2009/04/04/queue/index.html
+/blog/2009/04/08/concurent-index/index.html
+/blog/2009/04/20/to-yaml-recursion/index.html
+/blog/2009/05/19/two-databases/index.html
+/blog/2009/05/22/live-table-migration/index.html
+/blog/2009/05/28/validates-uniqueness-of/index.html
+</code></pre><p>После этого мы запустим tsung. Он будет создавать 1000 пользователей в минуту, причем 30 из них будут ботами, которые
+дергают один url, а один — «живым» пользователем, которые будет прокликивать сайт согласно нашему сценарию.</p>
+<p>После этого мы запускаем <code>tsung start</code>. Он проведет нагрузочное тестирование, а дальше получим результаты с помощью
+<code>tsung_stats.pl</code> (в OS X он лежит здесь <code>/usr/local/Cellar/tsung/1.5.0/lib/tsung/bin/tsung_stats.pl</code>, если вы ставили
+tsung из brew). Для этого надо зайти в папку <code>~/.tsung/log/20140402-1931</code> в нашем случае и запустить <code>tsung_stats.pl</code>.</p>
+<p>Он сгенерирует из файла <code>tsung.log</code> два html страницы: graph.html и report.html. Там много чего есть, я приведу для
+примера только один график оттуда.</p>
+<p><img src="/images/tsung.png" alt="Graph"></p>
+<p>Как мы видем, после 60 секунд нагрузка резко падает, и недогулявшией пользователи догуливают по сайту.</p>
+<p>А вот два графика из реальной жизни. Как оказалось, чтобы сервер приложений для ruby unicorn работал, как надо,
+необходимо немного подпилить параметры ядра Linux (о чем <a href="http://unicorn.bogomips.org/TUNING.html">написано в официальной
+документации</a>, но кто ее читает), а именно поставить в sysctl
+<code>net.core.somaxconn=32768</code> (по-умолчанию он был равен 128). В первом случае лог nginx пестрел вот такими ошибками.</p>
+<pre><code class="language-log" data-lang="log">2014/04/01 08:31:12 [error] 21583#0: *168851 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 54.72.157.44, server: new.project.ru, request: &quot;POST /login HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8080/login&quot;, host: &quot;1.1.1.1&quot;
+2014/04/01 08:31:12 [error] 21583#0: *169046 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 54.72.157.44, server: new.project.ru, request: &quot;GET / HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8080/&quot;, host: &quot;1.1.1.1&quot;
+2014/04/01 08:31:12 [error] 21583#0: *171178 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 54.72.45.113, server: new.project.ru, request: &quot;GET /login HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8080/login&quot;, host: &quot;1.1.1.1&quot;
+</code></pre><p><img src="/images/tsung-bad-tune.png" alt="Плохие настройки">
+<img src="/images/tsung-good-tune.png" alt="Хорошие настройки"></p>
+<p>Во втором случае видно, как сервер выходит на «насыщение», то есть понятно, на каких нагрузках он перестает справляться.
+Гладкие графики — явный признак того, что все работает правильно (наоборот, кстати, тоже верно).</p>
+<p>Единственное, что не удалось сделать — это запустить tsung в кластерном режиме работы. По какой-то причине erlang падал и
+выдавал crash dump. Разбираться было лень, я запустил параллельно два одинаковых тестовых плана на двух разных серверах.</p>
+<p>Так что если вам необходимо создать цунами — дерзайте, все необходимые инструменты для этого есть.</p><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blog-evtuhovich" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://evtuhovich.ru/" >
+    &copy;  Блог Ивана Евтуховича 2021 
+  </a>
+    <div>
+
+
+
+<a href="https://www.facebook.com/evtuhovich" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://twitter.com/evtuhovich" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://www.instagram.com/evtuhovich/" target="_blank" class="link-transition instagram link dib z-999 pt3 pt0-l mr1" title="Instagram link" rel="noopener" aria-label="follow on Instagram——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M42.271,26.578v-0.006c0.502,0,1.005,0.01,1.508-0.002  c0.646-0.017,1.172-0.57,1.172-1.217c0-0.963,0-1.927,0-2.89c0-0.691-0.547-1.24-1.236-1.241c-0.961,0-1.922-0.001-2.883,0  c-0.688,0.001-1.236,0.552-1.236,1.243c-0.001,0.955-0.004,1.91,0.003,2.865c0.001,0.143,0.028,0.291,0.073,0.426  c0.173,0.508,0.639,0.82,1.209,0.823C41.344,26.579,41.808,26.578,42.271,26.578z M33,27.817c-3.384-0.002-6.135,2.721-6.182,6.089  c-0.049,3.46,2.72,6.201,6.04,6.272c3.454,0.074,6.248-2.686,6.321-6.043C39.254,30.675,36.462,27.815,33,27.817z M21.046,31.116  v0.082c0,4.515-0.001,9.03,0,13.545c0,0.649,0.562,1.208,1.212,1.208c7.16,0.001,14.319,0.001,21.479,0  c0.656,0,1.215-0.557,1.215-1.212c0.001-4.509,0-9.02,0-13.528v-0.094h-2.912c0.411,1.313,0.537,2.651,0.376,4.014  c-0.161,1.363-0.601,2.631-1.316,3.803s-1.644,2.145-2.779,2.918c-2.944,2.006-6.821,2.182-9.946,0.428  c-1.579-0.885-2.819-2.12-3.685-3.713c-1.289-2.373-1.495-4.865-0.739-7.451C22.983,31.116,22.021,31.116,21.046,31.116z   M45.205,49.255c0.159-0.026,0.318-0.049,0.475-0.083c1.246-0.265,2.264-1.304,2.508-2.557c0.025-0.137,0.045-0.273,0.067-0.409  V21.794c-0.021-0.133-0.04-0.268-0.065-0.401c-0.268-1.367-1.396-2.428-2.78-2.618c-0.058-0.007-0.113-0.02-0.17-0.03H20.761  c-0.147,0.027-0.296,0.047-0.441,0.08c-1.352,0.308-2.352,1.396-2.545,2.766c-0.008,0.057-0.02,0.114-0.029,0.171V46.24  c0.028,0.154,0.05,0.311,0.085,0.465c0.299,1.322,1.427,2.347,2.77,2.52c0.064,0.008,0.13,0.021,0.195,0.03H45.205z M33,64  C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

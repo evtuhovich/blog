@@ -1,0 +1,15 @@
+---
+title: Индекс
+blog: life
+layout: life
+
+---
+
+%div
+  %article.article
+    %header
+      %h1.entry-title Индекс
+    %ul#category-list
+      - blog.tags.each do |tag, articles|
+        %li
+          = link_to "#{tag} (#{articles.count})", tag_path(tag)

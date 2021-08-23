@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>toster on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/toster/</link>
+    <description>Recent content in toster on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Mon, 06 Feb 2012 11:54:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/toster/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Конференция .toster</title>
+      <link>https://evtuhovich.ru/blog/2012/02/06/toster/</link>
+      <pubDate>Mon, 06 Feb 2012 11:54:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2012/02/06/toster/</guid>
+      <description>В эту пятницу в Москве пройдет конференция .toster, посвященная языку программирования ruby. Меня удостоили большой чести выступать среди 6 известных во всем мире ruby-разработчиков. Если кто-то еще не успел купить билеты, самое время это сделать.
+Мне переодически задают вопросы, зачем ходить на конференции, ведь все можно найти в интернете. Мое личное мнение, которое я никому не хочу навязывать, но все же поделюсь, следующее. Во-первых, сама по себе техническая информация — это просто техническая информация.</description>
+    </item>
+    
+  </channel>
+</rss>

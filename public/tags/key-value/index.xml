@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>key-value on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/key-value/</link>
+    <description>Recent content in key-value on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Mon, 23 Jan 2012 23:05:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/key-value/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hstore — key-value расширение для postgresql</title>
+      <link>https://evtuhovich.ru/blog/2012/01/23/hstore/</link>
+      <pubDate>Mon, 23 Jan 2012 23:05:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2012/01/23/hstore/</guid>
+      <description>&lt;p&gt;Наверное, не все знают, что для postgresql существует большое количество расширений, которые называются
+&lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/contrib.html&#34;&gt;contrib модулями&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Рассмотрим один из таких модулей - &lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/hstore.html&#34;&gt;hstore&lt;/a&gt;. Этот модуль
+нужен для того, чтобы в одном поле в БД хранить много значений key/value, фактически, просто какой-то хеш. При этом и
+ключи и значения могут быть только строками. О том, чем это лучше, нежели просто хранить в текстовом поле сериализованный хеш,
+я расскажу чуть-чуть попозже. Понадобится это может в том случае, если у вас есть модели с произвольным набором полей.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

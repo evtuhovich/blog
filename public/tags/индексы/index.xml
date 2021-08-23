@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>индексы on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B/</link>
+    <description>Recent content in индексы on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 10 Oct 2012 13:09:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Index Only Scan в Postgresql 9.2</title>
+      <link>https://evtuhovich.ru/blog/2012/10/10/index-only-scan/</link>
+      <pubDate>Wed, 10 Oct 2012 13:09:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2012/10/10/index-only-scan/</guid>
+      <description>&lt;p&gt;Вообще, сам не узнаю себя, уже ровно месяц прошел с выпуска &lt;a href=&#34;http://www.postgresql.org/docs/9.2/static/release-9-2.html&#34;&gt;Postgresql 9.2&lt;/a&gt;, даже вышло &lt;a href=&#34;http://www.postgresql.org/docs/9.2/static/release-9-2-1.html&#34;&gt;обновление 9.2.1&lt;/a&gt;, исправляющее некоторые баги, а я все еще ничего не написал об этом.&lt;/p&gt;
+&lt;p&gt;Поэтому сегодня рассказ будет о Index Only Scan — самом заметном, по моему мнению, изменении в 9.2. Кстати, именно это
+изменение стоит первым в &lt;a href=&#34;http://www.postgresql.org/docs/9.2/static/release-9-2.html&#34;&gt;Release Notes&lt;/a&gt;, а значит я не
+одинок.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Проблема с проверкой уникальности какого-то поля в rails</title>
+      <link>https://evtuhovich.ru/blog/2009/05/28/validates-uniqueness-of/</link>
+      <pubDate>Thu, 28 May 2009 22:22:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2009/05/28/validates-uniqueness-of/</guid>
+      <description>Пусть в модели User у нас описана валидация для поля email
+validates_uniqueness_of :email, :case_sensitive =&amp;gt; false, :message =&amp;gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
+SELECT * FROM users WHERE lower(email) = &amp;#39;thmth&amp;#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос.</description>
+    </item>
+    
+    <item>
+      <title>Конкурентное пересоздание индексов в postgresql</title>
+      <link>https://evtuhovich.ru/blog/2009/04/08/concurent-index/</link>
+      <pubDate>Wed, 08 Apr 2009 11:11:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2009/04/08/concurent-index/</guid>
+      <description>На таблице postgresql с большим количеством данных невозможно быстро создать либо пересоздать индекс. При создании индекса таблица блокируется для операций INSERT, UPDATE и DELETE. В таких случаях может помочь конкурентное создание индекса. Иногда на postgresql стоит пересоздавать индексы, чтобы уменьшить их фрагментацию (и увеличить скорость). Создание конкурентного индекса будет частным случаем его пересоздания.
+Пусть имеется таблица orders с 1 миллионом записей (приблизительно) в которой хранятся заказы. И в этой таблице есть поля country_id, region_id, city_id, на которых создан индекс.</description>
+    </item>
+    
+  </channel>
+</rss>

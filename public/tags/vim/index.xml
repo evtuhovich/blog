@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/vim/</link>
+    <description>Recent content in vim on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 10 Mar 2011 22:52:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>О редакторе Vim, рассказ ссылками</title>
+      <link>https://evtuhovich.ru/blog/2011/03/10/vim/</link>
+      <pubDate>Thu, 10 Mar 2011 22:52:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2011/03/10/vim/</guid>
+      <description>Vim — прекрасный редактор, который я использую для разработки на Ruby и Rails. Его можно использовать в чистом виде, но если добавить немного плагинов, то удобство работы значительно возрастает. Об этом я и хочу рассказать, правда рассказ получится длинным.
+Я выступал на последнем RailsClub&amp;rsquo;е с докладом Vim Or Die (посмотреть его можно на univertv.ru), в котором неплохо раскрыл тему Vim и полезных плагинов. Cами слайды, которые малополезны без видео, можно найти на slideshare.</description>
+    </item>
+    
+    <item>
+      <title>Автоматизация vim с помощью pathogen</title>
+      <link>https://evtuhovich.ru/blog/2010/04/05/vim-pathogen/</link>
+      <pubDate>Mon, 05 Apr 2010 00:33:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2010/04/05/vim-pathogen/</guid>
+      <description>Извечная проблема о том, как добавлять и обновлять плагины в vim решилась благодаря легендарному Tim Pope.
+Сегодня утром узнал от Ярослава Маркина о существовании pathogen.
+Статья на английском о том, как им пользоваться, лежит здесь. Правда, я потратил полчаса, чтобы догадаться, что надо добавить call pathogen#runtime_append_all_bundles() в файл ~/.vimrc.
+После установки pathogen.vim в ~/.vim/autoload можно хранить все плагины в папке ~/.vim/bundle, причем каждый в своей папке.
+А еще огромный плюс - в конце этой статьи код, который позволяет обновлять все плагины одной командой.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gem on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/gem/</link>
+    <description>Recent content in gem on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 07 Jun 2012 21:47:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/gem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Пакетные менеджеры</title>
+      <link>https://evtuhovich.ru/blog/2012/06/07/package-manager/</link>
+      <pubDate>Thu, 07 Jun 2012 21:47:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2012/06/07/package-manager/</guid>
+      <description>&lt;p&gt;Тема этого поста навеяна &lt;a href=&#34;https://groups.google.com/forum/?fromgroups#!topic/erlang-russian/hu5UViybcXI&#34;&gt;обсуждением пакетных менеджеров в рассылке
+Erlang&lt;/a&gt;. К сожалению, обсуждение завяло,
+так и не успев начаться.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

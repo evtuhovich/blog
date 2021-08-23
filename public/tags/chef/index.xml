@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chef on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/chef/</link>
+    <description>Recent content in chef on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Fri, 28 Mar 2014 18:11:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/chef/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Соло на ноже</title>
+      <link>https://evtuhovich.ru/blog/2014/03/28/knife-solo/</link>
+      <pubDate>Fri, 28 Mar 2014 18:11:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2014/03/28/knife-solo/</guid>
+      <description>Очень часто для небольших проектов нет необходимости усложнять инфраструктуру с использованием chef-server. Существует мнение, что chef server, вообще, не нужен, и многие аргументы в пользу этой идеи кажутся мне вполне убедительными.
+Для людей, которым нравится DSL chef и не нужен chef server, есть chef-solo. Чтобы готовить с его помощью, нужен специальный нож — knife-solo. Это инструмент, который значительно упрощает использование chef-solo.
+Для начала поставить knife-solo
+gem install knife-solo Если у вас есть уже готовый репозитарий для chef, как, например, наше тесто, то следующий шаг можно пропустить.</description>
+    </item>
+    
+    <item>
+      <title>Атрибуты в шефе и DeepMerge</title>
+      <link>https://evtuhovich.ru/blog/2014/02/14/deep_merge/</link>
+      <pubDate>Fri, 14 Feb 2014 18:38:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2014/02/14/deep_merge/</guid>
+      <description>&lt;p&gt;Многие знают, что в шефе есть большое количество типов атрибутов, необходимые, чтобы гибко управлять инфраструктурой.
+Для того, чтобы эти атрибуты работали вместе, есть разные правила их объединения. О них мы сегодня и поговорим.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Управление конфигурацией и Chef</title>
+      <link>https://evtuhovich.ru/blog/2011/09/03/configuration-management/</link>
+      <pubDate>Sat, 03 Sep 2011 01:06:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2011/09/03/configuration-management/</guid>
+      <description>Расскажу одну очень поучительную и одновременно типичную историю, которая случилась со мною года 3 назад. Однажды один из наших серверов вышел из строя. Казалось бы, обычная ситуация, но беда была в том, что работа приложения была сильно завязано на 10-15 различных cron-задач, которые были прописаны на этой машине. Еще большая проблема была в том, что писались скрипты, которые вызывались по cron, различными людьми, многие их которых к тому времени не работали в компании.</description>
+    </item>
+    
+  </channel>
+</rss>

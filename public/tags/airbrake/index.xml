@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>airbrake on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/airbrake/</link>
+    <description>Recent content in airbrake on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 11 Apr 2012 21:14:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/airbrake/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Быстрое удаление старых ошибок из airbrake через API</title>
+      <link>https://evtuhovich.ru/blog/2012/04/11/airbrake/</link>
+      <pubDate>Wed, 11 Apr 2012 21:14:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2012/04/11/airbrake/</guid>
+      <description>Так сложилось, что у нас накопилось достаточно много старых исключений в airbrake — сервисе по сбору и хранению исключений. Ошибки эти не то, чтобы мешали, но мозолили глаза. И закрыть их руками не представлялось возможным, тем более, что в airbrake это реализовано очень неудобно — необходимо открыть отдельную страницу с исключением, и там тыкнуть на достаточно неудобный самописный элемент управления.
+Когда такую операцию надо сделать несколько сотен раз, автоматически опускаются руки.</description>
+    </item>
+    
+  </channel>
+</rss>

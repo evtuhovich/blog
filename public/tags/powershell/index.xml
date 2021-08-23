@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>powershell on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/powershell/</link>
+    <description>Recent content in powershell on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 23 Oct 2014 08:13:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Могущественная скорлупа</title>
+      <link>https://evtuhovich.ru/blog/2014/10/23/powershell/</link>
+      <pubDate>Thu, 23 Oct 2014 08:13:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2014/10/23/powershell/</guid>
+      <description>Могущественная скорлупа — это, конечно же, шуточный перевод PowerShell. Обратиться к этой теме старого любителя Linux заставило не праздное любопытство, а насущная производственная необходимость. Конечно же, в мире Linux принято весело хохотать и поливать грязью все, что относится к Windows. Но, надо сказать, что многое изменилось в мире Windows, за последнее время.
+Во-первых, появился аналог ssh. По протоколу WinRM с помощью PowerShell можно ходить по другим машинкам не хуже, чем по ssh.</description>
+    </item>
+    
+  </channel>
+</rss>

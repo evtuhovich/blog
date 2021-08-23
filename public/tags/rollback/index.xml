@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rollback on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/rollback/</link>
+    <description>Recent content in rollback on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Tue, 19 May 2009 22:52:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/rollback/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Несколько баз данных</title>
+      <link>https://evtuhovich.ru/blog/2009/05/19/two-databases/</link>
+      <pubDate>Tue, 19 May 2009 22:52:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2009/05/19/two-databases/</guid>
+      <description>В некоторых ситуациях необходимо использовать более чем одну базу данных в проекте. Например, статистику и большие таблицы хранить на другом сервере, у которого большой и медленный диск, а данные, которые нужны постоянно, хранить на основном сервере с маленьким и быстрым диском.
+В нашем случае хотелось унести большие таблицы на другой сервер, чтобы в дисковом кэше (а у главного сервера БД 32 Гб оперативной памяти) хранились все рабочие таблицы и никогда оттуда не убегали.</description>
+    </item>
+    
+  </channel>
+</rss>

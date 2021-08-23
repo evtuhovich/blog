@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>мысли on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/</link>
+    <description>Recent content in мысли on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Thu, 13 Feb 2014 23:08:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Прощай, Октопресс, здравствуй, Middleman</title>
+      <link>https://evtuhovich.ru/blog/2014/02/13/bye-octopress/</link>
+      <pubDate>Thu, 13 Feb 2014 23:08:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2014/02/13/bye-octopress/</guid>
+      <description>Долгие годы этот блог велся на Octopress — платформе для ведения технических блогов. Он был первым и восхищал меня долгое время, я даже хотел написать о нем отдельный пост, но руки так и не дошли. Но были у октопресса и откровенные недостатки, как то:
+ медлительность — он реально подтупливает на генерации страниц; асинхронность — от внесения правки, до появления ее в браузере проходило значительное время, а это сильно раздражало; сложность — поменять что-то внутри не представляется возможным; отсутствие поддержки — с 2011 года официальный сайт не обновлялся; он, вообще, сломался с ruby 2.</description>
+    </item>
+    
+    <item>
+      <title>Командный игрок</title>
+      <link>https://evtuhovich.ru/blog/2012/08/27/command-player/</link>
+      <pubDate>Mon, 27 Aug 2012 17:54:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2012/08/27/command-player/</guid>
+      <description>&lt;p&gt;Технологии, конечно, технологиями, но иногда хочется рассказать чего-то «про жизнь». А именно про то, как работают
+хорошие команды. Собственно, этот рассказ тоже о технологиях, только о человеческих.&lt;/p&gt;
+&lt;p&gt;К несчастью, технологии работы с людьми формализуются достаточно плохо, и такой ясности, как при работе с компьютерами,
+конечно же нет. Поэтому сказать точно, что такое «хорошая команда», практически невозможно. Параметров оценки этого
+слишком много, да и каждый параметр даже не понятно, чем измерять. Поэтому я просто поделюсь своими соображениями на
+этот счет, не претендую никоим образом на объективность и правоту.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ясность</title>
+      <link>https://evtuhovich.ru/blog/2012/04/19/clear-view/</link>
+      <pubDate>Thu, 19 Apr 2012 00:18:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2012/04/19/clear-view/</guid>
+      <description>&lt;p&gt;Прежде всего, я хочу рассказать историю про стрижку быка (в английском варианте &lt;a href=&#34;http://www.urbandictionary.com/define.php?term=yak%20shaving&#34;&gt;Yak
+Shaving&lt;/a&gt;).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Простыня</title>
+      <link>https://evtuhovich.ru/blog/2011/08/04/prostynya/</link>
+      <pubDate>Thu, 04 Aug 2011 22:52:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2011/08/04/prostynya/</guid>
+      <description>Поскольку я поставил Octopress, то теперь сбылась моя мечта и я могу вести блог в своем любимом текстовом редакторе vim. Про octopress я напишу как-нибудь потом отдельно, потому что система для инженера программных систем просто необыкновенная: простая и удобная.
+Но сегодня я хочу поговорить о «простыне» &amp;mdash; так я шутя называют длинный последовательный кусок кода. Так вот, моя основная мысль &amp;mdash; простыня является самым лучшим кодом. Это так по одной простой причине, что последовательный код гораздо проще читать и понимать.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rubynoname on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/rubynoname/</link>
+    <description>Recent content in rubynoname on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 08 Feb 2012 22:40:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/rubynoname/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RubyNoName подкаст</title>
+      <link>https://evtuhovich.ru/blog/2012/02/08/rubynoname/</link>
+      <pubDate>Wed, 08 Feb 2012 22:40:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2012/02/08/rubynoname/</guid>
+      <description>Сегодня я выложил наш первый совместный с Иваном Самсоновым эпизод RubyNoName подкаста (плюсуйте анонс на Хабре).
+Хочу сразу сказать, что дело это оказалось далеко не такое простое, как я думал раньше. Начиная с того, что непринужденно рассказывать о новостях в ruby-мире без мыканья, эканья, запинок, фраз «ну» и «как бы» получается у нас гораздо хуже, чем писать код на ruby. И заканчивая тем, что свести две дорожки в редакторе, а потом сделать из этого что-то, что хорошо слушается, вообще для меня пока что очень сложная задача, которая к тому же занимает очень много времени.</description>
+    </item>
+    
+  </channel>
+</rss>

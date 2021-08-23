@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pgbouncer on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/pgbouncer/</link>
+    <description>Recent content in pgbouncer on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sun, 12 Feb 2012 23:04:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/pgbouncer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PgBouncer</title>
+      <link>https://evtuhovich.ru/blog/2012/02/12/pgbouncer/</link>
+      <pubDate>Sun, 12 Feb 2012 23:04:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2012/02/12/pgbouncer/</guid>
+      <description>&lt;p&gt;Удивительное дело, что я до сих пор не написал про &lt;a href=&#34;http://pgfoundry.org/projects/pgbouncer/&#34;&gt;PgBouncer&lt;/a&gt;. Как написано
+на сайте — это «Lightweight connection pooler for PostgreSQL». Я бы первел это следующим образом.
+PgBouncer — это легкий менеджер соединений для PostgreSQL.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

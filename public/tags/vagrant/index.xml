@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vagrant on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/vagrant/</link>
+    <description>Recent content in vagrant on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Tue, 10 Jan 2012 23:55:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vagrant</title>
+      <link>https://evtuhovich.ru/blog/2012/01/10/vagrant/</link>
+      <pubDate>Tue, 10 Jan 2012 23:55:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2012/01/10/vagrant/</guid>
+      <description>&lt;p&gt;Очень странно, что я до сих пор не написал о &lt;a href=&#34;http://vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt; — инструменте создания и распространения
+виртуальных окружений.&lt;/p&gt;
+&lt;p&gt;Vagrant нужен для одной простой цели — тестировать выкатку и изменение конфигурции. Причем он позволяет делать это очень
+просто, особенно для &lt;a href=&#34;http://wiki.opscode.com/display/chef/Home&#34;&gt;Chef&lt;/a&gt; и &lt;a href=&#34;http://www.puppetlabs.com/puppet&#34;&gt;Puppet&lt;/a&gt;.
+Vagrant — это надстройка над платформой виртуализации VirtualBox, которая позволяет легко и быстро создавать
+виртуальные машины по шаблону.&lt;/p&gt;
+&lt;p&gt;Работать с ним очень легко. Вы берете какой-нибудь готовый образ ОС (например, &lt;a href=&#34;http://www.vagrantbox.es/&#34;&gt;отсюда&lt;/a&gt;) или
+&lt;a href=&#34;http://vagrantup.com/docs/base_boxes.html&#34;&gt;создаете свой&lt;/a&gt;, который и будет вашим шаблоном. А потом проверяете, как на
+этот образ накатываются ваши Chef-рецепты, причем можете делать это каждый раз с чистого листа. Конечно, образ должен
+быть точно такой же, который вы используете в бою, на staging-сервере, на CI-сервере и, вообще, везде. Это позволит вам
+выловить максимальное количество проблем до того, как они попадут на production.
+Более того, это гораздо удобнее, чем писать chef-рецепты «вслепую». Все, что происходит тяжело, надо делать часто, чтобы
+научиться делать это хорошо. Выкатка с изменением конфигурации обычно происходит тяжело. Поэтому стоит тренироваться
+менять конфигурацию и выкатываться, при этом желательно делать это в «песочнице», а не на сервере, который обслуживает
+ваших пользователей (и приносит деньги).&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

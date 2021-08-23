@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pg_repack on Блог Ивана Евтуховича</title>
+    <link>https://evtuhovich.ru/tags/pg_repack/</link>
+    <description>Recent content in pg_repack on Блог Ивана Евтуховича</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 09 Jan 2013 00:49:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/pg_repack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ремонт БД на лету с помощью pg_repack</title>
+      <link>https://evtuhovich.ru/blog/2013/01/09/fix-db-on-fly/</link>
+      <pubDate>Wed, 09 Jan 2013 00:49:00 +0000</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2013/01/09/fix-db-on-fly/</guid>
+      <description>&lt;p&gt;Окончились новогодние праздники, а это значит, что пора с новыми силами кинуться в бой с ИТ-сложностью, ИТ-хаосом
+и другими ИТ бедами.&lt;/p&gt;
+&lt;p&gt;Одной из бед всех версионных БД является разбухание таблиц. Все бы ничего, но если количество активно используемых
+данных перестает влезать в оперативную память, то время обработки запросов к БД чрезвычайно сильно возрастает (об этом я
+напишу в ближайшем будущем). И чтобы «впихнуть» размеры таблицы в нужный размер, иногда приходится делать некоторые нетрадиционные
+трюки.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
