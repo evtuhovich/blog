@@ -1,6 +1,6 @@
 ---
 title: Обо мне
-date: 2021-01-19T12:16:00
+date: 2021-08-30T06:16:00
 comments: true
 sharing: true
 footer: true
@@ -13,6 +13,7 @@ layout: single
 
 Email: [evtuhovich@gmail.com](mailto:evtuhovich@gmail.com)<br />
 Telegram: [@evtuhovich](https://t.me/evtuhovich)<br />
+Telegram-канал: [Секта свидетелей Евтуховича](https://t.me/evtuhovich_sect)<br />
 Twitter: [evtuhovich](https://twitter.com/#!/evtuhovich)<br />
 
 Список моих докладов и мастер-классов доступен [здесь](/reports), правда, я временно не читаю доклады и мастер-классы.
@@ -36,27 +37,12 @@ Twitter: [evtuhovich](https://twitter.com/#!/evtuhovich)<br />
 полтора года --- это достижение, но за 5 лет это уже не то. Поскольку новых продуктов делать там не планировалось, я
 отправился дальше.
 
-Именно за время работы в Скалакси я выступил с докладами про
-[Git для продолжающих](http://www.slideshare.net/evtuhovich/git-5604524) и
-[Continuous Delivery](http://www.slideshare.net/evtuhovich/continuous-delivery-5604548) на
-[конференции в Минске](http://www.di.by/2010/speakers_list/3212/).
-Мы довели RailsClub до состояния полноценной конференции с 150-200 посетителями.
-[Я выступил](http://univertv.ru/video/informatika/programmirovanie/ruby_on_rails_moscow/vim_or_die/) с
-[докладом Vim Or Die](http://www.slideshare.net/evtuhovich/vim-or-die) про лучший в мире редактор Vim на RailsClub.
-Также в рамках RailsClub совместно с [DevConf](http://devconf.ru) мы привезли в Москву
-[Ехуду Катца](http://yehudakatz.com/) (core-developer Rails3, Merb, jQuery).
-
 С апреля 2011 года я работал в компании ["Злые Марсиане"](http://evilmartians.com), руководил разработкой купонного сервиса
 [Groupon](http://groupon.ru). Уже работая в марсианах, я успел
 [дать интервью](http://theoryandpractice.ru/posts/2488-programmisty-evil-martians-bookmate-i-yahoo-rasskazyvayut-o-krasote-koda),
 получить первый дан Айкидо Айкикай у [Матвеева Вячеслава Александровича](http://aikiclub.ru).
 
-Также в декабре 2011 мы провели [RailsClub](http://railsclub.ru), на который привезли 3 иностранных докладчиков:
-[Sven Fuchs](http://svenfuchs.com/) (автор [Travis CI](http://travis-ci.org/)),
-[Konstantin Haase](http://rkh.im/) (maintainer Sinatra) и
-[Piotr Sarnacki](http://piotrsarnacki.com/) (автор rails engine).
-
-А еще в начале июня 2011 года у меня родилась дочь --- Ксения Ивановна.
+В начале июня 2011 года у меня родилась дочь --- Ксения Ивановна.
 
 С начала 2012 вместе с [Иваном Самсоновым](https://twitter.com/#!/kronos_vano) мы вдохнули вторую жизнь в [Ruby NoName Podcast](http://ruby.rpod.ru),
 сделав его выпуски регулярными с частотой раз в две недели.
@@ -65,7 +51,7 @@ Twitter: [evtuhovich](https://twitter.com/#!/evtuhovich)<br />
 хорошим людям решать проблемы с доступностью, отказоустойчивостью, а также налаживаю управление конфигурацией и
 непрерывную интеграцию.
 
-В сентябре 2012 мы провели концференцию RailsClub международного уровня, пригласили 5 иностранных докладчиков со всех
+В сентябре 2012 мы провели конференцию RailsClub международного уровня, пригласили 5 иностранных докладчиков со всех
 концов мира.
 
 В 2013 году вместе с моим коллегой Никитой Борзых мы стали выпускать подкаст «[DevOps Deflope](http://devopsdeflope.ru/)».
@@ -79,6 +65,6 @@ Twitter: [evtuhovich](https://twitter.com/#!/evtuhovich)<br />
 
 В марте 2019 года у меня родился еще один солнечный малыш --- Георгий Иванович.
 
-В настоящий момент продолжаю работать в "Экспресс 42", занимаюсь продажами. За это время мы выросли с трех человек до
-42, сделали проекты по DevOps-тематике с такими компаниями, как МТС, Райффайзен Банк, Альфа-Банк, Росбанк,
+В настоящий момент (2021 год) продолжаю работать в "Экспресс 42", занимаюсь продажами. За это время мы выросли с трех человек до
+65, сделали проекты по DevOps-тематике с такими компаниями, как МТС, Райффайзен Банк, Альфа-Банк, Росбанк,
 Русфинансбанк, X5 и многими другими.

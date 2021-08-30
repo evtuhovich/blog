@@ -2,12 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://evtuhovich.ru/blog/</loc>
-    <lastmod>2021-08-30T07:44:34+03:00</lastmod>
+    <loc>https://evtuhovich.ru/</loc>
+    <lastmod>2021-08-30T06:16:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://evtuhovich.ru/</loc>
+    <loc>https://evtuhovich.ru/about/</loc>
+    <lastmod>2021-08-30T06:16:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/blog/</loc>
     <lastmod>2021-08-30T07:44:34+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -199,11 +204,6 @@
   </url><url>
     <loc>https://evtuhovich.ru/life/2021/01/20/lingvo-jokes/</loc>
     <lastmod>2021-01-20T16:38:08+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://evtuhovich.ru/about/</loc>
-    <lastmod>2021-01-19T12:16:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
