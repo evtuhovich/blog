@@ -11,7 +11,7 @@
 Начать знакомиться лучше всего отсюда.
 Если вкратце, то заходим в каталог проекта и набираем:
  capify . Дальше правим файл config/deploy.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -255,7 +255,7 @@
 втором случае отказ от использования capistrano — форменное безумие с моей точки зрения.</p>
 <p>Начать знакомиться лучше всего <a href="https://github.com/capistrano/capistrano/wiki/">отсюда</a>.</p>
 <p>Если вкратце, то заходим в каталог проекта и набираем:</p>
-<pre><code>    capify .
+<pre tabindex="0"><code>    capify .
 </code></pre><p>Дальше правим файл <code>config/deploy.rb</code>, в нем все более или менее понятно.</p>
 <p>Несколько тонкостей.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    set <span style="color:#e6db74">:deploy_via</span>, <span style="color:#e6db74">:remote_cache</span> <span style="color:#75715e"># чтобы каждый раз не тянуть весь проект из системы</span>
@@ -266,12 +266,12 @@
                                    <span style="color:#75715e"># кода из кеша в текущую выкатку</span>
 
 </code></pre></div><p>Иногда не надо выкатывать на все сервера, а хочется выкатить только на несколько конкретных</p>
-<pre><code>    cap HOSTS=w1.mydomain.ru deploy
+<pre tabindex="0"><code>    cap HOSTS=w1.mydomain.ru deploy
 </code></pre><p>Есть еще вариант с HOSTFILTER,
 <a href="http://groups.google.co.uk/group/capistrano/browse_thread/thread/0592ab63dda72d7e?hl=en#">подробности в рассылке capistrano</a></p>
 <p>Если есть необходимость в нескольких конфигурациях для выкатки одного и того же приложения (а разве бывает по-другому?),
 то для этого подходить плагин multistage. Для этого надо</p>
-<pre><code>gem install capistrano-ext
+<pre tabindex="0"><code>gem install capistrano-ext
 </code></pre><p>В файле <code>config/deploy.rb</code> добавить:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    set <span style="color:#e6db74">:stages</span>, <span style="color:#e6db74">%w(production staging)</span>
     require <span style="color:#e6db74">&#39;capistrano/ext/multistage&#39;</span>
@@ -279,7 +279,7 @@
 держать всю логику выкатки в <code>config/deploy.rb</code>, а в <code>staging.rb</code> и <code>production.rb</code> только описание, какую ветку и на
 какие сервера выкатывать. И в крайнем случае какую-то специфичную логику. Это поможет избежать казусов, когда на staging у
 вас выкатывается все хорошо, а с выкаткой на production возникают проблемы.</p>
-<pre><code># conifg/deploy/staging.rb
+<pre tabindex="0"><code># conifg/deploy/staging.rb
 role :app,    &quot;beta.mysite.ru&quot;, :sphinx =&gt; true
 role :web,    &quot;beta.mysite.ru&quot;
 role :static, &quot;beta.mysite.ru&quot;
@@ -297,9 +297,9 @@ namespace :deploy do
 end
 
 </code></pre><p>Далее</p>
-<pre><code>    cap staging deploy
+<pre tabindex="0"><code>    cap staging deploy
 </code></pre><p>После того, как все проверили на staging</p>
-<pre><code>    cap production deploy
+<pre tabindex="0"><code>    cap production deploy
 </code></pre><p>Очень хорошо, подробно и по-русски написано про выкатку с помощью capistrano
 <a href="http://maksd.info/tag/capistrano">в блоге у моего бывшего коллеги Максима Добрякова</a>.</p>
 <ul class="pa0">

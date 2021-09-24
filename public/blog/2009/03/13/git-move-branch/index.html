@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Представим следующую ситуацию (она постоянно возникает у нас при разработке). У нас есть ветка master в git, а в день релиза мы создаем ветку b1. Мы добавляем какие-то изменения в ветки b1 и master. И тут вдруг (хотя слово «вдруг» не очень подходит к регулярным событям) менеджмент решает добавить что-то из master в релиз.
 Если комитов было мало, то можно воспользоваться git cherry-pick (если их несколько, то может помочь ключ -n).">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -247,7 +247,7 @@
 больше 10? Рукаме делать <code>git cherry-pick</code> не очень удобно. В таком случае нам поможет (в который раз) <code>git rebase</code>.</p>
 <p>Итак, вначале у нас было ситуация с картинки 1.</p>
 <p>И нам необходимо добавить часть комитов из master в b1, начиная с m10, но не все.</p>
-<pre><code>    git checkout master
+<pre tabindex="0"><code>    git checkout master
     git checkout -b b2
     git rebase -i --onto b1 f9e4819a b2
 </code></pre><p><img src="/images/git3.png" alt="Картинка3"></p>
@@ -257,10 +257,10 @@ b1 ветку master, вряд ли это то, что нам нужно.</p>
 <p>Здесь f9e4819a40c58985ce183a135a473a9bfd654ff4 — это sha комита m7. Далее в открывшемся тектовом редакторе оставляем
 комиты, которые нам нужны. После этого мы имеем картинку 2.</p>
 <p>Дальнейшее не составит труда даже для ребенка</p>
-<pre><code>    git checkout b1
+<pre tabindex="0"><code>    git checkout b1
     git merge b2
 </code></pre><p>Ветку b2 можно теперь удалить.</p>
-<pre><code>    git branch -D b2
+<pre tabindex="0"><code>    git branch -D b2
 </code></pre><ul class="pa0">
   
    <li class="list">

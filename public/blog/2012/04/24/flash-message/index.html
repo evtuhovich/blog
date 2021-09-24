@@ -11,7 +11,7 @@
 было бы не страшно, но при декодировании сессии происходит исключение, и пользователь видит 500 ошибку до тех пор, пока
 не почистит куки. Конечно, пользователей, у которых в сессии будет flash сообщение в момент переключения с версии 3.0 на
 3.2 будет не так и много, но это пользователи, потерянные навсегда.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -263,7 +263,7 @@
 Изучение того, <a href="https://github.com/ruby/ruby/blob/ruby_1_8_7/marshal.c">как работает <code>Marshal.load</code></a> особой радости не принесло, потому что читать
 код на C без хорошего знания внутренностей ruby — занятие достаточно бесполезное.</p>
 <p>Я посмотрел, что поменялось, и достаточно быстро пришел к хорошему решению — отнаследовать класс <code>FlashHash</code> от <code>Hash</code>.</p>
-<pre><code># config/initializers/session_hack.rb
+<pre tabindex="0"><code># config/initializers/session_hack.rb
 
 module ActionDispatch
   class Flash
@@ -279,7 +279,7 @@ end
 </code></pre><p>Но мне оно не очень понравилось, слишком какой-то сильный хак, который надо будет потом поддерживать и про него не
 забыть. Поэтому я решил, что разлогинить пользователей, у которых
 есть flash сообщение в сессии — это не очень большой грех (а их ведь мало совсем), поэтому поступил вот так.</p>
-<pre><code># config/initializers/session_hack.rb
+<pre tabindex="0"><code># config/initializers/session_hack.rb
 module ActiveSupport
   class MessageVerifier
     def compat_verify(signed_message)

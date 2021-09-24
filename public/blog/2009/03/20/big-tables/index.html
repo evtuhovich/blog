@@ -9,7 +9,7 @@
     <meta name="description" content="Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
  $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -244,7 +244,7 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает
 быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.</p>
 <p>Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.</p>
-<pre><code>    $ script/generate migration add_is_searchable_to_posts
+<pre tabindex="0"><code>    $ script/generate migration add_is_searchable_to_posts
 </code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddIsSearchableToPosts</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span>
       <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">up</span>
         add_column <span style="color:#e6db74">:posts</span>, <span style="color:#e6db74">:is_searchable</span>, <span style="color:#e6db74">:boolean</span>, <span style="color:#e6db74">:default</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>, <span style="color:#e6db74">:null</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">false</span>

@@ -11,7 +11,7 @@
 открытым. В нашем случае, поскольку на сервере БД очень много памяти и слабая дисковая подсистема, мне показалось
 разумным перенести туда таблицы, в которые идет интенсивная запись. И эти таблицы не должны быть «связаны», то есть
 перенос их должен быть простым.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -263,16 +263,16 @@
 	<span style="color:#ae81ff">2</span>
 </code></pre></div><p>В нашем случае это оказалась таблица, где сохранялись ip-адреса, с которых пользователи заходят на сайт, и
 таблица <code>delayed_jobs</code>. В rails 2.3 делалось это очень просто.</p>
-<pre><code># config/initializers/delayed_job_config.rb
+<pre tabindex="0"><code># config/initializers/delayed_job_config.rb
 class Delayed::Backend::ActiveRecord::Job
   establish_connection &quot;second_#{Rails.env}&quot;
 end
 </code></pre><p>В случае же с rails 3, на которые вот уже совсем скоро переедет Групон, все оказалось не так просто. Gem <code>delayed_jobs</code>
 версии 2.1.4 достаточно сильно отличается от версии 2.0. Поэтому старый трюк работать перестал. Гугление не помогло,
 поэтому пришлось залесть в его исходники, понять, чего там внутри происходит, и сделать вот такой monkey-patch.</p>
-<pre><code># config/initializers/delayed_job_config.rb
+<pre tabindex="0"><code># config/initializers/delayed_job_config.rb
 Delayed::Worker.backend = SecondDbDj
-</code></pre><pre><code>#  app/models/second_db_dj.rb
+</code></pre><pre tabindex="0"><code>#  app/models/second_db_dj.rb
 class SecondDbDj &lt; SecondDb # это абстрактный класс, который подключает ко второй БД
   include Delayed::Backend::Base
   set_table_name :delayed_jobs

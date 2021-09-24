@@ -10,7 +10,7 @@
 БД либо помещается в память, либо не работает. Ситуация в современном мире меняется в связи с появлением SSD дисков, но
 пока что они стоят достаточно дорого, по сравнению со старыми добрыми вращающимися дисками. Чтобы «потрогать» это
 руками, проделаем несложный тест.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -272,7 +272,7 @@ PostgreSQL.</p>
 <span style="color:#66d9ef">end</span>
 </code></pre></div><p>Более подробно про pgbench можно почитать в <a href="http://www.postgresql.org/docs/9.1/static/pgbench.html">официальной документации</a>.</p>
 <p>На машинках t1.micro <code>free -m</code> выдает следующее:</p>
-<pre><code>             total       used       free     shared    buffers     cached
+<pre tabindex="0"><code>             total       used       free     shared    buffers     cached
 Mem:           590        583          6          0          1        428
 </code></pre><p>Именно этим обусловлен такой выбор границ scale factor. Про scale factor = 50 размер БД приблизительно 750Мб, то есть
 больше количества доступной памяти, а граница shared_buffers пересекается при значениях scale factor 4-5.</p>

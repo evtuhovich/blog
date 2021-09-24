@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Многие знают, что в шефе есть большое количество типов атрибутов, необходимые, чтобы гибко управлять инфраструктурой.
 Для того, чтобы эти атрибуты работали вместе, есть разные правила их объединения. О них мы сегодня и поговорим.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -254,7 +254,7 @@
 <p>Следующий момент, на который стоит обратить внимание при работе с атрибутами, — это «глубокое слияние» или deep merge
 в английском варианте. Поставим небольшой эксперимент с помощью <code>chef-shell</code> (это такой irb с загруженными классами шеф
 клиента).</p>
-<pre><code>➜  chef-shell
+<pre tabindex="0"><code>➜  chef-shell
 loading configuration: none (standalone session)
 Session type: standalone
 Loading....done.
@@ -310,7 +310,7 @@ merge заменяются.</p>
 <p>Стоит также обратить внимание, что атрибуты из файлов атрибутов загружаются в алфавитном порядке. Например, совсем
 недавно, наткнулся на ошибку, связанную с этим (и, более того, чуть раньше на нее наткнулся мой коллега Никита на другом
 проекте).</p>
-<pre><code>$ ls inhouse-cookbooks/project/attributes
+<pre tabindex="0"><code>$ ls inhouse-cookbooks/project/attributes
 front.rb
 riemann.rb
 </code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># inhouse-cookbooks/project/attributes/front.rb</span>

@@ -10,7 +10,7 @@
  git commit -a --amend Ключ --amend (улучшить, в переводе с английского) позволяет добавить к последнему коммиту новые изменения.
 Если вы сделали commit в git, но поняли, что он достаточно плох, то можно сделать и так:
  git reset --soft HEAD^ Эта команда отменит последний коммит (но не изменения, которые вы внесли, они сохранятся).">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -247,17 +247,17 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Допустим, вы сделали commit в git, но поняли, что он недостаточно хорош. В таком случае можно продолжить правки, а при
 следующем коммите набрать</p>
-<pre><code>    git commit -a --amend
+<pre tabindex="0"><code>    git commit -a --amend
 </code></pre><p>Ключ <code>--amend</code> (улучшить, в переводе с английского) позволяет добавить к последнему коммиту новые изменения.</p>
 <p>Если вы сделали commit в git, но поняли, что он достаточно плох, то можно сделать и так:</p>
-<pre><code>    git reset --soft HEAD^
+<pre tabindex="0"><code>    git reset --soft HEAD^
 </code></pre><p>Эта команда отменит последний коммит (но не изменения, которые вы внесли, они сохранятся).</p>
 <p>Если последний коммит отвратителен, то можно вообще его удалить (но не стоит забывать, что эта команда не просто удалит
 последний коммит, но и <em>ВСЕ</em> правки, которые не были закоммиченны):</p>
-<pre><code>    git reset --hard HEAD^
+<pre tabindex="0"><code>    git reset --hard HEAD^
 </code></pre><p>Все это работает, если вы не опубликовали свои изменения. В случае, если вы их опубликовали, то не остается ничего
 другого, как сделать коммит, который отменяет какой-то коммит:</p>
-<pre><code>    git revert commit-sha1
+<pre tabindex="0"><code>    git revert commit-sha1
 </code></pre><p>Ну, а потом опубликовать поскорее его командой <code>git push</code>.</p>
 <p>Кстати, моя компания сделала <a href="https://education.express42.com/git?utm_source=evtuhovich">отличный однодневный мастер-класс по
 git</a>, обязательно приходите, расскажем вам обо всех тонкостях

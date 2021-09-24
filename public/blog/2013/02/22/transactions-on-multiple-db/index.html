@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Иногда так случается, что на проекте необходимо использовать более одного сервера баз данных. Оказывается, в rails можно
 достаточно удобно поддерживать актуальность нескольких БД с помощью миграций.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -243,7 +243,7 @@
 <code>establish_connection</code>. Я постараюсь осветить в этой статье то, чего в документации нет.</p>
 <p>Во-первых, рельсы умеют загружать и сохранять схемы нескольких БД, делается это следующим образом. Добавляете новую БД в
 свой <code>database.yml</code>.</p>
-<pre><code># database.yml
+<pre tabindex="0"><code># database.yml
 foo_development:
   database: foo
   &lt;&lt;: *defaults
@@ -278,7 +278,7 @@ foo_test:
 более корректно выразить то, что каждый тест выполняется внутри транзакции и в конце каждого теста делается <code>ROLLBACK</code>)
 только из основной БД. Чтобы поправить это, необходимо завернуть выполнение теста в транзакцию по второй БД, для чего
 добавить следующие строки в ваш файл <code>spec/spec_helper.rb</code>.</p>
-<pre><code># spec/spec_helper.rb
+<pre tabindex="0"><code># spec/spec_helper.rb
 RSpec.configure do |config|
   config.around(:each) do |ex|
     main = ActiveRecord::Base.connection

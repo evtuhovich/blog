@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Могущественная скорлупа — это, конечно же, шуточный перевод PowerShell. Обратиться к этой теме старого любителя Linux заставило не праздное любопытство, а насущная производственная необходимость. Конечно же, в мире Linux принято весело хохотать и поливать грязью все, что относится к Windows. Но, надо сказать, что многое изменилось в мире Windows, за последнее время.
 Во-первых, появился аналог ssh. По протоколу WinRM с помощью PowerShell можно ходить по другим машинкам не хуже, чем по ssh.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -244,18 +244,18 @@
 время.</p>
 <p>Во-первых, появился аналог ssh. По протоколу WinRM с помощью PowerShell можно ходить по другим машинкам не хуже, чем по
 ssh.</p>
-<pre><code>PS C:\&gt; Enter-PSSession dc
+<pre tabindex="0"><code>PS C:\&gt; Enter-PSSession dc
 [dc]: PS C:\Users\Administrator\Documents&gt;
 </code></pre><p>Во-вторых, появилась возможность управлять почти всеми кишками винды с помощью могущественной скорлупы, тьфу,
 powershell. Например, вот так выглядит аналог <code>ps aux | grep snmp</code>.</p>
-<pre><code>Get-Process | ? { $_.Name -like 'snmp' }
+<pre tabindex="0"><code>Get-Process | ? { $_.Name -like 'snmp' }
 </code></pre><p>Конечно, выглядит достаточно многословно, но для большинства команд есть короткие алиасы, посмотреть которые можно с
 помощью <code>Get-Alias</code>. Вы будете удивлены, но многие алиасы пришли из мира Linux, например, тот же <code>Get-Process</code>
 сокращается до привычного <code>ps</code>.</p>
 <p>Более того, в PowerShell есть привычная концепция пайпов (pipe), только вместо текстовых строк по пайпам бегают реальные
 объекты. Мне лично кажется, что это шаг вперед. Не надо воротить команды с <code>awk</code> и <code>cut</code>, и всегда можно посмотреть
 метаданные того, что пришло тебе через пайп.</p>
-<pre><code>ps | Get-Member
+<pre tabindex="0"><code>ps | Get-Member
 
 
    TypeName: System.Diagnostics.Process

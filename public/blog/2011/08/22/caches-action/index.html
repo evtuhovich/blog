@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.
 # dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &quot;admin&quot; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -240,7 +240,7 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам.
 Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически
 обновляется с помощью ajax-запросов.</p>
-<pre><code># dashboard.rb
+<pre tabindex="0"><code># dashboard.rb
 class Admin::DashboardsController &lt; Admin::BaseController
   layout &quot;admin&quot;
 
@@ -254,12 +254,12 @@ class Admin::DashboardsController &lt; Admin::BaseController
 end
 </code></pre><p>Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.</p>
 <p>В какой-то момент мы решили ее закешировать. Казалось бы, чего уж проще (отмечу, что мы используем Rails 2.3.14).</p>
-<pre><code># dashboard.rb
+<pre tabindex="0"><code># dashboard.rb
 class Admin::DashboardsController &lt; Admin::BaseController
   caches_action :show, :expires_in =&gt; 3.minutes
 </code></pre><p>Но не тут-то было, потому что <code>caches_action</code> по-умолчанию не обращает внимание на передаваемые параметры. Вникнув в
 <a href="http://apidock.com/rails/ActionController/Caching/Actions">документацию</a>, я переделал на следующий вариант.</p>
-<pre><code># dashboard.rb
+<pre tabindex="0"><code># dashboard.rb
 class Admin::DashboardsController &lt; Admin::BaseController
   caches_action :show, :expires_in =&gt; 3.minutes,
     :layout =&gt; false,
@@ -269,12 +269,12 @@ class Admin::DashboardsController &lt; Admin::BaseController
 зависимости от прав, поэтому не надо, чтобы они попадали в кеш.</p>
 <p>Во-вторых, <code>:caches_path</code> отвечает за генерацию ключа для кеширования. Вот с ним-то и возникла проблема, потому что этот ключ
 для обычных и ajax запросов будет один и тот же. Более того, в коде <code>show.html.haml</code> оказался проблемный кусок.</p>
-<pre><code># show.html.haml
+<pre tabindex="0"><code># show.html.haml
 - content_for :head do
   = include_stylesheets :admin_dashboard
 </code></pre><p>Из-за него на странице перестали подхватываться стили, и из кеша эта страница доставалась уже «битая». Я убрал <code>content_for</code>,
 что, конечно, не очень изящно, но для админки простительно. Код же я переписал следующим образом.</p>
-<pre><code># dashboard.rb
+<pre tabindex="0"><code># dashboard.rb
 class Admin::DashboardsController &lt; Admin::BaseController
   caches_action :show, :expires_in =&gt; 3.minutes,
     :layout =&gt; false,
@@ -283,7 +283,7 @@ class Admin::DashboardsController &lt; Admin::BaseController
 со своим коллегой <a href="https://github.com/brainopia">Равилем</a>, который подсказал мне,
 <a href="http://railsforum.com/viewtopic.php?id=41906">куда смотреть</a>. Оказывается, у <code>caches_action</code> есть особенность, что он
 кеширует ajax запросы только с <code>:layout =&gt; true</code>. В итоге у меня получился следующий код.</p>
-<pre><code># dashboard.rb
+<pre tabindex="0"><code># dashboard.rb
 class Admin::DashboardsController &lt; Admin::BaseController
   caches_action :show, :expires_in =&gt; 3.minutes,
     :layout =&gt; Proc.new { |c| c.request.xhr? },

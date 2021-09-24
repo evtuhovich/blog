@@ -16,7 +16,7 @@
 Тем не менее, аналогов этому инструменту я не знаю.
 Сейчас мы будем нагрузочно тестировать мой блог (давайте на секунду вообразим, что он стал мегапопулярным). Оставайтесь
 с нами, но бойтесь, впереди много xml!">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -444,7 +444,7 @@
   <span style="color:#f92672">&lt;/sessions&gt;</span>
 <span style="color:#f92672">&lt;/tsung&gt;</span>
 </code></pre></div><p>В файл <code>urls.csv</code> мы положим список всех урлов сайта, выглядеть он будет приблизительно так.</p>
-<pre><code>/about/index.html
+<pre tabindex="0"><code>/about/index.html
 /blog/2009/01/26/capistrano/index.html
 /blog/2009/02/27/continuous-integration/index.html
 /blog/2009/03/13/git-move-branch/index.html
@@ -471,7 +471,7 @@ tsung из brew). Для этого надо зайти в папку <code>~/.t
 необходимо немного подпилить параметры ядра Linux (о чем <a href="http://unicorn.bogomips.org/TUNING.html">написано в официальной
 документации</a>, но кто ее читает), а именно поставить в sysctl
 <code>net.core.somaxconn=32768</code> (по-умолчанию он был равен 128). В первом случае лог nginx пестрел вот такими ошибками.</p>
-<pre><code class="language-log" data-lang="log">2014/04/01 08:31:12 [error] 21583#0: *168851 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 54.72.157.44, server: new.project.ru, request: &quot;POST /login HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8080/login&quot;, host: &quot;1.1.1.1&quot;
+<pre tabindex="0"><code class="language-log" data-lang="log">2014/04/01 08:31:12 [error] 21583#0: *168851 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 54.72.157.44, server: new.project.ru, request: &quot;POST /login HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8080/login&quot;, host: &quot;1.1.1.1&quot;
 2014/04/01 08:31:12 [error] 21583#0: *169046 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 54.72.157.44, server: new.project.ru, request: &quot;GET / HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8080/&quot;, host: &quot;1.1.1.1&quot;
 2014/04/01 08:31:12 [error] 21583#0: *171178 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 54.72.45.113, server: new.project.ru, request: &quot;GET /login HTTP/1.1&quot;, upstream: &quot;http://127.0.0.1:8080/login&quot;, host: &quot;1.1.1.1&quot;
 </code></pre><p><img src="/images/tsung-bad-tune.png" alt="Плохие настройки">

@@ -12,7 +12,7 @@ contrib модулями.
 нужен для того, чтобы в одном поле в БД хранить много значений key/value, фактически, просто какой-то хеш. При этом и
 ключи и значения могут быть только строками. О том, чем это лучше, нежели просто хранить в текстовом поле сериализованный хеш,
 я расскажу чуть-чуть попозже. Понадобится это может в том случае, если у вас есть модели с произвольным набором полей.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -260,7 +260,7 @@ contrib модулями.
 ключи и значения могут быть только строками. О том, чем это лучше, нежели просто хранить в текстовом поле сериализованный хеш,
 я расскажу чуть-чуть попозже. Понадобится это может в том случае, если у вас есть модели с произвольным набором полей.</p>
 <p>Вначале поставим это расширения в Ubuntu 11.10</p>
-<pre><code>sudo apt-get install postgresql-contrib
+<pre tabindex="0"><code>sudo apt-get install postgresql-contrib
 </code></pre><p>Потом поставим этот модуль. Для этого в 9.1 зайдем в консоль <code>psql</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> EXTENSION hstore;
 WARNING:  <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">is</span> deprecated <span style="color:#66d9ef">as</span> an <span style="color:#66d9ef">operator</span> name

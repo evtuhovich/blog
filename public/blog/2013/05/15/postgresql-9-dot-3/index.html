@@ -11,7 +11,7 @@
 2013 года.
 Обо всех новых возможностях 9.3 можно почитать на официальной wiki.
 Но чтобы не только почитать, но и попробовать, я напишу здесь, как поставить 9.3 beta 1 на OSX.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -256,7 +256,7 @@
 <p>Но чтобы не только почитать, но и попробовать, я напишу здесь, как поставить 9.3 beta 1 на OSX.</p>
 <p>К нашему большому счастью, один из разработчиков PostgreSQL — <a href="http://petereisentraut.blogspot.ru/">Peter Eisentraut</a>
 уже сделал формулу для homebrew, чтобы поставить 9.3.</p>
-<pre><code>
+<pre tabindex="0"><code>
 $ brew update
 
 $ brew tap petere/postgresql
@@ -265,7 +265,7 @@ $ brew install postgresql-9.3
 
 </code></pre><p>Все эти процедуры никак не угрожают предыдущей версии PostgreSQL, который вы поставили из homebrew.
 Далее необходимо создать новый кластер для для 9.3.</p>
-<pre><code>
+<pre tabindex="0"><code>
 $ cd /usr/local/Cellar/postgresql-9.3/9.3beta1/bin
 
 $ ./initdb /usr/local/var/postgres-9.3
@@ -273,16 +273,16 @@ $ ./initdb /usr/local/var/postgres-9.3
 
 </code></pre><p>Далее в файле /usr/local/var/postgres-9.3/postgresql.conf поменяйте порт на 5433, если у вас установлена и запущена
 другая версия PostgreSQL, чтобы можно было пользоваться одновременно двумя.</p>
-<pre><code>$ cat /usr/local/var/postgres-9.3/postgresql.conf | grep port
+<pre tabindex="0"><code>$ cat /usr/local/var/postgres-9.3/postgresql.conf | grep port
 port = 5433                             # (change requires restart)
 </code></pre><p>Все, можно запускать.</p>
-<pre><code>
+<pre tabindex="0"><code>
 $ /usr/local/Cellar/postgresql-9.3/9.3beta1/bin/pg_ctl \
   -D /usr/local/var/postgres-9.3/ -l /var/log/postgresql-9.3.log start
 
 </code></pre><p>Возможно, у вас не будет хватать прав на /var/log/postgresql-9.3.log, но я уверен, вы с этим справитесь.</p>
 <p>Проверим, что все правильно.</p>
-<pre><code>$ psql -p 5433
+<pre tabindex="0"><code>$ psql -p 5433
 Pager usage is off.
 psql (9.2.2, server 9.3beta1)
 WARNING: psql version 9.2, server version 9.3.

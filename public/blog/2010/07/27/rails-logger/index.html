@@ -9,7 +9,7 @@
     <meta name="description" content="Часто один и тот же rails-проект используется и для web-части, и для каких-то других задач, выполняемых по расписанию или для создания демонов. В таких случаях иногда хочется, чтобы логи разных частей писались в разные файлы.
 Готового способа для этого я не нашел. Например, посмотрим на такой пример:
  $ ./script/console Loading development environment (Rails 2.3.5) &gt;&gt; ActiveRecord::Base.logger = Logger.new(STDOUT) =&gt; #&amp;lt;Logger:0xb192594 @progname=nil, @level=0, @default_formatter=#&amp;lt;Logger::Formatter:0xb19255c @datetime_format=nil&gt;, formatternil, logdev#&amp;lt;Logger::LogDevice:0xb19247c @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#&amp;lt;IO:&amp;lt;STDOUT&gt;, mutex#&amp;lt;Logger::LogDevice::LogDeviceMutex:0xb192444 @mon_owner=nil, @mon_count=0, @mon_mutex=#&amp;lt;Mutex:0xb19240c&gt; &gt;&gt; User.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -244,7 +244,7 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Часто один и тот же rails-проект используется и для web-части, и для каких-то других задач, выполняемых по расписанию
 или для создания демонов. В таких случаях иногда хочется, чтобы логи разных частей писались в разные файлы.</p>
 <p>Готового способа для этого я не нашел. Например, посмотрим на такой пример:</p>
-<pre><code>    $ ./script/console 
+<pre tabindex="0"><code>    $ ./script/console 
     Loading development environment (Rails 2.3.5)
 
     &gt;&gt;  ActiveRecord::Base.logger = Logger.new(STDOUT)
@@ -262,7 +262,7 @@
 </code></pre></div><p>Из этого кода понятно, что логгер потерялся в дебрях connection. Исправить ситуацию помогает следующая конструкция:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>instance_variable_set(<span style="color:#e6db74">&#39;@logger&#39;</span>, <span style="color:#66d9ef">Logger</span><span style="color:#f92672">.</span>new(<span style="color:#66d9ef">STDOUT</span>))
 </code></pre></div><p>После этого в консоли:</p>
-<pre><code>    &gt;&gt; User.first
+<pre tabindex="0"><code>    &gt;&gt; User.first
       User Load (0.1ms)   SELECT * FROM `users` LIMIT 1
     =&gt; #&amp;lt;User id: 1, email: &quot;seeduser@scalaxy.ru&quot;&gt;
 </code></pre><p>Эта проблема отняла у меня изрядное количество времени, надеюсь вам она поможет его сэкономить.</p>

@@ -10,7 +10,7 @@
 Поэтому сегодня рассказ будет о Index Only Scan — самом заметном, по моему мнению, изменении в 9.2. Кстати, именно это
 изменение стоит первым в Release Notes, а значит я не
 одинок.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -250,7 +250,7 @@
 изменение стоит первым в <a href="http://www.postgresql.org/docs/9.2/static/release-9-2.html">Release Notes</a>, а значит я не
 одинок.</p>
 <p>Итак, у нас есть БД Posgresql 9.2 с предварительно отключенным автовакумом.</p>
-<pre><code>
+<pre tabindex="0"><code>
 $ cat postgresql.conf | grep autovacuum\ =
 autovacuum = off			# Enable autovacuum subprocess?  'on'
 
@@ -262,7 +262,7 @@ $ echo &quot;select version()&quot; | psql
 (1 row)
 
 </code></pre><p>Также у нас есть вот такая таблица <code>a</code> с индексом на поле <code>first_name</code>.</p>
-<pre><code>
+<pre tabindex="0"><code>
 mc=# \d a
          Table &quot;public.a&quot;
    Column    |  Type   | Modifiers 
@@ -291,7 +291,7 @@ mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span
 (<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">row</span>)
 
 </code></pre></div><p>Что же, посмотрим, как Иваны будут извлекаться из БД.</p>
-<pre><code>
+<pre tabindex="0"><code>
 explain (analyze true, buffers true) select count(*) from a where first_name = 'Иван';
                                                              QUERY PLAN                                                             
 ------------------------------------------------------------------------------------------------------------------------------------
@@ -316,7 +316,7 @@ explain (analyze true, buffers true) select count(*) from a where first_name = '
 выставляется, и это означает, что нет необходимости проверять видимость какой-то строки, найденной в индексе.</p>
 <p>Поскольку vacuum как раз занимается тем, что чистит старые строки, то он же и обновляет visibility map. Поэтому сделаем
 вакум на таблице <code>a</code> и повторим наш запрос.</p>
-<pre><code>mc=# vacuum a;
+<pre tabindex="0"><code>mc=# vacuum a;
 VACUUM
 mc=# explain (analyze true, buffers true) select count(*) from a where first_name = 'Иван';
                                                              QUERY PLAN                                                              

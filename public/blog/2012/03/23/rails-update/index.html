@@ -14,7 +14,7 @@ warden стал по-другому сериализовать сессию. А 
 неуловимое исключение в Marshal.load.
 Все эти проблемы решены были кодом, которые приведен ниже. И еще похожий код был в rails2-ветке, который конвертил
 сессию третьих рельс во вторую. Пользуйтесь с осторожностью.">
-    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="generator" content="Hugo 0.88.1" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -269,7 +269,7 @@ warden стал по-другому сериализовать сессию. А 
 неуловимое исключение в Marshal.load.</p>
 <p>Все эти проблемы решены были кодом, которые приведен ниже. И еще похожий код был в rails2-ветке, который конвертил
 сессию третьих рельс во вторую. Пользуйтесь с осторожностью.</p>
-<pre><code># config/initializiers/rails3_session.rb
+<pre tabindex="0"><code># config/initializiers/rails3_session.rb
 class ActionController::Flash::FlashHash &lt; Hash
 end
 
