@@ -203,6 +203,23 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2009-04-20</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2009/04/20/to-yaml-recursion/" class="link black dim">
+        Рекурсивные особенности to_yaml
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Если необходимо сериализовать/десериализовать какой-то объект, то yaml формат хорошо для этого подходит.
+В моем проекте мы записывали объекты в очередь, использую yaml-сериализацию. На тестах все было хорошо. Но на живом эта самая сериализация стала выполняться очень долго.
+Оказалось, что если у объекта есть связные объекты, то он их тоже засовывает в yaml, а если таких объектов очень много, то это будет сложная операция. Понятно, что в примитивных тестах этого было не видно, а подумать хорошо головой в тот раз не получилось.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2009-04-08</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2009/04/08/concurent-index/" class="link black dim">
