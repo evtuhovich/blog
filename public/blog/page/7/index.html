@@ -203,6 +203,23 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2012-02-12</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2012/02/12/pgbouncer/" class="link black dim">
+        PgBouncer
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Удивительное дело, что я до сих пор не написал про <a href="http://pgfoundry.org/projects/pgbouncer/">PgBouncer</a>. Как написано
+на сайте — это «Lightweight connection pooler for PostgreSQL». Я бы первел это следующим образом.
+PgBouncer — это легкий менеджер соединений для PostgreSQL.</p>
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2012-02-08</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2012/02/08/rubynoname/" class="link black dim">
@@ -395,21 +412,6 @@ class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =
       Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
 class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
 Хеш params, которые передается в класс Report — это тот самый params из контроллера.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2011-09-03</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2011/09/03/configuration-management/" class="link black dim">
-        Управление конфигурацией и Chef
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Расскажу одну очень поучительную и одновременно типичную историю, которая случилась со мною года 3 назад. Однажды один из наших серверов вышел из строя. Казалось бы, обычная ситуация, но беда была в том, что работа приложения была сильно завязано на 10-15 различных cron-задач, которые были прописаны на этой машине. Еще большая проблема была в том, что писались скрипты, которые вызывались по cron, различными людьми, многие их которых к тому времени не работали в компании.
     </div>
   </div>
 </div>
