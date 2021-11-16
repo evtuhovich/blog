@@ -203,6 +203,24 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2012-02-19</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2012/02/19/local-data/" class="link black dim">
+        Фильтрация данных на клиенте
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Давече у нас на Групоне возникла следующая проблема — начала тормозить одна страница в админке. Причем до того сильно,
+что ее sql запрос стал регулярно появляться в списке медленных запросов в newrelic. Для большей понятности я поменяю
+название моделей на книги (Book) и авторы (Author), при этом, очевидно, «авторы имеют много книг», то есть связь один ко
+многим.</p>
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2012-02-12</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2012/02/12/pgbouncer/" class="link black dim">
@@ -395,23 +413,6 @@ Vagrant — это надстройка над платформой вирту�
       Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
 class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2011-09-09</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2011/09/09/indiferent-hash-merge/" class="link black dim">
-        Слияние HashWithIndifferentAccess с обычными хешами
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
-class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
-Хеш params, которые передается в класс Report — это тот самый params из контроллера.
     </div>
   </div>
 </div>

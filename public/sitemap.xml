@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://evtuhovich.ru/blog/</loc>
-    <lastmod>2021-10-26T20:56:58+03:00</lastmod>
+    <lastmod>2021-11-16T18:04:19+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://evtuhovich.ru/</loc>
-    <lastmod>2021-10-26T20:56:58+03:00</lastmod>
+    <lastmod>2021-11-16T18:04:19+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/blog/2021/11/16/leave-the-starship/</loc>
+    <lastmod>2021-11-16T18:04:19+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
