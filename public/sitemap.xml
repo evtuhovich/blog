@@ -2,12 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://evtuhovich.ru/blog/</loc>
-    <lastmod>2021-11-16T18:04:19+03:00</lastmod>
+    <loc>https://evtuhovich.ru/</loc>
+    <lastmod>2021-11-22T11:32:58+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://evtuhovich.ru/</loc>
+    <loc>https://evtuhovich.ru/life/2021/11/22/morining-in-the-future/</loc>
+    <lastmod>2021-11-22T11:32:58+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/life/</loc>
+    <lastmod>2021-11-22T11:32:58+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/life/2021/11/18/whining/</loc>
+    <lastmod>2021-11-18T12:23:59+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/blog/</loc>
     <lastmod>2021-11-16T18:04:19+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -33,11 +48,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://evtuhovich.ru/life/2021/10/15/antidepressant/</loc>
-    <lastmod>2021-10-15T12:01:55+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://evtuhovich.ru/life/</loc>
     <lastmod>2021-10-15T12:01:55+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
