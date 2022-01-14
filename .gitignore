@@ -20,3 +20,5 @@
 
 .s3_sync
 sync.sh
+
+.hugo_build.lock
