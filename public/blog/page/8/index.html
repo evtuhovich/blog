@@ -203,6 +203,23 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2011-09-11</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2011/09/11/find-in-batches/" class="link black dim">
+        Проблемы с find_in_batches
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
+Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
+class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2011-09-09</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2011/09/09/indiferent-hash-merge/" class="link black dim">
@@ -386,23 +403,6 @@ http://github.com/evtuhovich/pgq/tree/master
 </div>
 </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2009-05-28</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2009/05/28/validates-uniqueness-of/" class="link black dim">
-        Проблема с проверкой уникальности какого-то поля в rails
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Пусть в модели User у нас описана валидация для поля email
-validates_uniqueness_of :email, :case_sensitive =&gt; false, :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
-SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос.
-    </div>
-  </div>
-</div>
-</div>
-      
     </section>
     <ul class="pagination pagination-default">
       <li class="page-item">
@@ -410,9 +410,6 @@ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таб�
       </li>
       <li class="page-item">
         <a href="/blog/page/7/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/blog/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
       </li>
       <li class="page-item">
         <a href="/blog/page/6/" aria-label="Page 6" class="page-link" role="button">6</a>
@@ -427,10 +424,13 @@ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таб�
         <a href="/blog/page/9/" aria-label="Page 9" class="page-link" role="button">9</a>
       </li>
       <li class="page-item">
+        <a href="/blog/page/10/" aria-label="Page 10" class="page-link" role="button">10</a>
+      </li>
+      <li class="page-item">
         <a href="/blog/page/9/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/blog/page/9/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/blog/page/10/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul></article>
 

@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://evtuhovich.ru/blog/</loc>
+    <lastmod>2022-01-20T10:28:44+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://evtuhovich.ru/</loc>
-    <lastmod>2022-01-14T15:35:25+03:00</lastmod>
+    <lastmod>2022-01-20T10:28:44+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/blog/2022/01/20/new-job/</loc>
+    <lastmod>2022-01-20T10:28:44+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -59,11 +69,6 @@
   </url><url>
     <loc>https://evtuhovich.ru/life/2021/11/18/whining/</loc>
     <lastmod>2021-11-18T12:23:59+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://evtuhovich.ru/blog/</loc>
-    <lastmod>2021-11-16T18:04:19+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

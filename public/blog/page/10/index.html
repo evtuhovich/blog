@@ -203,218 +203,18 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2013-03-20</span>
+    <span class="f6 db">Blog 2009-01-26</span>
     <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2013/03/20/big-cache/" class="link black dim">
-        БД — большой кэш
+      <a href="https://evtuhovich.ru/blog/2009/01/26/capistrano/" class="link black dim">
+        Использование capistrano
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>В <a href="blog/2013/02/24/partitioning/">прошлый раз</a> я обещал написать о том, что в проектах с более менее серьезной нагрузкой
-БД либо помещается в память, либо не работает. Ситуация в современном мире меняется в связи с появлением SSD дисков, но
-пока что они стоят достаточно дорого, по сравнению со старыми добрыми вращающимися дисками. Чтобы «потрогать» это
-руками, проделаем несложный тест.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2013-02-24</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2013/02/24/partitioning/" class="link black dim">
-        Партиционирование
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Я долго считал партиционирование плохой практикой, а само слово не любил из-за кальки с английского, которую крайне
-сложно выговорить с первого раза. И если слово «партиционирование» я так с первого раза и не выговариваю, то саму
-практику пришлось признать как необходимое и неизбежное зло. Чтобы никто не подумал, что я делаю что-то плохое, я
-использую для этого термин «инженерный компромисс», звучит умнее и не так обидно.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2013-02-22</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2013/02/22/transactions-on-multiple-db/" class="link black dim">
-        Транзакции и несколько БД
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Иногда так случается, что на проекте необходимо использовать более одного сервера баз данных. Оказывается, в rails можно
-достаточно удобно поддерживать актуальность нескольких БД с помощью миграций.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2013-01-27</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2013/01/27/locks/" class="link black dim">
-        Блокировки в PostgreSQL
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Чтобы рассказать о тонких моментах <a href="/blog/2013/01/09/fix-db-on-fly/">pg_repack</a>, мне понадобится немного углубиться в
-тему блокировок в PostgreSQL. Конечно, лучше всего начать читать про них в <a href="http://www.postgresql.org/docs/9.1/static/explicit-locking.html">официальной документации</a>. Для этой статьи достаточно понимать, что
-эксклюзивная блокировка (ACCESS EXCLUSIVE LOCK) препятствует выполнению всех операций, включая <code>SELECT</code>, и она нужна для операции
-<code>ALTER TABLE</code>.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2013-01-09</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2013/01/09/fix-db-on-fly/" class="link black dim">
-        Ремонт БД на лету с помощью pg_repack
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Окончились новогодние праздники, а это значит, что пора с новыми силами кинуться в бой с ИТ-сложностью, ИТ-хаосом
-и другими ИТ бедами.</p>
-<p>Одной из бед всех версионных БД является разбухание таблиц. Все бы ничего, но если количество активно используемых
-данных перестает влезать в оперативную память, то время обработки запросов к БД чрезвычайно сильно возрастает (об этом я
-напишу в ближайшем будущем). И чтобы «впихнуть» размеры таблицы в нужный размер, иногда приходится делать некоторые нетрадиционные
-трюки.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2012-12-18</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2012/12/18/railsclub-ulsk/" class="link black dim">
-        Последствия выступления на Railsclub&#39;Ulsk
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>В эту субботу 15 декабря я выступал в Ульяновске с докладом «Нетрадиционное использование Ruby и PostgreSQL». Несмотря
-на несколько провокационное название, доклад был посвящен вполне обыденным вещам: о том, как использовать Ruby и
-PostgreSQL не в web-проекте с Rails. Я рассказал о Ruby внутри Vim, hstore и PostgreSQL массивах внутри Rails (кстати,
-hstore и ARRAY неоднократно упоминались на конференции, так что я был неоригинален), а самая забавная часть моего
-доклада была посвящена несуществующей документоориентированной БД rmongo.rb. Видеозапись второго дня еще доступна на
-<a href="http://railsclub.ru/stream">сайте Railsclub</a>, и я надеюсь, что и первый день скоро появится в общем доступе.</p>
-<p>Исходные коды, которые связаны с докладом, я выложил на <a href="https://gist.github.com/4327395">Gist</a>, сам доклад я выложил на
-<a href="http://www.slideshare.net/evtuhovich/ruby-postgresql">Slideshare</a>.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2012-10-10</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2012/10/10/index-only-scan/" class="link black dim">
-        Index Only Scan в Postgresql 9.2
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Вообще, сам не узнаю себя, уже ровно месяц прошел с выпуска <a href="http://www.postgresql.org/docs/9.2/static/release-9-2.html">Postgresql 9.2</a>, даже вышло <a href="http://www.postgresql.org/docs/9.2/static/release-9-2-1.html">обновление 9.2.1</a>, исправляющее некоторые баги, а я все еще ничего не написал об этом.</p>
-<p>Поэтому сегодня рассказ будет о Index Only Scan — самом заметном, по моему мнению, изменении в 9.2. Кстати, именно это
-изменение стоит первым в <a href="http://www.postgresql.org/docs/9.2/static/release-9-2.html">Release Notes</a>, а значит я не
-одинок.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2012-09-20</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2012/09/20/cyprus/" class="link black dim">
-        Кипр и хвосты
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      22 сентября я уезжаю на Кипр на 3 недели всей семьей. Если кто-то хочется встретиться со мною лично, либо есть какое-то деловое или не очень предложение, обращайтесь на мой email.
-Сегодня уезжает последний наш гость на конференции RailsClub — Диркьян Бушинк. Мы с Иваном Самсоновым успели взять у него интервью, которое выйдет в ближайшем подкасте RubyNoName. Я очень благодарен всем, кто помогал проводить нам конференцию, а также тем, кто пришел. Я прочитал множество теплых отзывов в твиттере, больше вам спасибо за это.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2012-09-08</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2012/09/08/railsclub-2012/" class="link black dim">
-        Конференции
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Сегодня я хочу рассказать о пользе конференций в жизненной практике любого специалиста. Если вы просто работаете в своей
-профессии и не хотите стать и быть Специалистом (именно так, с большой буквы), то дальше можете не читать.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2012-08-27</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2012/08/27/command-player/" class="link black dim">
-        Командный игрок
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Технологии, конечно, технологиями, но иногда хочется рассказать чего-то «про жизнь». А именно про то, как работают
-хорошие команды. Собственно, этот рассказ тоже о технологиях, только о человеческих.</p>
-<p>К несчастью, технологии работы с людьми формализуются достаточно плохо, и такой ясности, как при работе с компьютерами,
-конечно же нет. Поэтому сказать точно, что такое «хорошая команда», практически невозможно. Параметров оценки этого
-слишком много, да и каждый параметр даже не понятно, чем измерять. Поэтому я просто поделюсь своими соображениями на
-этот счет, не претендую никоим образом на объективность и правоту.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2012-07-27</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2012/07/27/backup/" class="link black dim">
-        Barman и WAL-E
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>В postgresql есть замечательная возможность делать <a href="http://www.postgresql.org/docs/9.1/interactive/continuous-archiving.html">непрерывные бэкапы</a>,
-то есть бэкапы, по которым можно восстановиться на любой момент времени.</p>
-<p>Если вы делаете обычные бэкапы и запускаете в час ночи pg_dump, а в час дня ваш сервер БД умер, то вы потеряете данные за
-12 часов и доверие ваших пользователей. Для многих web-сервисов такой сценарий неприемлем, и, чтобы минимизировать потери
-данных, стоит использовать непрерывный бэкап.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2012-07-14</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2012/07/14/collate-osx-postgres/" class="link black dim">
-        Проблема с сортировкой русских слов в Postgres на OSX
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Я давно мечтаю об Ubuntu, которая работает так же хорошо, как OSX. К несчастью, большинство пользовательских программ в
-Ubuntu хуже, чем в OSX, а что касается серверной части - OSX очень сильно отстает от Ubuntu (Debian).</p>
-<p>К примеру, по-умолчанию, в Postgresql в OSX сломана сортировка русских слов. Решение я нашел
-<a href="http://chipiga.pp.ua/sql/kak-zastavit-postgresql-pravilno-sortirovat-utf8-kirillitsu-na-mac-os-x/">здесь</a>.</p>
+      Для выкатки (deploy) я не знаю другого инструмента, кроме capistrano. Слышал про vlad, но в глаза его никогда не видел.
+Использовать capistrano имеет смысл при любом размере проекта, будь то сайт из 3-5 страничек, или что-то большое. Во втором случае отказ от использования capistrano — форменное безумие с моей точки зрения.
+Начать знакомиться лучше всего отсюда.
+Если вкратце, то заходим в каталог проекта и набираем:
+ capify . Дальше правим файл config/deploy.
     </div>
   </div>
 </div>
@@ -426,16 +226,7 @@ Ubuntu хуже, чем в OSX, а что касается серверной ч
         <a href="/blog/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/blog/page/4/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/blog/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
-      </li>
-      <li class="page-item">
-        <a href="/blog/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 5" class="page-link" role="button">5</a>
+        <a href="/blog/page/9/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
       </li>
       <li class="page-item">
         <a href="/blog/page/6/" aria-label="Page 6" class="page-link" role="button">6</a>
@@ -444,10 +235,19 @@ Ubuntu хуже, чем в OSX, а что касается серверной ч
         <a href="/blog/page/7/" aria-label="Page 7" class="page-link" role="button">7</a>
       </li>
       <li class="page-item">
-        <a href="/blog/page/6/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+        <a href="/blog/page/8/" aria-label="Page 8" class="page-link" role="button">8</a>
       </li>
       <li class="page-item">
-        <a href="/blog/page/10/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/blog/page/9/" aria-label="Page 9" class="page-link" role="button">9</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 10" class="page-link" role="button">10</a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul></article>
 
