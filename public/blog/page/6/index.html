@@ -203,6 +203,24 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2012-07-14</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2012/07/14/collate-osx-postgres/" class="link black dim">
+        Проблема с сортировкой русских слов в Postgres на OSX
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Я давно мечтаю об Ubuntu, которая работает так же хорошо, как OSX. К несчастью, большинство пользовательских программ в
+Ubuntu хуже, чем в OSX, а что касается серверной части - OSX очень сильно отстает от Ubuntu (Debian).</p>
+<p>К примеру, по-умолчанию, в Postgresql в OSX сломана сортировка русских слов. Решение я нашел
+<a href="http://chipiga.pp.ua/sql/kak-zastavit-postgresql-pravilno-sortirovat-utf8-kirillitsu-na-mac-os-x/">здесь</a>.</p>
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2012-07-01</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2012/07/01/ulsk-results/" class="link black dim">
@@ -382,28 +400,6 @@ Shaving</a>).</p>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       31 марта буду выступать на конференции CodeFest. Мой доклад «Как мы делали Групон» будет в 17:05 во втором зале. А второго апреля я проведу мастер-класс «Устройство и оптимизация Postgresql».
 Я хочу выразить большую благодарность организаторам конференции за их работу. Поскольку у меня есть опыт в этой области, я понимаю, какой объем работы надо проделать, чтобы привезти докладчиков со всех концов России в Новосибирск. Верю, что конференция пройдет продуктивно и на позитивной волне.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2012-03-23</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2012/03/23/rails-update/" class="link black dim">
-        Обновление на rails3 и проблемы, связанные с этим
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>На «Групоне» мы давно уже переходим с Rails 2.3 на Rails 3.0. На этой неделе перешли — полет нормальный. Но поскольку
-сразу переход у нас не получился, то мы переходили по частям. И тут возникла проблема, что в rails3 нужен новый devise (1.5.3),
-которому нужен warden (1.1.1). А в rails2 используется devise (1.0.9), которому нужен warden (0.10.7). И вот этот вот
-warden стал по-другому сериализовать сессию. А devise стал хранить remember_token в подписанной (signed) cookie. Более
-того, из самих рельс пропал класс ActionController::Flash::FlashHash, поэтому при десериализации сессии происходило
-неуловимое исключение в Marshal.load.</p>
-<p>Все эти проблемы решены были кодом, которые приведен ниже. И еще похожий код был в rails2-ветке, который конвертил
-сессию третьих рельс во вторую. Пользуйтесь с осторожностью.</p>
     </div>
   </div>
 </div>
