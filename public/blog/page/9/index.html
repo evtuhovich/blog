@@ -203,6 +203,24 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2009-07-30</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2009/07/30/ruby-debug/" class="link black dim">
+        Использование ruby-debug
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Использование дебаггера при разработке — это плохой тон. Это значит, что вы не понимаете, как работает ваша программа. Но иногда жизнь без дебаггера становится невыносимой.
+Есть отличный плагин vim-ruby-debugger для редактора vim. Но он пока сыроват и не все возможности в нем есть. По крайней мере в моем случае, чтобы понять, что происходить внутри спека, он не помог.
+Тогда я воспользовался старым дедовским способом:
+require &#39;ruby-debug&#39; Debugger.start И вставил вызов debugger в том месте, где мне это необходимо.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2009-06-05</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/" class="link black dim">
@@ -381,22 +399,6 @@ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таб�
       Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
  $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2009-03-13</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2009/03/13/git-move-branch/" class="link black dim">
-        Перенести ветку в git
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Представим следующую ситуацию (она постоянно возникает у нас при разработке). У нас есть ветка master в git, а в день релиза мы создаем ветку b1. Мы добавляем какие-то изменения в ветки b1 и master. И тут вдруг (хотя слово «вдруг» не очень подходит к регулярным событям) менеджмент решает добавить что-то из master в релиз.
-Если комитов было мало, то можно воспользоваться git cherry-pick (если их несколько, то может помочь ключ -n).
     </div>
   </div>
 </div>
