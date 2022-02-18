@@ -203,6 +203,25 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2010-04-05</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2010/04/05/vim-pathogen/" class="link black dim">
+        Автоматизация vim с помощью pathogen
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Извечная проблема о том, как добавлять и обновлять плагины в vim решилась благодаря легендарному Tim Pope.
+Сегодня утром узнал от Ярослава Маркина о существовании pathogen.
+Статья на английском о том, как им пользоваться, лежит здесь. Правда, я потратил полчаса, чтобы догадаться, что надо добавить call pathogen#runtime_append_all_bundles() в файл ~/.vimrc.
+После установки pathogen.vim в ~/.vim/autoload можно хранить все плагины в папке ~/.vim/bundle, причем каждый в своей папке.
+А еще огромный плюс - в конце этой статьи код, который позволяет обновлять все плагины одной командой.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2009-07-30</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2009/07/30/ruby-debug/" class="link black dim">
@@ -382,23 +401,6 @@ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таб�
       Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
 Итак, у нас есть следующие модели:
 # shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2009-03-20</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2009/03/20/big-tables/" class="link black dim">
-        PosgtreSql, миграции и огромные таблицы
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
-Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
- $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self.
     </div>
   </div>
 </div>
