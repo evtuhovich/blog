@@ -203,6 +203,23 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2009-03-22</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2009/03/22/cache-problem/" class="link black dim">
+        Проблемы с кэшированием
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
+Итак, у нас есть следующие модели:
+# shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2009-03-20</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2009/03/20/big-tables/" class="link black dim">
