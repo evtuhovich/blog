@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="В некоторых ситуациях необходимо использовать более чем одну базу данных в проекте. Например, статистику и большие таблицы хранить на другом сервере, у которого большой и медленный диск, а данные, которые нужны постоянно, хранить на основном сервере с маленьким и быстрым диском.
 В нашем случае хотелось унести большие таблицы на другой сервер, чтобы в дисковом кэше (а у главного сервера БД 32 Гб оперативной памяти) хранились все рабочие таблицы и никогда оттуда не убегали.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -243,101 +243,101 @@
 <p>В нашем случае хотелось унести большие таблицы на другой сервер, чтобы в дисковом кэше (а у главного сервера БД 32 Гб
 оперативной памяти) хранились все рабочие таблицы и никогда оттуда не убегали.</p>
 <p>Делаем абстракный класс SecondDb, в котором указываем, с каким сервером БД соединяться.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecondDb</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
-      self<span style="color:#f92672">.</span>abstract_class <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-      establish_connection <span style="color:#e6db74">&#34;linkfeed2_</span><span style="color:#e6db74">#{</span><span style="color:#66d9ef">RAILS_ENV</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;development&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    <span style="color:#66d9ef">end</span>
-</code></pre></div><p>Наследуем от этого класса тот класс, который будем хранить в другой БД:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Message</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">SecondDb</span>
-    <span style="color:#66d9ef">end</span>
-</code></pre></div><p>Не забываем, что миграции тоже должны использовать SecondDb:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">SecondDb</span><span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>create_table <span style="color:#e6db74">:auto_buy_stats</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
-      t<span style="color:#f92672">.</span>timestamps
-    <span style="color:#66d9ef">end</span>
-</code></pre></div><p>Но сразу возникает проблема с тестами. Дело в том, что после теста откатывается (ROLLBACK) только основная БД. Для того,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecondDb</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
+</span></span><span style="display:flex;"><span>      self<span style="color:#f92672">.</span>abstract_class <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      establish_connection <span style="color:#e6db74">&#34;linkfeed2_</span><span style="color:#e6db74">#{</span><span style="color:#66d9ef">RAILS_ENV</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;development&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Наследуем от этого класса тот класс, который будем хранить в другой БД:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Message</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">SecondDb</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Не забываем, что миграции тоже должны использовать SecondDb:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">SecondDb</span><span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>create_table <span style="color:#e6db74">:auto_buy_stats</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>      t<span style="color:#f92672">.</span>timestamps
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Но сразу возникает проблема с тестами. Дело в том, что после теста откатывается (ROLLBACK) только основная БД. Для того,
 чтобы и на второй БД транзакции откатывались, можно вот так пропатчить spec/spec_helper.rb (rspec 1.1.1)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">module</span> Test <span style="color:#75715e">#:nodoc:</span>
-      <span style="color:#66d9ef">module</span> Unit <span style="color:#75715e">#:nodoc:</span>
-        <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestCase</span> <span style="color:#75715e">#:nodoc:</span>
-          remove_const(<span style="color:#e6db74">&#39;DATABASES&#39;</span>) <span style="color:#66d9ef">if</span> defined?(<span style="color:#66d9ef">DATABASES</span>)
-          <span style="color:#66d9ef">DATABASES</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>, <span style="color:#66d9ef">SecondDb</span><span style="color:#f92672">]</span>
-
-          <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup_preloaded_fixtures</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">if</span> @fixtures_setup
-            @fixtures_setup <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">unless</span> defined?(<span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>configurations<span style="color:#f92672">.</span>blank?
-
-            <span style="color:#66d9ef">if</span> pre_loaded_fixtures <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>use_transactional_fixtures
-              <span style="color:#66d9ef">raise</span> <span style="color:#66d9ef">RuntimeError</span>, <span style="color:#e6db74">&#39;pre_loaded_fixtures requires use_transactional_fixtures&#39;</span>
-            <span style="color:#66d9ef">end</span>
-
-            @fixture_cache <span style="color:#f92672">=</span> {}
-
-            <span style="color:#75715e"># Load fixtures once and begin transaction.</span>
-            <span style="color:#66d9ef">if</span> use_transactional_fixtures?
-              <span style="color:#66d9ef">if</span> @@already_loaded_fixtures<span style="color:#f92672">[</span>self<span style="color:#f92672">.</span>class<span style="color:#f92672">]</span>
-                @loaded_fixtures <span style="color:#f92672">=</span> @@already_loaded_fixtures<span style="color:#f92672">[</span>self<span style="color:#f92672">.</span>class<span style="color:#f92672">]</span>
-              <span style="color:#66d9ef">else</span>
-                load_fixtures
-                @@already_loaded_fixtures<span style="color:#f92672">[</span>self<span style="color:#f92672">.</span>class<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> @loaded_fixtures
-              <span style="color:#66d9ef">end</span>
-              <span style="color:#66d9ef">DATABASES</span><span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>db<span style="color:#f92672">|</span>
-                <span style="color:#66d9ef">if</span> db<span style="color:#f92672">.</span>respond_to?(<span style="color:#e6db74">:increment_open_transactions</span>, <span style="color:#66d9ef">true</span>)
-                  <span style="color:#75715e"># rails &lt; 2.2</span>
-                  db<span style="color:#f92672">.</span>send <span style="color:#e6db74">:increment_open_transactions</span>
-                <span style="color:#66d9ef">else</span>
-                  <span style="color:#75715e"># rails &gt;= 2.2</span>
-                  db<span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>send <span style="color:#e6db74">:increment_open_transactions</span>
-                <span style="color:#66d9ef">end</span>
-                db<span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>begin_db_transaction
-              <span style="color:#66d9ef">end</span>
-              <span style="color:#75715e"># Load fixtures for every test.</span>
-            <span style="color:#66d9ef">else</span>
-              <span style="color:#66d9ef">Fixtures</span><span style="color:#f92672">.</span>reset_cache
-              @@already_loaded_fixtures<span style="color:#f92672">[</span>self<span style="color:#f92672">.</span>class<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">nil</span>
-              load_fixtures
-            <span style="color:#66d9ef">end</span>
-
-            <span style="color:#75715e"># Instantiate fixtures for every test if requested.</span>
-            instantiate_fixtures <span style="color:#66d9ef">if</span> use_instantiated_fixtures
-          <span style="color:#66d9ef">end</span>
-
-          setup_fixtures_method_name <span style="color:#f92672">=</span> <span style="color:#66d9ef">Test</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Unit</span><span style="color:#f92672">::</span><span style="color:#66d9ef">TestCase</span><span style="color:#f92672">.</span>instance_methods<span style="color:#f92672">.</span>include?(<span style="color:#e6db74">&#39;setup_fixtures&#39;</span>) ? <span style="color:#e6db74">:setup_fixtures</span> : <span style="color:#e6db74">:setup_with_fixtures</span>
-          alias_method setup_fixtures_method_name, <span style="color:#e6db74">:setup_preloaded_fixtures</span>
-          alias_method <span style="color:#e6db74">:setup</span>, setup_fixtures_method_name
-
-          <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">teardown_preloaded_fixtures</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">if</span> @fixtures_teardown
-            @fixtures_teardown <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">unless</span> defined?(<span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>configurations<span style="color:#f92672">.</span>blank?
-
-            <span style="color:#66d9ef">unless</span> use_transactional_fixtures?
-              <span style="color:#66d9ef">Fixtures</span><span style="color:#f92672">.</span>reset_cache
-            <span style="color:#66d9ef">end</span>
-
-            <span style="color:#75715e"># Rollback changes if a transaction is active.</span>
-            <span style="color:#66d9ef">if</span> use_transactional_fixtures?
-              <span style="color:#66d9ef">DATABASES</span><span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>db<span style="color:#f92672">|</span>
-                db<span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>rollback_db_transaction
-                <span style="color:#66d9ef">if</span> db<span style="color:#f92672">.</span>respond_to?(<span style="color:#e6db74">:increment_open_transactions</span>, <span style="color:#66d9ef">true</span>)
-                  <span style="color:#75715e"># rails &lt; 2.2</span>
-                  <span style="color:#66d9ef">Thread</span><span style="color:#f92672">.</span>current<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;open_transactions&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-                <span style="color:#66d9ef">else</span>
-                  <span style="color:#75715e"># rails &gt;= 2.2</span>
-                  db<span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>instance_variable_set(<span style="color:#e6db74">&#39;@open_transactions&#39;</span>,<span style="color:#ae81ff">0</span>)
-                <span style="color:#66d9ef">end</span>
-              <span style="color:#66d9ef">end</span>
-            <span style="color:#66d9ef">end</span>
-            <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>verify_active_connections!
-          <span style="color:#66d9ef">end</span>
-
-          teardown_fixtures_method_name <span style="color:#f92672">=</span> <span style="color:#66d9ef">Test</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Unit</span><span style="color:#f92672">::</span><span style="color:#66d9ef">TestCase</span><span style="color:#f92672">.</span>instance_methods<span style="color:#f92672">.</span>include?(<span style="color:#e6db74">&#39;teardown_fixtures&#39;</span>) ? <span style="color:#e6db74">:teardown_fixtures</span> : <span style="color:#e6db74">:teardown_with_fixtures</span>
-          alias_method teardown_fixtures_method_name, <span style="color:#e6db74">:teardown_preloaded_fixtures</span>
-          alias_method <span style="color:#e6db74">:teardown</span>, teardown_fixtures_method_name
-        <span style="color:#66d9ef">end</span>
-      <span style="color:#66d9ef">end</span>
-    <span style="color:#66d9ef">end</span>
-</code></pre></div><p>Вуаля!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">module</span> Test <span style="color:#75715e">#:nodoc:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">module</span> Unit <span style="color:#75715e">#:nodoc:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestCase</span> <span style="color:#75715e">#:nodoc:</span>
+</span></span><span style="display:flex;"><span>          remove_const(<span style="color:#e6db74">&#39;DATABASES&#39;</span>) <span style="color:#66d9ef">if</span> defined?(<span style="color:#66d9ef">DATABASES</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">DATABASES</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>, <span style="color:#66d9ef">SecondDb</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup_preloaded_fixtures</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">if</span> @fixtures_setup
+</span></span><span style="display:flex;"><span>            @fixtures_setup <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">unless</span> defined?(<span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>configurations<span style="color:#f92672">.</span>blank?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> pre_loaded_fixtures <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>use_transactional_fixtures
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">raise</span> <span style="color:#66d9ef">RuntimeError</span>, <span style="color:#e6db74">&#39;pre_loaded_fixtures requires use_transactional_fixtures&#39;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            @fixture_cache <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Load fixtures once and begin transaction.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> use_transactional_fixtures?
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">if</span> @@already_loaded_fixtures<span style="color:#f92672">[</span>self<span style="color:#f92672">.</span>class<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                @loaded_fixtures <span style="color:#f92672">=</span> @@already_loaded_fixtures<span style="color:#f92672">[</span>self<span style="color:#f92672">.</span>class<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                load_fixtures
+</span></span><span style="display:flex;"><span>                @@already_loaded_fixtures<span style="color:#f92672">[</span>self<span style="color:#f92672">.</span>class<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> @loaded_fixtures
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">DATABASES</span><span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>db<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> db<span style="color:#f92672">.</span>respond_to?(<span style="color:#e6db74">:increment_open_transactions</span>, <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>                  <span style="color:#75715e"># rails &lt; 2.2</span>
+</span></span><span style="display:flex;"><span>                  db<span style="color:#f92672">.</span>send <span style="color:#e6db74">:increment_open_transactions</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#75715e"># rails &gt;= 2.2</span>
+</span></span><span style="display:flex;"><span>                  db<span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>send <span style="color:#e6db74">:increment_open_transactions</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>                db<span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>begin_db_transaction
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e"># Load fixtures for every test.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">Fixtures</span><span style="color:#f92672">.</span>reset_cache
+</span></span><span style="display:flex;"><span>              @@already_loaded_fixtures<span style="color:#f92672">[</span>self<span style="color:#f92672">.</span>class<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>              load_fixtures
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Instantiate fixtures for every test if requested.</span>
+</span></span><span style="display:flex;"><span>            instantiate_fixtures <span style="color:#66d9ef">if</span> use_instantiated_fixtures
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          setup_fixtures_method_name <span style="color:#f92672">=</span> <span style="color:#66d9ef">Test</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Unit</span><span style="color:#f92672">::</span><span style="color:#66d9ef">TestCase</span><span style="color:#f92672">.</span>instance_methods<span style="color:#f92672">.</span>include?(<span style="color:#e6db74">&#39;setup_fixtures&#39;</span>) ? <span style="color:#e6db74">:setup_fixtures</span> : <span style="color:#e6db74">:setup_with_fixtures</span>
+</span></span><span style="display:flex;"><span>          alias_method setup_fixtures_method_name, <span style="color:#e6db74">:setup_preloaded_fixtures</span>
+</span></span><span style="display:flex;"><span>          alias_method <span style="color:#e6db74">:setup</span>, setup_fixtures_method_name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">teardown_preloaded_fixtures</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">if</span> @fixtures_teardown
+</span></span><span style="display:flex;"><span>            @fixtures_teardown <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">unless</span> defined?(<span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>configurations<span style="color:#f92672">.</span>blank?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">unless</span> use_transactional_fixtures?
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">Fixtures</span><span style="color:#f92672">.</span>reset_cache
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Rollback changes if a transaction is active.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> use_transactional_fixtures?
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">DATABASES</span><span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>db<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>                db<span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>rollback_db_transaction
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> db<span style="color:#f92672">.</span>respond_to?(<span style="color:#e6db74">:increment_open_transactions</span>, <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>                  <span style="color:#75715e"># rails &lt; 2.2</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#66d9ef">Thread</span><span style="color:#f92672">.</span>current<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;open_transactions&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#75715e"># rails &gt;= 2.2</span>
+</span></span><span style="display:flex;"><span>                  db<span style="color:#f92672">.</span>connection<span style="color:#f92672">.</span>instance_variable_set(<span style="color:#e6db74">&#39;@open_transactions&#39;</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>verify_active_connections!
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          teardown_fixtures_method_name <span style="color:#f92672">=</span> <span style="color:#66d9ef">Test</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Unit</span><span style="color:#f92672">::</span><span style="color:#66d9ef">TestCase</span><span style="color:#f92672">.</span>instance_methods<span style="color:#f92672">.</span>include?(<span style="color:#e6db74">&#39;teardown_fixtures&#39;</span>) ? <span style="color:#e6db74">:teardown_fixtures</span> : <span style="color:#e6db74">:teardown_with_fixtures</span>
+</span></span><span style="display:flex;"><span>          alias_method teardown_fixtures_method_name, <span style="color:#e6db74">:teardown_preloaded_fixtures</span>
+</span></span><span style="display:flex;"><span>          alias_method <span style="color:#e6db74">:teardown</span>, teardown_fixtures_method_name
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Вуаля!</p>
 <ul class="pa0">
   
    <li class="list">
@@ -357,7 +357,7 @@
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

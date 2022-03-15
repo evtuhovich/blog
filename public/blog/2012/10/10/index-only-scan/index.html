@@ -10,7 +10,7 @@
 Поэтому сегодня рассказ будет о Index Only Scan — самом заметном, по моему мнению, изменении в 9.2. Кстати, именно это
 изменение стоит первым в Release Notes, а значит я не
 одинок.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -252,19 +252,18 @@
 <p>Итак, у нас есть БД Posgresql 9.2 с предварительно отключенным автовакумом.</p>
 <pre tabindex="0"><code>
 $ cat postgresql.conf | grep autovacuum\ =
-autovacuum = off			# Enable autovacuum subprocess?  'on'
+autovacuum = off			# Enable autovacuum subprocess?  &#39;on&#39;
 
-$ echo &quot;select version()&quot; | psql
+$ echo &#34;select version()&#34; | psql
              version
 -----------------------------------------------------------------------------
  PostgreSQL 9.2.1 on x86_64-apple-darwin12.2.0, compiled by Apple 
  clang version 4.0 (tags/Apple/clang-421.0.57) (based on LLVM 3.1svn), 64-bit
 (1 row)
-
 </code></pre><p>Также у нас есть вот такая таблица <code>a</code> с индексом на поле <code>first_name</code>.</p>
 <pre tabindex="0"><code>
 mc=# \d a
-         Table &quot;public.a&quot;
+         Table &#34;public.a&#34;
    Column    |  Type   | Modifiers 
 -------------+---------+-----------
  id          | integer | 
@@ -274,38 +273,35 @@ mc=# \d a
  checked     | boolean | 
  b           | text    | 
 Indexes:
-    &quot;a_first_name_idx&quot; btree (first_name)
-
+    &#34;a_first_name_idx&#34; btree (first_name)
 </code></pre><p>Посмотрим, сколько же записей в этой таблице и сколько в ней Иванов.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
-<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> a;
- <span style="color:#66d9ef">count</span> 
-<span style="color:#75715e">-------
-</span><span style="color:#75715e"></span> <span style="color:#ae81ff">48596</span>
-(<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">row</span>)
-
-mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> a <span style="color:#66d9ef">where</span> first_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Иван&#39;</span>;
- <span style="color:#66d9ef">count</span> 
-<span style="color:#75715e">-------
-</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">371</span>
-(<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">row</span>)
-
-</code></pre></div><p>Что же, посмотрим, как Иваны будут извлекаться из БД.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> a;
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">count</span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#ae81ff">48596</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">row</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> a <span style="color:#66d9ef">where</span> first_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Иван&#39;</span>;
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">count</span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#ae81ff">371</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">row</span>)
+</span></span></code></pre></div><p>Что же, посмотрим, как Иваны будут извлекаться из БД.</p>
 <pre tabindex="0"><code>
-explain (analyze true, buffers true) select count(*) from a where first_name = 'Иван';
+explain (analyze true, buffers true) select count(*) from a where first_name = &#39;Иван&#39;;
                                                              QUERY PLAN                                                             
 ------------------------------------------------------------------------------------------------------------------------------------
  Aggregate  (cost=815.89..815.90 rows=1 width=0) (actual time=4.080..4.080 rows=1 loops=1)
    Buffers: shared hit=17
    -&gt;  Bitmap Heap Scan on a  (cost=16.51..814.58 rows=525 width=0) (actual time=0.235..0.471 rows=371 loops=1)
-         Recheck Cond: (first_name = 'Иван'::text)
+         Recheck Cond: (first_name = &#39;Иван&#39;::text)
          Buffers: shared hit=17
          -&gt;  Bitmap Index Scan on a_first_name_idx  (cost=0.00..16.38 rows=525 width=0) (actual time=0.212..0.212 rows=742 loops=1)
-               Index Cond: (first_name = 'Иван'::text)
+               Index Cond: (first_name = &#39;Иван&#39;::text)
                Buffers: shared hit=7
  Total runtime: 4.133 ms
 (9 rows)
-
 </code></pre><p>Как мы видем, вначале Иваны вытаскиваются из индекса (<code>Bitmap Index Scan</code>), а потом pg лезет в саму таблицу
 (<code>Bitmap Heap Scan</code>), чтобы проверить, есть ли такие записи на самом деле. Дело в том, что Postgresql —
 <a href="http://www.postgresql.org/docs/9.2/static/mvcc-intro.html">версионная БД</a>, то есть хранит разные версии строк, чтобы не
@@ -318,18 +314,17 @@ explain (analyze true, buffers true) select count(*) from a where first_name = '
 вакум на таблице <code>a</code> и повторим наш запрос.</p>
 <pre tabindex="0"><code>mc=# vacuum a;
 VACUUM
-mc=# explain (analyze true, buffers true) select count(*) from a where first_name = 'Иван';
+mc=# explain (analyze true, buffers true) select count(*) from a where first_name = &#39;Иван&#39;;
                                                              QUERY PLAN                                                              
 -------------------------------------------------------------------------------------------------------------------------------------
  Aggregate  (cost=417.30..417.31 rows=1 width=0) (actual time=0.304..0.304 rows=1 loops=1)
    Buffers: shared hit=9
    -&gt;  Index Only Scan using a_first_name_idx on a  (cost=0.00..416.69 rows=243 width=0) (actual time=0.095..0.224 rows=371 loops=1)
-         Index Cond: (first_name = 'Иван'::text)
+         Index Cond: (first_name = &#39;Иван&#39;::text)
          Heap Fetches: 0
          Buffers: shared hit=9
  Total runtime: 0.342 ms
 (7 rows)
-
 </code></pre><p>И да, мы получили другой план запроса, как и ожидали. Понятно, что index only scan может ускорить запросы только по тем
 таблицам, которые достаточно редко обновляются.</p>
 <p>Что же касается обновления на новую версию, то мы, как обычно, решили повременить пару месяцев, пока 9.2 окончательно
@@ -349,7 +344,7 @@ mc=# explain (analyze true, buffers true) select count(*) from a where first_nam
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

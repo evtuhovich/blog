@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Когда у вас есть две ветки разработки, которые достаточно сильно друг от друга отличаются, периодически возникают
 проблемы с их слиянием (merge).">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -249,14 +249,12 @@ asset pipeline переделок было значительное количе
 следующей конструкцией:</p>
 <pre tabindex="0"><code>
 git diff `git merge-base master rails32`..master -- conflicted.filename
-
 </code></pre><p>Эта команда показывает, что поменялось в файле <code>conflicted.filename</code> в ветке <code>master</code> с момента последнего слияния веток.
 Почти всегда этот diff давал мне ясное понимание того, как надо разрешить конфликт.</p>
 <p>Сама команда <code>merge-base</code> возвращает ближайшего общего предка для двух веток, то есть sha-id какого-то комита.</p>
 <pre tabindex="0"><code>
 $ git merge-base master rails32
 74b67a8090fa10549ab238928c68368f10b5a415
-
 </code></pre><p>К несчастью, мой любимый плагин к vim <a href="http://github.com/tpope/vim-git">vim-git</a> не позволяет показать такой diff просто. И я
 не помню, чтобы какая-то IDE умела это. Хотя, казалось бы, такая очевидная и нужная функция.</p><ul class="pa0">
   
@@ -269,7 +267,7 @@ $ git merge-base master rails32
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

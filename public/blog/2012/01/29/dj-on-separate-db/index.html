@@ -11,7 +11,7 @@
 открытым. В нашем случае, поскольку на сервере БД очень много памяти и слабая дисковая подсистема, мне показалось
 разумным перенести туда таблицы, в которые идет интенсивная запись. И эти таблицы не должны быть «связаны», то есть
 перенос их должен быть простым.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -255,17 +255,17 @@
 разумным перенести туда таблицы, в которые идет интенсивная запись. И эти таблицы не должны быть «связаны», то есть
 перенос их должен быть простым.</p>
 <p>Вот такой запрос показывает потенциальных кандидатов на переезд.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span>
-	relname, n_tup_ins <span style="color:#f92672">+</span> n_tup_upd <span style="color:#f92672">+</span> n_tup_del
-<span style="color:#66d9ef">FROM</span>
-	pg_stat_user_tables 
-<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>
-	<span style="color:#ae81ff">2</span>
-</code></pre></div><p>В нашем случае это оказалась таблица, где сохранялись ip-адреса, с которых пользователи заходят на сайт, и
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>	relname, n_tup_ins <span style="color:#f92672">+</span> n_tup_upd <span style="color:#f92672">+</span> n_tup_del
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>
+</span></span><span style="display:flex;"><span>	pg_stat_user_tables 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>В нашем случае это оказалась таблица, где сохранялись ip-адреса, с которых пользователи заходят на сайт, и
 таблица <code>delayed_jobs</code>. В rails 2.3 делалось это очень просто.</p>
 <pre tabindex="0"><code># config/initializers/delayed_job_config.rb
 class Delayed::Backend::ActiveRecord::Job
-  establish_connection &quot;second_#{Rails.env}&quot;
+  establish_connection &#34;second_#{Rails.env}&#34;
 end
 </code></pre><p>В случае же с rails 3, на которые вот уже совсем скоро переедет Групон, все оказалось не так просто. Gem <code>delayed_jobs</code>
 версии 2.1.4 достаточно сильно отличается от версии 2.0. Поэтому старый трюк работать перестал. Гугление не помогло,
@@ -280,10 +280,10 @@ class SecondDbDj &lt; SecondDb # это абстрактный класс, ко�
   before_save :set_default_run_at
 
   scope :ready_to_run, lambda {|worker_name, max_run_time|
-    where(['(run_at &lt;= ? AND (locked_at IS NULL OR locked_at &lt; ?) OR locked_by = ?) AND failed_at IS NULL', db_time_now,
+    where([&#39;(run_at &lt;= ? AND (locked_at IS NULL OR locked_at &lt; ?) OR locked_by = ?) AND failed_at IS NULL&#39;, db_time_now,
 db_time_now - max_run_time, worker_name])
   }
-  scope :by_priority, order('priority ASC, run_at ASC')
+  scope :by_priority, order(&#39;priority ASC, run_at ASC&#39;)
 
   def self.before_fork
     ::ActiveRecord::Base.clear_all_connections!
@@ -293,16 +293,16 @@ db_time_now - max_run_time, worker_name])
     ::ActiveRecord::Base.establish_connection
   end
 
-  # When a worker is exiting, make sure we don't have any locked jobs.
+  # When a worker is exiting, make sure we don&#39;t have any locked jobs.
   def self.clear_locks!(worker_name)
-    update_all(&quot;locked_by = null, locked_at = null&quot;, [&quot;locked_by = ?&quot;, worker_name])
+    update_all(&#34;locked_by = null, locked_at = null&#34;, [&#34;locked_by = ?&#34;, worker_name])
   end
 
   # Find a few candidate jobs to run (in case some immediately get locked by others).
   def self.find_available(worker_name, limit = 5, max_run_time = Delayed::Worker.max_run_time)
     scope = self.ready_to_run(worker_name, max_run_time)
-    scope = scope.scoped(:conditions =&gt; ['priority &gt;= ?', Delayed::Worker.min_priority]) if Delayed::Worker.min_priority
-    scope = scope.scoped(:conditions =&gt; ['priority &lt;= ?', Delayed::Worker.max_priority]) if Delayed::Worker.max_priority
+    scope = scope.scoped(:conditions =&gt; [&#39;priority &gt;= ?&#39;, Delayed::Worker.min_priority]) if Delayed::Worker.min_priority
+    scope = scope.scoped(:conditions =&gt; [&#39;priority &lt;= ?&#39;, Delayed::Worker.max_priority]) if Delayed::Worker.max_priority
 
     ::ActiveRecord::Base.silence do
       scope.by_priority.all(:limit =&gt; limit)
@@ -314,13 +314,13 @@ db_time_now - max_run_time, worker_name])
   def lock_exclusively!(max_run_time, worker)
     now = self.class.db_time_now
     affected_rows = if locked_by != worker
-      # We don't own this job so we will update the locked_by name and the locked_at
-      self.class.update_all([&quot;locked_at = ?, locked_by = ?&quot;, now, worker], [&quot;id = ? and (locked_at is null or locked_at
-&lt; ?) and (run_at &lt;= ?)&quot;, id, (now - max_run_time.to_i), now])
+      # We don&#39;t own this job so we will update the locked_by name and the locked_at
+      self.class.update_all([&#34;locked_at = ?, locked_by = ?&#34;, now, worker], [&#34;id = ? and (locked_at is null or locked_at
+&lt; ?) and (run_at &lt;= ?)&#34;, id, (now - max_run_time.to_i), now])
     else
       # We already own this job, this may happen if the job queue crashes.
       # Simply resume and update the locked_at
-      self.class.update_all([&quot;locked_at = ?&quot;, now], [&quot;id = ? and locked_by = ?&quot;, id, worker])
+      self.class.update_all([&#34;locked_at = ?&#34;, now], [&#34;id = ? and locked_by = ?&#34;, id, worker])
     end
     if affected_rows == 1
       self.locked_at = now
@@ -359,7 +359,7 @@ end
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

@@ -9,7 +9,7 @@
     <meta name="description" content="Если необходимо сериализовать/десериализовать какой-то объект, то yaml формат хорошо для этого подходит.
 В моем проекте мы записывали объекты в очередь, использую yaml-сериализацию. На тестах все было хорошо. Но на живом эта самая сериализация стала выполняться очень долго.
 Оказалось, что если у объекта есть связные объекты, то он их тоже засовывает в yaml, а если таких объектов очень много, то это будет сложная операция. Понятно, что в примитивных тестах этого было не видно, а подумать хорошо головой в тот раз не получилось.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -267,16 +267,16 @@ attributes_cache: {}
 projects:
 - !ruby/object:Project
   attributes:
-    cost_update_date: &quot;2008-01-14&quot;
-    max_error_wait: &quot;7&quot;
+    cost_update_date: &#34;2008-01-14&#34;
+    max_error_wait: &#34;7&#34;
     name: test2
     created_at: 2009-04-23 12:45:23+04
   attributes_cache: {}
 
 - !ruby/object:Project
   attributes:
-    cost_update_date: &quot;2008-01-14&quot;
-    max_error_wait: &quot;7&quot;
+    cost_update_date: &#34;2008-01-14&#34;
+    max_error_wait: &#34;7&#34;
     name: test
     created_at: 2009-04-23 12:45:23+04
   attributes_cache: {}
@@ -293,7 +293,7 @@ projects:
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

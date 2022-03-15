@@ -11,7 +11,7 @@
 было бы не страшно, но при декодировании сессии происходит исключение, и пользователь видит 500 ошибку до тех пор, пока
 не почистит куки. Конечно, пользователей, у которых в сессии будет flash сообщение в момент переключения с версии 3.0 на
 3.2 будет не так и много, но это пользователи, потерянные навсегда.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -275,7 +275,6 @@ module ActionDispatch
     end
   end
 end
-
 </code></pre><p>Но мне оно не очень понравилось, слишком какой-то сильный хак, который надо будет потом поддерживать и про него не
 забыть. Поэтому я решил, что разлогинить пользователей, у которых
 есть flash сообщение в сессии — это не очень большой грех (а их ведь мало совсем), поэтому поступил вот так.</p>
@@ -285,7 +284,7 @@ module ActiveSupport
     def compat_verify(signed_message)
       raise InvalidSignature if signed_message.blank?
 
-      data, digest = signed_message.split(&quot;--&quot;)
+      data, digest = signed_message.split(&#34;--&#34;)
       if data.present? &amp;&amp; digest.present? &amp;&amp; secure_compare(digest, generate_digest(data))
         result = Marshal.load(Base64.decode64(data)) rescue {} # а вот здесь все валилось
       else
@@ -294,7 +293,6 @@ module ActiveSupport
     end
   end
 end
-
 </code></pre><p>Неясно в этой истории только одно. Зачем в фреймворке, который используется „в бою“ на огромном количестве систем, вносить
 несовместимые изменения, которые можно было бы не вносить. Учитывая то, что с flash сообщениями уже были проблемы при
 переходе с 2.3 на 3.0, я думаю, может быть стоит по-другому сериализовать данные в сессию, потому что загадочный <code>Marhsal</code>
@@ -309,7 +307,7 @@ end
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

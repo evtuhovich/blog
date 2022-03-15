@@ -10,7 +10,7 @@
 тему блокировок в PostgreSQL. Конечно, лучше всего начать читать про них в официальной документации. Для этой статьи достаточно понимать, что
 эксклюзивная блокировка (ACCESS EXCLUSIVE LOCK) препятствует выполнению всех операций, включая SELECT, и она нужна для операции
 ALTER TABLE.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -252,50 +252,47 @@ ALTER TABLE."/>
 <p>Ситуация, с которой периодически приходится сталкиваться в «бою», можно приблизительно повторить следующим образом.
 Вначале получим блокировку любого уровня на какую-то таблицу. В данном примере я заблокирую ее с помощью <code>SELECT FOR UPDATE</code>, потому что сделать длинный <code>SELECT</code> в домашних условиях достаточно сложно. Я изменил pid&rsquo;ы процессов, чтобы они
 легче воспринимались визуально.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_backend_pid();
- pg_backend_pid
-<span style="color:#75715e">----------------
-</span><span style="color:#75715e"></span>          <span style="color:#ae81ff">2</span>
-
-mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">begin</span>;
-<span style="color:#66d9ef">BEGIN</span>
-mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> a <span style="color:#66d9ef">where</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">6637</span> <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">update</span>;
-  id  <span style="color:#f92672">|</span> first_name
-<span style="color:#75715e">------+------------
-</span><span style="color:#75715e"></span> <span style="color:#ae81ff">6637</span> <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">Р</span>
-
-</code></pre></div><p>Во второй сессии мы добавим новую колонку к той же таблице.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
-mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_backend_pid();
- pg_backend_pid
-<span style="color:#75715e">----------------
-</span><span style="color:#75715e"></span>          <span style="color:#ae81ff">3</span>
-
-mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> a <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">c</span> int;
-
-</code></pre></div><p>Как мы видим, <code>ALTER TABLE</code> «завис», то есть ждет завершение транзакции, которую начал процесс с pid 2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_backend_pid();
+</span></span><span style="display:flex;"><span> pg_backend_pid
+</span></span><span style="display:flex;"><span><span style="color:#75715e">----------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">begin</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>
+</span></span><span style="display:flex;"><span>mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> a <span style="color:#66d9ef">where</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">6637</span> <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">update</span>;
+</span></span><span style="display:flex;"><span>  id  <span style="color:#f92672">|</span> first_name
+</span></span><span style="display:flex;"><span><span style="color:#75715e">------+------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#ae81ff">6637</span> <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">Р</span>
+</span></span></code></pre></div><p>Во второй сессии мы добавим новую колонку к той же таблице.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_backend_pid();
+</span></span><span style="display:flex;"><span> pg_backend_pid
+</span></span><span style="display:flex;"><span><span style="color:#75715e">----------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> a <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">c</span> int;
+</span></span></code></pre></div><p>Как мы видим, <code>ALTER TABLE</code> «завис», то есть ждет завершение транзакции, которую начал процесс с pid 2.</p>
 <p>Что же, запустим еще одну сессию, в которой попробуем выбрать что-то из БД.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
-mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_backend_pid();
- pg_backend_pid
-<span style="color:#75715e">----------------
-</span><span style="color:#75715e"></span>          <span style="color:#ae81ff">4</span>
-
-mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> a <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">10</span>;
-<span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">здесь</span> <span style="color:#960050;background-color:#1e0010">запрос</span> <span style="color:#960050;background-color:#1e0010">тоже</span> <span style="color:#960050;background-color:#1e0010">висит</span>
-</code></pre></div><p>Этот запрос тоже повис. А теперь представьте себе на мгновение, что таблица a — это одна из самых важных таблиц в вашем
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_backend_pid();
+</span></span><span style="display:flex;"><span> pg_backend_pid
+</span></span><span style="display:flex;"><span><span style="color:#75715e">----------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> a <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">здесь</span> <span style="color:#960050;background-color:#1e0010">запрос</span> <span style="color:#960050;background-color:#1e0010">тоже</span> <span style="color:#960050;background-color:#1e0010">висит</span>
+</span></span></code></pre></div><p>Этот запрос тоже повис. А теперь представьте себе на мгновение, что таблица a — это одна из самых важных таблиц в вашем
 web-проекте, и все запросы к ней, даже на чтение, теперь блокируются, это будет означать, что сайт лег.</p>
 <p>Ситуация понятная, pid 3 ждет pid 2, а pid 4 ждет pid 3. Посмотрим более внимательно, как это выглядит,
 с помощью системного представления PostgreSQL <a href="http://www.postgresql.org/docs/9.1/static/view-pg-locks.html">pg_locks</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">c</span>.relname, l.<span style="color:#66d9ef">mode</span>, l.<span style="color:#66d9ef">granted</span>, l.pid
-<span style="color:#66d9ef">FROM</span> pg_locks <span style="color:#66d9ef">as</span> l <span style="color:#66d9ef">JOIN</span> pg_class <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">on</span> <span style="color:#66d9ef">c</span>.oid <span style="color:#f92672">=</span> l.relation;
-          relname           <span style="color:#f92672">|</span>        <span style="color:#66d9ef">mode</span>         <span style="color:#f92672">|</span> <span style="color:#66d9ef">granted</span> <span style="color:#f92672">|</span>  pid
-<span style="color:#75715e">----------------------------+---------------------+---------+-------
-</span><span style="color:#75715e"></span> a                          <span style="color:#f92672">|</span> AccessShareLock     <span style="color:#f92672">|</span> f       <span style="color:#f92672">|</span> <span style="color:#ae81ff">4</span>
- a                          <span style="color:#f92672">|</span> AccessExclusiveLock <span style="color:#f92672">|</span> f       <span style="color:#f92672">|</span> <span style="color:#ae81ff">3</span>
- a                          <span style="color:#f92672">|</span> RowShareLock        <span style="color:#f92672">|</span> t       <span style="color:#f92672">|</span> <span style="color:#ae81ff">2</span>
-
-</code></pre></div><p>Добавлю еще, как я и говорил выше, pid 2 может просто делать выборку (<code>SELECT</code>), которая длится достаточно долго. Дважды
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mc<span style="color:#f92672">=#</span> <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">c</span>.relname, l.<span style="color:#66d9ef">mode</span>, l.<span style="color:#66d9ef">granted</span>, l.pid
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> pg_locks <span style="color:#66d9ef">as</span> l <span style="color:#66d9ef">JOIN</span> pg_class <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">on</span> <span style="color:#66d9ef">c</span>.oid <span style="color:#f92672">=</span> l.relation;
+</span></span><span style="display:flex;"><span>          relname           <span style="color:#f92672">|</span>        <span style="color:#66d9ef">mode</span>         <span style="color:#f92672">|</span> <span style="color:#66d9ef">granted</span> <span style="color:#f92672">|</span>  pid
+</span></span><span style="display:flex;"><span><span style="color:#75715e">----------------------------+---------------------+---------+-------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> a                          <span style="color:#f92672">|</span> AccessShareLock     <span style="color:#f92672">|</span> f       <span style="color:#f92672">|</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span> a                          <span style="color:#f92672">|</span> AccessExclusiveLock <span style="color:#f92672">|</span> f       <span style="color:#f92672">|</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span> a                          <span style="color:#f92672">|</span> RowShareLock        <span style="color:#f92672">|</span> t       <span style="color:#f92672">|</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>Добавлю еще, как я и говорил выше, pid 2 может просто делать выборку (<code>SELECT</code>), которая длится достаточно долго. Дважды
 за последние пару месяцев я наблюдал такую ситуацию в «бою». В первый раз это была финальная стадия работы <code>pg_repack</code>,
 которая пришлась на тот момент, когда делался обычный sql dump с помощью утилиты <code>pg_dump</code>. В финальной стадии
 <code>pg_repack</code> переименовывает новые объекты в старые, а для этого выполняет <code>ALTER TABLE new RENAME TO old</code>.</p>
@@ -309,19 +306,18 @@ web-проекте, и все запросы к ней, даже на чтени
 <a href="http://www.postgresql.org/docs/9.1/static/monitoring-stats.html">pg_stat_activity</a>, который возвращает все
 выполняющиеся в данный момент операции, отсортированные по времени выполнения. Внизу вывода обычно находятся те из них,
 которые нас больше всего интересуют.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
-<span style="color:#66d9ef">SELECT</span> now() <span style="color:#f92672">-</span> query_start, procpid, current_query
-<span style="color:#66d9ef">FROM</span> pg_stat_activity 
-<span style="color:#66d9ef">WHERE</span> current_query <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#39;&lt;IDLE&gt;&#39;</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> <span style="color:#ae81ff">1</span>;
-
-        <span style="color:#f92672">?</span><span style="color:#66d9ef">column</span><span style="color:#f92672">?</span>        <span style="color:#f92672">|</span>  pid  <span style="color:#f92672">|</span>                                              query
-<span style="color:#75715e">------------------------+-------+--------------------------------------------------------------------------------------------------
-</span><span style="color:#75715e"></span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>               <span style="color:#f92672">|</span> <span style="color:#ae81ff">56167</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">select</span> now() <span style="color:#f92672">-</span> query_start, pid, query <span style="color:#66d9ef">from</span> pg_stat_activity <span style="color:#66d9ef">where</span> query <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#39;&lt;IDLE&gt;&#39;</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> <span style="color:#ae81ff">1</span>;
- <span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">11</span>:<span style="color:#ae81ff">43</span>.<span style="color:#ae81ff">353052</span>        <span style="color:#f92672">|</span> <span style="color:#ae81ff">58745</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">SELECT</span>  <span style="color:#e6db74">&#34;groups&#34;</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;groups&#34;</span>  <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> id <span style="color:#66d9ef">DESC</span> <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">10</span>
- <span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">35</span>:<span style="color:#ae81ff">15</span>.<span style="color:#ae81ff">182291</span>        <span style="color:#f92672">|</span> <span style="color:#ae81ff">58762</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">COMMIT</span>
- <span style="color:#ae81ff">7</span> days <span style="color:#ae81ff">09</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">50</span>.<span style="color:#ae81ff">269023</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">61889</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> words <span style="color:#66d9ef">where</span> word <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;а&#39;</span>;
-
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> now() <span style="color:#f92672">-</span> query_start, procpid, current_query
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> pg_stat_activity 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> current_query <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#39;&lt;IDLE&gt;&#39;</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">?</span><span style="color:#66d9ef">column</span><span style="color:#f92672">?</span>        <span style="color:#f92672">|</span>  pid  <span style="color:#f92672">|</span>                                              query
+</span></span><span style="display:flex;"><span><span style="color:#75715e">------------------------+-------+--------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>               <span style="color:#f92672">|</span> <span style="color:#ae81ff">56167</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">select</span> now() <span style="color:#f92672">-</span> query_start, pid, query <span style="color:#66d9ef">from</span> pg_stat_activity <span style="color:#66d9ef">where</span> query <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#39;&lt;IDLE&gt;&#39;</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">11</span>:<span style="color:#ae81ff">43</span>.<span style="color:#ae81ff">353052</span>        <span style="color:#f92672">|</span> <span style="color:#ae81ff">58745</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">SELECT</span>  <span style="color:#e6db74">&#34;groups&#34;</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;groups&#34;</span>  <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> id <span style="color:#66d9ef">DESC</span> <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">35</span>:<span style="color:#ae81ff">15</span>.<span style="color:#ae81ff">182291</span>        <span style="color:#f92672">|</span> <span style="color:#ae81ff">58762</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">COMMIT</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">7</span> days <span style="color:#ae81ff">09</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">50</span>.<span style="color:#ae81ff">269023</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">61889</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> words <span style="color:#66d9ef">where</span> word <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;а&#39;</span>;
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
      <a href="/tags/postgresql" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">PostgreSQL</a>
@@ -336,7 +332,7 @@ web-проекте, и все запросы к ней, даже на чтени
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

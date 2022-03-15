@@ -7,7 +7,7 @@
     <title>Блог | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Заметки из жизни предпринимателя">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -306,7 +306,7 @@ Vagrant — это надстройка над платформой вирту�
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
-class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription.
+ class OfferDescription &lt; ActiveRecord::Base  has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id  end В отчете данные группировались по родительским объектам OfferDescription.
     </div>
   </div>
 </div>
@@ -322,8 +322,7 @@ class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
-class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
-Хеш params, которые передается в класс Report — это тот самый params из контроллера.
+ class ReportSender  def initialize(report_instance)  @report_instance = report_instance  @params = report_instance.params  @emails = @params.delete(:mail_to)  end  class Report  def initialize(params = {})  @params = self.class.default_values.merge(params)  end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
     </div>
   </div>
 </div>
@@ -370,7 +369,7 @@ class ReportSender def initialize(report_instance) @report_instance = report_ins
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.
-# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &quot;admin&quot; def show # Здесь сложные-сложные запросы к БД if request.xhr? render 'show', :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.
+# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &#34;admin&#34; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.
     </div>
   </div>
 </div>

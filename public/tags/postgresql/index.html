@@ -7,7 +7,7 @@
     <title>PostgreSQL | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Блог Ивана Евтуховича">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -508,7 +508,7 @@ http://github.com/evtuhovich/pgq/tree/master
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      При большом количестве запросов к приложению (в широком смысле этого слова) иногда целесообразно ``размазать'' пиковую нагрузку во времени. Для этого удобно использовать очереди. То есть, если какое-то запрос наверняка должен быть выполнен, но не имеет значение произойдет это прямо сейчас или чуть попозже, можно создать событие в очереди. И когда до этого события дойдет очередь —&ndash; оно будет выполнено. Таким образом можно развести сложные запросы во времени.
+      При большом количестве запросов к приложению (в широком смысле этого слова) иногда целесообразно ``размазать&rsquo;&rsquo; пиковую нагрузку во времени. Для этого удобно использовать очереди. То есть, если какое-то запрос наверняка должен быть выполнен, но не имеет значение произойдет это прямо сейчас или чуть попозже, можно создать событие в очереди. И когда до этого события дойдет очередь —&ndash; оно будет выполнено. Таким образом можно развести сложные запросы во времени.
 Очереди подходят для таких задач, как, например, рассылка большого количества сообщений и обновление различных счетчиков в БД (если их актуальность не очень критична).
     </div>
   </div>
@@ -528,7 +528,7 @@ http://github.com/evtuhovich/pgq/tree/master
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
- $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self.
+ $ script/generate migration add_is_searchable_to_posts  class AddIsSearchableToPosts &lt; ActiveRecord::Migration  def self.up  add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false  end   def self.
     </div>
   </div>
 </div>

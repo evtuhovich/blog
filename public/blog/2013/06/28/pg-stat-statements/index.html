@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Иногда при эксплуатации проекта возникает вопрос, какие запросы в БД выполняются дольше всего или потребляют наибольшее количество времени или ресурсов.
 До версии 9.2 неплохой ответ на этот вопрос можно было получить с помощью проекта pgBadger. Если прорваться через достаточно простую процедуру его настройки, описанную в документации, то в результате можно получить достаточно красивый отчет. К сожалению, этот подход имеет достаточно много слабых сторон. Во-первых, чтобы получить полную картину, необходимо писать логи всех запросов к БД, которые при значительной нагрузке отъедают огромное количество дискового пространства, а также производительность дисковой подсистемы.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -253,10 +253,10 @@
 достаточно давно, но только в 9.2 он научился «нормализовать» запросы, объединяя запросы, которые отличаются только
 параметрами, в один.</p>
 <p>Чтобы воспользоваться этим модулем, необходимо добавить следующую строчку в <code>postgresql.conf</code>.</p>
-<pre tabindex="0"><code>shared_preload_libraries = 'pg_stat_statements'         # (change requires restart)
+<pre tabindex="0"><code>shared_preload_libraries = &#39;pg_stat_statements&#39;         # (change requires restart)
 </code></pre><p>После чего необходимо перезапустить сервер БД. После этого в БД, выполните следующую команду:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> EXTENSION pg_stat_statements
-</code></pre></div><p>После этого в БД, где вы выполнили эту команду, появится представление (view) pg_stat_statements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> EXTENSION pg_stat_statements
+</span></span></code></pre></div><p>После этого в БД, где вы выполнили эту команду, появится представление (view) pg_stat_statements.</p>
 <pre tabindex="0"><code>$ psql dbname
 dbname=# \x
 Расширенный вывод включен.
@@ -265,7 +265,7 @@ doman=# select * from pg_stat_statements;
 
 userid              | 10
 dbid                | 16388
-query               | SELECT  &quot;words&quot;.* FROM &quot;words&quot;  WHERE &quot;words&quot;.&quot;id&quot; = ? LIMIT ?
+query               | SELECT  &#34;words&#34;.* FROM &#34;words&#34;  WHERE &#34;words&#34;.&#34;id&#34; = ? LIMIT ?
 calls               | 27
 total_time          | 0.277
 rows                | 27
@@ -325,7 +325,7 @@ blk_write_time      | 0
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

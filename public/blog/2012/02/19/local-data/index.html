@@ -10,7 +10,7 @@
 что ее sql запрос стал регулярно появляться в списке медленных запросов в newrelic. Для большей понятности я поменяю
 название моделей на книги (Book) и авторы (Author), при этом, очевидно, «авторы имеют много книг», то есть связь один ко
 многим.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -250,9 +250,9 @@
 название моделей на книги (Book) и авторы (Author), при этом, очевидно, «авторы имеют много книг», то есть связь один ко
 многим.</p>
 <p>Итак, на одной странице выводился список последних книг, у которых есть автор, вот таким запросом.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">  <span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>all(<span style="color:#e6db74">:order</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;id desc&#39;</span><span style="color:#f92672">]</span>)<span style="color:#f92672">.</span>select{<span style="color:#f92672">|</span>it<span style="color:#f92672">|</span> it<span style="color:#f92672">.</span>author }<span style="color:#f92672">.</span>
-    paginate(<span style="color:#e6db74">:per_page</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">:page</span> <span style="color:#f92672">=&gt;</span> params<span style="color:#f92672">[</span><span style="color:#e6db74">:page</span><span style="color:#f92672">]</span>)
-</code></pre></div><p>Все было ничего, пока книг в базе было немного. Но в какой-то момент их количество перевалило за 10 тысяч. Конечно же,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>  <span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>all(<span style="color:#e6db74">:order</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;id desc&#39;</span><span style="color:#f92672">]</span>)<span style="color:#f92672">.</span>select{<span style="color:#f92672">|</span>it<span style="color:#f92672">|</span> it<span style="color:#f92672">.</span>author }<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>    paginate(<span style="color:#e6db74">:per_page</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">:page</span> <span style="color:#f92672">=&gt;</span> params<span style="color:#f92672">[</span><span style="color:#e6db74">:page</span><span style="color:#f92672">]</span>)
+</span></span></code></pre></div><p>Все было ничего, пока книг в базе было немного. Но в какой-то момент их количество перевалило за 10 тысяч. Конечно же,
 для БД и такой запрос не очень сложный, все же для современных машин десять тысяч записей — ерунда. Но когда эти десять
 тысяч записей приходят по сети в приложение на ruby, потом фильтруются на наличие автора, а для этого для каждой записи
 делается дополнительный запрос в БД, то это занимает значительное количество времени.</p>
@@ -264,15 +264,15 @@
 коллег о похожих историях, говорят, что проблема повсеместна. Разработчики очень часто тащат в приложение гораздо больше
 данных, когда из-за лени, а когда и из-за непонимания.</p>
 <p>В нашем случае проблема решилась следующим образом:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">	<span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>scoped(<span style="color:#e6db74">:order</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;id desc&#39;</span><span style="color:#f92672">]</span>)<span style="color:#f92672">.</span>paginate(<span style="color:#e6db74">:per_page</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">:page</span> <span style="color:#f92672">=&gt;</span> params<span style="color:#f92672">[</span><span style="color:#e6db74">:page</span><span style="color:#f92672">]</span>)
-</code></pre></div><p>Такой запрос превращается из полного сканирования по таблице в запрос, который использует индекс по полю books.id. А
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>	<span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>scoped(<span style="color:#e6db74">:order</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;id desc&#39;</span><span style="color:#f92672">]</span>)<span style="color:#f92672">.</span>paginate(<span style="color:#e6db74">:per_page</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">:page</span> <span style="color:#f92672">=&gt;</span> params<span style="color:#f92672">[</span><span style="color:#e6db74">:page</span><span style="color:#f92672">]</span>)
+</span></span></code></pre></div><p>Такой запрос превращается из полного сканирования по таблице в запрос, который использует индекс по полю books.id. А
 такой индекс есть всегда, так как это первичный ключ. В приложение из БД приходит 20 записей и все счастливы.</p>
 <p>Есть один минус — такой запрос не гарантирует, что все книги будут с автором, но такие книги можно не показывать. Тогда
 на странице может быть меньше 20 элементов, что не очень красиво, но во многих случаях вполне хорошо.</p>
 <p>Если же и этот вариант не нравится, то можно явно сделать join с таблицей авторов.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">  <span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>scoped(<span style="color:#e6db74">:joins</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">:author</span>, <span style="color:#e6db74">:order</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;id desc&#39;</span><span style="color:#f92672">]</span>)<span style="color:#f92672">.</span>
-    paginate(<span style="color:#e6db74">:per_page</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">:page</span> <span style="color:#f92672">=&gt;</span> params<span style="color:#f92672">[</span><span style="color:#e6db74">:page</span><span style="color:#f92672">]</span>)
-</code></pre></div><p>Нам этот вариант не подошел, потому что по историческим причинам таблица авторов была в другой БД, а переносить ее было
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>  <span style="color:#66d9ef">Book</span><span style="color:#f92672">.</span>scoped(<span style="color:#e6db74">:joins</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">:author</span>, <span style="color:#e6db74">:order</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;id desc&#39;</span><span style="color:#f92672">]</span>)<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>    paginate(<span style="color:#e6db74">:per_page</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">:page</span> <span style="color:#f92672">=&gt;</span> params<span style="color:#f92672">[</span><span style="color:#e6db74">:page</span><span style="color:#f92672">]</span>)
+</span></span></code></pre></div><p>Нам этот вариант не подошел, потому что по историческим причинам таблица авторов была в другой БД, а переносить ее было
 лень.</p>
 <p>Эта история подводит нас к мысли о локальности данных. Мысль, конечно, до безобразия простая. Все операции с данными
 лучше делать там, где они лежат. По возможности фильтрацию данных лучше всего делать в самом хранилище (БД). Встречаются случаи,
@@ -291,7 +291,7 @@
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

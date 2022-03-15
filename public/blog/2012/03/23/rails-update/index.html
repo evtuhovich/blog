@@ -14,7 +14,7 @@ warden стал по-другому сериализовать сессию. А 
 неуловимое исключение в Marshal.load.
 Все эти проблемы решены были кодом, которые приведен ниже. И еще похожий код был в rails2-ветке, который конвертил
 сессию третьих рельс во вторую. Пользуйтесь с осторожностью.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -278,21 +278,21 @@ module ActiveSupport
     def compat_verify(signed_message)
       raise InvalidSignature if signed_message.blank?
 
-      data, digest = signed_message.split(&quot;--&quot;)
+      data, digest = signed_message.split(&#34;--&#34;)
       if data.present? &amp;&amp; digest.present? &amp;&amp; secure_compare(digest, generate_digest(data))
         result = Marshal.load(ActiveSupport::Base64.decode64(data))
 
-        if result[&quot;flash&quot;].is_a? ActionController::Flash::FlashHash
-          result.delete 'flash'
+        if result[&#34;flash&#34;].is_a? ActionController::Flash::FlashHash
+          result.delete &#39;flash&#39;
         end
 
-        if result['warden.user.user.key'].is_a?(Array) &amp;&amp; result['warden.user.user.key'][0] == User
-          klass = result['warden.user.user.key'][0]
-          user_id = result['warden.user.user.key'][1]
+        if result[&#39;warden.user.user.key&#39;].is_a?(Array) &amp;&amp; result[&#39;warden.user.user.key&#39;][0] == User
+          klass = result[&#39;warden.user.user.key&#39;][0]
+          user_id = result[&#39;warden.user.user.key&#39;][1]
           begin
-            result['warden.user.user.key'] = [klass.to_s, user_id, klass.find(user_id).authenticatable_salt]
+            result[&#39;warden.user.user.key&#39;] = [klass.to_s, user_id, klass.find(user_id).authenticatable_salt]
           rescue
-            result.delete('warden.user.user.key')
+            result.delete(&#39;warden.user.user.key&#39;)
           end
         end
         result
@@ -308,9 +308,9 @@ module ActionDispatch
     class SignedCookieJar
       def [](name)
         if signed_message = @parent_jar[name]
-          if name == &quot;_darberry_session&quot;
+          if name == &#34;_darberry_session&#34;
             @verifier.compat_verify(signed_message)
-          elsif name == &quot;remember_user_token&quot;
+          elsif name == &#34;remember_user_token&#34;
             if match = signed_message.match(/(\d+)::(.*)/)
               [[match[1].to_i], match[2]]
             end
@@ -345,7 +345,7 @@ end
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

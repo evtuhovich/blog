@@ -7,7 +7,7 @@
     <title>caches_action | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Блог Ивана Евтуховича">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -212,7 +212,7 @@
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.
-# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &quot;admin&quot; def show # Здесь сложные-сложные запросы к БД if request.xhr? render 'show', :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.
+# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &#34;admin&#34; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.
     </div>
   </div>
 </div>

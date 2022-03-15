@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Так сложилось, что у нас накопилось достаточно много старых исключений в airbrake — сервисе по сбору и хранению исключений. Ошибки эти не то, чтобы мешали, но мозолили глаза. И закрыть их руками не представлялось возможным, тем более, что в airbrake это реализовано очень неудобно — необходимо открыть отдельную страницу с исключением, и там тыкнуть на достаточно неудобный самописный элемент управления.
 Когда такую операцию надо сделать несколько сотен раз, автоматически опускаются руки.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -248,30 +248,30 @@ API, которым можно достаточно успешно пользо�
 адресам в основном приложении.</p>
 <p>Ниже привожу код на ruby, который вытаскивает список ошибок через API и закрывает их. Я отформатировал их для красоты,
 в реальности я запускал однострочные команды, чтобы удобнее было их повторять в irb.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;rubygems&#39;</span>
-require <span style="color:#e6db74">&#39;nokogiri&#39;</span>
-require <span style="color:#e6db74">&#39;rest-client&#39;</span>
-
-auth_token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;your_token&#34;</span> <span style="color:#75715e"># взять на страничке &#34;My Settings&#34; </span>
-                          <span style="color:#75715e"># https://your_account.airbrake.io/users/your_id/edit</span>
-
-project_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">123456</span>       <span style="color:#75715e"># взять из урла в airbrake, иначе выводится </span>
-                          <span style="color:#75715e"># список ошибок из всех проектов</span>
-
-ids <span style="color:#f92672">=</span> (<span style="color:#ae81ff">4</span><span style="color:#f92672">..</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">.</span>to_a<span style="color:#f92672">.</span>map { <span style="color:#f92672">|</span>page<span style="color:#f92672">|</span>
-  <span style="color:#66d9ef">Nokogiri</span><span style="color:#f92672">::</span><span style="color:#66d9ef">XML</span>(<span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>get <span style="color:#e6db74">&#34;https://your_account.airbrake.io/errors.xml&#34;</span> <span style="color:#f92672">+</span>
-      <span style="color:#e6db74">&#34;?auth_token=</span><span style="color:#e6db74">#{</span>auth_token<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;page=</span><span style="color:#e6db74">#{</span>page<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;project_id=</span><span style="color:#e6db74">#{</span>project_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>
-    search(<span style="color:#e6db74">&#39;group/id&#39;</span>)<span style="color:#f92672">.</span>map(<span style="color:#f92672">&amp;</span><span style="color:#e6db74">:text</span>) 
-}<span style="color:#f92672">.</span>flatten
-
-ids<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</span>id<span style="color:#f92672">|</span>
-  <span style="color:#75715e"># чтобы не ждать, пока дофига запросов выполнится последовательно</span>
-  <span style="color:#66d9ef">Thread</span><span style="color:#f92672">.</span>new { 
-    <span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>put(<span style="color:#e6db74">&#34;https://your_account.airbrake.io/errors/</span><span style="color:#e6db74">#{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">?auth_token=</span><span style="color:#e6db74">#{</span>auth_token<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>,
-      <span style="color:#e6db74">:group</span> <span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:resolved</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>}) 
-  } 
-}
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;rubygems&#39;</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;nokogiri&#39;</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;rest-client&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>auth_token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;your_token&#34;</span> <span style="color:#75715e"># взять на страничке &#34;My Settings&#34; </span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#75715e"># https://your_account.airbrake.io/users/your_id/edit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>project_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">123456</span>       <span style="color:#75715e"># взять из урла в airbrake, иначе выводится </span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#75715e"># список ошибок из всех проектов</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ids <span style="color:#f92672">=</span> (<span style="color:#ae81ff">4</span><span style="color:#f92672">..</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">.</span>to_a<span style="color:#f92672">.</span>map { <span style="color:#f92672">|</span>page<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">Nokogiri</span><span style="color:#f92672">::</span><span style="color:#66d9ef">XML</span>(<span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>get <span style="color:#e6db74">&#34;https://your_account.airbrake.io/errors.xml&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;?auth_token=</span><span style="color:#e6db74">#{</span>auth_token<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;page=</span><span style="color:#e6db74">#{</span>page<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;project_id=</span><span style="color:#e6db74">#{</span>project_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>    search(<span style="color:#e6db74">&#39;group/id&#39;</span>)<span style="color:#f92672">.</span>map(<span style="color:#f92672">&amp;</span><span style="color:#e6db74">:text</span>) 
+</span></span><span style="display:flex;"><span>}<span style="color:#f92672">.</span>flatten
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ids<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</span>id<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># чтобы не ждать, пока дофига запросов выполнится последовательно</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">Thread</span><span style="color:#f92672">.</span>new { 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>put(<span style="color:#e6db74">&#34;https://your_account.airbrake.io/errors/</span><span style="color:#e6db74">#{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">?auth_token=</span><span style="color:#e6db74">#{</span>auth_token<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:group</span> <span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:resolved</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>}) 
+</span></span><span style="display:flex;"><span>  } 
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
      <a href="/tags/airbrake" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">airbrake</a>
@@ -282,7 +282,7 @@ ids<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</spa
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

@@ -10,7 +10,7 @@
 БД либо помещается в память, либо не работает. Ситуация в современном мире меняется в связи с появлением SSD дисков, но
 пока что они стоят достаточно дорого, по сравнению со старыми добрыми вращающимися дисками. Чтобы «потрогать» это
 руками, проделаем несложный тест.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -255,22 +255,22 @@
 PostgreSQL.</p>
 <p>В postgresql.conf параметр <code>shared_buffers</code> был выставлен в 64MB.</p>
 <p>Далее был написан скрипт на ruby, который проводил тестирование:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#39;res.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>f<span style="color:#f92672">|</span>
-	(<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">50</span>)<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>s<span style="color:#f92672">|</span>
-		<span style="color:#75715e"># -i означает, что мы создаем чистую БД</span>
-		<span style="color:#75715e"># -s - это scale factor, определяет размер БД</span>
-		<span style="color:#e6db74">`/usr/lib/postgresql/9.1/bin/pgbench -i -s </span><span style="color:#e6db74">#{</span>s<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
-
-		<span style="color:#75715e"># -S - тесты для запросов только на чтение</span>
-		<span style="color:#75715e"># -T 20 - тест длится 20 секунд</span>
-		<span style="color:#75715e"># -c 40 - 40 клиентов</span>
-		<span style="color:#75715e"># -j 4 - 4 потока</span>
-		res <span style="color:#f92672">=</span> <span style="color:#e6db74">`/usr/lib/postgresql/9.1/bin/pgbench -c 40 -j 4 -S -T 20`</span>
-		puts res
-		f<span style="color:#f92672">.</span>write res
-	<span style="color:#66d9ef">end</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></div><p>Более подробно про pgbench можно почитать в <a href="http://www.postgresql.org/docs/9.1/static/pgbench.html">официальной документации</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#39;res.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>f<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">50</span>)<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>s<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># -i означает, что мы создаем чистую БД</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># -s - это scale factor, определяет размер БД</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">`/usr/lib/postgresql/9.1/bin/pgbench -i -s </span><span style="color:#e6db74">#{</span>s<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># -S - тесты для запросов только на чтение</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># -T 20 - тест длится 20 секунд</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># -c 40 - 40 клиентов</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># -j 4 - 4 потока</span>
+</span></span><span style="display:flex;"><span>		res <span style="color:#f92672">=</span> <span style="color:#e6db74">`/usr/lib/postgresql/9.1/bin/pgbench -c 40 -j 4 -S -T 20`</span>
+</span></span><span style="display:flex;"><span>		puts res
+</span></span><span style="display:flex;"><span>		f<span style="color:#f92672">.</span>write res
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Более подробно про pgbench можно почитать в <a href="http://www.postgresql.org/docs/9.1/static/pgbench.html">официальной документации</a>.</p>
 <p>На машинках t1.micro <code>free -m</code> выдает следующее:</p>
 <pre tabindex="0"><code>             total       used       free     shared    buffers     cached
 Mem:           590        583          6          0          1        428
@@ -314,7 +314,7 @@ buffers. Но все же это будет происходить достат�
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

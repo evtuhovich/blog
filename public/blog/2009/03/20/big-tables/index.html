@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
- $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self.">
-    <meta name="generator" content="Hugo 0.91.2" />
+ $ script/generate migration add_is_searchable_to_posts  class AddIsSearchableToPosts &lt; ActiveRecord::Migration  def self.up  add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false  end   def self.">
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -37,7 +37,7 @@
     <meta property="og:title" content="PosgtreSql, миграции и огромные таблицы" />
 <meta property="og:description" content="Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
- $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self." />
+ $ script/generate migration add_is_searchable_to_posts  class AddIsSearchableToPosts &lt; ActiveRecord::Migration  def self.up  add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false  end   def self." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://evtuhovich.ru/blog/2009/03/20/big-tables/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2009-03-20T12:34:00+00:00" />
@@ -46,14 +46,14 @@
 <meta itemprop="name" content="PosgtreSql, миграции и огромные таблицы">
 <meta itemprop="description" content="Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
- $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self."><meta itemprop="datePublished" content="2009-03-20T12:34:00+00:00" />
+ $ script/generate migration add_is_searchable_to_posts  class AddIsSearchableToPosts &lt; ActiveRecord::Migration  def self.up  add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false  end   def self."><meta itemprop="datePublished" content="2009-03-20T12:34:00+00:00" />
 <meta itemprop="dateModified" content="2009-03-20T12:34:00+00:00" />
 <meta itemprop="wordCount" content="276">
 <meta itemprop="keywords" content="PostgreSQL,rails," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PosgtreSql, миграции и огромные таблицы"/>
 <meta name="twitter:description" content="Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
- $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self."/>
+ $ script/generate migration add_is_searchable_to_posts  class AddIsSearchableToPosts &lt; ActiveRecord::Migration  def self.up  add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false  end   def self."/>
 
 	<meta name="yandex-verification" content="844263c66799f878" />
 
@@ -245,39 +245,39 @@
 быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.</p>
 <p>Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.</p>
 <pre tabindex="0"><code>    $ script/generate migration add_is_searchable_to_posts
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddIsSearchableToPosts</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span>
-      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">up</span>
-        add_column <span style="color:#e6db74">:posts</span>, <span style="color:#e6db74">:is_searchable</span>, <span style="color:#e6db74">:boolean</span>, <span style="color:#e6db74">:default</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>, <span style="color:#e6db74">:null</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">false</span>
-      <span style="color:#66d9ef">end</span>
-
-      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">down</span>
-        remove_column <span style="color:#e6db74">:posts</span>, <span style="color:#e6db74">:is_searchable</span>
-      <span style="color:#66d9ef">end</span>
-    <span style="color:#66d9ef">end</span>
-</code></pre></div><p>Если на базе development данных у вас немного, то миграция пройдет замечательно. На production базе она может занять
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddIsSearchableToPosts</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">up</span>
+</span></span><span style="display:flex;"><span>        add_column <span style="color:#e6db74">:posts</span>, <span style="color:#e6db74">:is_searchable</span>, <span style="color:#e6db74">:boolean</span>, <span style="color:#e6db74">:default</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>, <span style="color:#e6db74">:null</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">down</span>
+</span></span><span style="display:flex;"><span>        remove_column <span style="color:#e6db74">:posts</span>, <span style="color:#e6db74">:is_searchable</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Если на базе development данных у вас немного, то миграция пройдет замечательно. На production базе она может занять
 несколько часов, блокируя таблицу posts. Заглянув в документацию по postgresql и немного подумав, можно переписать эту
 миграцию вот так:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddIsSearchableToPosts</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span>
-      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">up</span>
-        add_column <span style="color:#e6db74">:posts</span>, <span style="color:#e6db74">:is_searchable</span>, <span style="color:#e6db74">:boolean</span>, <span style="color:#e6db74">:null</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>
-      <span style="color:#66d9ef">end</span>
-
-      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">down</span>
-        remove_column <span style="color:#e6db74">:posts</span>, <span style="color:#e6db74">:is_searchable</span>
-      <span style="color:#66d9ef">end</span>
-    <span style="color:#66d9ef">end</span>
-</code></pre></div><p>А после этого выполнить следующий скрипт. Выполнить этот же код в миграции нельзя, потому что миграция выполняется
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddIsSearchableToPosts</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">up</span>
+</span></span><span style="display:flex;"><span>        add_column <span style="color:#e6db74">:posts</span>, <span style="color:#e6db74">:is_searchable</span>, <span style="color:#e6db74">:boolean</span>, <span style="color:#e6db74">:null</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">down</span>
+</span></span><span style="display:flex;"><span>        remove_column <span style="color:#e6db74">:posts</span>, <span style="color:#e6db74">:is_searchable</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>А после этого выполнить следующий скрипт. Выполнить этот же код в миграции нельзя, потому что миграция выполняется
 внутри тразнакции, а значит это было бы равносильно первому случаю.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">loop</span> <span style="color:#66d9ef">do</span>
-      say(<span style="color:#e6db74">&#34;Update posts with id </span><span style="color:#e6db74">#{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">..</span><span style="color:#e6db74">#{</span>i <span style="color:#f92672">+</span> <span style="color:#ae81ff">10000</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-      result <span style="color:#f92672">=</span> execute(<span style="color:#e6db74">&#34;UPDATE posts
-</span><span style="color:#e6db74">        SET is_searchable = true WHERE id &gt;= </span><span style="color:#e6db74">#{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74"> AND id &lt; </span><span style="color:#e6db74">#{</span>i <span style="color:#f92672">+</span> <span style="color:#ae81ff">10000</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-      <span style="color:#66d9ef">break</span> <span style="color:#66d9ef">if</span> result<span style="color:#f92672">.</span>cmdtuples <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
-      i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">10000</span>
-    <span style="color:#66d9ef">end</span>
-    execute(<span style="color:#e6db74">&#39;ALTER TABLE posts ALTER COLUMN is_searchable SET NOT NULL&#39;</span>)
-</code></pre></div><p>Создание поля без присвоения ему значения меняет только метаинформацию о таблице. Серия update&rsquo;ов, хоть и
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">loop</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>      say(<span style="color:#e6db74">&#34;Update posts with id </span><span style="color:#e6db74">#{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">..</span><span style="color:#e6db74">#{</span>i <span style="color:#f92672">+</span> <span style="color:#ae81ff">10000</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>      result <span style="color:#f92672">=</span> execute(<span style="color:#e6db74">&#34;UPDATE posts
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        SET is_searchable = true WHERE id &gt;= </span><span style="color:#e6db74">#{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74"> AND id &lt; </span><span style="color:#e6db74">#{</span>i <span style="color:#f92672">+</span> <span style="color:#ae81ff">10000</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">break</span> <span style="color:#66d9ef">if</span> result<span style="color:#f92672">.</span>cmdtuples <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>      i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">10000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    execute(<span style="color:#e6db74">&#39;ALTER TABLE posts ALTER COLUMN is_searchable SET NOT NULL&#39;</span>)
+</span></span></code></pre></div><p>Создание поля без присвоения ему значения меняет только метаинформацию о таблице. Серия update&rsquo;ов, хоть и
 создает дополнительную нагрузку на базу, но оставляет приложение работоспособным. А вот один большой update на 10
 миллионов записей фактически блокирует таблицу на запись на все время своего исполнения.</p>
 <p>Хотя я написал в заголовке PostgreSql, но это правило распространяется на все БД, с которыми я знаком &mdash; MySQL и MS
@@ -297,7 +297,7 @@ SQL.</p>
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

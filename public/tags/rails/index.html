@@ -7,7 +7,7 @@
     <title>rails | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Блог Ивана Евтуховича">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -258,7 +258,7 @@ warden стал по-другому сериализовать сессию. А 
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
-class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription.
+ class OfferDescription &lt; ActiveRecord::Base  has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id  end В отчете данные группировались по родительским объектам OfferDescription.
     </div>
   </div>
 </div>
@@ -276,7 +276,7 @@ class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.
-# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &quot;admin&quot; def show # Здесь сложные-сложные запросы к БД if request.xhr? render 'show', :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.
+# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &#34;admin&#34; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.
     </div>
   </div>
 </div>
@@ -333,8 +333,8 @@ http://github.com/evtuhovich/pgq/tree/master
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Пусть в модели User у нас описана валидация для поля email
-validates_uniqueness_of :email, :case_sensitive =&gt; false, :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
-SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос.
+ validates_uniqueness_of :email, :case_sensitive =&gt; false,  :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
+ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос.
     </div>
   </div>
 </div>
@@ -390,7 +390,7 @@ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таб�
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
- $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self.
+ $ script/generate migration add_is_searchable_to_posts  class AddIsSearchableToPosts &lt; ActiveRecord::Migration  def self.up  add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false  end   def self.
     </div>
   </div>
 </div>

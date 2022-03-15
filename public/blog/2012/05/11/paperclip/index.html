@@ -10,7 +10,7 @@
 gem paperclip. В Gemfile была явно прописана версия 3.0.1. Зайдя на rubygems, я увидел,
 что эту версию гема его создатели удалили, а версия 3.0.2 и старше не поставилась, выругавшись на то, что ей нужен ruby
 1.9.2 и старше.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -255,10 +255,10 @@ email из своего гема <a href="https://rubygems.org/gems/clearance">C
 gem с rubygems, насильно заставляя всех в один день обновиться на ruby 1.9, что, надо сказать, задача никак ни одного
 дня.</p>
 <p>Проблема решилась добавлением следующего кода в <code>Gemfile</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">gem <span style="color:#e6db74">&#39;paperclip&#39;</span>,  <span style="color:#e6db74">&#39;3.0.1&#39;</span>,
-                  <span style="color:#e6db74">:git</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;git://github.com/thoughtbot/paperclip.git&#39;</span>,
-                  <span style="color:#e6db74">:tag</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;v3.0.1&#39;</span>
-</code></pre></div><p>Если вы поддерживаете какие-то gem-ы, никогда не поступайте так плохо, как это сделали Thoughtbot.</p><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>gem <span style="color:#e6db74">&#39;paperclip&#39;</span>,  <span style="color:#e6db74">&#39;3.0.1&#39;</span>,
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">:git</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;git://github.com/thoughtbot/paperclip.git&#39;</span>,
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">:tag</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;v3.0.1&#39;</span>
+</span></span></code></pre></div><p>Если вы поддерживаете какие-то gem-ы, никогда не поступайте так плохо, как это сделали Thoughtbot.</p><ul class="pa0">
   
    <li class="list">
      <a href="/tags/paperclip" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">paperclip</a>
@@ -269,7 +269,7 @@ gem с rubygems, насильно заставляя всех в один ден
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

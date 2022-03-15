@@ -7,8 +7,8 @@
     <title>Некоторые проблемы с cached_action в Rails 2.3 | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.
-# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &quot;admin&quot; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.">
-    <meta name="generator" content="Hugo 0.91.2" />
+# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &#34;admin&#34; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.">
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -35,7 +35,7 @@
     
     <meta property="og:title" content="Некоторые проблемы с cached_action в Rails 2.3" />
 <meta property="og:description" content="На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.
-# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &quot;admin&quot; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера." />
+# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &#34;admin&#34; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://evtuhovich.ru/blog/2011/08/22/caches-action/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2011-08-22T13:02:00+00:00" />
@@ -43,13 +43,13 @@
 
 <meta itemprop="name" content="Некоторые проблемы с cached_action в Rails 2.3">
 <meta itemprop="description" content="На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.
-# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &quot;admin&quot; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера."><meta itemprop="datePublished" content="2011-08-22T13:02:00+00:00" />
+# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &#34;admin&#34; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера."><meta itemprop="datePublished" content="2011-08-22T13:02:00+00:00" />
 <meta itemprop="dateModified" content="2011-08-22T13:02:00+00:00" />
 <meta itemprop="wordCount" content="389">
 <meta itemprop="keywords" content="rails,caches_action," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Некоторые проблемы с cached_action в Rails 2.3"/>
 <meta name="twitter:description" content="На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.
-# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &quot;admin&quot; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера."/>
+# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &#34;admin&#34; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера."/>
 
 	<meta name="yandex-verification" content="844263c66799f878" />
 
@@ -242,13 +242,13 @@
 обновляется с помощью ajax-запросов.</p>
 <pre tabindex="0"><code># dashboard.rb
 class Admin::DashboardsController &lt; Admin::BaseController
-  layout &quot;admin&quot;
+  layout &#34;admin&#34;
 
   def show
     # Здесь сложные-сложные запросы к БД
 
     if request.xhr?
-      render 'show', :layout =&gt; false
+      render &#39;show&#39;, :layout =&gt; false
     end
   end
 end
@@ -278,7 +278,7 @@ class Admin::DashboardsController &lt; Admin::BaseController
 class Admin::DashboardsController &lt; Admin::BaseController
   caches_action :show, :expires_in =&gt; 3.minutes,
     :layout =&gt; false,
-    :cache_path =&gt; Proc.new { |c| c.params.merge!(&quot;xhr&quot; =&gt; c.request.xhr?.to_s) }
+    :cache_path =&gt; Proc.new { |c| c.params.merge!(&#34;xhr&#34; =&gt; c.request.xhr?.to_s) }
 </code></pre><p>Но на этом беды не кончились — по неведомой причине после этого ajax запросы перестали попадать в кеш. Я посоветовался
 со своим коллегой <a href="https://github.com/brainopia">Равилем</a>, который подсказал мне,
 <a href="http://railsforum.com/viewtopic.php?id=41906">куда смотреть</a>. Оказывается, у <code>caches_action</code> есть особенность, что он
@@ -287,7 +287,7 @@ class Admin::DashboardsController &lt; Admin::BaseController
 class Admin::DashboardsController &lt; Admin::BaseController
   caches_action :show, :expires_in =&gt; 3.minutes,
     :layout =&gt; Proc.new { |c| c.request.xhr? },
-    :cache_path =&gt; Proc.new { |c| c.params.merge!(&quot;xhr&quot; =&gt; c.request.xhr?.to_s) }
+    :cache_path =&gt; Proc.new { |c| c.params.merge!(&#34;xhr&#34; =&gt; c.request.xhr?.to_s) }
 </code></pre><p>Итак, я за одно утро наступил сразу на все возможные грабли с этим методом. Если хоть один человек избежит этого, значит
 я написал это не зря.</p>
 <ul class="pa0">
@@ -305,7 +305,7 @@ class Admin::DashboardsController &lt; Admin::BaseController
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

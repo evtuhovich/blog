@@ -7,7 +7,7 @@
       <section class="flex-wrap justify-around">
         {{ $.Scratch.Set "oldYear" "2000" }}
         {{ range where .Site.RegularPages "Section" "!=" "" }}
-          {{ $y := split .Path "/" }}
+          {{ $y := split .File.Path "/" }}
           {{ $year := index $y 1 }}
           {{ if and (ne $year ($.Scratch.Get "oldYear")) (ne ($.Scratch.Get "oldYear") "2000") }}
             </ul>

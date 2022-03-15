@@ -10,7 +10,7 @@
 Для людей, которым нравится DSL chef и не нужен chef server, есть chef-solo. Чтобы готовить с его помощью, нужен специальный нож — knife-solo. Это инструмент, который значительно упрощает использование chef-solo.
 Для начала поставить knife-solo
 gem install knife-solo Если у вас есть уже готовый репозитарий для chef, как, например, наше тесто, то следующий шаг можно пропустить.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -260,17 +260,17 @@ gem install knife-solo Если у вас есть уже готовый реп�
 </code></pre><p>Последний параметр нужен из-за досадного бага в chef 11.10.0 (а именно он ставится по умолчанию при выполнении команды
 <code>prepare</code>), из-за которого chef-solo толком не работал, а я потратил 2 часа своей жизни.</p>
 <p>После выполнения этой команды в папке <code>nodes</code> появится файл <code>myhostname.json</code> со следующим содержанием:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;run_list&#34;</span>: [
-  ]
-}
-</code></pre></div><p>Давайте поправим этот файл, добавив ноде какие-нибудь роли или рецепты.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;run_list&#34;</span>: [
-    <span style="color:#e6db74">&#34;role[base]&#34;</span>
-  ]
-}
-</code></pre></div><p>После этого можно запустить команду <code>cook</code>. Она синхронизирует текущую папку на удаленную ноду, после чего запустит на
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;run_list&#34;</span>: [
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Давайте поправим этот файл, добавив ноде какие-нибудь роли или рецепты.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;run_list&#34;</span>: [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;role[base]&#34;</span>
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>После этого можно запустить команду <code>cook</code>. Она синхронизирует текущую папку на удаленную ноду, после чего запустит на
 удаленной ноде chef-solo.</p>
 <pre tabindex="0"><code>$ knife solo cook myhostname
 WARNING: No knife configuration file found
@@ -286,11 +286,11 @@ Compiling Cookbooks...
 Recipe: base::default
   * chef_gem[pony] action install (up to date)
 [2014-03-28T08:08:28+00:00] WARN: Cloning resource attributes for package[sudo] from prior resource (CHEF-3694)
-[2014-03-28T08:08:28+00:00] WARN: Previous package[sudo]: /home/brun/chef-solo/cookbooks-2/base/recipes/default.rb:69:in `block in from_file'
-[2014-03-28T08:08:28+00:00] WARN: Current  package[sudo]: /home/brun/chef-solo/cookbooks-2/sudo/recipes/default.rb:20:in `from_file'
+[2014-03-28T08:08:28+00:00] WARN: Previous package[sudo]: /home/brun/chef-solo/cookbooks-2/base/recipes/default.rb:69:in `block in from_file&#39;
+[2014-03-28T08:08:28+00:00] WARN: Current  package[sudo]: /home/brun/chef-solo/cookbooks-2/sudo/recipes/default.rb:20:in `from_file&#39;
 [2014-03-28T08:08:28+00:00] WARN: Cloning resource attributes for package[git-core] from prior resource (CHEF-3694)
-[2014-03-28T08:08:28+00:00] WARN: Previous package[git-core]: /home/brun/chef-solo/cookbooks-2/ruby/recipes/ruby_build.rb:35:in `block in from_file'
-[2014-03-28T08:08:28+00:00] WARN: Current  package[git-core]: /home/brun/chef-solo/cookbooks-2/ruby/recipes/chruby.rb:35:in `block in from_file'
+[2014-03-28T08:08:28+00:00] WARN: Previous package[git-core]: /home/brun/chef-solo/cookbooks-2/ruby/recipes/ruby_build.rb:35:in `block in from_file&#39;
+[2014-03-28T08:08:28+00:00] WARN: Current  package[git-core]: /home/brun/chef-solo/cookbooks-2/ruby/recipes/chruby.rb:35:in `block in from_file&#39;
 Converging 108 resources
 ...
 </code></pre><p>Очень здорово, что knife-solo интегрирован с librarian/berkshelf, и для того, чтобы вносить изменения, вам надо просто
@@ -316,7 +316,7 @@ Converging 108 resources
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

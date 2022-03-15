@@ -7,9 +7,8 @@
     <title>Слияние HashWithIndifferentAccess с обычными хешами | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
-class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
-Хеш params, которые передается в класс Report — это тот самый params из контроллера.">
-    <meta name="generator" content="Hugo 0.91.2" />
+ class ReportSender  def initialize(report_instance)  @report_instance = report_instance  @params = report_instance.params  @emails = @params.delete(:mail_to)  end  class Report  def initialize(params = {})  @params = self.class.default_values.merge(params)  end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.">
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -36,8 +35,7 @@ class ReportSender def initialize(report_instance) @report_instance = report_ins
     
     <meta property="og:title" content="Слияние HashWithIndifferentAccess с обычными хешами" />
 <meta property="og:description" content="Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
-class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
-Хеш params, которые передается в класс Report — это тот самый params из контроллера." />
+ class ReportSender  def initialize(report_instance)  @report_instance = report_instance  @params = report_instance.params  @emails = @params.delete(:mail_to)  end  class Report  def initialize(params = {})  @params = self.class.default_values.merge(params)  end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://evtuhovich.ru/blog/2011/09/09/indiferent-hash-merge/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2011-09-09T23:16:00+00:00" />
@@ -45,15 +43,13 @@ class ReportSender def initialize(report_instance) @report_instance = report_ins
 
 <meta itemprop="name" content="Слияние HashWithIndifferentAccess с обычными хешами">
 <meta itemprop="description" content="Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
-class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
-Хеш params, которые передается в класс Report — это тот самый params из контроллера."><meta itemprop="datePublished" content="2011-09-09T23:16:00+00:00" />
+ class ReportSender  def initialize(report_instance)  @report_instance = report_instance  @params = report_instance.params  @emails = @params.delete(:mail_to)  end  class Report  def initialize(params = {})  @params = self.class.default_values.merge(params)  end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы."><meta itemprop="datePublished" content="2011-09-09T23:16:00+00:00" />
 <meta itemprop="dateModified" content="2011-09-09T23:16:00+00:00" />
 <meta itemprop="wordCount" content="144">
 <meta itemprop="keywords" content="HashWithIndifferentAccess," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Слияние HashWithIndifferentAccess с обычными хешами"/>
 <meta name="twitter:description" content="Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
-class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
-Хеш params, которые передается в класс Report — это тот самый params из контроллера."/>
+ class ReportSender  def initialize(report_instance)  @report_instance = report_instance  @params = report_instance.params  @emails = @params.delete(:mail_to)  end  class Report  def initialize(params = {})  @params = self.class.default_values.merge(params)  end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы."/>
 
 	<meta name="yandex-verification" content="844263c66799f878" />
 
@@ -243,24 +239,24 @@ class ReportSender def initialize(report_instance) @report_instance = report_ins
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом
 (ненужные подробности я опустил).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ReportSender</span>
-      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(report_instance)
-        @report_instance <span style="color:#f92672">=</span> report_instance
-        @params <span style="color:#f92672">=</span> report_instance<span style="color:#f92672">.</span>params
-        @emails <span style="color:#f92672">=</span>  @params<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">:mail_to</span>)
-      <span style="color:#66d9ef">end</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Report</span>
-      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(params <span style="color:#f92672">=</span> {})
-        @params <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>class<span style="color:#f92672">.</span>default_values<span style="color:#f92672">.</span>merge(params)
-      <span style="color:#66d9ef">end</span>
-</code></pre></div><p>К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ReportSender</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(report_instance)
+</span></span><span style="display:flex;"><span>        @report_instance <span style="color:#f92672">=</span> report_instance
+</span></span><span style="display:flex;"><span>        @params <span style="color:#f92672">=</span> report_instance<span style="color:#f92672">.</span>params
+</span></span><span style="display:flex;"><span>        @emails <span style="color:#f92672">=</span>  @params<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">:mail_to</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Report</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(params <span style="color:#f92672">=</span> {})
+</span></span><span style="display:flex;"><span>        @params <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>class<span style="color:#f92672">.</span>default_values<span style="color:#f92672">.</span>merge(params)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.</p>
 <p>Хеш <code>params</code>, которые передается в класс <code>Report</code> — это тот самый <code>params</code> из контроллера. У него базовый класс — <code>HashWithIndifferentAccess</code>.</p>
 <p>А теперь посмотрим на такой пример:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    {<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>}<span style="color:#f92672">.</span>merge( <span style="color:#66d9ef">HashWithIndifferentAccess</span><span style="color:#f92672">.</span>new <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span> )<span style="color:#f92672">[</span><span style="color:#e6db74">:b</span><span style="color:#f92672">]</span>
-    <span style="color:#75715e"># =&gt; nil </span>
-    <span style="color:#66d9ef">HashWithIndifferentAccess</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>merge(<span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">[</span><span style="color:#e6db74">:b</span><span style="color:#f92672">]</span>
-    <span style="color:#75715e"># =&gt; 1 </span>
-</code></pre></div><p>То есть, если <code>Hash</code> слить с <code>HashWithIndifferentAccess</code>, nо получится <code>Hash</code>. И обращение по ключу <code>:mail_to</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    {<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>}<span style="color:#f92672">.</span>merge( <span style="color:#66d9ef">HashWithIndifferentAccess</span><span style="color:#f92672">.</span>new <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span> )<span style="color:#f92672">[</span><span style="color:#e6db74">:b</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># =&gt; nil </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">HashWithIndifferentAccess</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>merge(<span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">[</span><span style="color:#e6db74">:b</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># =&gt; 1 </span>
+</span></span></code></pre></div><p>То есть, если <code>Hash</code> слить с <code>HashWithIndifferentAccess</code>, nо получится <code>Hash</code>. И обращение по ключу <code>:mail_to</code>
 возвращало <code>nil</code>, потому что ключ был <code>&quot;mail_to&quot;</code>.</p>
 <p>Надеюсь, это поможет кому-то сэкономить те 45 минут, которые я потратил сегодня вечером, разбираясь с этой проблемой.</p>
 <ul class="pa0">
@@ -274,7 +270,7 @@ class ReportSender def initialize(report_instance) @report_instance = report_ins
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

@@ -9,8 +9,8 @@
     <meta name="description" content="Использование дебаггера при разработке — это плохой тон. Это значит, что вы не понимаете, как работает ваша программа. Но иногда жизнь без дебаггера становится невыносимой.
 Есть отличный плагин vim-ruby-debugger для редактора vim. Но он пока сыроват и не все возможности в нем есть. По крайней мере в моем случае, чтобы понять, что происходить внутри спека, он не помог.
 Тогда я воспользовался старым дедовским способом:
-require &#39;ruby-debug&#39; Debugger.start И вставил вызов debugger в том месте, где мне это необходимо.">
-    <meta name="generator" content="Hugo 0.91.2" />
+ require &#39;ruby-debug&#39;  Debugger.start И вставил вызов debugger в том месте, где мне это необходимо.">
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -39,7 +39,7 @@ require &#39;ruby-debug&#39; Debugger.start И вставил вызов debugge
 <meta property="og:description" content="Использование дебаггера при разработке — это плохой тон. Это значит, что вы не понимаете, как работает ваша программа. Но иногда жизнь без дебаггера становится невыносимой.
 Есть отличный плагин vim-ruby-debugger для редактора vim. Но он пока сыроват и не все возможности в нем есть. По крайней мере в моем случае, чтобы понять, что происходить внутри спека, он не помог.
 Тогда я воспользовался старым дедовским способом:
-require &#39;ruby-debug&#39; Debugger.start И вставил вызов debugger в том месте, где мне это необходимо." />
+ require &#39;ruby-debug&#39;  Debugger.start И вставил вызов debugger в том месте, где мне это необходимо." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://evtuhovich.ru/blog/2009/07/30/ruby-debug/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2009-07-30T22:22:00+00:00" />
@@ -49,7 +49,7 @@ require &#39;ruby-debug&#39; Debugger.start И вставил вызов debugge
 <meta itemprop="description" content="Использование дебаггера при разработке — это плохой тон. Это значит, что вы не понимаете, как работает ваша программа. Но иногда жизнь без дебаггера становится невыносимой.
 Есть отличный плагин vim-ruby-debugger для редактора vim. Но он пока сыроват и не все возможности в нем есть. По крайней мере в моем случае, чтобы понять, что происходить внутри спека, он не помог.
 Тогда я воспользовался старым дедовским способом:
-require &#39;ruby-debug&#39; Debugger.start И вставил вызов debugger в том месте, где мне это необходимо."><meta itemprop="datePublished" content="2009-07-30T22:22:00+00:00" />
+ require &#39;ruby-debug&#39;  Debugger.start И вставил вызов debugger в том месте, где мне это необходимо."><meta itemprop="datePublished" content="2009-07-30T22:22:00+00:00" />
 <meta itemprop="dateModified" content="2009-07-30T22:22:00+00:00" />
 <meta itemprop="wordCount" content="176">
 <meta itemprop="keywords" content="ruby-debug," /><meta name="twitter:card" content="summary"/>
@@ -57,7 +57,7 @@ require &#39;ruby-debug&#39; Debugger.start И вставил вызов debugge
 <meta name="twitter:description" content="Использование дебаггера при разработке — это плохой тон. Это значит, что вы не понимаете, как работает ваша программа. Но иногда жизнь без дебаггера становится невыносимой.
 Есть отличный плагин vim-ruby-debugger для редактора vim. Но он пока сыроват и не все возможности в нем есть. По крайней мере в моем случае, чтобы понять, что происходить внутри спека, он не помог.
 Тогда я воспользовался старым дедовским способом:
-require &#39;ruby-debug&#39; Debugger.start И вставил вызов debugger в том месте, где мне это необходимо."/>
+ require &#39;ruby-debug&#39;  Debugger.start И вставил вызов debugger в том месте, где мне это необходимо."/>
 
 	<meta name="yandex-verification" content="844263c66799f878" />
 
@@ -250,13 +250,13 @@ require &#39;ruby-debug&#39; Debugger.start И вставил вызов debugge
 <p>Есть отличный плагин vim-ruby-debugger для редактора vim. Но он пока сыроват и не все возможности в нем есть. По крайней
 мере в моем случае, чтобы понять, что происходить внутри спека, он не помог.</p>
 <p>Тогда я воспользовался старым дедовским способом:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    require <span style="color:#e6db74">&#39;ruby-debug&#39;</span>
-    <span style="color:#66d9ef">Debugger</span><span style="color:#f92672">.</span>start
-</code></pre></div><p>И вставил вызов debugger в том месте, где мне это необходимо.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    require <span style="color:#e6db74">&#39;ruby-debug&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Debugger</span><span style="color:#f92672">.</span>start
+</span></span></code></pre></div><p>И вставил вызов debugger в том месте, где мне это необходимо.</p>
 <p>Когда дебаггер дойдет до нужного места, появится консоль дебаггера.</p>
 <pre tabindex="0"><code>    (rdb:1) help
     ruby-debug help v0.10.3
-    Type 'help ' for help on a specific command
+    Type &#39;help &#39; for help on a specific command
 
     Available commands:
     backtrace  catch      continue  disable    down    enable   exit     frame  info   
@@ -278,7 +278,7 @@ require &#39;ruby-debug&#39; Debugger.start И вставил вызов debugge
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

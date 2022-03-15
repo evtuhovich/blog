@@ -190,7 +190,7 @@ http://github.com/evtuhovich/pgq/tree/master
       <pubDate>Sat, 04 Apr 2009 23:45:00 +0000</pubDate>
       
       <guid>https://evtuhovich.ru/blog/2009/04/04/queue/</guid>
-      <description>При большом количестве запросов к приложению (в широком смысле этого слова) иногда целесообразно ``размазать&#39;&#39; пиковую нагрузку во времени. Для этого удобно использовать очереди. То есть, если какое-то запрос наверняка должен быть выполнен, но не имеет значение произойдет это прямо сейчас или чуть попозже, можно создать событие в очереди. И когда до этого события дойдет очередь —&amp;ndash; оно будет выполнено. Таким образом можно развести сложные запросы во времени.
+      <description>При большом количестве запросов к приложению (в широком смысле этого слова) иногда целесообразно ``размазать&amp;rsquo;&amp;rsquo; пиковую нагрузку во времени. Для этого удобно использовать очереди. То есть, если какое-то запрос наверняка должен быть выполнен, но не имеет значение произойдет это прямо сейчас или чуть попозже, можно создать событие в очереди. И когда до этого события дойдет очередь —&amp;ndash; оно будет выполнено. Таким образом можно развести сложные запросы во времени.
 Очереди подходят для таких задач, как, например, рассылка большого количества сообщений и обновление различных счетчиков в БД (если их актуальность не очень критична).</description>
     </item>
     
@@ -202,7 +202,7 @@ http://github.com/evtuhovich/pgq/tree/master
       <guid>https://evtuhovich.ru/blog/2009/03/20/big-tables/</guid>
       <description>Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
- $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &amp;lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&amp;gt; true, :null =&amp;gt; false end def self.</description>
+ $ script/generate migration add_is_searchable_to_posts  class AddIsSearchableToPosts &amp;lt; ActiveRecord::Migration  def self.up  add_column :posts, :is_searchable, :boolean, :default =&amp;gt; true, :null =&amp;gt; false  end   def self.</description>
     </item>
     
   </channel>

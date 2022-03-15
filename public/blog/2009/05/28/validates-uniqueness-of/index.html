@@ -7,9 +7,9 @@
     <title>Проблема с проверкой уникальности какого-то поля в rails | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Пусть в модели User у нас описана валидация для поля email
-validates_uniqueness_of :email, :case_sensitive =&gt; false, :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
-SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос.">
-    <meta name="generator" content="Hugo 0.91.2" />
+ validates_uniqueness_of :email, :case_sensitive =&gt; false,  :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
+ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос.">
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -36,8 +36,8 @@ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таб�
     
     <meta property="og:title" content="Проблема с проверкой уникальности какого-то поля в rails" />
 <meta property="og:description" content="Пусть в модели User у нас описана валидация для поля email
-validates_uniqueness_of :email, :case_sensitive =&gt; false, :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
-SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос." />
+ validates_uniqueness_of :email, :case_sensitive =&gt; false,  :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
+ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://evtuhovich.ru/blog/2009/05/28/validates-uniqueness-of/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2009-05-28T22:22:00+00:00" />
@@ -45,15 +45,15 @@ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таб�
 
 <meta itemprop="name" content="Проблема с проверкой уникальности какого-то поля в rails">
 <meta itemprop="description" content="Пусть в модели User у нас описана валидация для поля email
-validates_uniqueness_of :email, :case_sensitive =&gt; false, :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
-SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос."><meta itemprop="datePublished" content="2009-05-28T22:22:00+00:00" />
+ validates_uniqueness_of :email, :case_sensitive =&gt; false,  :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
+ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос."><meta itemprop="datePublished" content="2009-05-28T22:22:00+00:00" />
 <meta itemprop="dateModified" content="2009-05-28T22:22:00+00:00" />
 <meta itemprop="wordCount" content="169">
 <meta itemprop="keywords" content="rails,validates_uniqueness_of,индексы," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Проблема с проверкой уникальности какого-то поля в rails"/>
 <meta name="twitter:description" content="Пусть в модели User у нас описана валидация для поля email
-validates_uniqueness_of :email, :case_sensitive =&gt; false, :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
-SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос."/>
+ validates_uniqueness_of :email, :case_sensitive =&gt; false,  :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
+ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос."/>
 
 	<meta name="yandex-verification" content="844263c66799f878" />
 
@@ -242,11 +242,11 @@ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таб�
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Пусть в модели User у нас описана валидация для поля email</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    validates_uniqueness_of <span style="color:#e6db74">:email</span>, <span style="color:#e6db74">:case_sensitive</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">false</span>, 
-      <span style="color:#e6db74">:message</span> <span style="color:#f92672">=&gt;</span> i18n_proxy(<span style="color:#e6db74">:email_already_registered</span>)
-</code></pre></div><p>Следующий код генерирует вот такой запрос к базе данных:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">lower</span>(email) <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;thmth&#39;</span> <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>
-</code></pre></div><p>А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    validates_uniqueness_of <span style="color:#e6db74">:email</span>, <span style="color:#e6db74">:case_sensitive</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">false</span>, 
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">:message</span> <span style="color:#f92672">=&gt;</span> i18n_proxy(<span style="color:#e6db74">:email_already_registered</span>)
+</span></span></code></pre></div><p>Следующий код генерирует вот такой запрос к базе данных:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">lower</span>(email) <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;thmth&#39;</span> <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху,
 не будет использовать индекс. Представьте, что будет, когда в таблице users
 десятки тысяч записей, а на каждое изменение любого поля в users вызывается
 такой запрос.</p>
@@ -254,13 +254,13 @@ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таб�
 просто, например, убрать <code>:case_sensetive</code>, а email всегда
 предварительно переводить в нижние буквы.</p>
 <p>Есть другой вариант, сделать функциональный индекс:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> users(<span style="color:#66d9ef">lower</span>(email))
-</code></pre></div><p>Беда в том, что в таком случае (а его мы тоже используем, но уже в другом проекте) придется держать 2 индекса на email -
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">ON</span> users(<span style="color:#66d9ef">lower</span>(email))
+</span></span></code></pre></div><p>Беда в том, что в таком случае (а его мы тоже используем, но уже в другом проекте) придется держать 2 индекса на email -
 обычный и функциональный. И вот почему:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">User</span><span style="color:#f92672">.</span>find_by_email <span style="color:#e6db74">&#39;evtuhovich@gmail.com&#39;</span>
-</code></pre></div><p>Этот код выполнит в БД следующий запрос:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;users&#34;</span> <span style="color:#66d9ef">WHERE</span> (<span style="color:#e6db74">&#34;users&#34;</span>.<span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;evtuhovich@gmail.com&#39;</span>) <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>
-</code></pre></div><p>В любом случае, все зависит от решаемой задачи.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">User</span><span style="color:#f92672">.</span>find_by_email <span style="color:#e6db74">&#39;evtuhovich@gmail.com&#39;</span>
+</span></span></code></pre></div><p>Этот код выполнит в БД следующий запрос:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;users&#34;</span> <span style="color:#66d9ef">WHERE</span> (<span style="color:#e6db74">&#34;users&#34;</span>.<span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;evtuhovich@gmail.com&#39;</span>) <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>В любом случае, все зависит от решаемой задачи.</p>
 <ul class="pa0">
   
    <li class="list">
@@ -280,7 +280,7 @@ SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таб�
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Могущественная скорлупа — это, конечно же, шуточный перевод PowerShell. Обратиться к этой теме старого любителя Linux заставило не праздное любопытство, а насущная производственная необходимость. Конечно же, в мире Linux принято весело хохотать и поливать грязью все, что относится к Windows. Но, надо сказать, что многое изменилось в мире Windows, за последнее время.
 Во-первых, появился аналог ssh. По протоколу WinRM с помощью PowerShell можно ходить по другим машинкам не хуже, чем по ssh.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -248,7 +248,7 @@ ssh.</p>
 [dc]: PS C:\Users\Administrator\Documents&gt;
 </code></pre><p>Во-вторых, появилась возможность управлять почти всеми кишками винды с помощью могущественной скорлупы, тьфу,
 powershell. Например, вот так выглядит аналог <code>ps aux | grep snmp</code>.</p>
-<pre tabindex="0"><code>Get-Process | ? { $_.Name -like 'snmp' }
+<pre tabindex="0"><code>Get-Process | ? { $_.Name -like &#39;snmp&#39; }
 </code></pre><p>Конечно, выглядит достаточно многословно, но для большинства команд есть короткие алиасы, посмотреть которые можно с
 помощью <code>Get-Alias</code>. Вы будете удивлены, но многие алиасы пришли из мира Linux, например, тот же <code>Get-Process</code>
 сокращается до привычного <code>ps</code>.</p>
@@ -272,11 +272,11 @@ Disposed                   Event          System.EventHandler Disposed(System.Ob
 ...
 </code></pre><p>Плюс к тому, если ничего не помогает, можно всегда создать .Net класс прямо из PowerShell и воротить, вообще, что
 угодно. Например, преобразовывать xml файлы.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$Xml = New-Object System.Xml.XmlDocument
-$Xml.Load($XmlFile)
-$Xml.SelectSingleNode(<span style="color:#e6db74">&#34;/my/xpath&#34;</span>).InnerXml = <span style="color:#e6db74">&#34;&lt;justforfun /&gt;&#34;</span>
-$Xml.Save($XmlFile)
-</code></pre></div><p>С появлением в Windows headless режима, эта ОС все меньше похожа на игрушку, где надо тыкать мышкой по кнопочкам.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$Xml = New-Object System.Xml.XmlDocument
+</span></span><span style="display:flex;"><span>$Xml.Load($XmlFile)
+</span></span><span style="display:flex;"><span>$Xml.SelectSingleNode(<span style="color:#e6db74">&#34;/my/xpath&#34;</span>).InnerXml = <span style="color:#e6db74">&#34;&lt;justforfun /&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>$Xml.Save($XmlFile)
+</span></span></code></pre></div><p>С появлением в Windows headless режима, эта ОС все меньше похожа на игрушку, где надо тыкать мышкой по кнопочкам.</p>
 <p>Я, конечно, считаю, что PowerShell уступает в изяществе Ruby, но могущественность его от этого нисколько не страдает.</p>
 <ul class="pa0">
   
@@ -289,7 +289,7 @@ $Xml.Save($XmlFile)
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

@@ -11,7 +11,7 @@
 2013 года.
 Обо всех новых возможностях 9.3 можно почитать на официальной wiki.
 Но чтобы не только почитать, но и попробовать, я напишу здесь, как поставить 9.3 beta 1 на OSX.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -262,15 +262,12 @@ $ brew update
 $ brew tap petere/postgresql
 
 $ brew install postgresql-9.3
-
 </code></pre><p>Все эти процедуры никак не угрожают предыдущей версии PostgreSQL, который вы поставили из homebrew.
 Далее необходимо создать новый кластер для для 9.3.</p>
 <pre tabindex="0"><code>
 $ cd /usr/local/Cellar/postgresql-9.3/9.3beta1/bin
 
 $ ./initdb /usr/local/var/postgres-9.3
-
-
 </code></pre><p>Далее в файле /usr/local/var/postgres-9.3/postgresql.conf поменяйте порт на 5433, если у вас установлена и запущена
 другая версия PostgreSQL, чтобы можно было пользоваться одновременно двумя.</p>
 <pre tabindex="0"><code>$ cat /usr/local/var/postgres-9.3/postgresql.conf | grep port
@@ -279,7 +276,6 @@ port = 5433                             # (change requires restart)
 <pre tabindex="0"><code>
 $ /usr/local/Cellar/postgresql-9.3/9.3beta1/bin/pg_ctl \
   -D /usr/local/var/postgres-9.3/ -l /var/log/postgresql-9.3.log start
-
 </code></pre><p>Возможно, у вас не будет хватать прав на /var/log/postgresql-9.3.log, но я уверен, вы с этим справитесь.</p>
 <p>Проверим, что все правильно.</p>
 <pre tabindex="0"><code>$ psql -p 5433
@@ -287,7 +283,7 @@ Pager usage is off.
 psql (9.2.2, server 9.3beta1)
 WARNING: psql version 9.2, server version 9.3.
          Some psql features might not work.
-Type &quot;help&quot; for help.
+Type &#34;help&#34; for help.
 
 brun=# \q
 </code></pre><p>Ура, можно экспериментировать. О том, что интересного появилось в 9.3, я расскажу в следующих постах.</p>
@@ -302,7 +298,7 @@ brun=# \q
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

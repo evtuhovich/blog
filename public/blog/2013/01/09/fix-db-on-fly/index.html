@@ -12,7 +12,7 @@
 данных перестает влезать в оперативную память, то время обработки запросов к БД чрезвычайно сильно возрастает (об этом я
 напишу в ближайшем будущем). И чтобы «впихнуть» размеры таблицы в нужный размер, иногда приходится делать некоторые нетрадиционные
 трюки.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -261,49 +261,46 @@
 трюки.</p>
 <p>Но перейдем к практике. Пусть у нас есть таблица пользователей библиотеки <code>users</code> и таблица, в которой хранится связка
 пользователей и книг, которые они взяли <code>books_users</code>. А у этой нашей библиотеки миллион пользователей.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">test<span style="color:#f92672">=#</span> <span style="color:#960050;background-color:#1e0010">\</span>d users
-                         <span style="color:#66d9ef">Table</span> <span style="color:#e6db74">&#34;public.users&#34;</span>
- <span style="color:#66d9ef">Column</span> <span style="color:#f92672">|</span>  <span style="color:#66d9ef">Type</span>   <span style="color:#f92672">|</span>                     Modifiers                      
-<span style="color:#75715e">--------+---------+----------------------------------------------------
-</span><span style="color:#75715e"></span> id     <span style="color:#f92672">|</span> integer <span style="color:#f92672">|</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span> <span style="color:#66d9ef">default</span> nextval(<span style="color:#e6db74">&#39;users_id_seq&#39;</span>::regclass)
- email  <span style="color:#f92672">|</span> text    <span style="color:#f92672">|</span> 
- name   <span style="color:#f92672">|</span> text    <span style="color:#f92672">|</span> 
- gender <span style="color:#f92672">|</span> integer <span style="color:#f92672">|</span> 
- age    <span style="color:#f92672">|</span> integer <span style="color:#f92672">|</span> 
-Indexes:
-    <span style="color:#e6db74">&#34;users_pkey&#34;</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>, btree (id)
-    <span style="color:#e6db74">&#34;users_age_idx&#34;</span> btree (age)
-    <span style="color:#e6db74">&#34;users_email_idx&#34;</span> btree (email)
-    <span style="color:#e6db74">&#34;users_gender_idx&#34;</span> btree (gender)
-
-test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_size_pretty(pg_total_relation_size(<span style="color:#e6db74">&#39;users&#39;</span>));
- pg_size_pretty 
-<span style="color:#75715e">----------------
-</span><span style="color:#75715e"></span> <span style="color:#ae81ff">208</span> MB
-(<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">row</span>)
-
-</code></pre></div><p>В какой-то момент мы решаем денормализовать схему БД и добавить количество взятых в библиотеки книг в таблицу
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>test<span style="color:#f92672">=#</span> <span style="color:#960050;background-color:#1e0010">\</span>d users
+</span></span><span style="display:flex;"><span>                         <span style="color:#66d9ef">Table</span> <span style="color:#e6db74">&#34;public.users&#34;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">Column</span> <span style="color:#f92672">|</span>  <span style="color:#66d9ef">Type</span>   <span style="color:#f92672">|</span>                     Modifiers                      
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--------+---------+----------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> id     <span style="color:#f92672">|</span> integer <span style="color:#f92672">|</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span> <span style="color:#66d9ef">default</span> nextval(<span style="color:#e6db74">&#39;users_id_seq&#39;</span>::regclass)
+</span></span><span style="display:flex;"><span> email  <span style="color:#f92672">|</span> text    <span style="color:#f92672">|</span> 
+</span></span><span style="display:flex;"><span> name   <span style="color:#f92672">|</span> text    <span style="color:#f92672">|</span> 
+</span></span><span style="display:flex;"><span> gender <span style="color:#f92672">|</span> integer <span style="color:#f92672">|</span> 
+</span></span><span style="display:flex;"><span> age    <span style="color:#f92672">|</span> integer <span style="color:#f92672">|</span> 
+</span></span><span style="display:flex;"><span>Indexes:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;users_pkey&#34;</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>, btree (id)
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;users_age_idx&#34;</span> btree (age)
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;users_email_idx&#34;</span> btree (email)
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;users_gender_idx&#34;</span> btree (gender)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_size_pretty(pg_total_relation_size(<span style="color:#e6db74">&#39;users&#39;</span>));
+</span></span><span style="display:flex;"><span> pg_size_pretty 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">----------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#ae81ff">208</span> MB
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">row</span>)
+</span></span></code></pre></div><p>В какой-то момент мы решаем денормализовать схему БД и добавить количество взятых в библиотеки книг в таблицу
 пользователей.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> users <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">column</span> books_count int;
-test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">update</span> users <span style="color:#66d9ef">set</span> books_count <span style="color:#f92672">=</span> (<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> books_users <span style="color:#66d9ef">where</span> user_id <span style="color:#f92672">=</span> users.id);
-<span style="color:#66d9ef">UPDATE</span> <span style="color:#ae81ff">1000000</span>
-
-test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_size_pretty(pg_total_relation_size(<span style="color:#e6db74">&#39;users&#39;</span>));
- pg_size_pretty 
-<span style="color:#75715e">----------------
-</span><span style="color:#75715e"></span> <span style="color:#ae81ff">454</span> MB
-
-</code></pre></div><p>Как мы видим, после такой простой операции таблица разбухла в 2 раза. Что же делать в таком случае? Давайте попробуем
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> users <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">column</span> books_count int;
+</span></span><span style="display:flex;"><span>test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">update</span> users <span style="color:#66d9ef">set</span> books_count <span style="color:#f92672">=</span> (<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> books_users <span style="color:#66d9ef">where</span> user_id <span style="color:#f92672">=</span> users.id);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> <span style="color:#ae81ff">1000000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_size_pretty(pg_total_relation_size(<span style="color:#e6db74">&#39;users&#39;</span>));
+</span></span><span style="display:flex;"><span> pg_size_pretty 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">----------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#ae81ff">454</span> MB
+</span></span></code></pre></div><p>Как мы видим, после такой простой операции таблица разбухла в 2 раза. Что же делать в таком случае? Давайте попробуем
 обычный <code>vacuum</code>, ведь он предназначен именно для этого.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">vacuum</span> users;
-<span style="color:#66d9ef">VACUUM</span>
-
-test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_size_pretty(pg_total_relation_size(<span style="color:#e6db74">&#39;users&#39;</span>));
- pg_size_pretty
-<span style="color:#75715e">----------------
-</span><span style="color:#75715e"></span> <span style="color:#ae81ff">454</span> MB
-
-</code></pre></div><p>Как мы видим, это не помогло. Понятно, что разбухла как таблица, так и индексы (а их там 4), поправить 3 из них можно с
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">vacuum</span> users;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">VACUUM</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> pg_size_pretty(pg_total_relation_size(<span style="color:#e6db74">&#39;users&#39;</span>));
+</span></span><span style="display:flex;"><span> pg_size_pretty
+</span></span><span style="display:flex;"><span><span style="color:#75715e">----------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#ae81ff">454</span> MB
+</span></span></code></pre></div><p>Как мы видим, это не помогло. Понятно, что разбухла как таблица, так и индексы (а их там 4), поправить 3 из них можно с
 помощью <a href="/blog/2009/04/08/concurent-index/">конкурентного пересоздания индексов</a>, но сама таблица и индекс <code>users_pkey</code>, который
 отвечает за первичный ключ, останутся разбухшими.</p>
 <p>Конечно, нам бы помог <code>vacuum full</code>, но он требует эксклюзивного доступа к таблица, а это значит, что все время, пока он
@@ -336,7 +333,7 @@ test<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</sp
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

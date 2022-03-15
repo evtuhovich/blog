@@ -10,7 +10,7 @@
 сложно выговорить с первого раза. И если слово «партиционирование» я так с первого раза и не выговариваю, то саму
 практику пришлось признать как необходимое и неизбежное зло. Чтобы никто не подумал, что я делаю что-то плохое, я
 использую для этого термин «инженерный компромисс», звучит умнее и не так обидно.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -262,87 +262,86 @@
 WITH TIME ZONE не является IMMUTABLE</a>.</p>
 <p>Пример того, как выглядит генерация триггера на вставку в партиционированную таблицу. Для этой статьи я добавил
 комментарии для больше понятности, но все равно выглядит громоздко.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreatePartitionsForArchiveTransfers</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span>
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">up</span>
-    <span style="color:#75715e"># Таблица фактов называется archive_transfers, мы разобъем ее на части по месяцам</span>
-
-    start <span style="color:#f92672">=</span> <span style="color:#66d9ef">Date</span><span style="color:#f92672">.</span>parse <span style="color:#e6db74">&#39;2011-10-01&#39;</span>
-    trigger_parts <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>   <span style="color:#75715e"># здесь будут храниться куски триггера на вставку</span>
-    <span style="color:#75715e"># сгенерируем триггер и таблицы до 2014-09 включительно - 3 года = 36 месяцев</span>
-    <span style="color:#ae81ff">36</span><span style="color:#f92672">.</span>times <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>i<span style="color:#f92672">|</span>
-      date <span style="color:#f92672">=</span> start <span style="color:#f92672">+</span> i<span style="color:#f92672">.</span>month
-      <span style="color:#75715e"># таблицы будут иметь названия вида archive_transfers_2013_03</span>
-      table_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;archive_transfers_</span><span style="color:#e6db74">#{</span>date<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y_%m&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-
-      <span style="color:#75715e"># b и e - сокращения от begin и end</span>
-      b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> <span style="color:#f92672">+</span> date<span style="color:#f92672">.</span>to_time_in_current_zone<span style="color:#f92672">.</span>utc<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-%d %H:%M:%S&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;&#34;</span>
-      e <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> <span style="color:#f92672">+</span>
-        (date <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span>month)<span style="color:#f92672">.</span>to_time_in_current_zone<span style="color:#f92672">.</span>utc<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-%d %H:%M:%S&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;&#34;</span>
-
-      trigger_parts <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; ( NEW.created_at &gt;= </span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74"> AND
-</span><span style="color:#e6db74">               NEW.created_at &lt; </span><span style="color:#e6db74">#{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74"> ) THEN
-</span><span style="color:#e6db74">              INSERT INTO </span><span style="color:#e6db74">#{</span>table_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> VALUES (NEW.*);
-</span><span style="color:#e6db74">      &#34;</span>
-
-      create_table table_name, <span style="color:#e6db74">:options</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;inherits (archive_transfers)&#34;</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
-      <span style="color:#66d9ef">end</span>
-
-      <span style="color:#75715e"># индексы не наследуются, поэтому для каждой</span>
-      <span style="color:#75715e"># дочерней таблицы их надо создавать заново</span>
-      add_index table_name, <span style="color:#e6db74">:sender_id</span>
-      add_index table_name, <span style="color:#e6db74">:receiver_id</span>
-
-      <span style="color:#75715e"># для каждой дочерней табилцы создаем проверку,</span>
-      <span style="color:#75715e"># чтобы в нее попадали только нужные данные</span>
-      execute <span style="color:#e6db74">&#34;ALTER TABLE </span><span style="color:#e6db74">#{</span>table_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> ADD CHECK (
-</span><span style="color:#e6db74">        created_at &gt;= </span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74"> AND
-</span><span style="color:#e6db74">        created_at &lt; </span><span style="color:#e6db74">#{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
-    <span style="color:#66d9ef">end</span>
-
-    execute <span style="color:#e6db74">%Q(
-</span><span style="color:#e6db74">      CREATE OR REPLACE FUNCTION archive_transfers_insert_trigger()
-</span><span style="color:#e6db74">      RETURNS TRIGGER AS $$
-</span><span style="color:#e6db74">      BEGIN
-</span><span style="color:#e6db74">          IF )</span> <span style="color:#f92672">+</span> trigger_parts<span style="color:#f92672">.</span>join(<span style="color:#e6db74">&#39;ELSEIF&#39;</span>) <span style="color:#f92672">+</span>
-      <span style="color:#e6db74">%Q(    ELSE
-</span><span style="color:#e6db74">              RAISE EXCEPTION &#39;Date out of range. Fix the archive_transfers_insert_trigger() function!&#39;;
-</span><span style="color:#e6db74">          END IF;
-</span><span style="color:#e6db74">          RETURN NULL;
-</span><span style="color:#e6db74">      END;
-</span><span style="color:#e6db74">      $$
-</span><span style="color:#e6db74">      LANGUAGE plpgsql;
-</span><span style="color:#e6db74">    )</span>
-
-    execute <span style="color:#e6db74">%Q(
-</span><span style="color:#e6db74">      CREATE TRIGGER insert_archive_transfers_trigger
-</span><span style="color:#e6db74">      BEFORE INSERT ON archive_transfers
-</span><span style="color:#e6db74">      FOR EACH ROW EXECUTE PROCEDURE archive_transfers_insert_trigger();)</span>
-
-  <span style="color:#66d9ef">end</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></div><p>После выполнения мы получим 36 новых таблиц в БД и триггер, похожий на этот.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">FUNCTION</span> archive_transfers_insert_trigger()
-<span style="color:#66d9ef">RETURNS</span> <span style="color:#66d9ef">TRIGGER</span> <span style="color:#66d9ef">AS</span> <span style="color:#960050;background-color:#1e0010">$$</span>
-<span style="color:#66d9ef">BEGIN</span>
-  <span style="color:#66d9ef">IF</span>  ( <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;2011-09-30 20:00:00&#39;</span> <span style="color:#66d9ef">AND</span>
-          <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#39;2011-10-31 20:00:00&#39;</span> ) <span style="color:#66d9ef">THEN</span>
-         <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> archive_transfers_2011_10 <span style="color:#66d9ef">VALUES</span> (<span style="color:#66d9ef">NEW</span>.<span style="color:#f92672">*</span>);
-  ELSEIF ( <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;2011-10-31 20:00:00&#39;</span> <span style="color:#66d9ef">AND</span>
-          <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#39;2011-11-30 20:00:00&#39;</span> ) <span style="color:#66d9ef">THEN</span>
-         <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> archive_transfers_2011_11 <span style="color:#66d9ef">VALUES</span> (<span style="color:#66d9ef">NEW</span>.<span style="color:#f92672">*</span>);
-<span style="color:#f92672">%</span> <span style="color:#960050;background-color:#1e0010">здесь</span> <span style="color:#960050;background-color:#1e0010">пропустим</span> <span style="color:#960050;background-color:#1e0010">много</span> <span style="color:#960050;background-color:#1e0010">таких</span> <span style="color:#960050;background-color:#1e0010">же</span> <span style="color:#960050;background-color:#1e0010">строчек</span>
-  ELSEIF ( <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;2014-08-31 20:00:00&#39;</span> <span style="color:#66d9ef">AND</span>
-          <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#39;2014-09-30 20:00:00&#39;</span> ) <span style="color:#66d9ef">THEN</span>
-         <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> archive_transfers_2014_09 <span style="color:#66d9ef">VALUES</span> (<span style="color:#66d9ef">NEW</span>.<span style="color:#f92672">*</span>);
-  <span style="color:#66d9ef">ELSE</span>
-     RAISE <span style="color:#66d9ef">EXCEPTION</span> <span style="color:#e6db74">&#39;Date out of range.  Fix the archive_transfers_insert_trigger() function!&#39;</span>;
-  <span style="color:#66d9ef">END</span> <span style="color:#66d9ef">IF</span>;
-  <span style="color:#66d9ef">RETURN</span> <span style="color:#66d9ef">NULL</span>;
-<span style="color:#66d9ef">END</span>;
-<span style="color:#960050;background-color:#1e0010">$$</span>
-<span style="color:#66d9ef">LANGUAGE</span> plpgsql;
-
-</code></pre></div><p>При партиционировании перестает работать <code>RETURNING</code>, а это значит, что при вставке новой записи нельзя узнать ее
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreatePartitionsForArchiveTransfers</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">up</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Таблица фактов называется archive_transfers, мы разобъем ее на части по месяцам</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    start <span style="color:#f92672">=</span> <span style="color:#66d9ef">Date</span><span style="color:#f92672">.</span>parse <span style="color:#e6db74">&#39;2011-10-01&#39;</span>
+</span></span><span style="display:flex;"><span>    trigger_parts <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>   <span style="color:#75715e"># здесь будут храниться куски триггера на вставку</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># сгенерируем триггер и таблицы до 2014-09 включительно - 3 года = 36 месяцев</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">36</span><span style="color:#f92672">.</span>times <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>i<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>      date <span style="color:#f92672">=</span> start <span style="color:#f92672">+</span> i<span style="color:#f92672">.</span>month
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># таблицы будут иметь названия вида archive_transfers_2013_03</span>
+</span></span><span style="display:flex;"><span>      table_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;archive_transfers_</span><span style="color:#e6db74">#{</span>date<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y_%m&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># b и e - сокращения от begin и end</span>
+</span></span><span style="display:flex;"><span>      b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> <span style="color:#f92672">+</span> date<span style="color:#f92672">.</span>to_time_in_current_zone<span style="color:#f92672">.</span>utc<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-%d %H:%M:%S&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>      e <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        (date <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span>month)<span style="color:#f92672">.</span>to_time_in_current_zone<span style="color:#f92672">.</span>utc<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-%d %H:%M:%S&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      trigger_parts <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; ( NEW.created_at &gt;= </span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74"> AND
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">               NEW.created_at &lt; </span><span style="color:#e6db74">#{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74"> ) THEN
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              INSERT INTO </span><span style="color:#e6db74">#{</span>table_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> VALUES (NEW.*);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      create_table table_name, <span style="color:#e6db74">:options</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;inherits (archive_transfers)&#34;</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># индексы не наследуются, поэтому для каждой</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># дочерней таблицы их надо создавать заново</span>
+</span></span><span style="display:flex;"><span>      add_index table_name, <span style="color:#e6db74">:sender_id</span>
+</span></span><span style="display:flex;"><span>      add_index table_name, <span style="color:#e6db74">:receiver_id</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># для каждой дочерней табилцы создаем проверку,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># чтобы в нее попадали только нужные данные</span>
+</span></span><span style="display:flex;"><span>      execute <span style="color:#e6db74">&#34;ALTER TABLE </span><span style="color:#e6db74">#{</span>table_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> ADD CHECK (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        created_at &gt;= </span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74"> AND
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        created_at &lt; </span><span style="color:#e6db74">#{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    execute <span style="color:#e6db74">%Q(
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      CREATE OR REPLACE FUNCTION archive_transfers_insert_trigger()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      RETURNS TRIGGER AS $$
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      BEGIN
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          IF )</span> <span style="color:#f92672">+</span> trigger_parts<span style="color:#f92672">.</span>join(<span style="color:#e6db74">&#39;ELSEIF&#39;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">%Q(    ELSE
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              RAISE EXCEPTION &#39;Date out of range. Fix the archive_transfers_insert_trigger() function!&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          END IF;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          RETURN NULL;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      END;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      $$
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      LANGUAGE plpgsql;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    )</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    execute <span style="color:#e6db74">%Q(
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      CREATE TRIGGER insert_archive_transfers_trigger
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      BEFORE INSERT ON archive_transfers
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      FOR EACH ROW EXECUTE PROCEDURE archive_transfers_insert_trigger();)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>После выполнения мы получим 36 новых таблиц в БД и триггер, похожий на этот.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">FUNCTION</span> archive_transfers_insert_trigger()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">RETURNS</span> <span style="color:#66d9ef">TRIGGER</span> <span style="color:#66d9ef">AS</span> <span style="color:#960050;background-color:#1e0010">$$</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">IF</span>  ( <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;2011-09-30 20:00:00&#39;</span> <span style="color:#66d9ef">AND</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#39;2011-10-31 20:00:00&#39;</span> ) <span style="color:#66d9ef">THEN</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> archive_transfers_2011_10 <span style="color:#66d9ef">VALUES</span> (<span style="color:#66d9ef">NEW</span>.<span style="color:#f92672">*</span>);
+</span></span><span style="display:flex;"><span>  ELSEIF ( <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;2011-10-31 20:00:00&#39;</span> <span style="color:#66d9ef">AND</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#39;2011-11-30 20:00:00&#39;</span> ) <span style="color:#66d9ef">THEN</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> archive_transfers_2011_11 <span style="color:#66d9ef">VALUES</span> (<span style="color:#66d9ef">NEW</span>.<span style="color:#f92672">*</span>);
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span> <span style="color:#960050;background-color:#1e0010">здесь</span> <span style="color:#960050;background-color:#1e0010">пропустим</span> <span style="color:#960050;background-color:#1e0010">много</span> <span style="color:#960050;background-color:#1e0010">таких</span> <span style="color:#960050;background-color:#1e0010">же</span> <span style="color:#960050;background-color:#1e0010">строчек</span>
+</span></span><span style="display:flex;"><span>  ELSEIF ( <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&gt;=</span> <span style="color:#e6db74">&#39;2014-08-31 20:00:00&#39;</span> <span style="color:#66d9ef">AND</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">NEW</span>.created_at <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">&#39;2014-09-30 20:00:00&#39;</span> ) <span style="color:#66d9ef">THEN</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> archive_transfers_2014_09 <span style="color:#66d9ef">VALUES</span> (<span style="color:#66d9ef">NEW</span>.<span style="color:#f92672">*</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ELSE</span>
+</span></span><span style="display:flex;"><span>     RAISE <span style="color:#66d9ef">EXCEPTION</span> <span style="color:#e6db74">&#39;Date out of range.  Fix the archive_transfers_insert_trigger() function!&#39;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">END</span> <span style="color:#66d9ef">IF</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">RETURN</span> <span style="color:#66d9ef">NULL</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">END</span>;
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$$</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LANGUAGE</span> plpgsql;
+</span></span></code></pre></div><p>При партиционировании перестает работать <code>RETURNING</code>, а это значит, что при вставке новой записи нельзя узнать ее
 id. Для этого существует <a href="https://gist.github.com/copiousfreetime/59067">костыль</a>, который на каждую вставку делает
 дополнительную вставку и удаление, чтобы получить id записи. Я не рискнул использовать его в бою, поскольку у нас и так
 очень интенсивная нагрузка на БД.</p>
@@ -370,7 +369,7 @@ id. Для этого существует <a href="https://gist.github.com/copi
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

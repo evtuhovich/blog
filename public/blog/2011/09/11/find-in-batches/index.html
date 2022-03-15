@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
-class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription.">
-    <meta name="generator" content="Hugo 0.91.2" />
+ class OfferDescription &lt; ActiveRecord::Base  has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id  end В отчете данные группировались по родительским объектам OfferDescription.">
+    <meta name="generator" content="Hugo 0.95.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -37,7 +37,7 @@ class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =
     <meta property="og:title" content="Проблемы с find_in_batches" />
 <meta property="og:description" content="Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
-class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription." />
+ class OfferDescription &lt; ActiveRecord::Base  has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id  end В отчете данные группировались по родительским объектам OfferDescription." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://evtuhovich.ru/blog/2011/09/11/find-in-batches/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2011-09-11T00:22:00+00:00" />
@@ -46,14 +46,14 @@ class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =
 <meta itemprop="name" content="Проблемы с find_in_batches">
 <meta itemprop="description" content="Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
-class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription."><meta itemprop="datePublished" content="2011-09-11T00:22:00+00:00" />
+ class OfferDescription &lt; ActiveRecord::Base  has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id  end В отчете данные группировались по родительским объектам OfferDescription."><meta itemprop="datePublished" content="2011-09-11T00:22:00+00:00" />
 <meta itemprop="dateModified" content="2011-09-11T00:22:00+00:00" />
 <meta itemprop="wordCount" content="322">
 <meta itemprop="keywords" content="rails,ActiveRecord," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Проблемы с find_in_batches"/>
 <meta name="twitter:description" content="Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
-class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription."/>
+ class OfferDescription &lt; ActiveRecord::Base  has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id  end В отчете данные группировались по родительским объектам OfferDescription."/>
 
 	<meta name="yandex-verification" content="844263c66799f878" />
 
@@ -245,22 +245,22 @@ class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =
 в одном большом отчете цифры не сходились раза в два.</p>
 <p>Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались
 цифры (я опускаю ненужные подробности).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OfferDescription</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
-      has_many <span style="color:#e6db74">:children</span>, <span style="color:#e6db74">:class_name</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;OfferDescription&#39;</span>, <span style="color:#e6db74">:foreign_key</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">:parent_id</span>
-    <span style="color:#66d9ef">end</span>
-</code></pre></div><p>В отчете данные группировались по родительским объектам <code>OfferDescription</code>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OfferDescription</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
+</span></span><span style="display:flex;"><span>      has_many <span style="color:#e6db74">:children</span>, <span style="color:#e6db74">:class_name</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;OfferDescription&#39;</span>, <span style="color:#e6db74">:foreign_key</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">:parent_id</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>В отчете данные группировались по родительским объектам <code>OfferDescription</code>.
 Именно у объектов, у которых были дети, в отчетах были все нули. Рассчитывал
 отчеты приблизительно вот такой код.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">OfferDescription</span><span style="color:#f92672">.</span>scoped(<span style="color:#e6db74">:conditions</span> <span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:parent_id</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">nil</span>})<span style="color:#f92672">.</span>find_in_batches <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>batch<span style="color:#f92672">|</span>
-      batch<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>offer_description<span style="color:#f92672">|</span>
-        <span style="color:#66d9ef">if</span> offer_description<span style="color:#f92672">.</span>children<span style="color:#f92672">.</span>present?
-          <span style="color:#75715e"># здесь считаем цифры по детям</span>
-        <span style="color:#66d9ef">else</span>
-          <span style="color:#75715e"># здесь просто считаем цифры</span>
-        <span style="color:#66d9ef">end</span>
-      <span style="color:#66d9ef">end</span>
-    <span style="color:#66d9ef">end</span>
-</code></pre></div><p>Если бы я сразу прочитал первый комментарий на
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">OfferDescription</span><span style="color:#f92672">.</span>scoped(<span style="color:#e6db74">:conditions</span> <span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:parent_id</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">nil</span>})<span style="color:#f92672">.</span>find_in_batches <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>batch<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>      batch<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>offer_description<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> offer_description<span style="color:#f92672">.</span>children<span style="color:#f92672">.</span>present?
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># здесь считаем цифры по детям</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># здесь просто считаем цифры</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Если бы я сразу прочитал первый комментарий на
 <a href="http://apidock.com/rails/ActiveRecord/Batches/ClassMethods/find_in_batches#771-Careful-with-scopes">apidock.com для find_in_batches</a>,
 то сэкономил бы себе изрядное количество времени, но кто читает документацию,
 а тем более комментарии к ней?</p>
@@ -270,15 +270,15 @@ class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =
 в выборку детей всегда будет добавляться условие <code>:parent_id =&gt; nil</code>.</p>
 <p>Более того, следующий код тоже не будет работать (в примере взяты id, которые
 существуют в базе данных), потому что условия в запросе к БД никогда не выполняются.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    <span style="color:#66d9ef">OfferDescription</span><span style="color:#f92672">.</span>scoped(<span style="color:#e6db74">:conditions</span> <span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:id</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">16005</span>})<span style="color:#f92672">.</span>find_in_batches <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>batch<span style="color:#f92672">|</span>
-      batch<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>offer_description<span style="color:#f92672">|</span>
-        <span style="color:#66d9ef">OfferDescription</span><span style="color:#f92672">.</span>find <span style="color:#ae81ff">18847</span>
-        <span style="color:#75715e"># здесь запрос к базе данных будет вот таким</span>
-        <span style="color:#75715e"># SELECT * FROM &#34;offer_descriptions&#34; WHERE </span>
-        <span style="color:#75715e"># (&#34;offer_descriptions&#34;.&#34;id&#34; = 18847) AND (&#34;offer_descriptions&#34;.&#34;id&#34; = 16005)</span>
-      <span style="color:#66d9ef">end</span>
-    <span style="color:#66d9ef">end</span>
-</code></pre></div><p>Говоря откровенно, я не понимаю, зачем так сделано. Если кто-то объяснит мне
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">OfferDescription</span><span style="color:#f92672">.</span>scoped(<span style="color:#e6db74">:conditions</span> <span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:id</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">16005</span>})<span style="color:#f92672">.</span>find_in_batches <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>batch<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>      batch<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>offer_description<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">OfferDescription</span><span style="color:#f92672">.</span>find <span style="color:#ae81ff">18847</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># здесь запрос к базе данных будет вот таким</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># SELECT * FROM &#34;offer_descriptions&#34; WHERE </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># (&#34;offer_descriptions&#34;.&#34;id&#34; = 18847) AND (&#34;offer_descriptions&#34;.&#34;id&#34; = 16005)</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Говоря откровенно, я не понимаю, зачем так сделано. Если кто-то объяснит мне
 тайный смысл этого в комментариях, я буду ему очень благодарен.</p>
 <p>Все вышесказанное не умаляет полезности самого метода <code>find_in_batches</code>,
 потому что запросы к базе данных, которые он генерируют, позволяют выбрать все
@@ -300,7 +300,7 @@ class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =
       
         <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
