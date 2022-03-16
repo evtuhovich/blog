@@ -203,6 +203,24 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2012-05-11</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2012/05/11/paperclip/" class="link black dim">
+        Странное поведение создателей Paperclip
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Вчера я разворачивал наше приложение в системе CI <a href="http://jenkins-ci.org/">Jenkins</a>, и обнаружил, что bundler не находит
+gem paperclip. В Gemfile была явно прописана версия 3.0.1. Зайдя на <a href="https://rubygems.org/gems/paperclip/versions">rubygems</a>, я увидел,
+что эту версию гема его создатели удалили, а версия 3.0.2 и старше не поставилась, выругавшись на то, что ей нужен ruby
+1.9.2 и старше.</p>
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2012-04-24</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2012/04/24/flash-message/" class="link black dim">
@@ -386,26 +404,6 @@ PgBouncer — это легкий менеджер соединений для 
 открытым. В нашем случае, поскольку на сервере БД очень много памяти и слабая дисковая подсистема, мне показалось
 разумным перенести туда таблицы, в которые идет интенсивная запись. И эти таблицы не должны быть «связаны», то есть
 перенос их должен быть простым.</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2012-01-23</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2012/01/23/hstore/" class="link black dim">
-        Hstore — key-value расширение для postgresql
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Наверное, не все знают, что для postgresql существует большое количество расширений, которые называются
-<a href="http://www.postgresql.org/docs/9.1/static/contrib.html">contrib модулями</a>.</p>
-<p>Рассмотрим один из таких модулей - <a href="http://www.postgresql.org/docs/9.1/static/hstore.html">hstore</a>. Этот модуль
-нужен для того, чтобы в одном поле в БД хранить много значений key/value, фактически, просто какой-то хеш. При этом и
-ключи и значения могут быть только строками. О том, чем это лучше, нежели просто хранить в текстовом поле сериализованный хеш,
-я расскажу чуть-чуть попозже. Понадобится это может в том случае, если у вас есть модели с произвольным набором полей.</p>
     </div>
   </div>
 </div>
