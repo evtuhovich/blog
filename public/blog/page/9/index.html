@@ -203,6 +203,22 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2011-08-04</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2011/08/04/prostynya/" class="link black dim">
+        Простыня
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Поскольку я поставил Octopress, то теперь сбылась моя мечта и я могу вести блог в своем любимом текстовом редакторе vim. Про octopress я напишу как-нибудь потом отдельно, потому что система для инженера программных систем просто необыкновенная: простая и удобная.
+Но сегодня я хочу поговорить о «простыне» &mdash; так я шутя называют длинный последовательный кусок кода. Так вот, моя основная мысль &mdash; простыня является самым лучшим кодом. Это так по одной простой причине, что последовательный код гораздо проще читать и понимать.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2011-03-10</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2011/03/10/vim/" class="link black dim">
@@ -384,22 +400,6 @@ http://github.com/evtuhovich/pgq/tree/master
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       На таблице postgresql с большим количеством данных невозможно быстро создать либо пересоздать индекс. При создании индекса таблица блокируется для операций INSERT, UPDATE и DELETE. В таких случаях может помочь конкурентное создание индекса. Иногда на postgresql стоит пересоздавать индексы, чтобы уменьшить их фрагментацию (и увеличить скорость). Создание конкурентного индекса будет частным случаем его пересоздания.
 Пусть имеется таблица orders с 1 миллионом записей (приблизительно) в которой хранятся заказы. И в этой таблице есть поля country_id, region_id, city_id, на которых создан индекс.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2009-04-04</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2009/04/04/queue/" class="link black dim">
-        Использование очередей в высоконагруженных проектах
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      При большом количестве запросов к приложению (в широком смысле этого слова) иногда целесообразно ``размазать&rsquo;&rsquo; пиковую нагрузку во времени. Для этого удобно использовать очереди. То есть, если какое-то запрос наверняка должен быть выполнен, но не имеет значение произойдет это прямо сейчас или чуть попозже, можно создать событие в очереди. И когда до этого события дойдет очередь —&ndash; оно будет выполнено. Таким образом можно развести сложные запросы во времени.
-Очереди подходят для таких задач, как, например, рассылка большого количества сообщений и обновление различных счетчиков в БД (если их актуальность не очень критична).
     </div>
   </div>
 </div>
