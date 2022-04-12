@@ -203,6 +203,22 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2011-08-22</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2011/08/22/caches-action/" class="link black dim">
+        Некоторые проблемы с cached_action в Rails 2.3
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.
+# dashboard.rb class Admin::DashboardsController &lt; Admin::BaseController layout &#34;admin&#34; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &#39;show&#39;, :layout =&gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2011-08-04</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2011/08/04/prostynya/" class="link black dim">
@@ -384,22 +400,6 @@ http://github.com/evtuhovich/pgq/tree/master
       Если необходимо сериализовать/десериализовать какой-то объект, то yaml формат хорошо для этого подходит.
 В моем проекте мы записывали объекты в очередь, использую yaml-сериализацию. На тестах все было хорошо. Но на живом эта самая сериализация стала выполняться очень долго.
 Оказалось, что если у объекта есть связные объекты, то он их тоже засовывает в yaml, а если таких объектов очень много, то это будет сложная операция. Понятно, что в примитивных тестах этого было не видно, а подумать хорошо головой в тот раз не получилось.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2009-04-08</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2009/04/08/concurent-index/" class="link black dim">
-        Конкурентное пересоздание индексов в postgresql
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      На таблице postgresql с большим количеством данных невозможно быстро создать либо пересоздать индекс. При создании индекса таблица блокируется для операций INSERT, UPDATE и DELETE. В таких случаях может помочь конкурентное создание индекса. Иногда на postgresql стоит пересоздавать индексы, чтобы уменьшить их фрагментацию (и увеличить скорость). Создание конкурентного индекса будет частным случаем его пересоздания.
-Пусть имеется таблица orders с 1 миллионом записей (приблизительно) в которой хранятся заказы. И в этой таблице есть поля country_id, region_id, city_id, на которых создан индекс.
     </div>
   </div>
 </div>

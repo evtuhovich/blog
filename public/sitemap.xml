@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://evtuhovich.ru/blog/</loc>
-    <lastmod>2022-03-24T08:59:57+03:00</lastmod>
+    <lastmod>2022-04-12T16:41:42+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://evtuhovich.ru/</loc>
-    <lastmod>2022-03-24T08:59:57+03:00</lastmod>
+    <lastmod>2022-04-12T16:41:42+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/blog/2022/04/12/gagarin/</loc>
+    <lastmod>2022-04-12T16:41:42+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
