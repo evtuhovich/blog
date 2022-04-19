@@ -2,12 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://evtuhovich.ru/blog/</loc>
-    <lastmod>2022-04-12T16:41:42+03:00</lastmod>
+    <loc>https://evtuhovich.ru/</loc>
+    <lastmod>2022-04-19T12:08:54+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://evtuhovich.ru/</loc>
+    <loc>https://evtuhovich.ru/life/</loc>
+    <lastmod>2022-04-19T12:08:54+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/life/2022/04/19/reanimation/</loc>
+    <lastmod>2022-04-19T12:08:54+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/blog/</loc>
     <lastmod>2022-04-12T16:41:42+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -29,11 +39,6 @@
   </url><url>
     <loc>https://evtuhovich.ru/blog/2022/03/11/monitor-43/</loc>
     <lastmod>2022-03-11T16:23:13+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://evtuhovich.ru/life/</loc>
-    <lastmod>2022-03-09T15:56:57+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
