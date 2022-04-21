@@ -1,5 +1,17 @@
 <!-- TODO: Add follow intents where available TODO: Revisit color and hover color -->
 {{ $icon_size := "32px" }}
+{{ with .Param "vk" }}
+<a href="{{ . }}" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" title="VK link" rel="noopener" aria-label="VK——Opens in a new window">
+  {{ partial "svg/vk.svg" (dict "size" $icon_size) }}
+  {{- partial "new-window-icon.html" . -}}
+</a>
+{{ end }}
+{{ with .Param "telegram" }}
+<a href="{{ . }}" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" title="Telegram link" rel="noopener" aria-label="Telegram——Opens in a new window">
+  {{ partial "svg/telegram.svg" (dict "size" $icon_size) }}
+  {{- partial "new-window-icon.html" . -}}
+</a>
+{{ end }}
 {{ with .Param "stackoverflow" }}
 <a href="{{ . }}" target="_blank" class="link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Stack Overflow link" rel="noopener" aria-label="follow on Stack Overflow——Opens in a new window">
   {{ partial "svg/stackoverflow.svg" (dict "size" $icon_size) }}
@@ -78,3 +90,4 @@
   {{- partial "new-window-icon.html" . -}}
 </a>
 {{ end }}
+
