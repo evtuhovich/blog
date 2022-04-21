@@ -6,7 +6,16 @@
     <description>Recent content in Записи с тегом: postgresql on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 28 Jun 2013 15:20:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Apr 2022 16:57:41 +0300</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PostgreSQL изнутри</title>
+      <link>https://evtuhovich.ru/blog/2022/04/21/postgres-internals/</link>
+      <pubDate>Thu, 21 Apr 2022 16:57:41 +0300</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2022/04/21/postgres-internals/</guid>
+      <description>&lt;p&gt;Мой коллега Егор Рогов из &lt;a href=&#34;https://postgrespro.ru/&#34;&gt;ППГ&lt;/a&gt; недавно издал книгу &amp;ldquo;PostgreSQL изнутри&amp;rdquo;. Книгу можно &lt;a href=&#34;https://postgrespro.ru/education/books/internals&#34;&gt;бесплатно скачать&lt;/a&gt; в формате pdf на сайте Postgres Professional. Для любителей читать книги, сделанные из переработанных трупов зверски убитых деревьев, ее без труда можно найти на сайте &amp;ldquo;ДМК Пресс&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Статистика запросов и pg_stat_statements</title>
       <link>https://evtuhovich.ru/blog/2013/06/28/pg-stat-statements/</link>

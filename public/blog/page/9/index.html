@@ -203,6 +203,22 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2011-08-23</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2011/08/23/pro-git/" class="link black dim">
+        Рассказ про Git
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      По-моему, в «Прагматичных программистах» было написана фраза, которую я часто люблю повторять: «Программист должен в совершенстве владеть двумя инструментами — текстовым редактором и системой контроля версий». Программист работает с текстом, особенно программист, который пишет на высокоуровневом языке, таком как Ruby. Зачастую можно не вдаваться в подробности того, что происходит внутри, хотя иногда, конечно, надо. Так вот, текст надо уметь изменять, а потом этими изменениями как-то обмениваться со своими коллегами.
+Про текстовый редактор я рассказывал немного раньше, а сегодня я хочу рассказать про систему контроля версий git.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2011-08-22</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2011/08/22/caches-action/" class="link black dim">
@@ -383,23 +399,6 @@ http://github.com/evtuhovich/pgq/tree/master
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       В некоторых ситуациях необходимо использовать более чем одну базу данных в проекте. Например, статистику и большие таблицы хранить на другом сервере, у которого большой и медленный диск, а данные, которые нужны постоянно, хранить на основном сервере с маленьким и быстрым диском.
 В нашем случае хотелось унести большие таблицы на другой сервер, чтобы в дисковом кэше (а у главного сервера БД 32 Гб оперативной памяти) хранились все рабочие таблицы и никогда оттуда не убегали.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2009-04-20</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2009/04/20/to-yaml-recursion/" class="link black dim">
-        Рекурсивные особенности to_yaml
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Если необходимо сериализовать/десериализовать какой-то объект, то yaml формат хорошо для этого подходит.
-В моем проекте мы записывали объекты в очередь, использую yaml-сериализацию. На тестах все было хорошо. Но на живом эта самая сериализация стала выполняться очень долго.
-Оказалось, что если у объекта есть связные объекты, то он их тоже засовывает в yaml, а если таких объектов очень много, то это будет сложная операция. Понятно, что в примитивных тестах этого было не видно, а подумать хорошо головой в тот раз не получилось.
     </div>
   </div>
 </div>

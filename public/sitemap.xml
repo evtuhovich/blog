@@ -2,8 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://evtuhovich.ru/blog/2022/04/21/postgres-internals/</loc>
+    <lastmod>2022-04-21T16:57:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/tags/</loc>
+    <lastmod>2022-04-21T16:57:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/blog/</loc>
+    <lastmod>2022-04-21T16:57:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://evtuhovich.ru/</loc>
-    <lastmod>2022-04-19T12:08:54+03:00</lastmod>
+    <lastmod>2022-04-21T16:57:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/tags/postgresql/</loc>
+    <lastmod>2022-04-21T16:57:41+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -14,11 +34,6 @@
   </url><url>
     <loc>https://evtuhovich.ru/life/2022/04/19/reanimation/</loc>
     <lastmod>2022-04-19T12:08:54+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://evtuhovich.ru/blog/</loc>
-    <lastmod>2022-04-12T16:41:42+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -374,11 +389,6 @@
   </url><url>
     <loc>https://evtuhovich.ru/life/2021/02/05/shawarma/</loc>
     <lastmod>2021-02-05T11:53:22+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://evtuhovich.ru/tags/</loc>
-    <lastmod>2021-02-03T13:58:15+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -898,11 +908,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://evtuhovich.ru/tags/pgbadger/</loc>
-    <lastmod>2013-06-28T15:20:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://evtuhovich.ru/tags/postgresql/</loc>
     <lastmod>2013-06-28T15:20:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
