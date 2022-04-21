@@ -9,7 +9,7 @@
     <section class="ph4">
       {{ range $key, $value := .Data.Terms }}
         <h2 class="f1">
-          <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="link blue hover-black">
+          <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}/" class="link blue hover-black">
             {{ $.Data.Singular | humanize }}: {{ $key }}
           </a>
         </h2>
