@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
  class ReportSender  def initialize(report_instance)  @report_instance = report_instance  @params = report_instance.params  @emails = @params.delete(:mail_to)  end  class Report  def initialize(params = {})  @params = self.class.default_values.merge(params)  end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.">
-    <meta name="generator" content="Hugo 0.95.0-DEV" />
+    <meta name="generator" content="Hugo 0.99.0-DEV" />
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
