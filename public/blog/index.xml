@@ -6,7 +6,17 @@
     <description>Recent content in Блог on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Thu, 21 Apr 2022 16:57:41 +0300</lastBuildDate><atom:link href="https://evtuhovich.ru/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 May 2022 12:22:55 +0300</lastBuildDate><atom:link href="https://evtuhovich.ru/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Банальность</title>
+      <link>https://evtuhovich.ru/blog/2022/05/18/banality/</link>
+      <pubDate>Wed, 18 May 2022 12:22:55 +0300</pubDate>
+      
+      <guid>https://evtuhovich.ru/blog/2022/05/18/banality/</guid>
+      <description>&lt;p&gt;Меня вот искренне раздражает банальность. Во всем раздражает банальность — в кино, в книгах, в музыке, в текстах.&lt;/p&gt;
+&lt;p&gt;Вот читаю сейчас книгу про дыхание американскую. И тема, вроде, интересная, и материал хороший, но подача, знаете, такая классическая американская подача, что прямо тошно становится. И даже эта часть, где автор как будто хочет добавить эмоций и чего-то личного, получается как-то ненатурально и попсово, клише на клише.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>PostgreSQL изнутри</title>
       <link>https://evtuhovich.ru/blog/2022/04/21/postgres-internals/</link>
