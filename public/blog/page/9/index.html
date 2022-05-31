@@ -213,6 +213,22 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2011-09-09</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2011/09/09/indiferent-hash-merge/" class="link black dim">
+        Слияние HashWithIndifferentAccess с обычными хешами
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
+ class ReportSender  def initialize(report_instance)  @report_instance = report_instance  @params = report_instance.params  @emails = @params.delete(:mail_to)  end  class Report  def initialize(params = {})  @params = self.class.default_values.merge(params)  end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2011-09-03</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2011/09/03/configuration-management/" class="link black dim">
@@ -391,23 +407,6 @@ http://github.com/evtuhovich/pgq/tree/master
       Пусть в модели User у нас описана валидация для поля email
  validates_uniqueness_of :email, :case_sensitive =&gt; false,  :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
  SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2009-05-22</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2009/05/22/live-table-migration/" class="link black dim">
-        Перенос таблицы в другую базу данных postgres без простоя приложения
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      В продолжении темы о нескольких базах данных в одном rails-приложении расскажу о том, как изящно перенести одну большую таблицу в другую БД postgresql.
-Пусть у нас есть таблица messages с большим количеством данных (10 миллионов записей), которые мы решили перенести на другой сервер. Мы сделали, как написано в статье, указанной выше, а также создали в новой БД таблицу messages с такой же структурой.
-Теперь с помощью londiste настраиваем репликацию из первой БД во вторую для таблицы messages (об этом я напишу подробнее попозже, пока же можно прочитать об этом у Андрея Стихеева в рассылке ror2ru).
     </div>
   </div>
 </div>
