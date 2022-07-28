@@ -213,6 +213,21 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2012-03-14</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2012/03/14/postgresql-json/" class="link black dim">
+        Поддержка JSON в PostgreSql 9.2
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      В третьем квартале 2012 должна выйти версия PostgreSQL 9.2, в которой добавят много интересных возможностей. Среди них — базовая поддержка так полюбившегося всем web-разработчикам формата JSON. На данном этапе появится только возможность проверять JSON на валидность, но судя по списку рассылки, к версии 9.3 будет добавлена возможность строить индексы на JSON объектах подобно тому, как это можно сделать на hstore. Конечно, JSON объекты гораздо сложнее hstore, и как именно и в каком объеме будет реализована поддержка индексов в JSON — пока не ясно.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2012-02-19</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2012/02/19/local-data/" class="link black dim">
@@ -411,23 +426,6 @@ Vagrant — это надстройка над платформой вирту�
 </div>
 </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2011-09-11</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2011/09/11/find-in-batches/" class="link black dim">
-        Проблемы с find_in_batches
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
-Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
- class OfferDescription &lt; ActiveRecord::Base  has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id  end В отчете данные группировались по родительским объектам OfferDescription.
-    </div>
-  </div>
-</div>
-</div>
-      
     </section>
     <ul class="pagination pagination-default">
       <li class="page-item">
@@ -455,7 +453,7 @@ Vagrant — это надстройка над платформой вирту�
         <a href="/blog/page/9/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/blog/page/10/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/blog/page/11/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul></article>
 
