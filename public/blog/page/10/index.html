@@ -213,6 +213,24 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2009-06-05</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/" class="link black dim">
+        PgQ и Londiste
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Хотя я так и не написал толком, как пользоваться PgQ и Londiste, но уже написал плагин, который облегчает его использование вместе с рельсами.
+http://github.com/evtuhovich/pgq/tree/master
+В README всё написано на плохом английском (с хорошим английским у меня плохо).
+Совсем скоро я добавлю туда возможность прогонять миграции на master и slave базах данных одновременно. Тогда при очередной выкатке необходимо будет сделать только rake londiste:update в самом конце, после того, как все миграции прогонятся.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2009-05-28</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2009/05/28/validates-uniqueness-of/" class="link black dim">
@@ -389,22 +407,6 @@
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Представим следующую ситуацию (она постоянно возникает у нас при разработке). У нас есть ветка master в git, а в день релиза мы создаем ветку b1. Мы добавляем какие-то изменения в ветки b1 и master. И тут вдруг (хотя слово «вдруг» не очень подходит к регулярным событям) менеджмент решает добавить что-то из master в релиз.
 Если комитов было мало, то можно воспользоваться git cherry-pick (если их несколько, то может помочь ключ -n).
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2009-02-27</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2009/02/27/continuous-integration/" class="link black dim">
-        Непрерывная интеграция
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      О непрерывной интеграции (Continuous Integration) можно почитать у Мартина Фаулера (Martin Fowler) здесь. В друх словах, это практика постоянной интеграции наработок каждого программиста. Обычно это заключается в том, что на какой-нибудь машине постоянно (после каждого изменения в исходных кодах) собирается проект и прогоняются все тесты. Результаты этих действий высылаются разработчикам по почте. Это позволяет постоянно сохранять проект в относительно рабочем состоянии.
-Удобным инструментом непрерывной интеграции является CruiseControl. К сожалению в своей оригинальной версии он поддерживает только систему контроля версий svn.
     </div>
   </div>
 </div>
