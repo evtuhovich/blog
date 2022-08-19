@@ -1,7 +1,7 @@
 ---
 title: "Как побороть страх"
 date: 2022-08-12T17:48:50+03:00
-draft: false
+draft: true
 tags:
 ---
 
