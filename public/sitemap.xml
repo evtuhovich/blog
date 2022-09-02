@@ -2,12 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://evtuhovich.ru/blog/</loc>
-    <lastmod>2022-08-03T17:20:01+03:00</lastmod>
+    <loc>https://evtuhovich.ru/</loc>
+    <lastmod>2022-09-02T11:19:20+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://evtuhovich.ru/</loc>
+    <loc>https://evtuhovich.ru/life/</loc>
+    <lastmod>2022-09-02T11:19:20+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/life/2022/09/02/liberty-and-safety/</loc>
+    <lastmod>2022-09-02T11:19:20+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/blog/</loc>
     <lastmod>2022-08-03T17:20:01+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -19,11 +29,6 @@
   </url><url>
     <loc>https://evtuhovich.ru/blog/2022/07/28/not-your-business/</loc>
     <lastmod>2022-07-28T13:21:16+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://evtuhovich.ru/life/</loc>
-    <lastmod>2022-07-15T18:08:33+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
