@@ -6,7 +6,16 @@
     <description>Recent content on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 10 Jan 2023 09:48:15 +0300</lastBuildDate><atom:link href="https://evtuhovich.ru/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Jan 2023 16:06:22 +0300</lastBuildDate><atom:link href="https://evtuhovich.ru/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Менеджер паролей</title>
+      <link>https://evtuhovich.ru/life/2023/01/20/password-manager/</link>
+      <pubDate>Fri, 20 Jan 2023 16:06:22 +0300</pubDate>
+      
+      <guid>https://evtuhovich.ru/life/2023/01/20/password-manager/</guid>
+      <description>&lt;p&gt;Для тех, кто не в теме, есть такой класс программ — менеджер паролей. Он за тебя придумывает разные пароли для разных сайтов, а тебе надо помнить только один пароль, его еще называют мастер-пароль. Этим самым мастер-паролем все твои пароли шифруются, поэтому забывать его нельзя.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Танец Дели</title>
       <link>https://evtuhovich.ru/life/2023/01/10/deli-dance/</link>
