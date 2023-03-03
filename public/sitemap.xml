@@ -2,12 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://evtuhovich.ru/life/2023/02/17/chatgpt/</loc>
-    <lastmod>2023-02-17T18:13:08+03:00</lastmod>
+    <loc>https://evtuhovich.ru/blog/</loc>
+    <lastmod>2023-03-03T10:54:41+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://evtuhovich.ru/</loc>
+    <lastmod>2023-03-03T10:54:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/blog/2023/03/03/talk-with-yourself/</loc>
+    <lastmod>2023-03-03T10:54:41+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/life/2023/02/17/chatgpt/</loc>
     <lastmod>2023-02-17T18:13:08+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -29,11 +39,6 @@
   </url><url>
     <loc>https://evtuhovich.ru/life/2022/12/23/yaroslav/</loc>
     <lastmod>2022-12-23T14:58:23+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://evtuhovich.ru/blog/</loc>
-    <lastmod>2022-12-01T14:01:27+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>

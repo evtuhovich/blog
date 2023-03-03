@@ -213,6 +213,23 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2009-03-20</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2009/03/20/big-tables/" class="link black dim">
+        PosgtreSql, миграции и огромные таблицы
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
+Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
+ $ script/generate migration add_is_searchable_to_posts  class AddIsSearchableToPosts &lt; ActiveRecord::Migration  def self.up  add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false  end   def self.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2009-03-13</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2009/03/13/git-move-branch/" class="link black dim">

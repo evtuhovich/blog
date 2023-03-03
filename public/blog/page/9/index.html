@@ -215,6 +215,22 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2011-12-21</span>
     <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2011/12/21/brainwashing/" class="link black dim">
+        Мастер-класс: впечатления по прошествии 2 недель
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Две недели назад мы провели Мастер-Класс, в котором в сжатой форме попытались изложить самое важное, на наш взгляд, в web-разработке. За два достаточно напряженных дня мы рассказали обо всем, от Git, баз данных, до SASS, HAML и Rails 3. Все это перемежалось постоянными практическими заданиями.
+В конце Мастре-Класса мы сделали анкетирования, из которого можно смело заявить, что в целом идея удалась. Более того, на конференции RailsClub я попросил некоторых из наших участников лично поделиться впечатлениями от посещения.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2011-12-21</span>
+    <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2011/12/21/railsclub/" class="link black dim">
         Railsclub: отчет о прошедшей конференции
       </a>
@@ -384,25 +400,6 @@ The Ruby Show — выходит по вторникам, длится мину
       Часто один и тот же rails-проект используется и для web-части, и для каких-то других задач, выполняемых по расписанию или для создания демонов. В таких случаях иногда хочется, чтобы логи разных частей писались в разные файлы.
 Готового способа для этого я не нашел. Например, посмотрим на такой пример:
  $ ./script/console Loading development environment (Rails 2.3.5) &gt;&gt; ActiveRecord::Base.logger = Logger.new(STDOUT) =&gt; #&amp;lt;Logger:0xb192594 @progname=nil, @level=0, @default_formatter=#&amp;lt;Logger::Formatter:0xb19255c @datetime_format=nil&gt;, formatternil, logdev#&amp;lt;Logger::LogDevice:0xb19247c @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#&amp;lt;IO:&amp;lt;STDOUT&gt;, mutex#&amp;lt;Logger::LogDevice::LogDeviceMutex:0xb192444 @mon_owner=nil, @mon_count=0, @mon_mutex=#&amp;lt;Mutex:0xb19240c&gt; &gt;&gt; User.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2010-04-05</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2010/04/05/vim-pathogen/" class="link black dim">
-        Автоматизация vim с помощью pathogen
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Извечная проблема о том, как добавлять и обновлять плагины в vim решилась благодаря легендарному Tim Pope.
-Сегодня утром узнал от Ярослава Маркина о существовании pathogen.
-Статья на английском о том, как им пользоваться, лежит здесь. Правда, я потратил полчаса, чтобы догадаться, что надо добавить call pathogen#runtime_append_all_bundles() в файл ~/.vimrc.
-После установки pathogen.vim в ~/.vim/autoload можно хранить все плагины в папке ~/.vim/bundle, причем каждый в своей папке.
-А еще огромный плюс - в конце этой статьи код, который позволяет обновлять все плагины одной командой.
     </div>
   </div>
 </div>
