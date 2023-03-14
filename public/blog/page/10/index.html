@@ -213,6 +213,23 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2010-07-27</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2010/07/27/rails-logger/" class="link black dim">
+        Переопределение Rails.logger и проблемы с ним
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Часто один и тот же rails-проект используется и для web-части, и для каких-то других задач, выполняемых по расписанию или для создания демонов. В таких случаях иногда хочется, чтобы логи разных частей писались в разные файлы.
+Готового способа для этого я не нашел. Например, посмотрим на такой пример:
+ $ ./script/console Loading development environment (Rails 2.3.5) &gt;&gt; ActiveRecord::Base.logger = Logger.new(STDOUT) =&gt; #&amp;lt;Logger:0xb192594 @progname=nil, @level=0, @default_formatter=#&amp;lt;Logger::Formatter:0xb19255c @datetime_format=nil&gt;, formatternil, logdev#&amp;lt;Logger::LogDevice:0xb19247c @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#&amp;lt;IO:&amp;lt;STDOUT&gt;, mutex#&amp;lt;Logger::LogDevice::LogDeviceMutex:0xb192444 @mon_owner=nil, @mon_count=0, @mon_mutex=#&amp;lt;Mutex:0xb19240c&gt; &gt;&gt; User.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2010-04-05</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2010/04/05/vim-pathogen/" class="link black dim">
@@ -394,23 +411,6 @@ http://github.com/evtuhovich/pgq/tree/master
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Возможно, в сайте из 3 контроллеров и 15 страниц, тесты и не нужны. Я обычно не делаю тесты на маленьких проектах, которые пишу один.
 В случае, если проект собирается быть большим, длиться долго, а команда состоит больше чем из одного человека, то тесты — крайне желательный инструмент для того, чтобы разработка не вышла из под контроля. Без тестов в какой-то момент невозможно внести серьезное изменение в код, потому что знаешь, что такое изменение заденет еще некоторые части и точно знаешь, что все зависимости точно не учтешь.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2009-03-22</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2009/03/22/cache-problem/" class="link black dim">
-        Проблемы с кэшированием
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
-Итак, у нас есть следующие модели:
-# shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).
     </div>
   </div>
 </div>
