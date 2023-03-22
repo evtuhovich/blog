@@ -37,7 +37,7 @@ unsafe = true
   featured_image = "/images/background.jpg"
   recent_posts_number = 10
   mainSections = ["blog", "life"]
-  custom_css = ["css/custom.css"]
+  custom_css = ["css/custom.css", "css/jplayer.blue.monday.css"]
   recent_copy = "Недавние записи"
 
 
