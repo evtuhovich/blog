@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="На таблице postgresql с большим количеством данных невозможно быстро создать либо пересоздать индекс. При создании индекса таблица блокируется для операций INSERT, UPDATE и DELETE. В таких случаях может помочь конкурентное создание индекса. Иногда на postgresql стоит пересоздавать индексы, чтобы уменьшить их фрагментацию (и увеличить скорость). Создание конкурентного индекса будет частным случаем его пересоздания.
 Пусть имеется таблица orders с 1 миллионом записей (приблизительно) в которой хранятся заказы. И в этой таблице есть поля country_id, region_id, city_id, на которых создан индекс.">
-    <meta name="generator" content="Hugo 0.100.0-DEV" />
+    <meta name="generator" content="Hugo 0.111.3">
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -42,7 +42,6 @@
 <meta property="og:url" content="https://evtuhovich.ru/blog/2009/04/08/concurent-index/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2009-04-08T11:11:00+00:00" />
 <meta property="article:modified_time" content="2009-04-08T11:11:00+00:00" />
-
 <meta itemprop="name" content="Конкурентное пересоздание индексов в postgresql">
 <meta itemprop="description" content="На таблице postgresql с большим количеством данных невозможно быстро создать либо пересоздать индекс. При создании индекса таблица блокируется для операций INSERT, UPDATE и DELETE. В таких случаях может помочь конкурентное создание индекса. Иногда на postgresql стоит пересоздавать индексы, чтобы уменьшить их фрагментацию (и увеличить скорость). Создание конкурентного индекса будет частным случаем его пересоздания.
 Пусть имеется таблица orders с 1 миллионом записей (приблизительно) в которой хранятся заказы. И в этой таблице есть поля country_id, region_id, city_id, на которых создан индекс."><meta itemprop="datePublished" content="2009-04-08T11:11:00+00:00" />

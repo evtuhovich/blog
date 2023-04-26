@@ -7,7 +7,7 @@
     <title>Блог | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Заметки из жизни предпринимателя">
-    <meta name="generator" content="Hugo 0.100.0-DEV" />
+    <meta name="generator" content="Hugo 0.111.3">
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -43,7 +43,6 @@
 <meta property="og:description" content="Заметки из жизни предпринимателя" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://evtuhovich.ru/blog/" />
-
 <meta itemprop="name" content="Блог">
 <meta itemprop="description" content="Заметки из жизни предпринимателя"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Блог"/>
@@ -218,6 +217,35 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2012-01-10</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2012/01/10/vagrant/" class="link black dim">
+        vagrant
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Очень странно, что я до сих пор не написал о <a href="http://vagrantup.com/">Vagrant</a> — инструменте создания и распространения
+виртуальных окружений.</p>
+<p>Vagrant нужен для одной простой цели — тестировать выкатку и изменение конфигурции. Причем он позволяет делать это очень
+просто, особенно для <a href="http://wiki.opscode.com/display/chef/Home">Chef</a> и <a href="http://www.puppetlabs.com/puppet">Puppet</a>.
+Vagrant — это надстройка над платформой виртуализации VirtualBox, которая позволяет легко и быстро создавать
+виртуальные машины по шаблону.</p>
+<p>Работать с ним очень легко. Вы берете какой-нибудь готовый образ ОС (например, <a href="http://www.vagrantbox.es/">отсюда</a>) или
+<a href="http://vagrantup.com/docs/base_boxes.html">создаете свой</a>, который и будет вашим шаблоном. А потом проверяете, как на
+этот образ накатываются ваши Chef-рецепты, причем можете делать это каждый раз с чистого листа. Конечно, образ должен
+быть точно такой же, который вы используете в бою, на staging-сервере, на CI-сервере и, вообще, везде. Это позволит вам
+выловить максимальное количество проблем до того, как они попадут на production.
+Более того, это гораздо удобнее, чем писать chef-рецепты «вслепую». Все, что происходит тяжело, надо делать часто, чтобы
+научиться делать это хорошо. Выкатка с изменением конфигурации обычно происходит тяжело. Поэтому стоит тренироваться
+менять конфигурацию и выкатываться, при этом желательно делать это в «песочнице», а не на сервере, который обслуживает
+ваших пользователей (и приносит деньги).</p>
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2011-12-27</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2011/12/27/bible/" class="link black dim">
@@ -292,7 +320,7 @@
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
- class OfferDescription &lt; ActiveRecord::Base  has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id  end В отчете данные группировались по родительским объектам OfferDescription.
+class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription.
     </div>
   </div>
 </div>
@@ -308,7 +336,8 @@
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
- class ReportSender  def initialize(report_instance)  @report_instance = report_instance  @params = report_instance.params  @emails = @params.delete(:mail_to)  end  class Report  def initialize(params = {})  @params = self.class.default_values.merge(params)  end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
+class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
+Хеш params, которые передается в класс Report — это тот самый params из контроллера.
     </div>
   </div>
 </div>
@@ -388,23 +417,6 @@
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Vim — прекрасный редактор, который я использую для разработки на Ruby и Rails. Его можно использовать в чистом виде, но если добавить немного плагинов, то удобство работы значительно возрастает. Об этом я и хочу рассказать, правда рассказ получится длинным.
 Я выступал на последнем RailsClub&rsquo;е с докладом Vim Or Die (посмотреть его можно на univertv.ru), в котором неплохо раскрыл тему Vim и полезных плагинов. Cами слайды, которые малополезны без видео, можно найти на slideshare.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog 2010-07-28</span>
-    <h1 class="f3 near-black">
-      <a href="https://evtuhovich.ru/blog/2010/07/28/podcasts/" class="link black dim">
-        Англоязычные подкасты про ruby и rails
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Так сложилось, что я управляю транспортным средством больше, чем час в день (на работу, на тренировку, домой). И я давно уже хотел слушать английские тексты в это время, потому что музыка часто надоедает.
-Я пробовал слушать «обычные» тексты, но потом подумал, что гораздо интереснее слушать то, что тебя волнует. Поэтому я порылся в дебрях интернета и нашел следующие подкасты, которые я регулярно слушаю.
-The Ruby Show — выходит по вторникам, длится минут 15-20.
     </div>
   </div>
 </div>

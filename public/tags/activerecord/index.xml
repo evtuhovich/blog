@@ -15,7 +15,7 @@
       <guid>https://evtuhovich.ru/blog/2011/09/11/find-in-batches/</guid>
       <description>Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
- class OfferDescription &amp;lt; ActiveRecord::Base  has_many :children, :class_name =&amp;gt; &amp;#39;OfferDescription&amp;#39;, :foreign_key =&amp;gt; :parent_id  end В отчете данные группировались по родительским объектам OfferDescription.</description>
+class OfferDescription &amp;lt; ActiveRecord::Base has_many :children, :class_name =&amp;gt; &amp;#39;OfferDescription&amp;#39;, :foreign_key =&amp;gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription.</description>
     </item>
     
   </channel>

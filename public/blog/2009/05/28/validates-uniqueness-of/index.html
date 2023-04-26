@@ -7,9 +7,9 @@
     <title>Проблема с проверкой уникальности какого-то поля в rails | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Пусть в модели User у нас описана валидация для поля email
- validates_uniqueness_of :email, :case_sensitive =&gt; false,  :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
- SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос.">
-    <meta name="generator" content="Hugo 0.100.0-DEV" />
+validates_uniqueness_of :email, :case_sensitive =&gt; false, :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
+SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос.">
+    <meta name="generator" content="Hugo 0.111.3">
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -38,24 +38,23 @@
     
     <meta property="og:title" content="Проблема с проверкой уникальности какого-то поля в rails" />
 <meta property="og:description" content="Пусть в модели User у нас описана валидация для поля email
- validates_uniqueness_of :email, :case_sensitive =&gt; false,  :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
- SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос." />
+validates_uniqueness_of :email, :case_sensitive =&gt; false, :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
+SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://evtuhovich.ru/blog/2009/05/28/validates-uniqueness-of/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2009-05-28T22:22:00+00:00" />
 <meta property="article:modified_time" content="2009-05-28T22:22:00+00:00" />
-
 <meta itemprop="name" content="Проблема с проверкой уникальности какого-то поля в rails">
 <meta itemprop="description" content="Пусть в модели User у нас описана валидация для поля email
- validates_uniqueness_of :email, :case_sensitive =&gt; false,  :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
- SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос."><meta itemprop="datePublished" content="2009-05-28T22:22:00+00:00" />
+validates_uniqueness_of :email, :case_sensitive =&gt; false, :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
+SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос."><meta itemprop="datePublished" content="2009-05-28T22:22:00+00:00" />
 <meta itemprop="dateModified" content="2009-05-28T22:22:00+00:00" />
 <meta itemprop="wordCount" content="169">
 <meta itemprop="keywords" content="rails,validates_uniqueness_of,индексы," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Проблема с проверкой уникальности какого-то поля в rails"/>
 <meta name="twitter:description" content="Пусть в модели User у нас описана валидация для поля email
- validates_uniqueness_of :email, :case_sensitive =&gt; false,  :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
- SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос."/>
+validates_uniqueness_of :email, :case_sensitive =&gt; false, :message =&gt; i18n_proxy(:email_already_registered) Следующий код генерирует вот такой запрос к базе данных:
+SELECT * FROM users WHERE lower(email) = &#39;thmth&#39; LIMIT 1 А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху, не будет использовать индекс. Представьте, что будет, когда в таблице users десятки тысяч записей, а на каждое изменение любого поля в users вызывается такой запрос."/>
 
 	<meta name="yandex-verification" content="844263c66799f878" />
 

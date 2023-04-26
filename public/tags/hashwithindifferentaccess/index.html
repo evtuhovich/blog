@@ -7,7 +7,7 @@
     <title>Записи с тегом: hashwithindifferentaccess | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Все записи из блога тегом: hashwithindifferentaccess">
-    <meta name="generator" content="Hugo 0.100.0-DEV" />
+    <meta name="generator" content="Hugo 0.111.3">
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -43,7 +43,6 @@
 <meta property="og:description" content="Все записи из блога тегом: hashwithindifferentaccess" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://evtuhovich.ru/tags/hashwithindifferentaccess/" />
-
 <meta itemprop="name" content="Записи с тегом: hashwithindifferentaccess">
 <meta itemprop="description" content="Все записи из блога тегом: hashwithindifferentaccess"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Записи с тегом: hashwithindifferentaccess"/>
@@ -226,7 +225,8 @@
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
- class ReportSender  def initialize(report_instance)  @report_instance = report_instance  @params = report_instance.params  @emails = @params.delete(:mail_to)  end  class Report  def initialize(params = {})  @params = self.class.default_values.merge(params)  end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
+class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
+Хеш params, которые передается в класс Report — это тот самый params из контроллера.
     </div>
   </div>
 </div>

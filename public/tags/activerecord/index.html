@@ -7,7 +7,7 @@
     <title>Записи с тегом: activerecord | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Все записи из блога тегом: activerecord">
-    <meta name="generator" content="Hugo 0.100.0-DEV" />
+    <meta name="generator" content="Hugo 0.111.3">
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -43,7 +43,6 @@
 <meta property="og:description" content="Все записи из блога тегом: activerecord" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://evtuhovich.ru/tags/activerecord/" />
-
 <meta itemprop="name" content="Записи с тегом: activerecord">
 <meta itemprop="description" content="Все записи из блога тегом: activerecord"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Записи с тегом: activerecord"/>
@@ -227,7 +226,7 @@
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что в одном большом отчете цифры не сходились раза в два.
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
- class OfferDescription &lt; ActiveRecord::Base  has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id  end В отчете данные группировались по родительским объектам OfferDescription.
+class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription.
     </div>
   </div>
 </div>

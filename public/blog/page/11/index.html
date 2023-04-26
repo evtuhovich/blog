@@ -7,7 +7,7 @@
     <title>Блог | Блог Ивана Евтуховича</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Заметки из жизни предпринимателя">
-    <meta name="generator" content="Hugo 0.100.0-DEV" />
+    <meta name="generator" content="Hugo 0.111.3">
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -43,7 +43,6 @@
 <meta property="og:description" content="Заметки из жизни предпринимателя" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://evtuhovich.ru/blog/" />
-
 <meta itemprop="name" content="Блог">
 <meta itemprop="description" content="Заметки из жизни предпринимателя"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Блог"/>
@@ -218,6 +217,22 @@
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog 2009-03-23</span>
+    <h1 class="f3 near-black">
+      <a href="https://evtuhovich.ru/blog/2009/03/23/test-and-testing/" class="link black dim">
+        Тесты и тестирование
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Возможно, в сайте из 3 контроллеров и 15 страниц, тесты и не нужны. Я обычно не делаю тесты на маленьких проектах, которые пишу один.
+В случае, если проект собирается быть большим, длиться долго, а команда состоит больше чем из одного человека, то тесты — крайне желательный инструмент для того, чтобы разработка не вышла из под контроля. Без тестов в какой-то момент невозможно внести серьезное изменение в код, потому что знаешь, что такое изменение заденет еще некоторые части и точно знаешь, что все зависимости точно не учтешь.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Blog 2009-03-22</span>
     <h1 class="f3 near-black">
       <a href="https://evtuhovich.ru/blog/2009/03/22/cache-problem/" class="link black dim">
@@ -244,7 +259,7 @@
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
- $ script/generate migration add_is_searchable_to_posts  class AddIsSearchableToPosts &lt; ActiveRecord::Migration  def self.up  add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false  end   def self.
+$ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self.
     </div>
   </div>
 </div>
@@ -295,7 +310,7 @@
 Использовать capistrano имеет смысл при любом размере проекта, будь то сайт из 3-5 страничек, или что-то большое. Во втором случае отказ от использования capistrano — форменное безумие с моей точки зрения.
 Начать знакомиться лучше всего отсюда.
 Если вкратце, то заходим в каталог проекта и набираем:
- capify . Дальше правим файл config/deploy.
+capify . Дальше правим файл config/deploy.
     </div>
   </div>
 </div>

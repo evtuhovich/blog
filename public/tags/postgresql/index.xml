@@ -211,7 +211,7 @@ http://github.com/evtuhovich/pgq/tree/master
       <guid>https://evtuhovich.ru/blog/2009/03/20/big-tables/</guid>
       <description>Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
- $ script/generate migration add_is_searchable_to_posts  class AddIsSearchableToPosts &amp;lt; ActiveRecord::Migration  def self.up  add_column :posts, :is_searchable, :boolean, :default =&amp;gt; true, :null =&amp;gt; false  end   def self.</description>
+$ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &amp;lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&amp;gt; true, :null =&amp;gt; false end def self.</description>
     </item>
     
   </channel>
