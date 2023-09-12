@@ -2,17 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://evtuhovich.ru/life/2023/04/28/5-floor/</loc>
-    <lastmod>2023-04-28T18:13:59+03:00</lastmod>
+    <loc>https://evtuhovich.ru/life/2023/09/12/20-years/</loc>
+    <lastmod>2023-09-12T16:03:38+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/tags/</loc>
+    <lastmod>2023-09-12T16:03:38+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/tags/%D0%B0%D0%B9%D0%BA%D0%B8%D0%B4%D0%BE/</loc>
+    <lastmod>2023-09-12T16:03:38+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://evtuhovich.ru/</loc>
-    <lastmod>2023-04-28T18:13:59+03:00</lastmod>
+    <lastmod>2023-09-12T16:03:38+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://evtuhovich.ru/life/</loc>
+    <lastmod>2023-09-12T16:03:38+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/life/2023/04/28/5-floor/</loc>
     <lastmod>2023-04-28T18:13:59+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -158,11 +173,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://evtuhovich.ru/blog/2022/04/21/postgres-internals/</loc>
-    <lastmod>2022-04-21T16:57:41+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://evtuhovich.ru/tags/</loc>
     <lastmod>2022-04-21T16:57:41+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
