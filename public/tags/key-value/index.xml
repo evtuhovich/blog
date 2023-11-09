@@ -6,12 +6,12 @@
     <description>Recent content in Записи с тегом: key-value on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 23 Jan 2012 23:05:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/key-value/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Jan 2012 23:05:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/key-value/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hstore — key-value расширение для postgresql</title>
       <link>https://evtuhovich.ru/blog/2012/01/23/hstore/</link>
       <pubDate>Mon, 23 Jan 2012 23:05:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2012/01/23/hstore/</guid>
       <description>&lt;p&gt;Наверное, не все знают, что для postgresql существует большое количество расширений, которые называются
 &lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/contrib.html&#34;&gt;contrib модулями&lt;/a&gt;.&lt;/p&gt;
@@ -20,6 +20,5 @@
 ключи и значения могут быть только строками. О том, чем это лучше, нежели просто хранить в текстовом поле сериализованный хеш,
 я расскажу чуть-чуть попозже. Понадобится это может в том случае, если у вас есть модели с произвольным набором полей.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

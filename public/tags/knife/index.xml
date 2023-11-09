@@ -6,18 +6,17 @@
     <description>Recent content in Записи с тегом: knife on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 28 Mar 2014 18:11:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/knife/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Mar 2014 18:11:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/knife/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Соло на ноже</title>
       <link>https://evtuhovich.ru/blog/2014/03/28/knife-solo/</link>
       <pubDate>Fri, 28 Mar 2014 18:11:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2014/03/28/knife-solo/</guid>
       <description>Очень часто для небольших проектов нет необходимости усложнять инфраструктуру с использованием chef-server. Существует мнение, что chef server, вообще, не нужен, и многие аргументы в пользу этой идеи кажутся мне вполне убедительными.
 Для людей, которым нравится DSL chef и не нужен chef server, есть chef-solo. Чтобы готовить с его помощью, нужен специальный нож — knife-solo. Это инструмент, который значительно упрощает использование chef-solo.
 Для начала поставить knife-solo
 gem install knife-solo Если у вас есть уже готовый репозитарий для chef, как, например, наше тесто, то следующий шаг можно пропустить.</description>
     </item>
-    
   </channel>
 </rss>

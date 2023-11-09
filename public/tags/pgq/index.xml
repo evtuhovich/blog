@@ -6,28 +6,25 @@
     <description>Recent content in Записи с тегом: pgq on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 05 Jun 2009 12:34:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/pgq/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Jun 2009 12:34:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/pgq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PgQ и Londiste</title>
       <link>https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/</link>
       <pubDate>Fri, 05 Jun 2009 12:34:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/</guid>
       <description>Хотя я так и не написал толком, как пользоваться PgQ и Londiste, но уже написал плагин, который облегчает его использование вместе с рельсами.
 http://github.com/evtuhovich/pgq/tree/master
 В README всё написано на плохом английском (с хорошим английским у меня плохо).
 Совсем скоро я добавлю туда возможность прогонять миграции на master и slave базах данных одновременно. Тогда при очередной выкатке необходимо будет сделать только rake londiste:update в самом конце, после того, как все миграции прогонятся.</description>
     </item>
-    
     <item>
       <title>Использование очередей в высоконагруженных проектах</title>
       <link>https://evtuhovich.ru/blog/2009/04/04/queue/</link>
       <pubDate>Sat, 04 Apr 2009 23:45:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2009/04/04/queue/</guid>
       <description>При большом количестве запросов к приложению (в широком смысле этого слова) иногда целесообразно ``размазать&amp;rsquo;&amp;rsquo; пиковую нагрузку во времени. Для этого удобно использовать очереди. То есть, если какое-то запрос наверняка должен быть выполнен, но не имеет значение произойдет это прямо сейчас или чуть попозже, можно создать событие в очереди. И когда до этого события дойдет очередь —&amp;ndash; оно будет выполнено. Таким образом можно развести сложные запросы во времени.
 Очереди подходят для таких задач, как, например, рассылка большого количества сообщений и обновление различных счетчиков в БД (если их актуальность не очень критична).</description>
     </item>
-    
   </channel>
 </rss>

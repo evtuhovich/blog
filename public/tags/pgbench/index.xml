@@ -6,18 +6,17 @@
     <description>Recent content in Записи с тегом: pgbench on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 20 Mar 2013 23:03:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/pgbench/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Mar 2013 23:03:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/pgbench/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>БД — большой кэш</title>
       <link>https://evtuhovich.ru/blog/2013/03/20/big-cache/</link>
       <pubDate>Wed, 20 Mar 2013 23:03:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2013/03/20/big-cache/</guid>
       <description>&lt;p&gt;В &lt;a href=&#34;blog/2013/02/24/partitioning/&#34;&gt;прошлый раз&lt;/a&gt; я обещал написать о том, что в проектах с более менее серьезной нагрузкой
 БД либо помещается в память, либо не работает. Ситуация в современном мире меняется в связи с появлением SSD дисков, но
 пока что они стоят достаточно дорого, по сравнению со старыми добрыми вращающимися дисками. Чтобы «потрогать» это
 руками, проделаем несложный тест.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

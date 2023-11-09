@@ -6,16 +6,15 @@
     <description>Recent content in Записи с тегом: caches_action on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Mon, 22 Aug 2011 13:02:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/caches_action/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2011 13:02:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/caches_action/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Некоторые проблемы с cached_action в Rails 2.3</title>
       <link>https://evtuhovich.ru/blog/2011/08/22/caches-action/</link>
       <pubDate>Mon, 22 Aug 2011 13:02:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2011/08/22/caches-action/</guid>
       <description>На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.
 # dashboard.rb class Admin::DashboardsController &amp;lt; Admin::BaseController layout &amp;#34;admin&amp;#34; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &amp;#39;show&amp;#39;, :layout =&amp;gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.</description>
     </item>
-    
   </channel>
 </rss>

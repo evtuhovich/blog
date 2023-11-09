@@ -6,17 +6,16 @@
     <description>Recent content in Записи с тегом: memcache on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Sun, 22 Mar 2009 13:18:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/memcache/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Mar 2009 13:18:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/memcache/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Проблемы с кэшированием</title>
       <link>https://evtuhovich.ru/blog/2009/03/22/cache-problem/</link>
       <pubDate>Sun, 22 Mar 2009 13:18:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2009/03/22/cache-problem/</guid>
       <description>Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
 Итак, у нас есть следующие модели:
 # shop.rb class Shop &amp;lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::PAID} end def bad_orders_count Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::BAD} end end end class Category &amp;lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &amp;lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).</description>
     </item>
-    
   </channel>
 </rss>

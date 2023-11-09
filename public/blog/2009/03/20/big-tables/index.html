@@ -9,7 +9,7 @@
     <meta name="description" content="Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
 $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self.">
-    <meta name="generator" content="Hugo 0.119.0">
+    <meta name="generator" content="Hugo 0.120.1">
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -44,6 +44,7 @@ $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPo
 <meta property="og:url" content="https://evtuhovich.ru/blog/2009/03/20/big-tables/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2009-03-20T12:34:00+00:00" />
 <meta property="article:modified_time" content="2009-03-20T12:34:00+00:00" />
+
 <meta itemprop="name" content="PosgtreSql, миграции и огромные таблицы">
 <meta itemprop="description" content="Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.

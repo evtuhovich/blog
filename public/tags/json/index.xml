@@ -6,15 +6,14 @@
     <description>Recent content in Записи с тегом: json on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 14 Mar 2012 23:52:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Mar 2012 23:52:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/json/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Поддержка JSON в PostgreSql 9.2</title>
       <link>https://evtuhovich.ru/blog/2012/03/14/postgresql-json/</link>
       <pubDate>Wed, 14 Mar 2012 23:52:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2012/03/14/postgresql-json/</guid>
       <description>В третьем квартале 2012 должна выйти версия PostgreSQL 9.2, в которой добавят много интересных возможностей. Среди них — базовая поддержка так полюбившегося всем web-разработчикам формата JSON. На данном этапе появится только возможность проверять JSON на валидность, но судя по списку рассылки, к версии 9.3 будет добавлена возможность строить индексы на JSON объектах подобно тому, как это можно сделать на hstore. Конечно, JSON объекты гораздо сложнее hstore, и как именно и в каком объеме будет реализована поддержка индексов в JSON — пока не ясно.</description>
     </item>
-    
   </channel>
 </rss>

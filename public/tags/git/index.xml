@@ -6,48 +6,41 @@
     <description>Recent content in Записи с тегом: git on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 25 May 2012 22:37:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 May 2012 22:37:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Конфликтные слияния веток и git merge-base</title>
       <link>https://evtuhovich.ru/blog/2012/05/25/git-merge-base/</link>
       <pubDate>Fri, 25 May 2012 22:37:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2012/05/25/git-merge-base/</guid>
       <description>&lt;p&gt;Когда у вас есть две ветки разработки, которые достаточно сильно друг от друга отличаются, периодически возникают
 проблемы с их слиянием (merge).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Рассказ про Git</title>
       <link>https://evtuhovich.ru/blog/2011/08/23/pro-git/</link>
       <pubDate>Tue, 23 Aug 2011 10:30:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2011/08/23/pro-git/</guid>
       <description>По-моему, в «Прагматичных программистах» было написана фраза, которую я часто люблю повторять: «Программист должен в совершенстве владеть двумя инструментами — текстовым редактором и системой контроля версий». Программист работает с текстом, особенно программист, который пишет на высокоуровневом языке, таком как Ruby. Зачастую можно не вдаваться в подробности того, что происходит внутри, хотя иногда, конечно, надо. Так вот, текст надо уметь изменять, а потом этими изменениями как-то обмениваться со своими коллегами.
 Про текстовый редактор я рассказывал немного раньше, а сегодня я хочу рассказать про систему контроля версий git.</description>
     </item>
-    
     <item>
       <title>Отмена последнего коммита в git</title>
       <link>https://evtuhovich.ru/blog/2009/04/03/git-reset/</link>
       <pubDate>Fri, 03 Apr 2009 12:34:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2009/04/03/git-reset/</guid>
       <description>Допустим, вы сделали commit в git, но поняли, что он недостаточно хорош. В таком случае можно продолжить правки, а при следующем коммите набрать
 git commit -a --amend Ключ --amend (улучшить, в переводе с английского) позволяет добавить к последнему коммиту новые изменения.
 Если вы сделали commit в git, но поняли, что он достаточно плох, то можно сделать и так:
 git reset --soft HEAD^ Эта команда отменит последний коммит (но не изменения, которые вы внесли, они сохранятся).</description>
     </item>
-    
     <item>
       <title>Перенести ветку в git</title>
       <link>https://evtuhovich.ru/blog/2009/03/13/git-move-branch/</link>
       <pubDate>Fri, 13 Mar 2009 09:12:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2009/03/13/git-move-branch/</guid>
       <description>Представим следующую ситуацию (она постоянно возникает у нас при разработке). У нас есть ветка master в git, а в день релиза мы создаем ветку b1. Мы добавляем какие-то изменения в ветки b1 и master. И тут вдруг (хотя слово «вдруг» не очень подходит к регулярным событям) менеджмент решает добавить что-то из master в релиз.
 Если комитов было мало, то можно воспользоваться git cherry-pick (если их несколько, то может помочь ключ -n).</description>
     </item>
-    
   </channel>
 </rss>

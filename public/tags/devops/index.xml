@@ -6,12 +6,12 @@
     <description>Recent content in Записи с тегом: devops on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Tue, 10 Jan 2012 23:55:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Jan 2012 23:55:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vagrant</title>
       <link>https://evtuhovich.ru/blog/2012/01/10/vagrant/</link>
       <pubDate>Tue, 10 Jan 2012 23:55:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2012/01/10/vagrant/</guid>
       <description>&lt;p&gt;Очень странно, что я до сих пор не написал о &lt;a href=&#34;http://vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt; — инструменте создания и распространения
 виртуальных окружений.&lt;/p&gt;
@@ -29,6 +29,5 @@ Vagrant — это надстройка над платформой вирту�
 менять конфигурацию и выкатываться, при этом желательно делать это в «песочнице», а не на сервере, который обслуживает
 ваших пользователей (и приносит деньги).&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,16 +6,15 @@
     <description>Recent content in Записи с тегом: codefest on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Wed, 28 Mar 2012 14:22:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/codefest/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Mar 2012 14:22:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/codefest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Буду выступать на CodeFest</title>
       <link>https://evtuhovich.ru/blog/2012/03/28/codefest/</link>
       <pubDate>Wed, 28 Mar 2012 14:22:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2012/03/28/codefest/</guid>
       <description>31 марта буду выступать на конференции CodeFest. Мой доклад «Как мы делали Групон» будет в 17:05 во втором зале. А второго апреля я проведу мастер-класс «Устройство и оптимизация Postgresql».
 Я хочу выразить большую благодарность организаторам конференции за их работу. Поскольку у меня есть опыт в этой области, я понимаю, какой объем работы надо проделать, чтобы привезти докладчиков со всех концов России в Новосибирск. Верю, что конференция пройдет продуктивно и на позитивной волне.</description>
     </item>
-    
   </channel>
 </rss>

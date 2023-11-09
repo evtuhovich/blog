@@ -6,16 +6,15 @@
     <description>Recent content in Записи с тегом: continuous-integration on Блог Ивана Евтуховича</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-ru</language>
-    <lastBuildDate>Fri, 27 Feb 2009 14:45:00 +0000</lastBuildDate><atom:link href="https://evtuhovich.ru/tags/continuous-integration/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Feb 2009 14:45:00 +0000</lastBuildDate>
+    <atom:link href="https://evtuhovich.ru/tags/continuous-integration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Непрерывная интеграция</title>
       <link>https://evtuhovich.ru/blog/2009/02/27/continuous-integration/</link>
       <pubDate>Fri, 27 Feb 2009 14:45:00 +0000</pubDate>
-      
       <guid>https://evtuhovich.ru/blog/2009/02/27/continuous-integration/</guid>
       <description>О непрерывной интеграции (Continuous Integration) можно почитать у Мартина Фаулера (Martin Fowler) здесь. В друх словах, это практика постоянной интеграции наработок каждого программиста. Обычно это заключается в том, что на какой-нибудь машине постоянно (после каждого изменения в исходных кодах) собирается проект и прогоняются все тесты. Результаты этих действий высылаются разработчикам по почте. Это позволяет постоянно сохранять проект в относительно рабочем состоянии.
 Удобным инструментом непрерывной интеграции является CruiseControl. К сожалению в своей оригинальной версии он поддерживает только систему контроля версий svn.</description>
     </item>
-    
   </channel>
 </rss>
