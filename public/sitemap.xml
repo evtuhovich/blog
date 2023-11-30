@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://evtuhovich.ru/</loc>
-    <lastmod>2023-11-07T18:01:33+03:00</lastmod>
+    <lastmod>2023-11-10T15:07:37+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://evtuhovich.ru/life/</loc>
-    <lastmod>2023-11-07T18:01:33+03:00</lastmod>
+    <lastmod>2023-11-10T15:07:37+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://evtuhovich.ru/life/2023/11/10/end-of-attack/</loc>
+    <lastmod>2023-11-10T15:07:37+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
