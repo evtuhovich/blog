@@ -13,18 +13,14 @@
       <link>https://evtuhovich.ru/blog/2017/08/29/state-of-devops-2017/</link>
       <pubDate>Tue, 29 Aug 2017 10:32:00 +0000</pubDate>
       <guid>https://evtuhovich.ru/blog/2017/08/29/state-of-devops-2017/</guid>
-      <description>&lt;p&gt;В очередной раз компания &lt;a href=&#34;https://puppet.com/&#34;&gt;Puppet&lt;/a&gt; совместно с &lt;a href=&#34;https://devops-research.com/&#34;&gt;DORA&lt;/a&gt; ( DevOps Research and Assessment — компания, которая решила активно продавать DevOps, что бы это не значило) опубликовали отчет о состоянии DevOps, который называется «&lt;a href=&#34;https://puppet.com/resources/whitepaper/state-of-devops-report&#34;&gt;2017 State of DevOps Report&lt;/a&gt;». Скачать его можно бесплатно, если оставить свою почту. Насколько я знаю, это единственное регулярное исследование ИТ-рынка на предмет проникновения DevOps практик.&lt;/p&gt;
-&lt;p&gt;Поскольку я уверен, что читать пятидесятистраничный документ на английском многим будет лень, я напишу здесь краткую выжимку из него, расскажу о том, что мне показалось там важным.&lt;/p&gt;</description>
+      <description>&lt;p&gt;В очередной раз компания &lt;a href=&#34;https://puppet.com/&#34;&gt;Puppet&lt;/a&gt; совместно с &lt;a href=&#34;https://devops-research.com/&#34;&gt;DORA&lt;/a&gt; ( DevOps Research and Assessment — компания, которая решила активно продавать DevOps, что бы это не значило) опубликовали отчет о состоянии DevOps, который называется «&lt;a href=&#34;https://puppet.com/resources/whitepaper/state-of-devops-report&#34;&gt;2017 State of DevOps Report&lt;/a&gt;». Скачать его можно бесплатно, если оставить свою почту. Насколько я знаю, это единственное регулярное исследование ИТ-рынка на предмет проникновения DevOps практик.&lt;/p&gt;&#xA;&lt;p&gt;Поскольку я уверен, что читать пятидесятистраничный документ на английском многим будет лень, я напишу здесь краткую выжимку из него, расскажу о том, что мне показалось там важным.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Состояние DevOps на 2016 год</title>
       <link>https://evtuhovich.ru/blog/2016/09/28/state-of-devops-2016/</link>
       <pubDate>Wed, 28 Sep 2016 15:05:00 +0000</pubDate>
       <guid>https://evtuhovich.ru/blog/2016/09/28/state-of-devops-2016/</guid>
-      <description>&lt;p&gt;Компания Puppet (как ни удивительно — это разработчики одноименной системы управления конфигурацией) опубликовали свой
-очередной ежегодный &lt;a href=&#34;https://puppet.com/resources/white-paper/2016-state-of-devops-report&#34;&gt;отчет о состоянии DevOps&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Они опросили 4600 инженеров со всего мира и по результатам этого опроса составили отчет на 55 страниц. Я кратко
-резюмирую здесь их результаты для тех, кому лень читать оригинальный отчет.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Компания Puppet (как ни удивительно — это разработчики одноименной системы управления конфигурацией) опубликовали свой&#xA;очередной ежегодный &lt;a href=&#34;https://puppet.com/resources/white-paper/2016-state-of-devops-report&#34;&gt;отчет о состоянии DevOps&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Они опросили 4600 инженеров со всего мира и по результатам этого опроса составили отчет на 55 страниц. Я кратко&#xA;резюмирую здесь их результаты для тех, кому лень читать оригинальный отчет.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

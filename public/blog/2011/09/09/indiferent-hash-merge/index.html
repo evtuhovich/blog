@@ -9,7 +9,7 @@
     <meta name="description" content="Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
 class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
 Хеш params, которые передается в класс Report — это тот самый params из контроллера.">
-    <meta name="generator" content="Hugo 0.120.4">
+    <meta name="generator" content="Hugo 0.121.1">
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -51,8 +51,7 @@ class ReportSender def initialize(report_instance) @report_instance = report_ins
 Хеш params, которые передается в класс Report — это тот самый params из контроллера."><meta itemprop="datePublished" content="2011-09-09T23:16:00+00:00" />
 <meta itemprop="dateModified" content="2011-09-09T23:16:00+00:00" />
 <meta itemprop="wordCount" content="144">
-<meta itemprop="keywords" content="HashWithIndifferentAccess," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Слияние HashWithIndifferentAccess с обычными хешами"/>
+<meta itemprop="keywords" content="HashWithIndifferentAccess," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Слияние HashWithIndifferentAccess с обычными хешами"/>
 <meta name="twitter:description" content="Сегодня у нас перестали ходить отчеты по почте. Ходили, ходили и вдруг перестали. Kлассы выглядели следующим образом (ненужные подробности я опустил).
 class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
 Хеш params, которые передается в класс Report — это тот самый params из контроллера."/>
@@ -288,7 +287,7 @@ class ReportSender def initialize(report_instance) @report_instance = report_ins
 <div class="mt6 instapaper_ignoref">
       
         <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     

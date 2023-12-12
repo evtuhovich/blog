@@ -13,10 +13,7 @@
       <link>https://evtuhovich.ru/blog/2012/05/11/paperclip/</link>
       <pubDate>Fri, 11 May 2012 23:23:00 +0000</pubDate>
       <guid>https://evtuhovich.ru/blog/2012/05/11/paperclip/</guid>
-      <description>&lt;p&gt;Вчера я разворачивал наше приложение в системе CI &lt;a href=&#34;http://jenkins-ci.org/&#34;&gt;Jenkins&lt;/a&gt;, и обнаружил, что bundler не находит
-gem paperclip. В Gemfile была явно прописана версия 3.0.1. Зайдя на &lt;a href=&#34;https://rubygems.org/gems/paperclip/versions&#34;&gt;rubygems&lt;/a&gt;, я увидел,
-что эту версию гема его создатели удалили, а версия 3.0.2 и старше не поставилась, выругавшись на то, что ей нужен ruby
-1.9.2 и старше.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Вчера я разворачивал наше приложение в системе CI &lt;a href=&#34;http://jenkins-ci.org/&#34;&gt;Jenkins&lt;/a&gt;, и обнаружил, что bundler не находит&#xA;gem paperclip. В Gemfile была явно прописана версия 3.0.1. Зайдя на &lt;a href=&#34;https://rubygems.org/gems/paperclip/versions&#34;&gt;rubygems&lt;/a&gt;, я увидел,&#xA;что эту версию гема его создатели удалили, а версия 3.0.2 и старше не поставилась, выругавшись на то, что ей нужен ruby&#xA;1.9.2 и старше.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

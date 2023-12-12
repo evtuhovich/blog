@@ -13,9 +13,7 @@
       <link>https://evtuhovich.ru/blog/2012/02/12/pgbouncer/</link>
       <pubDate>Sun, 12 Feb 2012 23:04:00 +0000</pubDate>
       <guid>https://evtuhovich.ru/blog/2012/02/12/pgbouncer/</guid>
-      <description>&lt;p&gt;Удивительное дело, что я до сих пор не написал про &lt;a href=&#34;http://pgfoundry.org/projects/pgbouncer/&#34;&gt;PgBouncer&lt;/a&gt;. Как написано
-на сайте — это «Lightweight connection pooler for PostgreSQL». Я бы первел это следующим образом.
-PgBouncer — это легкий менеджер соединений для PostgreSQL.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Удивительное дело, что я до сих пор не написал про &lt;a href=&#34;http://pgfoundry.org/projects/pgbouncer/&#34;&gt;PgBouncer&lt;/a&gt;. Как написано&#xA;на сайте — это «Lightweight connection pooler for PostgreSQL». Я бы первел это следующим образом.&#xA;PgBouncer — это легкий менеджер соединений для PostgreSQL.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
