@@ -9,7 +9,7 @@
     <meta name="description" content="Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
 Итак, у нас есть следующие модели:
 # shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).">
-    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Hugo 0.125.7">
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -36,26 +36,32 @@
 
     
     
-    <meta property="og:title" content="Проблемы с кэшированием" />
-<meta property="og:description" content="Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
+    <meta property="og:url" content="https://evtuhovich.ru/blog/2009/03/22/cache-problem/">
+  <meta property="og:site_name" content="Блог Ивана Евтуховича">
+  <meta property="og:title" content="Проблемы с кэшированием">
+  <meta property="og:description" content="Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
 Итак, у нас есть следующие модели:
-# shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://evtuhovich.ru/blog/2009/03/22/cache-problem/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2009-03-22T13:18:00+00:00" />
-<meta property="article:modified_time" content="2009-03-22T13:18:00+00:00" />
-<meta itemprop="name" content="Проблемы с кэшированием">
-<meta itemprop="description" content="Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
+# shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).">
+  <meta property="og:locale" content="ru-ru">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2009-03-22T13:18:00+00:00">
+    <meta property="article:modified_time" content="2009-03-22T13:18:00+00:00">
+    <meta property="article:tag" content="Записи с тегом: memcache">
+    <meta property="article:tag" content="Записи с тегом: rails">
+
+  <meta itemprop="name" content="Проблемы с кэшированием">
+  <meta itemprop="description" content="Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
 Итак, у нас есть следующие модели:
-# shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached)."><meta itemprop="datePublished" content="2009-03-22T13:18:00+00:00" />
-<meta itemprop="dateModified" content="2009-03-22T13:18:00+00:00" />
-<meta itemprop="wordCount" content="277">
-<meta itemprop="keywords" content="memcache,rails," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Проблемы с кэшированием"/>
+# shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).">
+  <meta itemprop="datePublished" content="2009-03-22T13:18:00+00:00">
+  <meta itemprop="dateModified" content="2009-03-22T13:18:00+00:00">
+  <meta itemprop="wordCount" content="277">
+  <meta itemprop="keywords" content="Записи с тегом: memcache,Записи с тегом: rails"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Проблемы с кэшированием">
 <meta name="twitter:description" content="Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.
 Итак, у нас есть следующие модели:
-# shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached)."/>
-
-	<meta name="yandex-verification" content="844263c66799f878" />
+# shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).">
+<meta name="yandex-verification" content="844263c66799f878" />
 
 <script type="text/javascript">
     (function (d, w, c) {
@@ -131,12 +137,6 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/blog/" title="Блог page">
               Блог
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/reports/" title="Доклады и мастер-классы page">
-              Доклады и мастер-классы
             </a>
           </li>
           
