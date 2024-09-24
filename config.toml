@@ -2,12 +2,15 @@ baseURL = "https://evtuhovich.ru/"
 languageCode ="ru-ru" 
 title = "Блог Ивана Евтуховича"
 theme = "ananke"
-disqusShortname = "blog-evtuhovich"
 googleAnalytics = ""
 DefaultContentLanguage = "ru"
 SectionPagesMenu = "main"
 Paginate = 12
 enableRobotsTXT = true
+
+[services]
+  [services.disqus]
+    shortname = "blog-evtuhovich"
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -22,6 +25,7 @@ unsafe = true
     endLevel = 3
     ordered = false
     startLevel = 1
+
 [params]
   favicon = "/images/favicon.ico"
   description = "Блог Ивана Евтуховича"
@@ -29,17 +33,15 @@ unsafe = true
   github = "https://github.com/evtuhovich/"
   # twitter = "https://twitter.com/evtuhovich"
   # instagram = "https://www.instagram.com/evtuhovich/"
-  youtube = ""
-  gitlab = ""
-  telegram = "https://t.me/evtuhovich"
-  vk = "https://vk.com/ivan.evtuhovich"
-  linkedin = ""
   featured_image = "/images/background.jpg"
   recent_posts_number = 10
   mainSections = ["blog", "life"]
-  custom_css = ["css/custom.css", "css/jplayer.blue.monday.css"]
+  custom_css = ["css/custom.css"]
   recent_copy = "Недавние записи"
-
+  ananke_socials = [
+    { name = "vk", url = "https://vk.com/ivan.evtuhovich" },
+    { name = "telegram", url = "https://t.me/evtuhovich" }
+  ]
 
 [[deployment.targets]]
 # An arbitrary name for this target.
