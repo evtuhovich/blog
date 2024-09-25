@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: еда on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/%D0%B5%D0%B4%D0%B0/</link>
+    <link>http://localhost:1313/tags/%D0%B5%D0%B4%D0%B0/</link>
     <description>Recent content in Записи с тегом: еда on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Sat, 06 Feb 2016 14:06:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/%D0%B5%D0%B4%D0%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%D0%B5%D0%B4%D0%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Сырники</title>
-      <link>https://evtuhovich.ru/life/2016/02/06/syrniki/</link>
+      <link>http://localhost:1313/life/2016/02/06/syrniki/</link>
       <pubDate>Sat, 06 Feb 2016 14:06:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/life/2016/02/06/syrniki/</guid>
-      <description>Готовить я, по большому счету, не умею. Вот мой брат, или там, Саша с Пашей (вы их вряд ли знаете, но все равно) — это да, а я так, любитель. Но тем не менее, поскольку окружающая меня действительность несколько раз взывала к тому, чтобы я рассказал про сырники, то я не буду молчать.&#xA;Итак, сырники (про яичницу тоже напишу попозже, хотя что там писать).&#xA;Все секреты я почерпнул у мамы, шаг за шагом перенимая у нее секреты мастерства.</description>
+      <guid>http://localhost:1313/life/2016/02/06/syrniki/</guid>
+      <description>&lt;p&gt;Готовить я, по большому счету, не умею. Вот мой брат, или там, Саша с Пашей (вы их вряд ли знаете, но все равно) — это&#xA;да, а я так, любитель. Но тем не менее, поскольку окружающая меня действительность несколько раз взывала к тому, чтобы я&#xA;рассказал про сырники, то я не буду молчать.&lt;/p&gt;&#xA;&lt;p&gt;Итак, сырники (про яичницу тоже напишу попозже, хотя что там писать).&lt;/p&gt;&#xA;&lt;p&gt;Все секреты я почерпнул у мамы, шаг за шагом перенимая у нее секреты мастерства. На этой неделе даже жена сказала, что у&#xA;меня стало получаться почти, как у нее, вряд ли есть большая похвала.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

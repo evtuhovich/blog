@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: performance on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/performance/</link>
+    <link>http://localhost:1313/tags/performance/</link>
     <description>Recent content in Записи с тегом: performance on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 28 Jun 2013 15:20:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/performance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Статистика запросов и pg_stat_statements</title>
-      <link>https://evtuhovich.ru/blog/2013/06/28/pg-stat-statements/</link>
+      <link>http://localhost:1313/blog/2013/06/28/pg-stat-statements/</link>
       <pubDate>Fri, 28 Jun 2013 15:20:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2013/06/28/pg-stat-statements/</guid>
-      <description>Иногда при эксплуатации проекта возникает вопрос, какие запросы в БД выполняются дольше всего или потребляют наибольшее количество времени или ресурсов.&#xA;До версии 9.2 неплохой ответ на этот вопрос можно было получить с помощью проекта pgBadger. Если прорваться через достаточно простую процедуру его настройки, описанную в документации, то в результате можно получить достаточно красивый отчет. К сожалению, этот подход имеет достаточно много слабых сторон. Во-первых, чтобы получить полную картину, необходимо писать логи всех запросов к БД, которые при значительной нагрузке отъедают огромное количество дискового пространства, а также производительность дисковой подсистемы.</description>
+      <guid>http://localhost:1313/blog/2013/06/28/pg-stat-statements/</guid>
+      <description>&lt;p&gt;Иногда при эксплуатации проекта возникает вопрос, какие запросы в БД выполняются дольше всего или потребляют наибольшее&#xA;количество времени или ресурсов.&lt;/p&gt;&#xA;&lt;p&gt;До версии 9.2 неплохой ответ на этот вопрос можно было получить с помощью проекта &lt;a href=&#34;http://dalibo.github.io/pgbadger/&#34;&gt;pgBadger&lt;/a&gt;.&#xA;Если прорваться через достаточно простую процедуру его настройки, описанную в&#xA;&lt;a href=&#34;http://dalibo.github.io/pgbadger/documentation.html&#34;&gt;документации&lt;/a&gt;, то в результате можно получить достаточно &lt;a href=&#34;http://dalibo.github.io/pgbadger/sample.html&#34;&gt;красивый&#xA;отчет&lt;/a&gt;. К сожалению, этот подход имеет достаточно много слабых сторон.&#xA;Во-первых, чтобы получить полную картину, необходимо писать логи всех запросов к БД, которые при значительной нагрузке&#xA;отъедают огромное количество дискового пространства, а также производительность дисковой подсистемы. Во-вторых, в сухом&#xA;остатке получается только суммарное время исполнения всех запросов и их количество. Это полезная информация, но хотелось&#xA;бы знать много чего еще.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Фильтрация данных на клиенте</title>
-      <link>https://evtuhovich.ru/blog/2012/02/19/local-data/</link>
+      <link>http://localhost:1313/blog/2012/02/19/local-data/</link>
       <pubDate>Sun, 19 Feb 2012 23:16:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/02/19/local-data/</guid>
+      <guid>http://localhost:1313/blog/2012/02/19/local-data/</guid>
       <description>&lt;p&gt;Давече у нас на Групоне возникла следующая проблема — начала тормозить одна страница в админке. Причем до того сильно,&#xA;что ее sql запрос стал регулярно появляться в списке медленных запросов в newrelic. Для большей понятности я поменяю&#xA;название моделей на книги (Book) и авторы (Author), при этом, очевидно, «авторы имеют много книг», то есть связь один ко&#xA;многим.&lt;/p&gt;</description>
     </item>
   </channel>

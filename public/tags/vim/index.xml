@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: vim on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/vim/</link>
+    <link>http://localhost:1313/tags/vim/</link>
     <description>Recent content in Записи с тегом: vim on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Thu, 10 Mar 2011 22:52:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>О редакторе Vim, рассказ ссылками</title>
-      <link>https://evtuhovich.ru/blog/2011/03/10/vim/</link>
+      <link>http://localhost:1313/blog/2011/03/10/vim/</link>
       <pubDate>Thu, 10 Mar 2011 22:52:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2011/03/10/vim/</guid>
-      <description>Vim — прекрасный редактор, который я использую для разработки на Ruby и Rails. Его можно использовать в чистом виде, но если добавить немного плагинов, то удобство работы значительно возрастает. Об этом я и хочу рассказать, правда рассказ получится длинным.&#xA;Я выступал на последнем RailsClub&amp;rsquo;е с докладом Vim Or Die (посмотреть его можно на univertv.ru), в котором неплохо раскрыл тему Vim и полезных плагинов. Cами слайды, которые малополезны без видео, можно найти на slideshare.</description>
+      <guid>http://localhost:1313/blog/2011/03/10/vim/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt; — прекрасный редактор, который я использую для разработки на Ruby и Rails. Его можно&#xA;использовать в чистом виде, но если добавить немного плагинов, то удобство работы значительно возрастает. Об этом я и&#xA;хочу рассказать, правда рассказ получится длинным.&lt;/p&gt;&#xA;&lt;p&gt;Я выступал на последнем RailsClub&amp;rsquo;е с докладом Vim Or Die (&lt;a href=&#34;http://www.univertv.ru/video/informatika/programmirovanie/ruby_on_rails_moscow/vim_or_die/&#34;&gt;посмотреть его можно на&#xA;univertv.ru&lt;/a&gt;), в котором&#xA;неплохо раскрыл тему Vim и полезных плагинов. Cами слайды, которые малополезны без видео, можно найти на &lt;a href=&#34;http://www.slideshare.net/evtuhovich/vim-or-die&#34;&gt;slideshare.net&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Автоматизация vim с помощью pathogen</title>
-      <link>https://evtuhovich.ru/blog/2010/04/05/vim-pathogen/</link>
+      <link>http://localhost:1313/blog/2010/04/05/vim-pathogen/</link>
       <pubDate>Mon, 05 Apr 2010 00:33:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2010/04/05/vim-pathogen/</guid>
-      <description>Извечная проблема о том, как добавлять и обновлять плагины в vim решилась благодаря легендарному Tim Pope.&#xA;Сегодня утром узнал от Ярослава Маркина о существовании pathogen.&#xA;Статья на английском о том, как им пользоваться, лежит здесь. Правда, я потратил полчаса, чтобы догадаться, что надо добавить call pathogen#runtime_append_all_bundles() в файл ~/.vimrc.&#xA;После установки pathogen.vim в ~/.vim/autoload можно хранить все плагины в папке ~/.vim/bundle, причем каждый в своей папке.&#xA;А еще огромный плюс - в конце этой статьи код, который позволяет обновлять все плагины одной командой.</description>
+      <guid>http://localhost:1313/blog/2010/04/05/vim-pathogen/</guid>
+      <description>&lt;p&gt;Извечная проблема о том, как добавлять и обновлять плагины в vim решилась благодаря легендарному Tim Pope.&lt;/p&gt;&#xA;&lt;p&gt;Сегодня утром узнал от &lt;a href=&#34;http://twitter.com/yaroslav&#34;&gt;Ярослава Маркина&lt;/a&gt; о существовании pathogen.&lt;/p&gt;&#xA;&lt;p&gt;Статья на английском о том, как им пользоваться, лежит &lt;a&#xA;href=&#34;http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen&#34;&gt;здесь&lt;/a&gt;. Правда, я потратил полчаса, чтобы&#xA;догадаться, что надо добавить &lt;code&gt;call pathogen#runtime_append_all_bundles()&lt;/code&gt; в файл &lt;code&gt;~/.vimrc&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;После установки &lt;a href=&#34;http://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim&#34;&gt;pathogen.vim&lt;/a&gt; в&#xA;&lt;code&gt;&lt;del&gt;/.vim/autoload&lt;/code&gt; можно хранить все плагины в папке &lt;code&gt;&lt;/del&gt;/.vim/bundle&lt;/code&gt;, причем каждый в своей папке.&lt;/p&gt;&#xA;&lt;p&gt;А еще огромный плюс - в конце этой статьи код, который позволяет обновлять все плагины одной командой.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -2,137 +2,137 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: postgresql on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/postgresql/</link>
+    <link>http://localhost:1313/tags/postgresql/</link>
     <description>Recent content in Записи с тегом: postgresql on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Thu, 21 Apr 2022 16:57:41 +0300</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PostgreSQL изнутри</title>
-      <link>https://evtuhovich.ru/blog/2022/04/21/postgres-internals/</link>
+      <link>http://localhost:1313/blog/2022/04/21/postgres-internals/</link>
       <pubDate>Thu, 21 Apr 2022 16:57:41 +0300</pubDate>
-      <guid>https://evtuhovich.ru/blog/2022/04/21/postgres-internals/</guid>
+      <guid>http://localhost:1313/blog/2022/04/21/postgres-internals/</guid>
       <description>&lt;p&gt;Мой коллега Егор Рогов из &lt;a href=&#34;https://postgrespro.ru/&#34;&gt;ППГ&lt;/a&gt; недавно издал книгу &amp;ldquo;PostgreSQL изнутри&amp;rdquo;. Книгу можно &lt;a href=&#34;https://postgrespro.ru/education/books/internals&#34;&gt;бесплатно скачать&lt;/a&gt; в формате pdf на сайте Postgres Professional. Для любителей читать книги, сделанные из переработанных трупов зверски убитых деревьев, ее без труда можно найти на сайте &amp;ldquo;ДМК Пресс&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Статистика запросов и pg_stat_statements</title>
-      <link>https://evtuhovich.ru/blog/2013/06/28/pg-stat-statements/</link>
+      <link>http://localhost:1313/blog/2013/06/28/pg-stat-statements/</link>
       <pubDate>Fri, 28 Jun 2013 15:20:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2013/06/28/pg-stat-statements/</guid>
-      <description>Иногда при эксплуатации проекта возникает вопрос, какие запросы в БД выполняются дольше всего или потребляют наибольшее количество времени или ресурсов.&#xA;До версии 9.2 неплохой ответ на этот вопрос можно было получить с помощью проекта pgBadger. Если прорваться через достаточно простую процедуру его настройки, описанную в документации, то в результате можно получить достаточно красивый отчет. К сожалению, этот подход имеет достаточно много слабых сторон. Во-первых, чтобы получить полную картину, необходимо писать логи всех запросов к БД, которые при значительной нагрузке отъедают огромное количество дискового пространства, а также производительность дисковой подсистемы.</description>
+      <guid>http://localhost:1313/blog/2013/06/28/pg-stat-statements/</guid>
+      <description>&lt;p&gt;Иногда при эксплуатации проекта возникает вопрос, какие запросы в БД выполняются дольше всего или потребляют наибольшее&#xA;количество времени или ресурсов.&lt;/p&gt;&#xA;&lt;p&gt;До версии 9.2 неплохой ответ на этот вопрос можно было получить с помощью проекта &lt;a href=&#34;http://dalibo.github.io/pgbadger/&#34;&gt;pgBadger&lt;/a&gt;.&#xA;Если прорваться через достаточно простую процедуру его настройки, описанную в&#xA;&lt;a href=&#34;http://dalibo.github.io/pgbadger/documentation.html&#34;&gt;документации&lt;/a&gt;, то в результате можно получить достаточно &lt;a href=&#34;http://dalibo.github.io/pgbadger/sample.html&#34;&gt;красивый&#xA;отчет&lt;/a&gt;. К сожалению, этот подход имеет достаточно много слабых сторон.&#xA;Во-первых, чтобы получить полную картину, необходимо писать логи всех запросов к БД, которые при значительной нагрузке&#xA;отъедают огромное количество дискового пространства, а также производительность дисковой подсистемы. Во-вторых, в сухом&#xA;остатке получается только суммарное время исполнения всех запросов и их количество. Это полезная информация, но хотелось&#xA;бы знать много чего еще.&lt;/p&gt;</description>
     </item>
     <item>
       <title>PostgreSQL 9.3 beta 1 на OSX</title>
-      <link>https://evtuhovich.ru/blog/2013/05/15/postgresql-9-dot-3/</link>
+      <link>http://localhost:1313/blog/2013/05/15/postgresql-9-dot-3/</link>
       <pubDate>Wed, 15 May 2013 13:18:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2013/05/15/postgresql-9-dot-3/</guid>
+      <guid>http://localhost:1313/blog/2013/05/15/postgresql-9-dot-3/</guid>
       <description>&lt;p&gt;Два дня назад, 13 мая, &lt;a href=&#34;http://www.postgresql.org/about/news/1463/&#34;&gt;вышла beta 1 PostgreSQL 9.3&lt;/a&gt;. Во-первых, это хороший&#xA;знак, что уже пора обновляться на 9.2, либо выбирать 9.2 как основную БД. 9.3 планируется &lt;a href=&#34;http://www.postgresql.org/developer/roadmap/&#34;&gt;зарелизить в третьем квартале&#xA;2013 года&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Обо всех новых возможностях 9.3 можно почитать на &lt;a href=&#34;http://wiki.postgresql.org/wiki/What%27s_new_in_PostgreSQL_9.3&#34;&gt;официальной wiki&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Но чтобы не только почитать, но и попробовать, я напишу здесь, как поставить 9.3 beta 1 на OSX.&lt;/p&gt;</description>
     </item>
     <item>
       <title>БД — большой кэш</title>
-      <link>https://evtuhovich.ru/blog/2013/03/20/big-cache/</link>
+      <link>http://localhost:1313/blog/2013/03/20/big-cache/</link>
       <pubDate>Wed, 20 Mar 2013 23:03:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2013/03/20/big-cache/</guid>
+      <guid>http://localhost:1313/blog/2013/03/20/big-cache/</guid>
       <description>&lt;p&gt;В &lt;a href=&#34;blog/2013/02/24/partitioning/&#34;&gt;прошлый раз&lt;/a&gt; я обещал написать о том, что в проектах с более менее серьезной нагрузкой&#xA;БД либо помещается в память, либо не работает. Ситуация в современном мире меняется в связи с появлением SSD дисков, но&#xA;пока что они стоят достаточно дорого, по сравнению со старыми добрыми вращающимися дисками. Чтобы «потрогать» это&#xA;руками, проделаем несложный тест.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Партиционирование</title>
-      <link>https://evtuhovich.ru/blog/2013/02/24/partitioning/</link>
+      <link>http://localhost:1313/blog/2013/02/24/partitioning/</link>
       <pubDate>Sun, 24 Feb 2013 22:12:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2013/02/24/partitioning/</guid>
+      <guid>http://localhost:1313/blog/2013/02/24/partitioning/</guid>
       <description>&lt;p&gt;Я долго считал партиционирование плохой практикой, а само слово не любил из-за кальки с английского, которую крайне&#xA;сложно выговорить с первого раза. И если слово «партиционирование» я так с первого раза и не выговариваю, то саму&#xA;практику пришлось признать как необходимое и неизбежное зло. Чтобы никто не подумал, что я делаю что-то плохое, я&#xA;использую для этого термин «инженерный компромисс», звучит умнее и не так обидно.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Блокировки в PostgreSQL</title>
-      <link>https://evtuhovich.ru/blog/2013/01/27/locks/</link>
+      <link>http://localhost:1313/blog/2013/01/27/locks/</link>
       <pubDate>Sun, 27 Jan 2013 22:35:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2013/01/27/locks/</guid>
-      <description>&lt;p&gt;Чтобы рассказать о тонких моментах &lt;a href=&#34;https://evtuhovich.ru/blog/2013/01/09/fix-db-on-fly/&#34;&gt;pg_repack&lt;/a&gt;, мне понадобится немного углубиться в&#xA;тему блокировок в PostgreSQL. Конечно, лучше всего начать читать про них в &lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/explicit-locking.html&#34;&gt;официальной документации&lt;/a&gt;. Для этой статьи достаточно понимать, что&#xA;эксклюзивная блокировка (ACCESS EXCLUSIVE LOCK) препятствует выполнению всех операций, включая &lt;code&gt;SELECT&lt;/code&gt;, и она нужна для операции&#xA;&lt;code&gt;ALTER TABLE&lt;/code&gt;.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/2013/01/27/locks/</guid>
+      <description>&lt;p&gt;Чтобы рассказать о тонких моментах &lt;a href=&#34;http://localhost:1313/blog/2013/01/09/fix-db-on-fly/&#34;&gt;pg_repack&lt;/a&gt;, мне понадобится немного углубиться в&#xA;тему блокировок в PostgreSQL. Конечно, лучше всего начать читать про них в &lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/explicit-locking.html&#34;&gt;официальной документации&lt;/a&gt;. Для этой статьи достаточно понимать, что&#xA;эксклюзивная блокировка (ACCESS EXCLUSIVE LOCK) препятствует выполнению всех операций, включая &lt;code&gt;SELECT&lt;/code&gt;, и она нужна для операции&#xA;&lt;code&gt;ALTER TABLE&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ремонт БД на лету с помощью pg_repack</title>
-      <link>https://evtuhovich.ru/blog/2013/01/09/fix-db-on-fly/</link>
+      <link>http://localhost:1313/blog/2013/01/09/fix-db-on-fly/</link>
       <pubDate>Wed, 09 Jan 2013 00:49:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2013/01/09/fix-db-on-fly/</guid>
+      <guid>http://localhost:1313/blog/2013/01/09/fix-db-on-fly/</guid>
       <description>&lt;p&gt;Окончились новогодние праздники, а это значит, что пора с новыми силами кинуться в бой с ИТ-сложностью, ИТ-хаосом&#xA;и другими ИТ бедами.&lt;/p&gt;&#xA;&lt;p&gt;Одной из бед всех версионных БД является разбухание таблиц. Все бы ничего, но если количество активно используемых&#xA;данных перестает влезать в оперативную память, то время обработки запросов к БД чрезвычайно сильно возрастает (об этом я&#xA;напишу в ближайшем будущем). И чтобы «впихнуть» размеры таблицы в нужный размер, иногда приходится делать некоторые нетрадиционные&#xA;трюки.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Index Only Scan в Postgresql 9.2</title>
-      <link>https://evtuhovich.ru/blog/2012/10/10/index-only-scan/</link>
+      <link>http://localhost:1313/blog/2012/10/10/index-only-scan/</link>
       <pubDate>Wed, 10 Oct 2012 13:09:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/10/10/index-only-scan/</guid>
+      <guid>http://localhost:1313/blog/2012/10/10/index-only-scan/</guid>
       <description>&lt;p&gt;Вообще, сам не узнаю себя, уже ровно месяц прошел с выпуска &lt;a href=&#34;http://www.postgresql.org/docs/9.2/static/release-9-2.html&#34;&gt;Postgresql 9.2&lt;/a&gt;, даже вышло &lt;a href=&#34;http://www.postgresql.org/docs/9.2/static/release-9-2-1.html&#34;&gt;обновление 9.2.1&lt;/a&gt;, исправляющее некоторые баги, а я все еще ничего не написал об этом.&lt;/p&gt;&#xA;&lt;p&gt;Поэтому сегодня рассказ будет о Index Only Scan — самом заметном, по моему мнению, изменении в 9.2. Кстати, именно это&#xA;изменение стоит первым в &lt;a href=&#34;http://www.postgresql.org/docs/9.2/static/release-9-2.html&#34;&gt;Release Notes&lt;/a&gt;, а значит я не&#xA;одинок.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Barman и WAL-E</title>
-      <link>https://evtuhovich.ru/blog/2012/07/27/backup/</link>
+      <link>http://localhost:1313/blog/2012/07/27/backup/</link>
       <pubDate>Fri, 27 Jul 2012 15:54:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/07/27/backup/</guid>
+      <guid>http://localhost:1313/blog/2012/07/27/backup/</guid>
       <description>&lt;p&gt;В postgresql есть замечательная возможность делать &lt;a href=&#34;http://www.postgresql.org/docs/9.1/interactive/continuous-archiving.html&#34;&gt;непрерывные бэкапы&lt;/a&gt;,&#xA;то есть бэкапы, по которым можно восстановиться на любой момент времени.&lt;/p&gt;&#xA;&lt;p&gt;Если вы делаете обычные бэкапы и запускаете в час ночи pg_dump, а в час дня ваш сервер БД умер, то вы потеряете данные за&#xA;12 часов и доверие ваших пользователей. Для многих web-сервисов такой сценарий неприемлем, и, чтобы минимизировать потери&#xA;данных, стоит использовать непрерывный бэкап.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Проблема с сортировкой русских слов в Postgres на OSX</title>
-      <link>https://evtuhovich.ru/blog/2012/07/14/collate-osx-postgres/</link>
+      <link>http://localhost:1313/blog/2012/07/14/collate-osx-postgres/</link>
       <pubDate>Sat, 14 Jul 2012 13:17:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/07/14/collate-osx-postgres/</guid>
+      <guid>http://localhost:1313/blog/2012/07/14/collate-osx-postgres/</guid>
       <description>&lt;p&gt;Я давно мечтаю об Ubuntu, которая работает так же хорошо, как OSX. К несчастью, большинство пользовательских программ в&#xA;Ubuntu хуже, чем в OSX, а что касается серверной части - OSX очень сильно отстает от Ubuntu (Debian).&lt;/p&gt;&#xA;&lt;p&gt;К примеру, по-умолчанию, в Postgresql в OSX сломана сортировка русских слов. Решение я нашел&#xA;&lt;a href=&#34;http://chipiga.pp.ua/sql/kak-zastavit-postgresql-pravilno-sortirovat-utf8-kirillitsu-na-mac-os-x/&#34;&gt;здесь&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Поддержка JSON в PostgreSql 9.2</title>
-      <link>https://evtuhovich.ru/blog/2012/03/14/postgresql-json/</link>
+      <link>http://localhost:1313/blog/2012/03/14/postgresql-json/</link>
       <pubDate>Wed, 14 Mar 2012 23:52:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/03/14/postgresql-json/</guid>
-      <description>В третьем квартале 2012 должна выйти версия PostgreSQL 9.2, в которой добавят много интересных возможностей. Среди них — базовая поддержка так полюбившегося всем web-разработчикам формата JSON. На данном этапе появится только возможность проверять JSON на валидность, но судя по списку рассылки, к версии 9.3 будет добавлена возможность строить индексы на JSON объектах подобно тому, как это можно сделать на hstore. Конечно, JSON объекты гораздо сложнее hstore, и как именно и в каком объеме будет реализована поддержка индексов в JSON — пока не ясно.</description>
+      <guid>http://localhost:1313/blog/2012/03/14/postgresql-json/</guid>
+      <description>&lt;p&gt;В третьем квартале 2012 должна выйти версия &lt;a href=&#34;http://www.postgresql.org/developer/roadmap/&#34;&gt;PostgreSQL 9.2&lt;/a&gt;, в которой&#xA;добавят много интересных возможностей. Среди них — базовая поддержка так полюбившегося всем web-разработчикам формата&#xA;JSON. На данном этапе появится только возможность &lt;a href=&#34;http://www.postgresql.org/docs/devel/static/datatype-json.html&#34;&gt;проверять JSON на валидность&lt;/a&gt;,&#xA;но судя по списку рассылки, к версии 9.3 будет добавлена возможность строить индексы на JSON объектах подобно тому, как&#xA;это &lt;a href=&#34;http://localhost:1313/blog/2012/01/23/hstore/&#34;&gt;можно сделать на hstore&lt;/a&gt;. Конечно, JSON объекты гораздо сложнее hstore, и как именно и в&#xA;каком объеме будет реализована поддержка индексов в JSON — пока не ясно.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hstore — key-value расширение для postgresql</title>
-      <link>https://evtuhovich.ru/blog/2012/01/23/hstore/</link>
+      <link>http://localhost:1313/blog/2012/01/23/hstore/</link>
       <pubDate>Mon, 23 Jan 2012 23:05:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/01/23/hstore/</guid>
+      <guid>http://localhost:1313/blog/2012/01/23/hstore/</guid>
       <description>&lt;p&gt;Наверное, не все знают, что для postgresql существует большое количество расширений, которые называются&#xA;&lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/contrib.html&#34;&gt;contrib модулями&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Рассмотрим один из таких модулей - &lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/hstore.html&#34;&gt;hstore&lt;/a&gt;. Этот модуль&#xA;нужен для того, чтобы в одном поле в БД хранить много значений key/value, фактически, просто какой-то хеш. При этом и&#xA;ключи и значения могут быть только строками. О том, чем это лучше, нежели просто хранить в текстовом поле сериализованный хеш,&#xA;я расскажу чуть-чуть попозже. Понадобится это может в том случае, если у вас есть модели с произвольным набором полей.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Библия PostgreSQL</title>
-      <link>https://evtuhovich.ru/blog/2011/12/27/bible/</link>
+      <link>http://localhost:1313/blog/2011/12/27/bible/</link>
       <pubDate>Tue, 27 Dec 2011 17:11:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2011/12/27/bible/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://evtuhovich.ru/images/pg-book.jpg&#34; alt=&#34;Библия&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Если вы работаете с postgresql и сталкиваетесь с затруднительными ситуациями, ответы на которые даже не ясно, как&#xA;гуглить, то, скорее всего, вам не хватает каких-то фундаментальных знаний этой БД.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/2011/12/27/bible/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/pg-book.jpg&#34; alt=&#34;Библия&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Если вы работаете с postgresql и сталкиваетесь с затруднительными ситуациями, ответы на которые даже не ясно, как&#xA;гуглить, то, скорее всего, вам не хватает каких-то фундаментальных знаний этой БД.&lt;/p&gt;</description>
     </item>
     <item>
       <title>PgQ и Londiste</title>
-      <link>https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/</link>
+      <link>http://localhost:1313/blog/2009/06/05/pgq-londiste-plugin/</link>
       <pubDate>Fri, 05 Jun 2009 12:34:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/</guid>
-      <description>Хотя я так и не написал толком, как пользоваться PgQ и Londiste, но уже написал плагин, который облегчает его использование вместе с рельсами.&#xA;http://github.com/evtuhovich/pgq/tree/master&#xA;В README всё написано на плохом английском (с хорошим английским у меня плохо).&#xA;Совсем скоро я добавлю туда возможность прогонять миграции на master и slave базах данных одновременно. Тогда при очередной выкатке необходимо будет сделать только rake londiste:update в самом конце, после того, как все миграции прогонятся.</description>
+      <guid>http://localhost:1313/blog/2009/06/05/pgq-londiste-plugin/</guid>
+      <description>&lt;p&gt;Хотя я так и не написал толком, как пользоваться PgQ и Londiste, но уже написал плагин, который облегчает его&#xA;использование вместе с рельсами.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://github.com/evtuhovich/pgq/tree/master&#34;&gt;http://github.com/evtuhovich/pgq/tree/master&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;В README всё написано на плохом английском (с хорошим английским у меня плохо).&lt;/p&gt;&#xA;&lt;p&gt;Совсем скоро я добавлю туда возможность прогонять миграции на master и slave базах данных одновременно. Тогда при&#xA;очередной выкатке необходимо будет сделать только rake londiste:update в самом конце, после того, как все миграции&#xA;прогонятся.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Перенос таблицы в другую базу данных postgres без простоя приложения</title>
-      <link>https://evtuhovich.ru/blog/2009/05/22/live-table-migration/</link>
+      <link>http://localhost:1313/blog/2009/05/22/live-table-migration/</link>
       <pubDate>Fri, 22 May 2009 23:45:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2009/05/22/live-table-migration/</guid>
-      <description>В продолжении темы о нескольких базах данных в одном rails-приложении расскажу о том, как изящно перенести одну большую таблицу в другую БД postgresql.&#xA;Пусть у нас есть таблица messages с большим количеством данных (10 миллионов записей), которые мы решили перенести на другой сервер. Мы сделали, как написано в статье, указанной выше, а также создали в новой БД таблицу messages с такой же структурой.&#xA;Теперь с помощью londiste настраиваем репликацию из первой БД во вторую для таблицы messages (об этом я напишу подробнее попозже, пока же можно прочитать об этом у Андрея Стихеева в рассылке ror2ru).</description>
+      <guid>http://localhost:1313/blog/2009/05/22/live-table-migration/</guid>
+      <description>&lt;p&gt;В продолжении &lt;a href=&#34;http://localhost:1313/blog/2009/05/19/two-databases/&#34;&gt;темы о нескольких базах данных в одном rails-приложении&lt;/a&gt; расскажу о том,&#xA;как изящно перенести одну большую таблицу в другую БД postgresql.&lt;/p&gt;&#xA;&lt;p&gt;Пусть у нас есть таблица messages с большим количеством данных (10 миллионов записей), которые мы решили перенести на&#xA;другой сервер. Мы сделали, как написано в статье, указанной выше, а также создали в новой БД таблицу messages с такой же&#xA;структурой.&lt;/p&gt;&#xA;&lt;p&gt;Теперь с помощью londiste настраиваем репликацию из первой БД во вторую для таблицы messages (об этом я напишу подробнее&#xA;попозже, пока же можно &lt;a href=&#34;http://groups.google.com/group/ror2ru/msg/8d2a6b71375c3d5a?hl=ru&#34;&gt;прочитать об этом у&#xA;Андрея Стихеева&lt;/a&gt; в рассылке ror2ru).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Конкурентное пересоздание индексов в postgresql</title>
-      <link>https://evtuhovich.ru/blog/2009/04/08/concurent-index/</link>
+      <link>http://localhost:1313/blog/2009/04/08/concurent-index/</link>
       <pubDate>Wed, 08 Apr 2009 11:11:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2009/04/08/concurent-index/</guid>
-      <description>На таблице postgresql с большим количеством данных невозможно быстро создать либо пересоздать индекс. При создании индекса таблица блокируется для операций INSERT, UPDATE и DELETE. В таких случаях может помочь конкурентное создание индекса. Иногда на postgresql стоит пересоздавать индексы, чтобы уменьшить их фрагментацию (и увеличить скорость). Создание конкурентного индекса будет частным случаем его пересоздания.&#xA;Пусть имеется таблица orders с 1 миллионом записей (приблизительно) в которой хранятся заказы. И в этой таблице есть поля country_id, region_id, city_id, на которых создан индекс.</description>
+      <guid>http://localhost:1313/blog/2009/04/08/concurent-index/</guid>
+      <description>&lt;p&gt;На таблице postgresql с большим количеством данных невозможно быстро создать либо пересоздать индекс. При создании&#xA;индекса таблица блокируется для операций INSERT, UPDATE и DELETE. В таких случаях может помочь конкурентное создание&#xA;индекса. Иногда на postgresql стоит пересоздавать индексы, чтобы уменьшить их фрагментацию (и увеличить скорость).&#xA;Создание конкурентного индекса будет частным случаем его пересоздания.&lt;/p&gt;&#xA;&lt;p&gt;Пусть имеется таблица orders с 1 миллионом записей (приблизительно) в которой хранятся заказы. И в этой таблице есть&#xA;поля country_id, region_id, city_id, на которых создан индекс.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Использование очередей в высоконагруженных проектах</title>
-      <link>https://evtuhovich.ru/blog/2009/04/04/queue/</link>
+      <link>http://localhost:1313/blog/2009/04/04/queue/</link>
       <pubDate>Sat, 04 Apr 2009 23:45:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2009/04/04/queue/</guid>
-      <description>При большом количестве запросов к приложению (в широком смысле этого слова) иногда целесообразно ``размазать&amp;rsquo;&amp;rsquo; пиковую нагрузку во времени. Для этого удобно использовать очереди. То есть, если какое-то запрос наверняка должен быть выполнен, но не имеет значение произойдет это прямо сейчас или чуть попозже, можно создать событие в очереди. И когда до этого события дойдет очередь —&amp;ndash; оно будет выполнено. Таким образом можно развести сложные запросы во времени.&#xA;Очереди подходят для таких задач, как, например, рассылка большого количества сообщений и обновление различных счетчиков в БД (если их актуальность не очень критична).</description>
+      <guid>http://localhost:1313/blog/2009/04/04/queue/</guid>
+      <description>&lt;p&gt;При большом количестве запросов к приложению (в широком смысле этого слова) иногда целесообразно ``размазать&amp;rsquo;&amp;rsquo; пиковую&#xA;нагрузку во времени. Для этого удобно использовать очереди. То есть, если какое-то запрос наверняка должен быть&#xA;выполнен, но не имеет значение произойдет это прямо сейчас или чуть попозже, можно создать событие в очереди. И когда до&#xA;этого события дойдет очередь —&amp;ndash; оно будет выполнено. Таким образом можно развести сложные запросы во времени.&lt;/p&gt;&#xA;&lt;p&gt;Очереди подходят для таких задач, как, например, рассылка большого количества сообщений и обновление различных счетчиков&#xA;в БД (если их актуальность не очень критична). Использование такого подхода позволяет контролировать пиковую нагрузку,&#xA;за счет чего сделать систему более стабильной в работе и отказоустойчивой. Также это позволяет оставить приемлемое время&#xA;ответа сервиса, потому что он сможет отвечать что-то до фактического завершения длинной операции.&lt;/p&gt;</description>
     </item>
     <item>
       <title>PosgtreSql, миграции и огромные таблицы</title>
-      <link>https://evtuhovich.ru/blog/2009/03/20/big-tables/</link>
+      <link>http://localhost:1313/blog/2009/03/20/big-tables/</link>
       <pubDate>Fri, 20 Mar 2009 12:34:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2009/03/20/big-tables/</guid>
-      <description>Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.&#xA;Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.&#xA;$ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &amp;lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&amp;gt; true, :null =&amp;gt; false end def self.</description>
+      <guid>http://localhost:1313/blog/2009/03/20/big-tables/</guid>
+      <description>&lt;p&gt;Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает&#xA;быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.&lt;/p&gt;&#xA;&lt;p&gt;Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    $ script/generate migration add_is_searchable_to_posts&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AddIsSearchableToPosts&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ActiveRecord&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Migration&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;up&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        add_column &lt;span style=&#34;color:#e6db74&#34;&gt;:posts&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:is_searchable&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:boolean&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:null&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;down&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        remove_column &lt;span style=&#34;color:#e6db74&#34;&gt;:posts&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:is_searchable&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Если на базе development данных у вас немного, то миграция пройдет замечательно. На production базе она может занять&#xA;несколько часов, блокируя таблицу posts. Заглянув в документацию по postgresql и немного подумав, можно переписать эту&#xA;миграцию вот так:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

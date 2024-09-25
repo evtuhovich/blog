@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: миграция on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F/</link>
+    <link>http://localhost:1313/tags/%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F/</link>
     <description>Recent content in Записи с тегом: миграция on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 22 May 2009 23:45:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Перенос таблицы в другую базу данных postgres без простоя приложения</title>
-      <link>https://evtuhovich.ru/blog/2009/05/22/live-table-migration/</link>
+      <link>http://localhost:1313/blog/2009/05/22/live-table-migration/</link>
       <pubDate>Fri, 22 May 2009 23:45:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2009/05/22/live-table-migration/</guid>
-      <description>В продолжении темы о нескольких базах данных в одном rails-приложении расскажу о том, как изящно перенести одну большую таблицу в другую БД postgresql.&#xA;Пусть у нас есть таблица messages с большим количеством данных (10 миллионов записей), которые мы решили перенести на другой сервер. Мы сделали, как написано в статье, указанной выше, а также создали в новой БД таблицу messages с такой же структурой.&#xA;Теперь с помощью londiste настраиваем репликацию из первой БД во вторую для таблицы messages (об этом я напишу подробнее попозже, пока же можно прочитать об этом у Андрея Стихеева в рассылке ror2ru).</description>
+      <guid>http://localhost:1313/blog/2009/05/22/live-table-migration/</guid>
+      <description>&lt;p&gt;В продолжении &lt;a href=&#34;http://localhost:1313/blog/2009/05/19/two-databases/&#34;&gt;темы о нескольких базах данных в одном rails-приложении&lt;/a&gt; расскажу о том,&#xA;как изящно перенести одну большую таблицу в другую БД postgresql.&lt;/p&gt;&#xA;&lt;p&gt;Пусть у нас есть таблица messages с большим количеством данных (10 миллионов записей), которые мы решили перенести на&#xA;другой сервер. Мы сделали, как написано в статье, указанной выше, а также создали в новой БД таблицу messages с такой же&#xA;структурой.&lt;/p&gt;&#xA;&lt;p&gt;Теперь с помощью londiste настраиваем репликацию из первой БД во вторую для таблицы messages (об этом я напишу подробнее&#xA;попозже, пока же можно &lt;a href=&#34;http://groups.google.com/group/ror2ru/msg/8d2a6b71375c3d5a?hl=ru&#34;&gt;прочитать об этом у&#xA;Андрея Стихеева&lt;/a&gt; в рассылке ror2ru).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: блокирвоки on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D0%B2%D0%BE%D0%BA%D0%B8/</link>
+    <link>http://localhost:1313/tags/%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D0%B2%D0%BE%D0%BA%D0%B8/</link>
     <description>Recent content in Записи с тегом: блокирвоки on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Sun, 27 Jan 2013 22:35:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D0%B2%D0%BE%D0%BA%D0%B8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D0%B2%D0%BE%D0%BA%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Блокировки в PostgreSQL</title>
-      <link>https://evtuhovich.ru/blog/2013/01/27/locks/</link>
+      <link>http://localhost:1313/blog/2013/01/27/locks/</link>
       <pubDate>Sun, 27 Jan 2013 22:35:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2013/01/27/locks/</guid>
-      <description>&lt;p&gt;Чтобы рассказать о тонких моментах &lt;a href=&#34;https://evtuhovich.ru/blog/2013/01/09/fix-db-on-fly/&#34;&gt;pg_repack&lt;/a&gt;, мне понадобится немного углубиться в&#xA;тему блокировок в PostgreSQL. Конечно, лучше всего начать читать про них в &lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/explicit-locking.html&#34;&gt;официальной документации&lt;/a&gt;. Для этой статьи достаточно понимать, что&#xA;эксклюзивная блокировка (ACCESS EXCLUSIVE LOCK) препятствует выполнению всех операций, включая &lt;code&gt;SELECT&lt;/code&gt;, и она нужна для операции&#xA;&lt;code&gt;ALTER TABLE&lt;/code&gt;.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/2013/01/27/locks/</guid>
+      <description>&lt;p&gt;Чтобы рассказать о тонких моментах &lt;a href=&#34;http://localhost:1313/blog/2013/01/09/fix-db-on-fly/&#34;&gt;pg_repack&lt;/a&gt;, мне понадобится немного углубиться в&#xA;тему блокировок в PostgreSQL. Конечно, лучше всего начать читать про них в &lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/explicit-locking.html&#34;&gt;официальной документации&lt;/a&gt;. Для этой статьи достаточно понимать, что&#xA;эксклюзивная блокировка (ACCESS EXCLUSIVE LOCK) препятствует выполнению всех операций, включая &lt;code&gt;SELECT&lt;/code&gt;, и она нужна для операции&#xA;&lt;code&gt;ALTER TABLE&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

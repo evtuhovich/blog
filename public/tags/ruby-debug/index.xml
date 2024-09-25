@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: ruby-debug on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/ruby-debug/</link>
+    <link>http://localhost:1313/tags/ruby-debug/</link>
     <description>Recent content in Записи с тегом: ruby-debug on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Thu, 30 Jul 2009 22:22:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/ruby-debug/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ruby-debug/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Использование ruby-debug</title>
-      <link>https://evtuhovich.ru/blog/2009/07/30/ruby-debug/</link>
+      <link>http://localhost:1313/blog/2009/07/30/ruby-debug/</link>
       <pubDate>Thu, 30 Jul 2009 22:22:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2009/07/30/ruby-debug/</guid>
-      <description>Использование дебаггера при разработке — это плохой тон. Это значит, что вы не понимаете, как работает ваша программа. Но иногда жизнь без дебаггера становится невыносимой.&#xA;Есть отличный плагин vim-ruby-debugger для редактора vim. Но он пока сыроват и не все возможности в нем есть. По крайней мере в моем случае, чтобы понять, что происходить внутри спека, он не помог.&#xA;Тогда я воспользовался старым дедовским способом:&#xA;require &amp;#39;ruby-debug&amp;#39; Debugger.start И вставил вызов debugger в том месте, где мне это необходимо.</description>
+      <guid>http://localhost:1313/blog/2009/07/30/ruby-debug/</guid>
+      <description>&lt;p&gt;Использование дебаггера при разработке — это плохой тон. Это значит, что вы не понимаете, как работает ваша программа.&#xA;Но иногда жизнь без дебаггера становится невыносимой.&lt;/p&gt;&#xA;&lt;p&gt;Есть отличный плагин vim-ruby-debugger для редактора vim. Но он пока сыроват и не все возможности в нем есть. По крайней&#xA;мере в моем случае, чтобы понять, что происходить внутри спека, он не помог.&lt;/p&gt;&#xA;&lt;p&gt;Тогда я воспользовался старым дедовским способом:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    require &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ruby-debug&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;Debugger&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;start&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;И вставил вызов debugger в том месте, где мне это необходимо.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

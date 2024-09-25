@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: codefest on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/codefest/</link>
+    <link>http://localhost:1313/tags/codefest/</link>
     <description>Recent content in Записи с тегом: codefest on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Wed, 28 Mar 2012 14:22:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/codefest/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/codefest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Буду выступать на CodeFest</title>
-      <link>https://evtuhovich.ru/blog/2012/03/28/codefest/</link>
+      <link>http://localhost:1313/blog/2012/03/28/codefest/</link>
       <pubDate>Wed, 28 Mar 2012 14:22:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/03/28/codefest/</guid>
-      <description>31 марта буду выступать на конференции CodeFest. Мой доклад «Как мы делали Групон» будет в 17:05 во втором зале. А второго апреля я проведу мастер-класс «Устройство и оптимизация Postgresql».&#xA;Я хочу выразить большую благодарность организаторам конференции за их работу. Поскольку у меня есть опыт в этой области, я понимаю, какой объем работы надо проделать, чтобы привезти докладчиков со всех концов России в Новосибирск. Верю, что конференция пройдет продуктивно и на позитивной волне.</description>
+      <guid>http://localhost:1313/blog/2012/03/28/codefest/</guid>
+      <description>&lt;p&gt;31 марта буду выступать на конференции &lt;a href=&#34;http://codefest.ru/&#34;&gt;CodeFest&lt;/a&gt;. Мой доклад&#xA;«&lt;a href=&#34;http://codefest.ru/program/2012-03/groupon/&#34;&gt;Как мы делали Групон&lt;/a&gt;» будет в 17:05 во втором зале. А&#xA;второго апреля я проведу мастер-класс «&lt;a href=&#34;http://codefest.ru/training-2012-03/evtuhovich&#34;&gt;Устройство и оптимизация Postgresql&lt;/a&gt;».&lt;/p&gt;&#xA;&lt;p&gt;Я хочу выразить большую благодарность организаторам конференции за их работу. Поскольку у меня есть опыт в этой области,&#xA;я понимаю, какой объем работы надо проделать, чтобы привезти докладчиков со всех концов России в Новосибирск. Верю, что&#xA;конференция пройдет продуктивно и на позитивной волне.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

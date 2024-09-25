@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: deploy on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/deploy/</link>
+    <link>http://localhost:1313/tags/deploy/</link>
     <description>Recent content in Записи с тегом: deploy on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Mon, 26 Jan 2009 10:32:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/deploy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/deploy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Использование capistrano</title>
-      <link>https://evtuhovich.ru/blog/2009/01/26/capistrano/</link>
+      <link>http://localhost:1313/blog/2009/01/26/capistrano/</link>
       <pubDate>Mon, 26 Jan 2009 10:32:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2009/01/26/capistrano/</guid>
-      <description>Для выкатки (deploy) я не знаю другого инструмента, кроме capistrano. Слышал про vlad, но в глаза его никогда не видел.&#xA;Использовать capistrano имеет смысл при любом размере проекта, будь то сайт из 3-5 страничек, или что-то большое. Во втором случае отказ от использования capistrano — форменное безумие с моей точки зрения.&#xA;Начать знакомиться лучше всего отсюда.&#xA;Если вкратце, то заходим в каталог проекта и набираем:&#xA;capify . Дальше правим файл config/deploy.</description>
+      <guid>http://localhost:1313/blog/2009/01/26/capistrano/</guid>
+      <description>&lt;p&gt;Для выкатки (deploy) я не знаю другого инструмента, кроме capistrano. Слышал про vlad, но в глаза его никогда не&#xA;видел.&lt;/p&gt;&#xA;&lt;p&gt;Использовать capistrano имеет смысл при любом размере проекта, будь то сайт из 3-5 страничек, или что-то большое. Во&#xA;втором случае отказ от использования capistrano — форменное безумие с моей точки зрения.&lt;/p&gt;&#xA;&lt;p&gt;Начать знакомиться лучше всего &lt;a href=&#34;https://github.com/capistrano/capistrano/wiki/&#34;&gt;отсюда&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Если вкратце, то заходим в каталог проекта и набираем:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    capify .&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Дальше правим файл &lt;code&gt;config/deploy.rb&lt;/code&gt;, в нем все более или менее понятно.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

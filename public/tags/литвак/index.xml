@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: литвак on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/%D0%BB%D0%B8%D1%82%D0%B2%D0%B0%D0%BA/</link>
+    <link>http://localhost:1313/tags/%D0%BB%D0%B8%D1%82%D0%B2%D0%B0%D0%BA/</link>
     <description>Recent content in Записи с тегом: литвак on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Tue, 15 Sep 2020 17:17:02 +0300</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/%D0%BB%D0%B8%D1%82%D0%B2%D0%B0%D0%BA/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%D0%BB%D0%B8%D1%82%D0%B2%D0%B0%D0%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Михаил Ефимович Литвак</title>
-      <link>https://evtuhovich.ru/life/2020/09/15/litvak/</link>
+      <link>http://localhost:1313/life/2020/09/15/litvak/</link>
       <pubDate>Tue, 15 Sep 2020 17:17:02 +0300</pubDate>
-      <guid>https://evtuhovich.ru/life/2020/09/15/litvak/</guid>
+      <guid>http://localhost:1313/life/2020/09/15/litvak/</guid>
       <description>&lt;p&gt;10 сентября умер Михаил Литвак, ему было 82 года. Он был популяризатором психологии, но не уверен, что многие знают это&#xA;имя, хотя суммарный тираж его книг более 5 миллионов.&lt;/p&gt;&#xA;&lt;p&gt;Его книга попалась мне лет в 20, и тогда я начал смутно догадываться, что большинство человеческих поступков происходят,&#xA;как бы так сказать, сами собою, а мы потом придумываем им объяснение. Теперь я полностью в этом уверен 🙂&lt;/p&gt;</description>
     </item>
   </channel>

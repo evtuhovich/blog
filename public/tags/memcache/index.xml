@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: memcache on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/memcache/</link>
+    <link>http://localhost:1313/tags/memcache/</link>
     <description>Recent content in Записи с тегом: memcache on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Sun, 22 Mar 2009 13:18:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/memcache/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/memcache/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Проблемы с кэшированием</title>
-      <link>https://evtuhovich.ru/blog/2009/03/22/cache-problem/</link>
+      <link>http://localhost:1313/blog/2009/03/22/cache-problem/</link>
       <pubDate>Sun, 22 Mar 2009 13:18:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2009/03/22/cache-problem/</guid>
-      <description>Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов, чтобы не утруждать моего читателя незнакомой для него предметной областью.&#xA;Итак, у нас есть следующие модели:&#xA;# shop.rb class Shop &amp;lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::PAID} end def bad_orders_count Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::BAD} end end end class Category &amp;lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &amp;lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).</description>
+      <guid>http://localhost:1313/blog/2009/03/22/cache-problem/</guid>
+      <description>&lt;p&gt;Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов,&#xA;чтобы не утруждать моего читателя незнакомой для него предметной областью.&lt;/p&gt;&#xA;&lt;p&gt;Итак, у нас есть следующие модели:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# shop.rb&#xA;class Shop &amp;lt; ActiveRecord::Base&#xA;  has_many :categories&#xA;&#xA;  cached_methods do&#xA;    def wait_orders_count&#xA;      Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::WAIT}&#xA;    end&#xA;&#xA;    def paid_orders_count&#xA;      Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::PAID}&#xA;    end&#xA;&#xA;    def bad_orders_count&#xA;      Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::BAD}&#xA;    end&#xA;  end&#xA;end&#xA;&#xA;class Category &amp;lt; ActiveRecord::Base&#xA;  belongs_to :shop&#xA;  has_many :products&#xA;end&#xA;&#xA;class Product &amp;lt; ActiveRecord::Base&#xA;  belongs_to :category&#xA;  has_many :orders&#xA;end&#xA;&#xA;class Order&#xA;  belongs_to :product&#xA;end&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Методы внутри &lt;code&gt;cached_methods&lt;/code&gt; выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).&#xA;До этого поля *_orders_count хранились в базе и мы добавляли к ним +1/-1 каждый раз, когда изменяли статус заказа&#xA;(Order). Если магазин большой, то таких обновлений будет очень много, что создает нагрузку на базу, поэтому их и вынесли&#xA;в кэш. Чтобы не думать, каждый раз при обновлении статуса заказа, мы полностью сбрасывали кэши для конкретного магазина.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

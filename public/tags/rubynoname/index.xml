@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: rubynoname on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/rubynoname/</link>
+    <link>http://localhost:1313/tags/rubynoname/</link>
     <description>Recent content in Записи с тегом: rubynoname on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Wed, 08 Feb 2012 22:40:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/rubynoname/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/rubynoname/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RubyNoName подкаст</title>
-      <link>https://evtuhovich.ru/blog/2012/02/08/rubynoname/</link>
+      <link>http://localhost:1313/blog/2012/02/08/rubynoname/</link>
       <pubDate>Wed, 08 Feb 2012 22:40:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/02/08/rubynoname/</guid>
-      <description>Сегодня я выложил наш первый совместный с Иваном Самсоновым эпизод RubyNoName подкаста (плюсуйте анонс на Хабре).&#xA;Хочу сразу сказать, что дело это оказалось далеко не такое простое, как я думал раньше. Начиная с того, что непринужденно рассказывать о новостях в ruby-мире без мыканья, эканья, запинок, фраз «ну» и «как бы» получается у нас гораздо хуже, чем писать код на ruby. И заканчивая тем, что свести две дорожки в редакторе, а потом сделать из этого что-то, что хорошо слушается, вообще для меня пока что очень сложная задача, которая к тому же занимает очень много времени.</description>
+      <guid>http://localhost:1313/blog/2012/02/08/rubynoname/</guid>
+      <description>&lt;p&gt;Сегодня я выложил наш первый совместный с &lt;a href=&#34;https://twitter.com/#!/kronos_vano&#34;&gt;Иваном Самсоновым&lt;/a&gt; &lt;a href=&#34;http://ruby.rpod.ru/262745.html&#34;&gt;эпизод RubyNoName&#xA;подкаста&lt;/a&gt; (&lt;a href=&#34;http://habrahabr.ru/blogs/ruby/137853/&#34;&gt;плюсуйте анонс на Хабре&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;Хочу сразу сказать, что дело это оказалось далеко не такое простое, как я думал раньше. Начиная с того, что&#xA;непринужденно рассказывать о новостях в ruby-мире без мыканья, эканья, запинок, фраз «ну» и «как бы» получается у нас&#xA;гораздо хуже, чем писать код на ruby. И заканчивая тем, что свести две дорожки в редакторе, а потом сделать из этого&#xA;что-то, что хорошо слушается, вообще для меня пока что очень сложная задача, которая к тому же занимает очень много&#xA;времени.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

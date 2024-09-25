@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: delayed_job on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/delayed_job/</link>
+    <link>http://localhost:1313/tags/delayed_job/</link>
     <description>Recent content in Записи с тегом: delayed_job on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Sun, 29 Jan 2012 23:08:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/delayed_job/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/delayed_job/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Delayed_job в отдельной базе данных</title>
-      <link>https://evtuhovich.ru/blog/2012/01/29/dj-on-separate-db/</link>
+      <link>http://localhost:1313/blog/2012/01/29/dj-on-separate-db/</link>
       <pubDate>Sun, 29 Jan 2012 23:08:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/01/29/dj-on-separate-db/</guid>
-      <description>&lt;p&gt;Как я уже когда-то &lt;a href=&#34;https://evtuhovich.ru/blog/2009/05/19/two-databases/&#34;&gt;писал&lt;/a&gt;, иногда проект дорастает до того, что ему не хватает одной&#xA;базы данных. И тогда можно сделать вторую. Вопрос, какие таблицы переносить во вторую базу данных, всегда остается&#xA;открытым. В нашем случае, поскольку на сервере БД очень много памяти и слабая дисковая подсистема, мне показалось&#xA;разумным перенести туда таблицы, в которые идет интенсивная запись. И эти таблицы не должны быть «связаны», то есть&#xA;перенос их должен быть простым.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/2012/01/29/dj-on-separate-db/</guid>
+      <description>&lt;p&gt;Как я уже когда-то &lt;a href=&#34;http://localhost:1313/blog/2009/05/19/two-databases/&#34;&gt;писал&lt;/a&gt;, иногда проект дорастает до того, что ему не хватает одной&#xA;базы данных. И тогда можно сделать вторую. Вопрос, какие таблицы переносить во вторую базу данных, всегда остается&#xA;открытым. В нашем случае, поскольку на сервере БД очень много памяти и слабая дисковая подсистема, мне показалось&#xA;разумным перенести туда таблицы, в которые идет интенсивная запись. И эти таблицы не должны быть «связаны», то есть&#xA;перенос их должен быть простым.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

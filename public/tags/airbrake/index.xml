@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: airbrake on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/airbrake/</link>
+    <link>http://localhost:1313/tags/airbrake/</link>
     <description>Recent content in Записи с тегом: airbrake on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Wed, 11 Apr 2012 21:14:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/airbrake/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/airbrake/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Быстрое удаление старых ошибок из airbrake через API</title>
-      <link>https://evtuhovich.ru/blog/2012/04/11/airbrake/</link>
+      <link>http://localhost:1313/blog/2012/04/11/airbrake/</link>
       <pubDate>Wed, 11 Apr 2012 21:14:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/04/11/airbrake/</guid>
-      <description>Так сложилось, что у нас накопилось достаточно много старых исключений в airbrake — сервисе по сбору и хранению исключений. Ошибки эти не то, чтобы мешали, но мозолили глаза. И закрыть их руками не представлялось возможным, тем более, что в airbrake это реализовано очень неудобно — необходимо открыть отдельную страницу с исключением, и там тыкнуть на достаточно неудобный самописный элемент управления.&#xA;Когда такую операцию надо сделать несколько сотен раз, автоматически опускаются руки.</description>
+      <guid>http://localhost:1313/blog/2012/04/11/airbrake/</guid>
+      <description>&lt;p&gt;Так сложилось, что у нас накопилось достаточно много старых исключений в &lt;a href=&#34;http://airbrake.io&#34;&gt;airbrake&lt;/a&gt; — сервисе по&#xA;сбору и хранению исключений. Ошибки эти не то, чтобы мешали, но&#xA;мозолили глаза. И закрыть их руками не представлялось возможным, тем более, что в airbrake это реализовано очень&#xA;неудобно — необходимо открыть отдельную страницу с исключением, и там тыкнуть на достаточно неудобный самописный элемент&#xA;управления.&lt;/p&gt;&#xA;&lt;p&gt;Когда такую операцию надо сделать несколько сотен раз, автоматически опускаются руки. Но оказалось, что у airbrake есть&#xA;API, которым можно достаточно успешно пользоваться. &lt;a href=&#34;http://help.airbrake.io/kb/api-2/api-overview&#34;&gt;Документирован он&#xA;никак&lt;/a&gt;, но можно догадаться о некоторых адресах по&#xA;адресам в основном приложении.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: caches_action on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/caches_action/</link>
+    <link>http://localhost:1313/tags/caches_action/</link>
     <description>Recent content in Записи с тегом: caches_action on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Mon, 22 Aug 2011 13:02:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/caches_action/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/caches_action/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Некоторые проблемы с cached_action в Rails 2.3</title>
-      <link>https://evtuhovich.ru/blog/2011/08/22/caches-action/</link>
+      <link>http://localhost:1313/blog/2011/08/22/caches-action/</link>
       <pubDate>Mon, 22 Aug 2011 13:02:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2011/08/22/caches-action/</guid>
-      <description>На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам. Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически обновляется с помощью ajax-запросов.&#xA;# dashboard.rb class Admin::DashboardsController &amp;lt; Admin::BaseController layout &amp;#34;admin&amp;#34; def show # Здесь сложные-сложные запросы к БД if request.xhr? render &amp;#39;show&amp;#39;, :layout =&amp;gt; false end end end Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.</description>
+      <guid>http://localhost:1313/blog/2011/08/22/caches-action/</guid>
+      <description>&lt;p&gt;На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам.&#xA;Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически&#xA;обновляется с помощью ajax-запросов.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# dashboard.rb&#xA;class Admin::DashboardsController &amp;lt; Admin::BaseController&#xA;  layout &amp;#34;admin&amp;#34;&#xA;&#xA;  def show&#xA;    # Здесь сложные-сложные запросы к БД&#xA;&#xA;    if request.xhr?&#xA;      render &amp;#39;show&amp;#39;, :layout =&amp;gt; false&#xA;    end&#xA;  end&#xA;end&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

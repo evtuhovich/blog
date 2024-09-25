@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: knife on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/knife/</link>
+    <link>http://localhost:1313/tags/knife/</link>
     <description>Recent content in Записи с тегом: knife on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 28 Mar 2014 18:11:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/knife/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/knife/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Соло на ноже</title>
-      <link>https://evtuhovich.ru/blog/2014/03/28/knife-solo/</link>
+      <link>http://localhost:1313/blog/2014/03/28/knife-solo/</link>
       <pubDate>Fri, 28 Mar 2014 18:11:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2014/03/28/knife-solo/</guid>
-      <description>Очень часто для небольших проектов нет необходимости усложнять инфраструктуру с использованием chef-server. Существует мнение, что chef server, вообще, не нужен, и многие аргументы в пользу этой идеи кажутся мне вполне убедительными.&#xA;Для людей, которым нравится DSL chef и не нужен chef server, есть chef-solo. Чтобы готовить с его помощью, нужен специальный нож — knife-solo. Это инструмент, который значительно упрощает использование chef-solo.&#xA;Для начала поставить knife-solo&#xA;gem install knife-solo Если у вас есть уже готовый репозитарий для chef, как, например, наше тесто, то следующий шаг можно пропустить.</description>
+      <guid>http://localhost:1313/blog/2014/03/28/knife-solo/</guid>
+      <description>&lt;p&gt;Очень часто для небольших проектов нет необходимости усложнять инфраструктуру с использованием chef-server. Существует&#xA;мнение, что chef server, вообще, не нужен, и многие аргументы в пользу этой идеи кажутся мне вполне убедительными.&lt;/p&gt;&#xA;&lt;p&gt;Для людей, которым нравится DSL chef и не нужен chef server, есть &lt;a href=&#34;http://docs.opscode.com/chef_solo.html&#34;&gt;chef-solo&lt;/a&gt;.&#xA;Чтобы готовить с его помощью, нужен специальный нож — &lt;a href=&#34;http://matschaffer.github.io/knife-solo/&#34;&gt;knife-solo&lt;/a&gt;. Это&#xA;инструмент, который значительно упрощает использование chef-solo.&lt;/p&gt;&#xA;&lt;p&gt;Для начала поставить knife-solo&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gem install knife-solo&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Если у вас есть уже готовый репозитарий для chef, как, например, наше &lt;a href=&#34;https://github.com/express42-cookbooks/testo&#34;&gt;тесто&lt;/a&gt;,&#xA;то следующий шаг можно пропустить. В противном случае сделайте начальный репозитарий.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

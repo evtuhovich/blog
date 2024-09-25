@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: музыка on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0/</link>
+    <link>http://localhost:1313/tags/%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0/</link>
     <description>Recent content in Записи с тегом: музыка on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 18 Apr 2014 08:27:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Постная музыка</title>
-      <link>https://evtuhovich.ru/life/2014/04/18/music/</link>
+      <link>http://localhost:1313/life/2014/04/18/music/</link>
       <pubDate>Fri, 18 Apr 2014 08:27:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/life/2014/04/18/music/</guid>
+      <guid>http://localhost:1313/life/2014/04/18/music/</guid>
       <description>&lt;p&gt;В пост я обещал послушать 7 новых для себя музыкальных альбомов. Сказано — сделано, правда, альбомов было больше, но&#xA;новых авторов было 7.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: railsclub on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/railsclub/</link>
+    <link>http://localhost:1313/tags/railsclub/</link>
     <description>Recent content in Записи с тегом: railsclub on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Sat, 08 Sep 2012 10:49:00 +0000</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/railsclub/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/railsclub/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Конференции</title>
-      <link>https://evtuhovich.ru/blog/2012/09/08/railsclub-2012/</link>
+      <link>http://localhost:1313/blog/2012/09/08/railsclub-2012/</link>
       <pubDate>Sat, 08 Sep 2012 10:49:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2012/09/08/railsclub-2012/</guid>
+      <guid>http://localhost:1313/blog/2012/09/08/railsclub-2012/</guid>
       <description>&lt;p&gt;Сегодня я хочу рассказать о пользе конференций в жизненной практике любого специалиста. Если вы просто работаете в своей&#xA;профессии и не хотите стать и быть Специалистом (именно так, с большой буквы), то дальше можете не читать.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Railsclub: отчет о прошедшей конференции</title>
-      <link>https://evtuhovich.ru/blog/2011/12/21/railsclub/</link>
+      <link>http://localhost:1313/blog/2011/12/21/railsclub/</link>
       <pubDate>Wed, 21 Dec 2011 18:28:00 +0000</pubDate>
-      <guid>https://evtuhovich.ru/blog/2011/12/21/railsclub/</guid>
-      <description>В субботу 17 декабря прошла конференция Railsclub, которую посетило приблизительно 170 человек. Я рад, что в этот раз нам удалось привезти иностранных коллег: Sven Fuchs, Konstantin Haase и Piotr Sarnacki.&#xA;Но помимо самой конференции, было еще несколько посиделок, где можно было поговорить со всеми в неформальной обстановке. Я старался о всех публичных мероприятиях сообщать в твиттере конференции @railsclub_ru.&#xA;Очень понравилось, что Свен остался специально на день подольше, чтобы потусоваться с русскими разработчиками, специально посетил «Злых Марсианах», чтобы посмотреть, что у нас делается.</description>
+      <guid>http://localhost:1313/blog/2011/12/21/railsclub/</guid>
+      <description>&lt;p&gt;В субботу 17 декабря прошла конференция &lt;a href=&#34;http://railsclub.ru&#34;&gt;Railsclub&lt;/a&gt;, которую посетило приблизительно 170 человек. Я&#xA;рад, что в этот раз нам удалось привезти иностранных коллег: &lt;a href=&#34;http://svenfuchs.com/&#34;&gt;Sven Fuchs&lt;/a&gt;, &lt;a href=&#34;http://rkh.im/&#34;&gt;Konstantin Haase&lt;/a&gt; и&#xA;&lt;a href=&#34;http://piotrsarnacki.com/&#34;&gt;Piotr Sarnacki&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Но помимо самой конференции, было еще несколько посиделок, где можно было поговорить со всеми в неформальной обстановке.&#xA;Я старался о всех публичных мероприятиях сообщать в твиттере конференции &lt;a href=&#34;http://twitter.com/#!/railsclub_ru&#34;&gt;@railsclub_ru&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Очень понравилось, что Свен остался специально на день подольше, чтобы потусоваться с русскими разработчиками,&#xA;специально посетил «&lt;a href=&#34;http://evilmartians.ru/&#34;&gt;Злых Марсианах&lt;/a&gt;», чтобы посмотреть, что у нас делается. Мне показалось,&#xA;что эта неформальная часть получилась не менее интересной и насыщенной, чем сама конференция. И хотелось бы, чтобы в&#xA;дальнейшем, такие неформальные тусовки посещало больше моих коллег из Москвы и других городов России.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

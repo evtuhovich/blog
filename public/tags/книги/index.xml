@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: книги on Блог Ивана Евтуховича</title>
-    <link>https://evtuhovich.ru/tags/%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8/</link>
+    <link>http://localhost:1313/tags/%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8/</link>
     <description>Recent content in Записи с тегом: книги on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Wed, 03 Feb 2021 13:58:15 +0300</lastBuildDate>
-    <atom:link href="https://evtuhovich.ru/tags/%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Воспоминания о будущем</title>
-      <link>https://evtuhovich.ru/life/2021/02/03/memories/</link>
+      <link>http://localhost:1313/life/2021/02/03/memories/</link>
       <pubDate>Wed, 03 Feb 2021 13:58:15 +0300</pubDate>
-      <guid>https://evtuhovich.ru/life/2021/02/03/memories/</guid>
+      <guid>http://localhost:1313/life/2021/02/03/memories/</guid>
       <description>&lt;p&gt;Вчера закончил читать книга Михаила Хазина &amp;ldquo;Воспоминания о будущем. Идеи современной экономики&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;Я в последние годы стал мало читать именно книг, поэтому в этом году решил немножко этот пробел восполнить и даже&#xA;реанимировал свой Kindle, который пылился где-то в квартире. Я, конечно, читаю много статей по различной тематике, но&#xA;мне кажется, что книга — это возможность цельно посмотреть на какую-то проблематику, в отличии от мозайки различных&#xA;статей.&lt;/p&gt;</description>
     </item>
   </channel>
