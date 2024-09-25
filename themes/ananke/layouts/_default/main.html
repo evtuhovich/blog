@@ -5,10 +5,12 @@
     </section>
     <div class="mw8 center">
       <section class="flex-wrap justify-around">
-        {{ range where .Site.RegularPages "Section" "!=" "" | first 10 }}
-          {{ .Render "summary" }}
+        {{ $pages := where .Site.RegularPages "Section" "!=" "" }}
+        {{ $paginator := .Paginate $pages 10 }}
+        {{ range $paginator.Pages }}
+          {{ .Render "summary-with-image" }}
         {{ end }}
-
+        {{ template "_internal/pagination.html" . }}
       </section>
     </div>
   </article>

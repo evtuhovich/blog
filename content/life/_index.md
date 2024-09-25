@@ -5,5 +5,6 @@ pageable: true
 per_page: 10
 blog: life
 layout: life
+featured_image: /images/family.jpg
 ---
 
