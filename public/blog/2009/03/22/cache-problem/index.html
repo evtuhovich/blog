@@ -50,12 +50,12 @@ end
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.d524765537349e114e85161e667688f60ecffcce4d1bbb5cb296fa6718847a80.css" >
 
 
 
@@ -106,6 +106,8 @@ end
 Итак, у нас есть следующие модели:
 # shop.rb class Shop &lt; ActiveRecord::Base has_many :categories cached_methods do def wait_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::WAIT} end def paid_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::PAID} end def bad_orders_count Order.count :conditions =&gt; {:status_id =&gt; Order::BAD} end end end class Category &lt; ActiveRecord::Base belongs_to :shop has_many :products end class Product &lt; ActiveRecord::Base belongs_to :category has_many :orders end class Order belongs_to :product end Методы внутри cached_methods выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached). До этого поля *_orders_count хранились в базе и мы добавляли к ним &#43;1/-1 каждый раз, когда изменяли статус заказа (Order). Если магазин большой, то таких обновлений будет очень много, что создает нагрузку на базу, поэтому их и вынесли в кэш. Чтобы не думать, каждый раз при обновлении статуса заказа, мы полностью сбрасывали кэши для конкретного магазина.">
 
+      
+    
 	<meta name="yandex-verification" content="844263c66799f878" />
 
 <script type="text/javascript">
@@ -152,7 +154,7 @@ end
 
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    

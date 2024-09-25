@@ -21,12 +21,12 @@
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.d524765537349e114e85161e667688f60ecffcce4d1bbb5cb296fa6718847a80.css" >
 
 
 
@@ -77,6 +77,8 @@ class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =
 Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались цифры (я опускаю ненужные подробности).
 class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =&gt; &#39;OfferDescription&#39;, :foreign_key =&gt; :parent_id end В отчете данные группировались по родительским объектам OfferDescription. Именно у объектов, у которых были дети, в отчетах были все нули. Рассчитывал отчеты приблизительно вот такой код.">
 
+      
+    
 	<meta name="yandex-verification" content="844263c66799f878" />
 
 <script type="text/javascript">
@@ -123,7 +125,7 @@ class OfferDescription &lt; ActiveRecord::Base has_many :children, :class_name =
 
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    

@@ -27,12 +27,12 @@
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.d524765537349e114e85161e667688f60ecffcce4d1bbb5cb296fa6718847a80.css" >
 
 
 
@@ -83,6 +83,8 @@ $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPo
 Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.
 $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPosts &lt; ActiveRecord::Migration def self.up add_column :posts, :is_searchable, :boolean, :default =&gt; true, :null =&gt; false end def self.down remove_column :posts, :is_searchable end end Если на базе development данных у вас немного, то миграция пройдет замечательно. На production базе она может занять несколько часов, блокируя таблицу posts. Заглянув в документацию по postgresql и немного подумав, можно переписать эту миграцию вот так:">
 
+      
+    
 	<meta name="yandex-verification" content="844263c66799f878" />
 
 <script type="text/javascript">
@@ -129,7 +131,7 @@ $ script/generate migration add_is_searchable_to_posts class AddIsSearchableToPo
 
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    

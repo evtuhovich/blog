@@ -25,12 +25,12 @@
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.d524765537349e114e85161e667688f60ecffcce4d1bbb5cb296fa6718847a80.css" >
 
 
 
@@ -80,6 +80,8 @@ class ReportSender def initialize(report_instance) @report_instance = report_ins
 class ReportSender def initialize(report_instance) @report_instance = report_instance @params = report_instance.params @emails = @params.delete(:mail_to) end class Report def initialize(params = {}) @params = self.class.default_values.merge(params) end К классам отчетов были добавлены значения по-умолчанию, и, как оказалось, из-за них были все проблемы.
 Хеш params, которые передается в класс Report — это тот самый params из контроллера. У него базовый класс — HashWithIndifferentAccess.">
 
+      
+    
 	<meta name="yandex-verification" content="844263c66799f878" />
 
 <script type="text/javascript">
@@ -126,7 +128,7 @@ class ReportSender def initialize(report_instance) @report_instance = report_ins
 
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    

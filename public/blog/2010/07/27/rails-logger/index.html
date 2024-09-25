@@ -24,12 +24,12 @@
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.d524765537349e114e85161e667688f60ecffcce4d1bbb5cb296fa6718847a80.css" >
 
 
 
@@ -79,6 +79,8 @@ $ ./script/console Loading development environment (Rails 2.3.5) &gt;&gt; Active
 Готового способа для этого я не нашел. Например, посмотрим на такой пример:
 $ ./script/console Loading development environment (Rails 2.3.5) &gt;&gt; ActiveRecord::Base.logger = Logger.new(STDOUT) =&gt; #&amp;lt;Logger:0xb192594 @progname=nil, @level=0, @default_formatter=#&amp;lt;Logger::Formatter:0xb19255c @datetime_format=nil&gt;, formatternil, logdev#&amp;lt;Logger::LogDevice:0xb19247c @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#&amp;lt;IO:&amp;lt;STDOUT&gt;, mutex#&amp;lt;Logger::LogDevice::LogDeviceMutex:0xb192444 @mon_owner=nil, @mon_count=0, @mon_mutex=#&amp;lt;Mutex:0xb19240c&gt; &gt;&gt; User.first =&gt; #&amp;lt;User id: 1, email: &#34;seeduser@scalaxy.ru&#34; ...&gt; &gt;&gt; И где же логи, спросите вы?">
 
+      
+    
 	<meta name="yandex-verification" content="844263c66799f878" />
 
 <script type="text/javascript">
@@ -125,7 +127,7 @@ $ ./script/console Loading development environment (Rails 2.3.5) &gt;&gt; Active
 
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
