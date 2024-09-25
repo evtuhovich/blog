@@ -1,6 +1,6 @@
 ---
 title: Блог
-description: Заметки из жизни предпринимателя
+description: Заметки из рабочей жизни
 pageable: true
 per_page: 10
 blog: blog
