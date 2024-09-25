@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: devise on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/devise/</link>
+    <link>https://evtuhovich.ru/tags/devise/</link>
     <description>Recent content in Записи с тегом: devise on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 23 Mar 2012 15:19:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/devise/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/devise/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Обновление на rails3 и проблемы, связанные с этим</title>
-      <link>http://localhost:1313/blog/2012/03/23/rails-update/</link>
+      <link>https://evtuhovich.ru/blog/2012/03/23/rails-update/</link>
       <pubDate>Fri, 23 Mar 2012 15:19:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/03/23/rails-update/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/03/23/rails-update/</guid>
       <description>&lt;p&gt;На «Групоне» мы давно уже переходим с Rails 2.3 на Rails 3.0. На этой неделе перешли — полет нормальный. Но поскольку&#xA;сразу переход у нас не получился, то мы переходили по частям. И тут возникла проблема, что в rails3 нужен новый devise (1.5.3),&#xA;которому нужен warden (1.1.1). А в rails2 используется devise (1.0.9), которому нужен warden (0.10.7). И вот этот вот&#xA;warden стал по-другому сериализовать сессию. А devise стал хранить remember_token в подписанной (signed) cookie. Более&#xA;того, из самих рельс пропал класс ActionController::Flash::FlashHash, поэтому при десериализации сессии происходило&#xA;неуловимое исключение в Marshal.load.&lt;/p&gt;&#xA;&lt;p&gt;Все эти проблемы решены были кодом, которые приведен ниже. И еще похожий код был в rails2-ветке, который конвертил&#xA;сессию третьих рельс во вторую. Пользуйтесь с осторожностью.&lt;/p&gt;</description>
     </item>
   </channel>

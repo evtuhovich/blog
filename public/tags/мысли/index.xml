@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: мысли on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/</link>
+    <link>https://evtuhovich.ru/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/</link>
     <description>Recent content in Записи с тегом: мысли on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Thu, 13 Feb 2014 23:08:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/%D0%BC%D1%8B%D1%81%D0%BB%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Прощай, Октопресс, здравствуй, Middleman</title>
-      <link>http://localhost:1313/blog/2014/02/13/bye-octopress/</link>
+      <link>https://evtuhovich.ru/blog/2014/02/13/bye-octopress/</link>
       <pubDate>Thu, 13 Feb 2014 23:08:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2014/02/13/bye-octopress/</guid>
+      <guid>https://evtuhovich.ru/blog/2014/02/13/bye-octopress/</guid>
       <description>&lt;p&gt;Долгие годы этот блог велся на &lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt; — платформе для ведения технических блогов. Он был&#xA;первым и восхищал меня долгое время, я даже хотел написать о нем отдельный пост, но руки так и не дошли. Но были у&#xA;октопресса и откровенные недостатки, как то:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;медлительность — он реально подтупливает на генерации страниц;&lt;/li&gt;&#xA;&lt;li&gt;асинхронность — от внесения правки, до появления ее в браузере проходило значительное время, а это сильно раздражало;&lt;/li&gt;&#xA;&lt;li&gt;сложность — поменять что-то внутри не представляется возможным;&lt;/li&gt;&#xA;&lt;li&gt;отсутствие поддержки — с 2011 года официальный сайт не обновлялся;&lt;/li&gt;&#xA;&lt;li&gt;он, вообще, сломался с ruby 2.0.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Волею судеб я поддерживаю сейчас 3 блога: &lt;a href=&#34;http://express42.com/blog.html&#34;&gt;на сайте нашей компании&lt;/a&gt;, &lt;a href=&#34;http://devopsdeflope.ru/&#34;&gt;на сайте подкаста&#xA;Девопс Дефлопе&lt;/a&gt; и этот, а до этого я поддерживал еще &lt;a href=&#34;http://rubynoname.ru/&#34;&gt;сайт подкаста&#xA;rubynoname&lt;/a&gt;. И везде, кроме этого блога, я использовал &lt;a href=&#34;http://middlemanapp.com/&#34;&gt;Middleman&lt;/a&gt;. Я&#xA;видел, как он развивается, как просто к нему что-то дописать, как постоянно появляются классные сторонние библиотеки. А&#xA;недавно я захотел вести сразу 2 блога на одном сайте, просто по очень разной тематике. А Middleman позволяет делать и&#xA;это с недавних пор.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Командный игрок</title>
-      <link>http://localhost:1313/blog/2012/08/27/command-player/</link>
+      <link>https://evtuhovich.ru/blog/2012/08/27/command-player/</link>
       <pubDate>Mon, 27 Aug 2012 17:54:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/08/27/command-player/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/08/27/command-player/</guid>
       <description>&lt;p&gt;Технологии, конечно, технологиями, но иногда хочется рассказать чего-то «про жизнь». А именно про то, как работают&#xA;хорошие команды. Собственно, этот рассказ тоже о технологиях, только о человеческих.&lt;/p&gt;&#xA;&lt;p&gt;К несчастью, технологии работы с людьми формализуются достаточно плохо, и такой ясности, как при работе с компьютерами,&#xA;конечно же нет. Поэтому сказать точно, что такое «хорошая команда», практически невозможно. Параметров оценки этого&#xA;слишком много, да и каждый параметр даже не понятно, чем измерять. Поэтому я просто поделюсь своими соображениями на&#xA;этот счет, не претендую никоим образом на объективность и правоту.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ясность</title>
-      <link>http://localhost:1313/blog/2012/04/19/clear-view/</link>
+      <link>https://evtuhovich.ru/blog/2012/04/19/clear-view/</link>
       <pubDate>Thu, 19 Apr 2012 00:18:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/04/19/clear-view/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/04/19/clear-view/</guid>
       <description>&lt;p&gt;Прежде всего, я хочу рассказать историю про стрижку быка (в английском варианте &lt;a href=&#34;http://www.urbandictionary.com/define.php?term=yak%20shaving&#34;&gt;Yak&#xA;Shaving&lt;/a&gt;).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Простыня</title>
-      <link>http://localhost:1313/blog/2011/08/04/prostynya/</link>
+      <link>https://evtuhovich.ru/blog/2011/08/04/prostynya/</link>
       <pubDate>Thu, 04 Aug 2011 22:52:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2011/08/04/prostynya/</guid>
+      <guid>https://evtuhovich.ru/blog/2011/08/04/prostynya/</guid>
       <description>&lt;p&gt;Поскольку я поставил &lt;a href=&#34;http://octopress.org&#34;&gt;Octopress&lt;/a&gt;, то теперь сбылась моя мечта и я могу вести блог в своем любимом&#xA;текстовом редакторе &lt;a href=&#34;http://www.vim.org&#34;&gt;vim&lt;/a&gt;. Про octopress я напишу как-нибудь потом отдельно, потому что система для&#xA;инженера программных систем просто необыкновенная: простая и удобная.&lt;/p&gt;&#xA;&lt;p&gt;Но сегодня я хочу поговорить о «простыне» &amp;mdash; так я шутя называют длинный последовательный кусок кода. Так вот, моя&#xA;основная мысль &amp;mdash; простыня является самым лучшим кодом. Это так по одной простой причине, что последовательный&#xA;код гораздо проще читать и понимать. Конечно, если при этом не происходит нарушения правила&#xA;&lt;a href=&#34;http://en.wikipedia.org/wiki/Once_and_only_once&#34;&gt;OOO&lt;/a&gt; (Once and Only Once), то есть нет ненужного дублирования кода.&#xA;Простыня &amp;mdash; это способ выполнять правило &lt;a href=&#34;http://en.wikipedia.org/wiki/KISS_principle&#34;&gt;KISS&lt;/a&gt; (Keep It Simple, Stupid),&#xA;то есть правила держать систему максимально простой.&lt;/p&gt;</description>
     </item>
   </channel>

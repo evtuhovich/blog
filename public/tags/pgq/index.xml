@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: pgq on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/pgq/</link>
+    <link>https://evtuhovich.ru/tags/pgq/</link>
     <description>Recent content in Записи с тегом: pgq on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 05 Jun 2009 12:34:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/pgq/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/pgq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PgQ и Londiste</title>
-      <link>http://localhost:1313/blog/2009/06/05/pgq-londiste-plugin/</link>
+      <link>https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/</link>
       <pubDate>Fri, 05 Jun 2009 12:34:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/06/05/pgq-londiste-plugin/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/</guid>
       <description>&lt;p&gt;Хотя я так и не написал толком, как пользоваться PgQ и Londiste, но уже написал плагин, который облегчает его&#xA;использование вместе с рельсами.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://github.com/evtuhovich/pgq/tree/master&#34;&gt;http://github.com/evtuhovich/pgq/tree/master&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;В README всё написано на плохом английском (с хорошим английским у меня плохо).&lt;/p&gt;&#xA;&lt;p&gt;Совсем скоро я добавлю туда возможность прогонять миграции на master и slave базах данных одновременно. Тогда при&#xA;очередной выкатке необходимо будет сделать только rake londiste:update в самом конце, после того, как все миграции&#xA;прогонятся.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Использование очередей в высоконагруженных проектах</title>
-      <link>http://localhost:1313/blog/2009/04/04/queue/</link>
+      <link>https://evtuhovich.ru/blog/2009/04/04/queue/</link>
       <pubDate>Sat, 04 Apr 2009 23:45:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/04/04/queue/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/04/04/queue/</guid>
       <description>&lt;p&gt;При большом количестве запросов к приложению (в широком смысле этого слова) иногда целесообразно ``размазать&amp;rsquo;&amp;rsquo; пиковую&#xA;нагрузку во времени. Для этого удобно использовать очереди. То есть, если какое-то запрос наверняка должен быть&#xA;выполнен, но не имеет значение произойдет это прямо сейчас или чуть попозже, можно создать событие в очереди. И когда до&#xA;этого события дойдет очередь —&amp;ndash; оно будет выполнено. Таким образом можно развести сложные запросы во времени.&lt;/p&gt;&#xA;&lt;p&gt;Очереди подходят для таких задач, как, например, рассылка большого количества сообщений и обновление различных счетчиков&#xA;в БД (если их актуальность не очень критична). Использование такого подхода позволяет контролировать пиковую нагрузку,&#xA;за счет чего сделать систему более стабильной в работе и отказоустойчивой. Также это позволяет оставить приемлемое время&#xA;ответа сервиса, потому что он сможет отвечать что-то до фактического завершения длинной операции.&lt;/p&gt;</description>
     </item>
   </channel>

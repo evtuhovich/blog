@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: rails on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/rails/</link>
+    <link>https://evtuhovich.ru/tags/rails/</link>
     <description>Recent content in Записи с тегом: rails on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Tue, 24 Apr 2012 21:39:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/rails/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Изменение формата сессии при переходе с Rails 3.0 на 3.2</title>
-      <link>http://localhost:1313/blog/2012/04/24/flash-message/</link>
+      <link>https://evtuhovich.ru/blog/2012/04/24/flash-message/</link>
       <pubDate>Tue, 24 Apr 2012 21:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/04/24/flash-message/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/04/24/flash-message/</guid>
       <description>&lt;p&gt;Групон сейчас активно переводится с rails 3.0 на rails 3.2. Самая досадная неожиданность, которая встретилась в процессе&#xA;переезда — это изменение формата хранения flash сообщений в сессии. Если бы при этом flash сообщение пропадало, то это&#xA;было бы не страшно, но при декодировании сессии происходит исключение, и пользователь видит 500 ошибку до тех пор, пока&#xA;не почистит куки. Конечно, пользователей, у которых в сессии будет flash сообщение в момент переключения с версии 3.0 на&#xA;3.2 будет не так и много, но это пользователи, потерянные навсегда.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Обновление на rails3 и проблемы, связанные с этим</title>
-      <link>http://localhost:1313/blog/2012/03/23/rails-update/</link>
+      <link>https://evtuhovich.ru/blog/2012/03/23/rails-update/</link>
       <pubDate>Fri, 23 Mar 2012 15:19:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/03/23/rails-update/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/03/23/rails-update/</guid>
       <description>&lt;p&gt;На «Групоне» мы давно уже переходим с Rails 2.3 на Rails 3.0. На этой неделе перешли — полет нормальный. Но поскольку&#xA;сразу переход у нас не получился, то мы переходили по частям. И тут возникла проблема, что в rails3 нужен новый devise (1.5.3),&#xA;которому нужен warden (1.1.1). А в rails2 используется devise (1.0.9), которому нужен warden (0.10.7). И вот этот вот&#xA;warden стал по-другому сериализовать сессию. А devise стал хранить remember_token в подписанной (signed) cookie. Более&#xA;того, из самих рельс пропал класс ActionController::Flash::FlashHash, поэтому при десериализации сессии происходило&#xA;неуловимое исключение в Marshal.load.&lt;/p&gt;&#xA;&lt;p&gt;Все эти проблемы решены были кодом, которые приведен ниже. И еще похожий код был в rails2-ветке, который конвертил&#xA;сессию третьих рельс во вторую. Пользуйтесь с осторожностью.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Проблемы с find_in_batches</title>
-      <link>http://localhost:1313/blog/2011/09/11/find-in-batches/</link>
+      <link>https://evtuhovich.ru/blog/2011/09/11/find-in-batches/</link>
       <pubDate>Sun, 11 Sep 2011 00:22:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2011/09/11/find-in-batches/</guid>
+      <guid>https://evtuhovich.ru/blog/2011/09/11/find-in-batches/</guid>
       <description>&lt;p&gt;Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что&#xA;в одном большом отчете цифры не сходились раза в два.&lt;/p&gt;&#xA;&lt;p&gt;Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались&#xA;цифры (я опускаю ненужные подробности).&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OfferDescription&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ActiveRecord&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Base&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      has_many &lt;span style=&#34;color:#e6db74&#34;&gt;:children&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:class_name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;OfferDescription&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:foreign_key&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:parent_id&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;В отчете данные группировались по родительским объектам &lt;code&gt;OfferDescription&lt;/code&gt;.&#xA;Именно у объектов, у которых были дети, в отчетах были все нули. Рассчитывал&#xA;отчеты приблизительно вот такой код.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Некоторые проблемы с cached_action в Rails 2.3</title>
-      <link>http://localhost:1313/blog/2011/08/22/caches-action/</link>
+      <link>https://evtuhovich.ru/blog/2011/08/22/caches-action/</link>
       <pubDate>Mon, 22 Aug 2011 13:02:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2011/08/22/caches-action/</guid>
+      <guid>https://evtuhovich.ru/blog/2011/08/22/caches-action/</guid>
       <description>&lt;p&gt;На Групоне у нас есть внутренняя страница, на которой динамически отображаются данные о продажах по различным городам.&#xA;Результаты этой страницы зависят от параметров, которые передаются в метод show. А потом эта страница динамически&#xA;обновляется с помощью ajax-запросов.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# dashboard.rb&#xA;class Admin::DashboardsController &amp;lt; Admin::BaseController&#xA;  layout &amp;#34;admin&amp;#34;&#xA;&#xA;  def show&#xA;    # Здесь сложные-сложные запросы к БД&#xA;&#xA;    if request.xhr?&#xA;      render &amp;#39;show&amp;#39;, :layout =&amp;gt; false&#xA;    end&#xA;  end&#xA;end&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Поскольку запросы очень тяжелые, да и сама страничка непростая, то отдача ее сильно нагружала БД и app-сервера.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Переопределение Rails.logger и проблемы с ним</title>
-      <link>http://localhost:1313/blog/2010/07/27/rails-logger/</link>
+      <link>https://evtuhovich.ru/blog/2010/07/27/rails-logger/</link>
       <pubDate>Tue, 27 Jul 2010 22:52:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2010/07/27/rails-logger/</guid>
+      <guid>https://evtuhovich.ru/blog/2010/07/27/rails-logger/</guid>
       <description>&lt;p&gt;Часто один и тот же rails-проект используется и для web-части, и для каких-то других задач, выполняемых по расписанию&#xA;или для создания демонов. В таких случаях иногда хочется, чтобы логи разных частей писались в разные файлы.&lt;/p&gt;&#xA;&lt;p&gt;Готового способа для этого я не нашел. Например, посмотрим на такой пример:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    $ ./script/console &#xA;    Loading development environment (Rails 2.3.5)&#xA;&#xA;    &amp;gt;&amp;gt;  ActiveRecord::Base.logger = Logger.new(STDOUT)&#xA;    =&amp;gt; #&amp;amp;lt;Logger:0xb192594 @progname=nil, @level=0, @default_formatter=#&amp;amp;lt;Logger::Formatter:0xb19255c @datetime_format=nil&amp;gt;, formatternil, logdev#&amp;amp;lt;Logger::LogDevice:0xb19247c @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#&amp;amp;lt;IO:&amp;amp;lt;STDOUT&amp;gt;, mutex#&amp;amp;lt;Logger::LogDevice::LogDeviceMutex:0xb192444 @mon_owner=nil, @mon_count=0, @mon_mutex=#&amp;amp;lt;Mutex:0xb19240c&amp;gt;&#xA;&#xA;    &amp;gt;&amp;gt; User.first&#xA;    =&amp;gt; #&amp;amp;lt;User id: 1, email: &amp;#34;seeduser@scalaxy.ru&amp;#34; ...&amp;gt;&#xA;    &amp;gt;&amp;gt; &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;И где же логи, спросите вы?&lt;/p&gt;</description>
     </item>
     <item>
       <title>PgQ и Londiste</title>
-      <link>http://localhost:1313/blog/2009/06/05/pgq-londiste-plugin/</link>
+      <link>https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/</link>
       <pubDate>Fri, 05 Jun 2009 12:34:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/06/05/pgq-londiste-plugin/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/</guid>
       <description>&lt;p&gt;Хотя я так и не написал толком, как пользоваться PgQ и Londiste, но уже написал плагин, который облегчает его&#xA;использование вместе с рельсами.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://github.com/evtuhovich/pgq/tree/master&#34;&gt;http://github.com/evtuhovich/pgq/tree/master&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;В README всё написано на плохом английском (с хорошим английским у меня плохо).&lt;/p&gt;&#xA;&lt;p&gt;Совсем скоро я добавлю туда возможность прогонять миграции на master и slave базах данных одновременно. Тогда при&#xA;очередной выкатке необходимо будет сделать только rake londiste:update в самом конце, после того, как все миграции&#xA;прогонятся.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Проблема с проверкой уникальности какого-то поля в rails</title>
-      <link>http://localhost:1313/blog/2009/05/28/validates-uniqueness-of/</link>
+      <link>https://evtuhovich.ru/blog/2009/05/28/validates-uniqueness-of/</link>
       <pubDate>Thu, 28 May 2009 22:22:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/05/28/validates-uniqueness-of/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/05/28/validates-uniqueness-of/</guid>
       <description>&lt;p&gt;Пусть в модели User у нас описана валидация для поля email&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    validates_uniqueness_of &lt;span style=&#34;color:#e6db74&#34;&gt;:email&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:case_sensitive&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;, &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#e6db74&#34;&gt;:message&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; i18n_proxy(&lt;span style=&#34;color:#e6db74&#34;&gt;:email_already_registered&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Следующий код генерирует вот такой запрос к базе данных:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; users &lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;lower&lt;/span&gt;(email) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;thmth&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;LIMIT&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху,&#xA;не будет использовать индекс. Представьте, что будет, когда в таблице users&#xA;десятки тысяч записей, а на каждое изменение любого поля в users вызывается&#xA;такой запрос.&lt;/p&gt;&#xA;&lt;p&gt;Именно это я наблюдал совсем недавно на нашей живой базе. Проблема решается&#xA;просто, например, убрать &lt;code&gt;:case_sensetive&lt;/code&gt;, а email всегда&#xA;предварительно переводить в нижние буквы.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Тесты и тестирование</title>
-      <link>http://localhost:1313/blog/2009/03/23/test-and-testing/</link>
+      <link>https://evtuhovich.ru/blog/2009/03/23/test-and-testing/</link>
       <pubDate>Mon, 23 Mar 2009 19:06:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/03/23/test-and-testing/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/03/23/test-and-testing/</guid>
       <description>&lt;p&gt;Возможно, в сайте из 3 контроллеров и 15 страниц, тесты и не нужны. Я обычно не делаю тесты на маленьких проектах,&#xA;которые пишу один.&lt;/p&gt;&#xA;&lt;p&gt;В случае, если проект собирается быть большим, длиться долго, а команда состоит больше чем из одного человека, то&#xA;тесты — крайне желательный инструмент для того, чтобы разработка не вышла из под контроля. Без тестов в какой-то момент&#xA;невозможно внести серьезное изменение в код, потому что знаешь, что такое изменение заденет еще некоторые части и точно&#xA;знаешь, что все зависимости точно не учтешь. В этот момент разработка превращается в постоянное исправление ошибок, при&#xA;которых снова вносятся ошибки и так до бесконечности.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Проблемы с кэшированием</title>
-      <link>http://localhost:1313/blog/2009/03/22/cache-problem/</link>
+      <link>https://evtuhovich.ru/blog/2009/03/22/cache-problem/</link>
       <pubDate>Sun, 22 Mar 2009 13:18:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/03/22/cache-problem/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/03/22/cache-problem/</guid>
       <description>&lt;p&gt;Все ситуации, о которых я здесь пишу, встретились мне в повседневной работе. Единственное, что я делаю — меняю название классов,&#xA;чтобы не утруждать моего читателя незнакомой для него предметной областью.&lt;/p&gt;&#xA;&lt;p&gt;Итак, у нас есть следующие модели:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# shop.rb&#xA;class Shop &amp;lt; ActiveRecord::Base&#xA;  has_many :categories&#xA;&#xA;  cached_methods do&#xA;    def wait_orders_count&#xA;      Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::WAIT}&#xA;    end&#xA;&#xA;    def paid_orders_count&#xA;      Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::PAID}&#xA;    end&#xA;&#xA;    def bad_orders_count&#xA;      Order.count :conditions =&amp;gt; {:status_id =&amp;gt; Order::BAD}&#xA;    end&#xA;  end&#xA;end&#xA;&#xA;class Category &amp;lt; ActiveRecord::Base&#xA;  belongs_to :shop&#xA;  has_many :products&#xA;end&#xA;&#xA;class Product &amp;lt; ActiveRecord::Base&#xA;  belongs_to :category&#xA;  has_many :orders&#xA;end&#xA;&#xA;class Order&#xA;  belongs_to :product&#xA;end&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Методы внутри &lt;code&gt;cached_methods&lt;/code&gt; выполняются в том случае, если значение для них не нашлось в кэше (например, в memcached).&#xA;До этого поля *_orders_count хранились в базе и мы добавляли к ним +1/-1 каждый раз, когда изменяли статус заказа&#xA;(Order). Если магазин большой, то таких обновлений будет очень много, что создает нагрузку на базу, поэтому их и вынесли&#xA;в кэш. Чтобы не думать, каждый раз при обновлении статуса заказа, мы полностью сбрасывали кэши для конкретного магазина.&lt;/p&gt;</description>
     </item>
     <item>
       <title>PosgtreSql, миграции и огромные таблицы</title>
-      <link>http://localhost:1313/blog/2009/03/20/big-tables/</link>
+      <link>https://evtuhovich.ru/blog/2009/03/20/big-tables/</link>
       <pubDate>Fri, 20 Mar 2009 12:34:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/03/20/big-tables/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/03/20/big-tables/</guid>
       <description>&lt;p&gt;Миграции в rails — это очень правильный инструмент. Правда, иногда случаются казусы, потому что конкретная БД перестает&#xA;быть «сферическим конем в вакууме», как только количество данных и нагрузка на нее становится существенной.&lt;/p&gt;&#xA;&lt;p&gt;Пусть у нас есть таблица posts, в которой 10 миллионов записей. И мы решили добавить в нее поле is_searchable.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    $ script/generate migration add_is_searchable_to_posts&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AddIsSearchableToPosts&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ActiveRecord&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Migration&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;up&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        add_column &lt;span style=&#34;color:#e6db74&#34;&gt;:posts&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:is_searchable&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:boolean&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:null&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;down&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        remove_column &lt;span style=&#34;color:#e6db74&#34;&gt;:posts&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:is_searchable&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Если на базе development данных у вас немного, то миграция пройдет замечательно. На production базе она может занять&#xA;несколько часов, блокируя таблицу posts. Заглянув в документацию по postgresql и немного подумав, можно переписать эту&#xA;миграцию вот так:&lt;/p&gt;</description>
     </item>
   </channel>

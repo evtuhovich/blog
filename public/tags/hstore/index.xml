@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: hstore on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/hstore/</link>
+    <link>https://evtuhovich.ru/tags/hstore/</link>
     <description>Recent content in Записи с тегом: hstore on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Mon, 23 Jan 2012 23:05:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hstore/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/hstore/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hstore — key-value расширение для postgresql</title>
-      <link>http://localhost:1313/blog/2012/01/23/hstore/</link>
+      <link>https://evtuhovich.ru/blog/2012/01/23/hstore/</link>
       <pubDate>Mon, 23 Jan 2012 23:05:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/01/23/hstore/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/01/23/hstore/</guid>
       <description>&lt;p&gt;Наверное, не все знают, что для postgresql существует большое количество расширений, которые называются&#xA;&lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/contrib.html&#34;&gt;contrib модулями&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Рассмотрим один из таких модулей - &lt;a href=&#34;http://www.postgresql.org/docs/9.1/static/hstore.html&#34;&gt;hstore&lt;/a&gt;. Этот модуль&#xA;нужен для того, чтобы в одном поле в БД хранить много значений key/value, фактически, просто какой-то хеш. При этом и&#xA;ключи и значения могут быть только строками. О том, чем это лучше, нежели просто хранить в текстовом поле сериализованный хеш,&#xA;я расскажу чуть-чуть попозже. Понадобится это может в том случае, если у вас есть модели с произвольным набором полей.&lt;/p&gt;</description>
     </item>
   </channel>

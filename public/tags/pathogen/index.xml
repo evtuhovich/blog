@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: pathogen on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/pathogen/</link>
+    <link>https://evtuhovich.ru/tags/pathogen/</link>
     <description>Recent content in Записи с тегом: pathogen on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Mon, 05 Apr 2010 00:33:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/pathogen/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/pathogen/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Автоматизация vim с помощью pathogen</title>
-      <link>http://localhost:1313/blog/2010/04/05/vim-pathogen/</link>
+      <link>https://evtuhovich.ru/blog/2010/04/05/vim-pathogen/</link>
       <pubDate>Mon, 05 Apr 2010 00:33:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2010/04/05/vim-pathogen/</guid>
+      <guid>https://evtuhovich.ru/blog/2010/04/05/vim-pathogen/</guid>
       <description>&lt;p&gt;Извечная проблема о том, как добавлять и обновлять плагины в vim решилась благодаря легендарному Tim Pope.&lt;/p&gt;&#xA;&lt;p&gt;Сегодня утром узнал от &lt;a href=&#34;http://twitter.com/yaroslav&#34;&gt;Ярослава Маркина&lt;/a&gt; о существовании pathogen.&lt;/p&gt;&#xA;&lt;p&gt;Статья на английском о том, как им пользоваться, лежит &lt;a&#xA;href=&#34;http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen&#34;&gt;здесь&lt;/a&gt;. Правда, я потратил полчаса, чтобы&#xA;догадаться, что надо добавить &lt;code&gt;call pathogen#runtime_append_all_bundles()&lt;/code&gt; в файл &lt;code&gt;~/.vimrc&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;После установки &lt;a href=&#34;http://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim&#34;&gt;pathogen.vim&lt;/a&gt; в&#xA;&lt;code&gt;&lt;del&gt;/.vim/autoload&lt;/code&gt; можно хранить все плагины в папке &lt;code&gt;&lt;/del&gt;/.vim/bundle&lt;/code&gt;, причем каждый в своей папке.&lt;/p&gt;&#xA;&lt;p&gt;А еще огромный плюс - в конце этой статьи код, который позволяет обновлять все плагины одной командой.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: osx on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/osx/</link>
+    <link>https://evtuhovich.ru/tags/osx/</link>
     <description>Recent content in Записи с тегом: osx on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Sat, 14 Jul 2012 13:17:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/osx/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/osx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Проблема с сортировкой русских слов в Postgres на OSX</title>
-      <link>http://localhost:1313/blog/2012/07/14/collate-osx-postgres/</link>
+      <link>https://evtuhovich.ru/blog/2012/07/14/collate-osx-postgres/</link>
       <pubDate>Sat, 14 Jul 2012 13:17:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/07/14/collate-osx-postgres/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/07/14/collate-osx-postgres/</guid>
       <description>&lt;p&gt;Я давно мечтаю об Ubuntu, которая работает так же хорошо, как OSX. К несчастью, большинство пользовательских программ в&#xA;Ubuntu хуже, чем в OSX, а что касается серверной части - OSX очень сильно отстает от Ubuntu (Debian).&lt;/p&gt;&#xA;&lt;p&gt;К примеру, по-умолчанию, в Postgresql в OSX сломана сортировка русских слов. Решение я нашел&#xA;&lt;a href=&#34;http://chipiga.pp.ua/sql/kak-zastavit-postgresql-pravilno-sortirovat-utf8-kirillitsu-na-mac-os-x/&#34;&gt;здесь&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

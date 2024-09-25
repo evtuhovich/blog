@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: rspec on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/rspec/</link>
+    <link>https://evtuhovich.ru/tags/rspec/</link>
     <description>Recent content in Записи с тегом: rspec on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 22 Feb 2013 00:38:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/rspec/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/rspec/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Транзакции и несколько БД</title>
-      <link>http://localhost:1313/blog/2013/02/22/transactions-on-multiple-db/</link>
+      <link>https://evtuhovich.ru/blog/2013/02/22/transactions-on-multiple-db/</link>
       <pubDate>Fri, 22 Feb 2013 00:38:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2013/02/22/transactions-on-multiple-db/</guid>
+      <guid>https://evtuhovich.ru/blog/2013/02/22/transactions-on-multiple-db/</guid>
       <description>&lt;p&gt;Иногда так случается, что на проекте необходимо использовать более одного сервера баз данных. Оказывается, в rails можно&#xA;достаточно удобно поддерживать актуальность нескольких БД с помощью миграций.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Несколько баз данных</title>
-      <link>http://localhost:1313/blog/2009/05/19/two-databases/</link>
+      <link>https://evtuhovich.ru/blog/2009/05/19/two-databases/</link>
       <pubDate>Tue, 19 May 2009 22:52:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/05/19/two-databases/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/05/19/two-databases/</guid>
       <description>&lt;p&gt;В некоторых ситуациях необходимо использовать более чем одну базу данных в проекте. Например, статистику и большие&#xA;таблицы хранить на другом сервере, у которого большой и медленный диск, а данные, которые нужны постоянно, хранить на&#xA;основном сервере с маленьким и быстрым диском.&lt;/p&gt;&#xA;&lt;p&gt;В нашем случае хотелось унести большие таблицы на другой сервер, чтобы в дисковом кэше (а у главного сервера БД 32 Гб&#xA;оперативной памяти) хранились все рабочие таблицы и никогда оттуда не убегали.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Тесты и тестирование</title>
-      <link>http://localhost:1313/blog/2009/03/23/test-and-testing/</link>
+      <link>https://evtuhovich.ru/blog/2009/03/23/test-and-testing/</link>
       <pubDate>Mon, 23 Mar 2009 19:06:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/03/23/test-and-testing/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/03/23/test-and-testing/</guid>
       <description>&lt;p&gt;Возможно, в сайте из 3 контроллеров и 15 страниц, тесты и не нужны. Я обычно не делаю тесты на маленьких проектах,&#xA;которые пишу один.&lt;/p&gt;&#xA;&lt;p&gt;В случае, если проект собирается быть большим, длиться долго, а команда состоит больше чем из одного человека, то&#xA;тесты — крайне желательный инструмент для того, чтобы разработка не вышла из под контроля. Без тестов в какой-то момент&#xA;невозможно внести серьезное изменение в код, потому что знаешь, что такое изменение заденет еще некоторые части и точно&#xA;знаешь, что все зависимости точно не учтешь. В этот момент разработка превращается в постоянное исправление ошибок, при&#xA;которых снова вносятся ошибки и так до бесконечности.&lt;/p&gt;</description>
     </item>
   </channel>

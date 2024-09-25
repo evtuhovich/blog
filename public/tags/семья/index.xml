@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: семья on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/%D1%81%D0%B5%D0%BC%D1%8C%D1%8F/</link>
+    <link>https://evtuhovich.ru/tags/%D1%81%D0%B5%D0%BC%D1%8C%D1%8F/</link>
     <description>Recent content in Записи с тегом: семья on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Wed, 24 Aug 2016 12:20:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%D1%81%D0%B5%D0%BC%D1%8C%D1%8F/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/%D1%81%D0%B5%D0%BC%D1%8C%D1%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Бобиткомен</title>
-      <link>http://localhost:1313/life/2016/08/24/bobitkoman/</link>
+      <link>https://evtuhovich.ru/life/2016/08/24/bobitkoman/</link>
       <pubDate>Wed, 24 Aug 2016 12:20:00 +0000</pubDate>
-      <guid>http://localhost:1313/life/2016/08/24/bobitkoman/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/nikita.jpg&#34; alt=&#34;Никитка&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Я вношу в список задач те темы, про которые я хочу написать, так вот про Никиту я хотел написать уже очень давно, но все&#xA;как-то не доходили руки. А завтра ему уже два года. Тут, конечно, должны быть фраза: «Как время-то идет, как дети-то&#xA;растут», но это было бы слишком банально, хотя и правда.&lt;/p&gt;&#xA;&lt;p&gt;Как и все родители, мы придумывали Никите ласковые имена, и одно из них было Бобитка (Никтка-бобитка), которое и&#xA;превратилось в Бобиткомен.&lt;/p&gt;</description>
+      <guid>https://evtuhovich.ru/life/2016/08/24/bobitkoman/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://evtuhovich.ru/images/nikita.jpg&#34; alt=&#34;Никитка&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Я вношу в список задач те темы, про которые я хочу написать, так вот про Никиту я хотел написать уже очень давно, но все&#xA;как-то не доходили руки. А завтра ему уже два года. Тут, конечно, должны быть фраза: «Как время-то идет, как дети-то&#xA;растут», но это было бы слишком банально, хотя и правда.&lt;/p&gt;&#xA;&lt;p&gt;Как и все родители, мы придумывали Никите ласковые имена, и одно из них было Бобитка (Никтка-бобитка), которое и&#xA;превратилось в Бобиткомен.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

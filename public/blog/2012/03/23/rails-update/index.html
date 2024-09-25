@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru-ru">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -44,10 +44,10 @@ warden стал по-другому сериализовать сессию. А 
     
 
     
-      <link rel="canonical" href="http://localhost:1313/blog/2012/03/23/rails-update/">
+      <link rel="canonical" href="https://evtuhovich.ru/blog/2012/03/23/rails-update/">
     
 
-    <meta property="og:url" content="http://localhost:1313/blog/2012/03/23/rails-update/">
+    <meta property="og:url" content="https://evtuhovich.ru/blog/2012/03/23/rails-update/">
   <meta property="og:site_name" content="Блог Ивана Евтуховича">
   <meta property="og:title" content="Обновление на rails3 и проблемы, связанные с этим">
   <meta property="og:description" content="На «Групоне» мы давно уже переходим с Rails 2.3 на Rails 3.0. На этой неделе перешли — полет нормальный. Но поскольку сразу переход у нас не получился, то мы переходили по частям. И тут возникла проблема, что в rails3 нужен новый devise (1.5.3), которому нужен warden (1.1.1). А в rails2 используется devise (1.0.9), которому нужен warden (0.10.7). И вот этот вот warden стал по-другому сериализовать сессию. А devise стал хранить remember_token в подписанной (signed) cookie. Более того, из самих рельс пропал класс ActionController::Flash::FlashHash, поэтому при десериализации сессии происходило неуловимое исключение в Marshal.load.
@@ -413,7 +413,7 @@ end
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://evtuhovich.ru/" >
     &copy;  Блог Ивана Евтуховича 2024 
   </a>
     <div>

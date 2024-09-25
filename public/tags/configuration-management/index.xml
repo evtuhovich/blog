@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: configuration-management on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/configuration-management/</link>
+    <link>https://evtuhovich.ru/tags/configuration-management/</link>
     <description>Recent content in Записи с тегом: configuration-management on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Sat, 03 Sep 2011 01:06:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/configuration-management/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/configuration-management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Управление конфигурацией и Chef</title>
-      <link>http://localhost:1313/blog/2011/09/03/configuration-management/</link>
+      <link>https://evtuhovich.ru/blog/2011/09/03/configuration-management/</link>
       <pubDate>Sat, 03 Sep 2011 01:06:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2011/09/03/configuration-management/</guid>
+      <guid>https://evtuhovich.ru/blog/2011/09/03/configuration-management/</guid>
       <description>&lt;p&gt;Расскажу одну очень поучительную и одновременно типичную историю, которая случилась со мною года 3 назад. Однажды один&#xA;из наших серверов вышел из строя. Казалось бы, обычная ситуация, но беда была в том, что работа приложения была&#xA;сильно завязано на 10-15 различных cron-задач, которые были прописаны на этой машине. Еще большая проблема была в том,&#xA;что писались скрипты, которые вызывались по cron, различными людьми, многие их которых к тому времени не работали в&#xA;компании.&lt;/p&gt;</description>
     </item>
   </channel>

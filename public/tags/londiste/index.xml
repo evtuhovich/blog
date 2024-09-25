@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: londiste on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/londiste/</link>
+    <link>https://evtuhovich.ru/tags/londiste/</link>
     <description>Recent content in Записи с тегом: londiste on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 05 Jun 2009 12:34:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/londiste/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/londiste/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PgQ и Londiste</title>
-      <link>http://localhost:1313/blog/2009/06/05/pgq-londiste-plugin/</link>
+      <link>https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/</link>
       <pubDate>Fri, 05 Jun 2009 12:34:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/06/05/pgq-londiste-plugin/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/06/05/pgq-londiste-plugin/</guid>
       <description>&lt;p&gt;Хотя я так и не написал толком, как пользоваться PgQ и Londiste, но уже написал плагин, который облегчает его&#xA;использование вместе с рельсами.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://github.com/evtuhovich/pgq/tree/master&#34;&gt;http://github.com/evtuhovich/pgq/tree/master&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;В README всё написано на плохом английском (с хорошим английским у меня плохо).&lt;/p&gt;&#xA;&lt;p&gt;Совсем скоро я добавлю туда возможность прогонять миграции на master и slave базах данных одновременно. Тогда при&#xA;очередной выкатке необходимо будет сделать только rake londiste:update в самом конце, после того, как все миграции&#xA;прогонятся.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Перенос таблицы в другую базу данных postgres без простоя приложения</title>
-      <link>http://localhost:1313/blog/2009/05/22/live-table-migration/</link>
+      <link>https://evtuhovich.ru/blog/2009/05/22/live-table-migration/</link>
       <pubDate>Fri, 22 May 2009 23:45:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/05/22/live-table-migration/</guid>
-      <description>&lt;p&gt;В продолжении &lt;a href=&#34;http://localhost:1313/blog/2009/05/19/two-databases/&#34;&gt;темы о нескольких базах данных в одном rails-приложении&lt;/a&gt; расскажу о том,&#xA;как изящно перенести одну большую таблицу в другую БД postgresql.&lt;/p&gt;&#xA;&lt;p&gt;Пусть у нас есть таблица messages с большим количеством данных (10 миллионов записей), которые мы решили перенести на&#xA;другой сервер. Мы сделали, как написано в статье, указанной выше, а также создали в новой БД таблицу messages с такой же&#xA;структурой.&lt;/p&gt;&#xA;&lt;p&gt;Теперь с помощью londiste настраиваем репликацию из первой БД во вторую для таблицы messages (об этом я напишу подробнее&#xA;попозже, пока же можно &lt;a href=&#34;http://groups.google.com/group/ror2ru/msg/8d2a6b71375c3d5a?hl=ru&#34;&gt;прочитать об этом у&#xA;Андрея Стихеева&lt;/a&gt; в рассылке ror2ru).&lt;/p&gt;</description>
+      <guid>https://evtuhovich.ru/blog/2009/05/22/live-table-migration/</guid>
+      <description>&lt;p&gt;В продолжении &lt;a href=&#34;https://evtuhovich.ru/blog/2009/05/19/two-databases/&#34;&gt;темы о нескольких базах данных в одном rails-приложении&lt;/a&gt; расскажу о том,&#xA;как изящно перенести одну большую таблицу в другую БД postgresql.&lt;/p&gt;&#xA;&lt;p&gt;Пусть у нас есть таблица messages с большим количеством данных (10 миллионов записей), которые мы решили перенести на&#xA;другой сервер. Мы сделали, как написано в статье, указанной выше, а также создали в новой БД таблицу messages с такой же&#xA;структурой.&lt;/p&gt;&#xA;&lt;p&gt;Теперь с помощью londiste настраиваем репликацию из первой БД во вторую для таблицы messages (об этом я напишу подробнее&#xA;попозже, пока же можно &lt;a href=&#34;http://groups.google.com/group/ror2ru/msg/8d2a6b71375c3d5a?hl=ru&#34;&gt;прочитать об этом у&#xA;Андрея Стихеева&lt;/a&gt; в рассылке ror2ru).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

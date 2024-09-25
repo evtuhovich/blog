@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: конвей on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%B9/</link>
+    <link>https://evtuhovich.ru/tags/%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%B9/</link>
     <description>Recent content in Записи с тегом: конвей on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Wed, 05 Oct 2016 17:23:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%B9/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%B9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Закон Конвея</title>
-      <link>http://localhost:1313/blog/2016/10/05/conways-law/</link>
+      <link>https://evtuhovich.ru/blog/2016/10/05/conways-law/</link>
       <pubDate>Wed, 05 Oct 2016 17:23:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2016/10/05/conways-law/</guid>
+      <guid>https://evtuhovich.ru/blog/2016/10/05/conways-law/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Melvin_Conway&#34;&gt;Мелвин Конвей&lt;/a&gt; в 1968 году (48 лет назад!) опубликовал свою работу, в&#xA;которой сформулировал следующую идею: «Организация, которая создает систему, ограничена дизайном, который копирует&#xA;структуру коммуникации в этой организации». Более просто эту идею перефразировал Эрик Реймонд: «Если над компилятором&#xA;работает четыре группы разработчиков, вы получите четырехпроходный компилятор». Желающие могут прочитать оригинал статьи&#xA;&lt;a href=&#34;http://www.melconway.com/Home/Committees_Paper.html&#34;&gt;здесь&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

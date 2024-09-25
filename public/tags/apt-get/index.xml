@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: apt-get on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/apt-get/</link>
+    <link>https://evtuhovich.ru/tags/apt-get/</link>
     <description>Recent content in Записи с тегом: apt-get on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Thu, 07 Jun 2012 21:47:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/apt-get/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/apt-get/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Пакетные менеджеры</title>
-      <link>http://localhost:1313/blog/2012/06/07/package-manager/</link>
+      <link>https://evtuhovich.ru/blog/2012/06/07/package-manager/</link>
       <pubDate>Thu, 07 Jun 2012 21:47:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/06/07/package-manager/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/06/07/package-manager/</guid>
       <description>&lt;p&gt;Тема этого поста навеяна &lt;a href=&#34;https://groups.google.com/forum/?fromgroups#!topic/erlang-russian/hu5UViybcXI&#34;&gt;обсуждением пакетных менеджеров в рассылке&#xA;Erlang&lt;/a&gt;. К сожалению, обсуждение завяло,&#xA;так и не успев начаться.&lt;/p&gt;</description>
     </item>
   </channel>

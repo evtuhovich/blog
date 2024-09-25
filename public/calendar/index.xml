@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Архив on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/calendar/</link>
+    <link>https://evtuhovich.ru/calendar/</link>
     <description>Recent content in Архив on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
-    <atom:link href="http://localhost:1313/calendar/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/calendar/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

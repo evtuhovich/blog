@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: validates_uniqueness_of on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/validates_uniqueness_of/</link>
+    <link>https://evtuhovich.ru/tags/validates_uniqueness_of/</link>
     <description>Recent content in Записи с тегом: validates_uniqueness_of on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Thu, 28 May 2009 22:22:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/validates_uniqueness_of/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/validates_uniqueness_of/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Проблема с проверкой уникальности какого-то поля в rails</title>
-      <link>http://localhost:1313/blog/2009/05/28/validates-uniqueness-of/</link>
+      <link>https://evtuhovich.ru/blog/2009/05/28/validates-uniqueness-of/</link>
       <pubDate>Thu, 28 May 2009 22:22:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/05/28/validates-uniqueness-of/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/05/28/validates-uniqueness-of/</guid>
       <description>&lt;p&gt;Пусть в модели User у нас описана валидация для поля email&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    validates_uniqueness_of &lt;span style=&#34;color:#e6db74&#34;&gt;:email&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:case_sensitive&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;, &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#e6db74&#34;&gt;:message&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; i18n_proxy(&lt;span style=&#34;color:#e6db74&#34;&gt;:email_already_registered&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Следующий код генерирует вот такой запрос к базе данных:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; users &lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;lower&lt;/span&gt;(email) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;thmth&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;LIMIT&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;А на таблице users у нас индекс по полю email. В postgresql запрос, что вверху,&#xA;не будет использовать индекс. Представьте, что будет, когда в таблице users&#xA;десятки тысяч записей, а на каждое изменение любого поля в users вызывается&#xA;такой запрос.&lt;/p&gt;&#xA;&lt;p&gt;Именно это я наблюдал совсем недавно на нашей живой базе. Проблема решается&#xA;просто, например, убрать &lt;code&gt;:case_sensetive&lt;/code&gt;, а email всегда&#xA;предварительно переводить в нижние буквы.&lt;/p&gt;</description>
     </item>
   </channel>

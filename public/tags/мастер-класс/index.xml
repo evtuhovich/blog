@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: Мастер-класс on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%BA%D0%BB%D0%B0%D1%81%D1%81/</link>
+    <link>https://evtuhovich.ru/tags/%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%BA%D0%BB%D0%B0%D1%81%D1%81/</link>
     <description>Recent content in Записи с тегом: Мастер-класс on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Wed, 04 Sep 2013 09:37:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%BA%D0%BB%D0%B0%D1%81%D1%81/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%BA%D0%BB%D0%B0%D1%81%D1%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ближайшие события в Ruby и DevOps мире</title>
-      <link>http://localhost:1313/blog/2013/09/04/breaking-news/</link>
+      <link>https://evtuhovich.ru/blog/2013/09/04/breaking-news/</link>
       <pubDate>Wed, 04 Sep 2013 09:37:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2013/09/04/breaking-news/</guid>
+      <guid>https://evtuhovich.ru/blog/2013/09/04/breaking-news/</guid>
       <description>&lt;p&gt;До выхода PostgreSQL 9.3 еще 5 дней, поэтому самое время поговорить не о технических вещах.&lt;/p&gt;&#xA;&lt;p&gt;28 сентября в Москве в «Цифровом Октябре» пройдет очередная конференция &lt;a href=&#34;http://railsclub.ru/&#34;&gt;RailsClub&lt;/a&gt;. Как и в&#xA;прошлом году, в этот раз будет много известных иностранных докладчиков, но лучше сходите на сайт, чтобы я не&#xA;пересказывал здесь всю программу. После конференции, по традиции, будет after party, поэтому планируйте эту субботу так,&#xA;чтобы у вас осталось хотя бы несколько часов после конференции. Как всегда, я рад буду познакомиться со всеми, кого знаю&#xA;виртуально или, вообще, не знаю, ведь именно для этого и существуют оффлайновые мероприятия.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Очередной Brainwashing 14 и 15 июля</title>
-      <link>http://localhost:1313/blog/2012/06/17/brainwashing/</link>
+      <link>https://evtuhovich.ru/blog/2012/06/17/brainwashing/</link>
       <pubDate>Sun, 17 Jun 2012 10:07:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/06/17/brainwashing/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/06/17/brainwashing/</guid>
       <description>&lt;p&gt;Спешу сообщить радостную весть — очередной мастер-класс &lt;a href=&#34;http://brainwashing.pro/rails&#34;&gt;Brainwashing&lt;/a&gt;, который проводит&#xA;компания «&lt;a href=&#34;http://evilmartians.ru/&#34;&gt;Злые Марсиане&lt;/a&gt;», пройдет 14 и 15 июля. Мастер-класс посвящен разработке&#xA;web-приложений на ruby on rails, и будет интересен программистам, руководителям разработки и техническим директорам. В&#xA;интенсивном двухдневном курсе мы расскажем выжимку из нашего опыта и раскроем практически все темы, связанные с&#xA;разработкой, начиная с систем контроля версий, устройства фреймворка rails, и заканчивая оптимизацией фронтенда, базами&#xA;данных и выкаткой.&lt;/p&gt;&#xA;&lt;p&gt;Как и раньше, Мастер-класс вместе со мною будут проводить &lt;a href=&#34;http://twitter.com/#!/2kan&#34;&gt;Тимофей Цветков&lt;/a&gt; и&#xA;&lt;a href=&#34;http://twitter.com/#!/kossnocorp&#34;&gt;Саша Косс&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Мастер-класс: впечатления по прошествии 2 недель</title>
-      <link>http://localhost:1313/blog/2011/12/21/brainwashing/</link>
+      <link>https://evtuhovich.ru/blog/2011/12/21/brainwashing/</link>
       <pubDate>Wed, 21 Dec 2011 18:44:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2011/12/21/brainwashing/</guid>
-      <description>&lt;p&gt;Две недели назад мы провели &lt;a href=&#34;http://localhost:1313/blog/2011/11/13/master-class/&#34;&gt;Мастер-Класс&lt;/a&gt;, в котором в сжатой форме попытались изложить&#xA;самое важное, на наш взгляд, в web-разработке. За два достаточно напряженных дня мы рассказали обо всем, от Git, баз&#xA;данных, до SASS, HAML и Rails 3. Все это перемежалось постоянными практическими заданиями.&lt;/p&gt;&#xA;&lt;p&gt;В конце Мастре-Класса мы сделали анкетирования, из которого можно смело заявить, что в целом идея удалась. Более того,&#xA;на &lt;a href=&#34;http://railsclub.ru&#34;&gt;конференции RailsClub&lt;/a&gt; я попросил некоторых из наших участников лично поделиться впечатлениями&#xA;от посещения. Было очень лестно услышать хорошую оценку нашей работе. Более того, на этой же конференции ко мне&#xA;подошли несколько людей с вопросом, когда будет следующий Мастер-Класс и будет ли он проводиться в будние дни.&#xA;Меня конечно же порадовал интерес к нашей работе. Безусловно, мы будем еще проводить Мастер-Классы, в том числе и в&#xA;будние дни. Ориентировочно следующий Мастер-Класс пройдет в феврале-марте 2012 года.&lt;/p&gt;</description>
+      <guid>https://evtuhovich.ru/blog/2011/12/21/brainwashing/</guid>
+      <description>&lt;p&gt;Две недели назад мы провели &lt;a href=&#34;https://evtuhovich.ru/blog/2011/11/13/master-class/&#34;&gt;Мастер-Класс&lt;/a&gt;, в котором в сжатой форме попытались изложить&#xA;самое важное, на наш взгляд, в web-разработке. За два достаточно напряженных дня мы рассказали обо всем, от Git, баз&#xA;данных, до SASS, HAML и Rails 3. Все это перемежалось постоянными практическими заданиями.&lt;/p&gt;&#xA;&lt;p&gt;В конце Мастре-Класса мы сделали анкетирования, из которого можно смело заявить, что в целом идея удалась. Более того,&#xA;на &lt;a href=&#34;http://railsclub.ru&#34;&gt;конференции RailsClub&lt;/a&gt; я попросил некоторых из наших участников лично поделиться впечатлениями&#xA;от посещения. Было очень лестно услышать хорошую оценку нашей работе. Более того, на этой же конференции ко мне&#xA;подошли несколько людей с вопросом, когда будет следующий Мастер-Класс и будет ли он проводиться в будние дни.&#xA;Меня конечно же порадовал интерес к нашей работе. Безусловно, мы будем еще проводить Мастер-Классы, в том числе и в&#xA;будние дни. Ориентировочно следующий Мастер-Класс пройдет в феврале-марте 2012 года.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Мастер-класс</title>
-      <link>http://localhost:1313/blog/2011/11/10/master-class/</link>
+      <link>https://evtuhovich.ru/blog/2011/11/10/master-class/</link>
       <pubDate>Thu, 10 Nov 2011 23:20:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2011/11/10/master-class/</guid>
+      <guid>https://evtuhovich.ru/blog/2011/11/10/master-class/</guid>
       <description>&lt;p&gt;В современном мире хочется учиться быстро. И знать только то, что нужно знать, потому что все знать, к сожалению,&#xA;невозможно. Мне всегда казалось, что можно иметь какую-то «фундаментальную» картинку мира, на которую просто&#xA;наматываются подробности. Я всегда представляю себе дерево: если есть ствол, то к нему можно прицепить ветки и листья.&#xA;Но только из веток и листьев дерево не получится. Поэтому мы в «&lt;a href=&#34;http://evilmartians.ru/&#34;&gt;Злых Марсианах&lt;/a&gt;» решили&#xA;подготовить &lt;a href=&#34;http://brainwashing.pro/rails&#34;&gt;Мастер-Класс&lt;/a&gt;, в котором бы обобщили наши лучшие практики при разработке&#xA;различных web-проектов.&lt;/p&gt;</description>
     </item>
   </channel>

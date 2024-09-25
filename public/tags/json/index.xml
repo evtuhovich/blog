@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: json on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/json/</link>
+    <link>https://evtuhovich.ru/tags/json/</link>
     <description>Recent content in Записи с тегом: json on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Wed, 14 Mar 2012 23:52:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/json/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Поддержка JSON в PostgreSql 9.2</title>
-      <link>http://localhost:1313/blog/2012/03/14/postgresql-json/</link>
+      <link>https://evtuhovich.ru/blog/2012/03/14/postgresql-json/</link>
       <pubDate>Wed, 14 Mar 2012 23:52:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/03/14/postgresql-json/</guid>
-      <description>&lt;p&gt;В третьем квартале 2012 должна выйти версия &lt;a href=&#34;http://www.postgresql.org/developer/roadmap/&#34;&gt;PostgreSQL 9.2&lt;/a&gt;, в которой&#xA;добавят много интересных возможностей. Среди них — базовая поддержка так полюбившегося всем web-разработчикам формата&#xA;JSON. На данном этапе появится только возможность &lt;a href=&#34;http://www.postgresql.org/docs/devel/static/datatype-json.html&#34;&gt;проверять JSON на валидность&lt;/a&gt;,&#xA;но судя по списку рассылки, к версии 9.3 будет добавлена возможность строить индексы на JSON объектах подобно тому, как&#xA;это &lt;a href=&#34;http://localhost:1313/blog/2012/01/23/hstore/&#34;&gt;можно сделать на hstore&lt;/a&gt;. Конечно, JSON объекты гораздо сложнее hstore, и как именно и в&#xA;каком объеме будет реализована поддержка индексов в JSON — пока не ясно.&lt;/p&gt;</description>
+      <guid>https://evtuhovich.ru/blog/2012/03/14/postgresql-json/</guid>
+      <description>&lt;p&gt;В третьем квартале 2012 должна выйти версия &lt;a href=&#34;http://www.postgresql.org/developer/roadmap/&#34;&gt;PostgreSQL 9.2&lt;/a&gt;, в которой&#xA;добавят много интересных возможностей. Среди них — базовая поддержка так полюбившегося всем web-разработчикам формата&#xA;JSON. На данном этапе появится только возможность &lt;a href=&#34;http://www.postgresql.org/docs/devel/static/datatype-json.html&#34;&gt;проверять JSON на валидность&lt;/a&gt;,&#xA;но судя по списку рассылки, к версии 9.3 будет добавлена возможность строить индексы на JSON объектах подобно тому, как&#xA;это &lt;a href=&#34;https://evtuhovich.ru/blog/2012/01/23/hstore/&#34;&gt;можно сделать на hstore&lt;/a&gt;. Конечно, JSON объекты гораздо сложнее hstore, и как именно и в&#xA;каком объеме будет реализована поддержка индексов в JSON — пока не ясно.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

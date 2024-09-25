@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: pgbadger on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/pgbadger/</link>
+    <link>https://evtuhovich.ru/tags/pgbadger/</link>
     <description>Recent content in Записи с тегом: pgbadger on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 28 Jun 2013 15:20:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/pgbadger/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/pgbadger/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Статистика запросов и pg_stat_statements</title>
-      <link>http://localhost:1313/blog/2013/06/28/pg-stat-statements/</link>
+      <link>https://evtuhovich.ru/blog/2013/06/28/pg-stat-statements/</link>
       <pubDate>Fri, 28 Jun 2013 15:20:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2013/06/28/pg-stat-statements/</guid>
+      <guid>https://evtuhovich.ru/blog/2013/06/28/pg-stat-statements/</guid>
       <description>&lt;p&gt;Иногда при эксплуатации проекта возникает вопрос, какие запросы в БД выполняются дольше всего или потребляют наибольшее&#xA;количество времени или ресурсов.&lt;/p&gt;&#xA;&lt;p&gt;До версии 9.2 неплохой ответ на этот вопрос можно было получить с помощью проекта &lt;a href=&#34;http://dalibo.github.io/pgbadger/&#34;&gt;pgBadger&lt;/a&gt;.&#xA;Если прорваться через достаточно простую процедуру его настройки, описанную в&#xA;&lt;a href=&#34;http://dalibo.github.io/pgbadger/documentation.html&#34;&gt;документации&lt;/a&gt;, то в результате можно получить достаточно &lt;a href=&#34;http://dalibo.github.io/pgbadger/sample.html&#34;&gt;красивый&#xA;отчет&lt;/a&gt;. К сожалению, этот подход имеет достаточно много слабых сторон.&#xA;Во-первых, чтобы получить полную картину, необходимо писать логи всех запросов к БД, которые при значительной нагрузке&#xA;отъедают огромное количество дискового пространства, а также производительность дисковой подсистемы. Во-вторых, в сухом&#xA;остатке получается только суммарное время исполнения всех запросов и их количество. Это полезная информация, но хотелось&#xA;бы знать много чего еще.&lt;/p&gt;</description>
     </item>
   </channel>

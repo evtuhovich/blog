@@ -22,3 +22,5 @@
 sync.sh
 
 .hugo_build.lock
+
+themes/ananke-old

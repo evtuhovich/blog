@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: activerecord on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/activerecord/</link>
+    <link>https://evtuhovich.ru/tags/activerecord/</link>
     <description>Recent content in Записи с тегом: activerecord on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Sun, 11 Sep 2011 00:22:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/activerecord/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/activerecord/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Проблемы с find_in_batches</title>
-      <link>http://localhost:1313/blog/2011/09/11/find-in-batches/</link>
+      <link>https://evtuhovich.ru/blog/2011/09/11/find-in-batches/</link>
       <pubDate>Sun, 11 Sep 2011 00:22:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2011/09/11/find-in-batches/</guid>
+      <guid>https://evtuhovich.ru/blog/2011/09/11/find-in-batches/</guid>
       <description>&lt;p&gt;Иногда мне кажется, что большинство инженерных историй похожи как две капли воды. Вот и эта история началась с того, что&#xA;в одном большом отчете цифры не сходились раза в два.&lt;/p&gt;&#xA;&lt;p&gt;Мысленно закурив трубку, как Шерлок Холмс, я взялся за дело. Вот таким образом выглядела модель, по которой считались&#xA;цифры (я опускаю ненужные подробности).&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OfferDescription&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ActiveRecord&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Base&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      has_many &lt;span style=&#34;color:#e6db74&#34;&gt;:children&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:class_name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;OfferDescription&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;:foreign_key&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:parent_id&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;В отчете данные группировались по родительским объектам &lt;code&gt;OfferDescription&lt;/code&gt;.&#xA;Именно у объектов, у которых были дети, в отчетах были все нули. Рассчитывал&#xA;отчеты приблизительно вот такой код.&lt;/p&gt;</description>
     </item>
   </channel>

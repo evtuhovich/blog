@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: Ульяновск on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/%D1%83%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D1%81%D0%BA/</link>
+    <link>https://evtuhovich.ru/tags/%D1%83%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D1%81%D0%BA/</link>
     <description>Recent content in Записи с тегом: Ульяновск on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Tue, 18 Dec 2012 16:13:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%D1%83%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D1%81%D0%BA/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/%D1%83%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D1%81%D0%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Последствия выступления на Railsclub&#39;Ulsk</title>
-      <link>http://localhost:1313/blog/2012/12/18/railsclub-ulsk/</link>
+      <link>https://evtuhovich.ru/blog/2012/12/18/railsclub-ulsk/</link>
       <pubDate>Tue, 18 Dec 2012 16:13:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/12/18/railsclub-ulsk/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/12/18/railsclub-ulsk/</guid>
       <description>&lt;p&gt;В эту субботу 15 декабря я выступал в Ульяновске с докладом «Нетрадиционное использование Ruby и PostgreSQL». Несмотря&#xA;на несколько провокационное название, доклад был посвящен вполне обыденным вещам: о том, как использовать Ruby и&#xA;PostgreSQL не в web-проекте с Rails. Я рассказал о Ruby внутри Vim, hstore и PostgreSQL массивах внутри Rails (кстати,&#xA;hstore и ARRAY неоднократно упоминались на конференции, так что я был неоригинален), а самая забавная часть моего&#xA;доклада была посвящена несуществующей документоориентированной БД rmongo.rb. Видеозапись второго дня еще доступна на&#xA;&lt;a href=&#34;http://railsclub.ru/stream&#34;&gt;сайте Railsclub&lt;/a&gt;, и я надеюсь, что и первый день скоро появится в общем доступе.&lt;/p&gt;&#xA;&lt;p&gt;Исходные коды, которые связаны с докладом, я выложил на &lt;a href=&#34;https://gist.github.com/4327395&#34;&gt;Gist&lt;/a&gt;, сам доклад я выложил на&#xA;&lt;a href=&#34;http://www.slideshare.net/evtuhovich/ruby-postgresql&#34;&gt;Slideshare&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Посещение Ульяновска</title>
-      <link>http://localhost:1313/blog/2012/07/01/ulsk-results/</link>
+      <link>https://evtuhovich.ru/blog/2012/07/01/ulsk-results/</link>
       <pubDate>Sun, 01 Jul 2012 13:26:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/07/01/ulsk-results/</guid>
-      <description>&lt;p&gt;Прошла уже почти неделя, как я вернулся из &lt;a href=&#34;http://localhost:1313/blog/2012/06/17/ulsk/&#34;&gt;Ульяновска&lt;/a&gt;, но все никак не добегали пальцы до&#xA;клавиатуры, чтобы поделиться впечатлениями.&lt;/p&gt;&#xA;&lt;p&gt;Во-первых, я хочу выразить большую благодарность &lt;a href=&#34;http://mokevnin.github.com/&#34;&gt;Кириллу Мокевнину&lt;/a&gt;, который встретил нас&#xA;на вокзале на машине, помог поселиться, показал город, показал мне свой офис, а также организовал небольшую Ульяновскую&#xA;ruby-тусовку. Кирилл организовал достаточно большой офис ruby-разработки, где много света, красиво, аккуратно и&#xA;стеклянные туалеты. Поначалу они пугают, но стекло матовое и в целом это скорее забавно, чем неуютно.&lt;/p&gt;</description>
+      <guid>https://evtuhovich.ru/blog/2012/07/01/ulsk-results/</guid>
+      <description>&lt;p&gt;Прошла уже почти неделя, как я вернулся из &lt;a href=&#34;https://evtuhovich.ru/blog/2012/06/17/ulsk/&#34;&gt;Ульяновска&lt;/a&gt;, но все никак не добегали пальцы до&#xA;клавиатуры, чтобы поделиться впечатлениями.&lt;/p&gt;&#xA;&lt;p&gt;Во-первых, я хочу выразить большую благодарность &lt;a href=&#34;http://mokevnin.github.com/&#34;&gt;Кириллу Мокевнину&lt;/a&gt;, который встретил нас&#xA;на вокзале на машине, помог поселиться, показал город, показал мне свой офис, а также организовал небольшую Ульяновскую&#xA;ruby-тусовку. Кирилл организовал достаточно большой офис ruby-разработки, где много света, красиво, аккуратно и&#xA;стеклянные туалеты. Поначалу они пугают, но стекло матовое и в целом это скорее забавно, чем неуютно.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Буду в Ульяновске 21-23 июня</title>
-      <link>http://localhost:1313/blog/2012/06/17/ulsk/</link>
+      <link>https://evtuhovich.ru/blog/2012/06/17/ulsk/</link>
       <pubDate>Sun, 17 Jun 2012 22:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/06/17/ulsk/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/06/17/ulsk/</guid>
       <description>&lt;p&gt;По айкидошным делам посещу IT Мекку России — славный город Ульяновск. Сказания и легенды о необычайно плотности IT мысли в&#xA;Ульяновске слышал я уже давно, вот теперь воочию смогу убедиться в том, что это правда.&lt;/p&gt;&#xA;&lt;p&gt;Я планирую провести ruby/chef/rails пьянку 22 июня (в пятницу) вечером, но подробности можно будет прочитать в моем&#xA;&lt;a href=&#34;https://twitter.com/#!/evtuhovich&#34;&gt;твиттере&lt;/a&gt;, потому что я их и сам не знаю. Так же у меня будут более-менее свободны&#xA;все три дня: четверг, пятница и суббота. Я буду свободен днем между тренировками и вечером. Если кто-то хочет&#xA;встретиться и поговорить — напишите мне об этом.&lt;/p&gt;</description>
     </item>
   </channel>

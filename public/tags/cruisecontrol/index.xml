@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: cruisecontrol on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/cruisecontrol/</link>
+    <link>https://evtuhovich.ru/tags/cruisecontrol/</link>
     <description>Recent content in Записи с тегом: cruisecontrol on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 27 Feb 2009 14:45:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/cruisecontrol/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/cruisecontrol/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Непрерывная интеграция</title>
-      <link>http://localhost:1313/blog/2009/02/27/continuous-integration/</link>
+      <link>https://evtuhovich.ru/blog/2009/02/27/continuous-integration/</link>
       <pubDate>Fri, 27 Feb 2009 14:45:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/02/27/continuous-integration/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/02/27/continuous-integration/</guid>
       <description>&lt;p&gt;О непрерывной интеграции (Continuous Integration) можно почитать у Мартина Фаулера (Martin Fowler) &lt;a&#xA;href=&#34;http://martinfowler.com/articles/continuousIntegration.html&#34;&gt;здесь&lt;/a&gt;. В друх словах, это практика постоянной&#xA;интеграции наработок каждого программиста. Обычно это заключается в том, что на какой-нибудь машине постоянно (после&#xA;каждого изменения в исходных кодах) собирается проект и прогоняются все тесты. Результаты этих действий высылаются&#xA;разработчикам по почте. Это позволяет постоянно сохранять проект в относительно рабочем состоянии.&lt;/p&gt;&#xA;&lt;p&gt;Удобным инструментом непрерывной интеграции является &lt;a&#xA;href=&#34;http://cruisecontrolrb.thoughtworks.com&#34;&gt;CruiseControl&lt;/a&gt;. К сожалению в своей оригинальной версии он&#xA;поддерживает только систему контроля версий svn. Поддержку git дописали народные умельцы. Я воспользовался вот &lt;a&#xA;href=&#34;http://github.com/p8/cruisecontrolrb/tree/master&#34;&gt;этой веткой&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

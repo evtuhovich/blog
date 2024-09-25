@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: git on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/git/</link>
+    <link>https://evtuhovich.ru/tags/git/</link>
     <description>Recent content in Записи с тегом: git on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 25 May 2012 22:37:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Конфликтные слияния веток и git merge-base</title>
-      <link>http://localhost:1313/blog/2012/05/25/git-merge-base/</link>
+      <link>https://evtuhovich.ru/blog/2012/05/25/git-merge-base/</link>
       <pubDate>Fri, 25 May 2012 22:37:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/05/25/git-merge-base/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/05/25/git-merge-base/</guid>
       <description>&lt;p&gt;Когда у вас есть две ветки разработки, которые достаточно сильно друг от друга отличаются, периодически возникают&#xA;проблемы с их слиянием (merge).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Рассказ про Git</title>
-      <link>http://localhost:1313/blog/2011/08/23/pro-git/</link>
+      <link>https://evtuhovich.ru/blog/2011/08/23/pro-git/</link>
       <pubDate>Tue, 23 Aug 2011 10:30:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2011/08/23/pro-git/</guid>
-      <description>&lt;p&gt;По-моему, в &lt;a href=&#34;http://pragprog.com/the-pragmatic-programmer&#34;&gt;«Прагматичных программистах»&lt;/a&gt; было написана фраза, которую я&#xA;часто люблю повторять:&#xA;«Программист должен в совершенстве владеть двумя инструментами — текстовым редактором и системой контроля версий».&#xA;Программист работает с текстом, особенно программист, который пишет на высокоуровневом&#xA;языке, таком как Ruby. Зачастую можно не вдаваться в подробности того, что происходит внутри, хотя иногда, конечно,&#xA;надо. Так вот, текст надо уметь изменять, а потом этими изменениями как-то обмениваться со своими коллегами.&lt;/p&gt;&#xA;&lt;p&gt;Про текстовый редактор &lt;a href=&#34;http://localhost:1313/blog/2011/03/10/vim/&#34;&gt;я рассказывал немного раньше&lt;/a&gt;, а сегодня я хочу рассказать про&#xA;систему контроля версий &lt;a href=&#34;http://git-scm.com/&#34;&gt;git&lt;/a&gt;.&#xA;Пересказывать огромный объем материала, который лежит в сети, мне совершенно не хочется, но я дам ссылки с комментариями&#xA;на самые лучшие тексты.&lt;/p&gt;</description>
+      <guid>https://evtuhovich.ru/blog/2011/08/23/pro-git/</guid>
+      <description>&lt;p&gt;По-моему, в &lt;a href=&#34;http://pragprog.com/the-pragmatic-programmer&#34;&gt;«Прагматичных программистах»&lt;/a&gt; было написана фраза, которую я&#xA;часто люблю повторять:&#xA;«Программист должен в совершенстве владеть двумя инструментами — текстовым редактором и системой контроля версий».&#xA;Программист работает с текстом, особенно программист, который пишет на высокоуровневом&#xA;языке, таком как Ruby. Зачастую можно не вдаваться в подробности того, что происходит внутри, хотя иногда, конечно,&#xA;надо. Так вот, текст надо уметь изменять, а потом этими изменениями как-то обмениваться со своими коллегами.&lt;/p&gt;&#xA;&lt;p&gt;Про текстовый редактор &lt;a href=&#34;https://evtuhovich.ru/blog/2011/03/10/vim/&#34;&gt;я рассказывал немного раньше&lt;/a&gt;, а сегодня я хочу рассказать про&#xA;систему контроля версий &lt;a href=&#34;http://git-scm.com/&#34;&gt;git&lt;/a&gt;.&#xA;Пересказывать огромный объем материала, который лежит в сети, мне совершенно не хочется, но я дам ссылки с комментариями&#xA;на самые лучшие тексты.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Отмена последнего коммита в git</title>
-      <link>http://localhost:1313/blog/2009/04/03/git-reset/</link>
+      <link>https://evtuhovich.ru/blog/2009/04/03/git-reset/</link>
       <pubDate>Fri, 03 Apr 2009 12:34:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/04/03/git-reset/</guid>
+      <guid>https://evtuhovich.ru/blog/2009/04/03/git-reset/</guid>
       <description>&lt;p&gt;Допустим, вы сделали commit в git, но поняли, что он недостаточно хорош. В таком случае можно продолжить правки, а при&#xA;следующем коммите набрать&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    git commit -a --amend&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ключ &lt;code&gt;--amend&lt;/code&gt; (улучшить, в переводе с английского) позволяет добавить к последнему коммиту новые изменения.&lt;/p&gt;&#xA;&lt;p&gt;Если вы сделали commit в git, но поняли, что он достаточно плох, то можно сделать и так:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    git reset --soft HEAD^&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Эта команда отменит последний коммит (но не изменения, которые вы внесли, они сохранятся).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Перенести ветку в git</title>
-      <link>http://localhost:1313/blog/2009/03/13/git-move-branch/</link>
+      <link>https://evtuhovich.ru/blog/2009/03/13/git-move-branch/</link>
       <pubDate>Fri, 13 Mar 2009 09:12:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2009/03/13/git-move-branch/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/gitk1.png&#34; alt=&#34;Картинка 1&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Представим следующую ситуацию (она постоянно возникает у нас при разработке). У нас есть ветка master в git, а в день&#xA;релиза мы создаем ветку b1. Мы добавляем какие-то изменения в ветки b1 и master. И тут вдруг (хотя слово «вдруг» не&#xA;очень подходит к регулярным событям) менеджмент решает добавить что-то из master в релиз.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/gitk2.png&#34; alt=&#34;Картинка 2&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Если комитов было мало, то&#xA;можно воспользоваться &lt;code&gt;git cherry-pick&lt;/code&gt; (если их несколько, то может помочь ключ -n). А что делать, если комитов было&#xA;больше 10? Рукаме делать &lt;code&gt;git cherry-pick&lt;/code&gt; не очень удобно. В таком случае нам поможет (в который раз) &lt;code&gt;git rebase&lt;/code&gt;.&lt;/p&gt;</description>
+      <guid>https://evtuhovich.ru/blog/2009/03/13/git-move-branch/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://evtuhovich.ru/images/gitk1.png&#34; alt=&#34;Картинка 1&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Представим следующую ситуацию (она постоянно возникает у нас при разработке). У нас есть ветка master в git, а в день&#xA;релиза мы создаем ветку b1. Мы добавляем какие-то изменения в ветки b1 и master. И тут вдруг (хотя слово «вдруг» не&#xA;очень подходит к регулярным событям) менеджмент решает добавить что-то из master в релиз.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://evtuhovich.ru/images/gitk2.png&#34; alt=&#34;Картинка 2&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Если комитов было мало, то&#xA;можно воспользоваться &lt;code&gt;git cherry-pick&lt;/code&gt; (если их несколько, то может помочь ключ -n). А что делать, если комитов было&#xA;больше 10? Рукаме делать &lt;code&gt;git cherry-pick&lt;/code&gt; не очень удобно. В таком случае нам поможет (в который раз) &lt;code&gt;git rebase&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

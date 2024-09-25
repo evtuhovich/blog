@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Записи с тегом: paperclip on Блог Ивана Евтуховича</title>
-    <link>http://localhost:1313/tags/paperclip/</link>
+    <link>https://evtuhovich.ru/tags/paperclip/</link>
     <description>Recent content in Записи с тегом: paperclip on Блог Ивана Евтуховича</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Fri, 11 May 2012 23:23:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/paperclip/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://evtuhovich.ru/tags/paperclip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Странное поведение создателей Paperclip</title>
-      <link>http://localhost:1313/blog/2012/05/11/paperclip/</link>
+      <link>https://evtuhovich.ru/blog/2012/05/11/paperclip/</link>
       <pubDate>Fri, 11 May 2012 23:23:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/2012/05/11/paperclip/</guid>
+      <guid>https://evtuhovich.ru/blog/2012/05/11/paperclip/</guid>
       <description>&lt;p&gt;Вчера я разворачивал наше приложение в системе CI &lt;a href=&#34;http://jenkins-ci.org/&#34;&gt;Jenkins&lt;/a&gt;, и обнаружил, что bundler не находит&#xA;gem paperclip. В Gemfile была явно прописана версия 3.0.1. Зайдя на &lt;a href=&#34;https://rubygems.org/gems/paperclip/versions&#34;&gt;rubygems&lt;/a&gt;, я увидел,&#xA;что эту версию гема его создатели удалили, а версия 3.0.2 и старше не поставилась, выругавшись на то, что ей нужен ruby&#xA;1.9.2 и старше.&lt;/p&gt;</description>
     </item>
   </channel>
