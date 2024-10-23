@@ -3,7 +3,6 @@ title: Непрерывная поставка ПО
 date: 2015-03-11T10:34:00
 tags:
   - continuous delivery
-published: true
 ---
 
 Термин «Непрерывная поставка ПО» (Continuous Delivery, CD) прочно вошел в обиход в конце 2010 году, после выпуска

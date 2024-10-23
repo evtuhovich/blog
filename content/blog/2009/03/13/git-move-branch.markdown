@@ -5,7 +5,6 @@ date: 2009-03-13T09:12:00
 comments: true
 tags:
   - git
-published: true
 ---
 
 ![Картинка 1](/images/gitk1.png)

@@ -3,7 +3,6 @@
 title: Тесты и тестирование
 date: 2009-03-23T19:06:00
 comments: true
-published: true
 tags:
   - rspec
   - rails

@@ -5,8 +5,10 @@ theme = "ananke"
 googleAnalytics = ""
 DefaultContentLanguage = "ru"
 SectionPagesMenu = "main"
-Paginate = 12
 enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 12
 
 [services]
   [services.disqus]

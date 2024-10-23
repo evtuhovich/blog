@@ -5,7 +5,6 @@ date: 2011-08-04T22:52:00
 comments: true
 tags:
 - мысли
-published: true
 ---
 
 Поскольку я поставил [Octopress](http://octopress.org), то теперь сбылась моя мечта и я могу вести блог в своем любимом

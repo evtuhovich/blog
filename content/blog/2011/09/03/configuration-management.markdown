@@ -6,7 +6,6 @@ comments: true
 tags:
 - configuration management
 - chef
-published: true
 ---
 
 Расскажу одну очень поучительную и одновременно типичную историю, которая случилась со мною года 3 назад. Однажды один

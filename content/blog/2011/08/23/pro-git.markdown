@@ -3,7 +3,6 @@
 title: Рассказ про Git
 date: 2011-08-23T10:30:00
 comments: true
-published: true
 tags:
 - git
 ---

@@ -3,7 +3,6 @@
 title: Использование capistrano
 date: 2009-01-26T10:32:00
 comments: true
-published: true
 tags:
 - deploy
 - capistrano

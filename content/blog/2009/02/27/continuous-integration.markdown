@@ -6,7 +6,6 @@ comments: true
 tags:
 - cruisecontrol
 - continuous integration
-published: true
 ---
 
 О непрерывной интеграции (Continuous Integration) можно почитать у Мартина Фаулера (Martin Fowler) <a

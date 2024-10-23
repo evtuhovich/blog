@@ -3,7 +3,6 @@
 title: Рекурсивные особенности to_yaml
 date: 2009-04-20T13:14:00
 comments: true
-published: true
 tags:
   - yaml
 ---
