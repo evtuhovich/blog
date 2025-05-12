@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /page
+Disallow: /blog/page
+Disallow: /life/page
+Disallow: /tags
 Sitemap: https://evtuhovich.ru/sitemap.xml
